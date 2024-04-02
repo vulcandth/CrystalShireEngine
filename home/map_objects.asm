@@ -66,34 +66,34 @@ DoesSpriteHaveFacings::
 	pop de
 	ret
 
-GetPlayerTile::
-	ld a, [wPlayerTile]
-	call GetTileCollision
+GetPlayerTilePermission::
+	ld a, [wPlayerTileCollision]
+	call GetTilePermission
 	ld b, a
 	ret
 
 CheckOnWater::
-	ld a, [wPlayerTile]
-	call GetTileCollision
+	ld a, [wPlayerTileCollision]
+	call GetTilePermission
 	sub WATER_TILE
 	ret z
 	and a
 	ret
 
-GetTileCollision::
-; Get the collision type of tile a.
+GetTilePermission::
+; Get the permission of tile collision a.
 
 	push de
 	push hl
 
-	ld hl, TileCollisionTable
+	ld hl, CollisionPermissionTable
 	ld e, a
 	ld d, 0
 	add hl, de
 
 	ldh a, [hROMBank]
 	push af
-	ld a, BANK(TileCollisionTable)
+	ld a, BANK(CollisionPermissionTable)
 	rst Bankswitch
 	ld e, [hl]
 	pop af
@@ -174,7 +174,7 @@ CheckWaterfallTile::
 	ret
 
 CheckStandingOnEntrance::
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	cp COLL_DOOR
 	ret z
 	cp COLL_DOOR_79
@@ -316,8 +316,8 @@ LoadMovementDataPointer::
 	add hl, bc
 	ld [hl], STEP_TYPE_RESET
 
-	ld hl, wVramState
-	set 7, [hl]
+	ld hl, wStateFlags
+	set SCRIPTED_MOVEMENT_STATE_F, [hl]
 	and a
 	ret
 
@@ -479,8 +479,8 @@ _GetMovementIndex::
 	ret
 
 UpdateSprites::
-	ld a, [wVramState]
-	bit 0, a
+	ld a, [wStateFlags]
+	bit SPRITE_UPDATES_DISABLED_F, a
 	ret z
 
 	farcall UpdateAllObjectsFrozen

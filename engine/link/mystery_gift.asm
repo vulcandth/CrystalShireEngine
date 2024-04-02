@@ -69,7 +69,7 @@ endc
 	call WaitBGMap
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	pop de
 
 	hlcoord 2, 8
@@ -1395,7 +1395,7 @@ InitMysteryGiftLayout:
 	call WaitBGMap
 	ld b, SCGB_MYSTERY_GIFT
 	call GetSGBLayout
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 .Load5GFX:
 	ld b, 5

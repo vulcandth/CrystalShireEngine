@@ -43,7 +43,7 @@ SSAquaGranddaughterBefore:
 	writetext SSAquaGranddaughterHasToFindGrandpaText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	callasm DisableDynPalUpdates
 	disappear FASTSHIPCABINS_SE_SSE_CAPTAINSCABIN_TWIN2

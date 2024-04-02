@@ -239,7 +239,7 @@ PrintPartyMonPage1:
 	call WaitBGMap
 	ld b, SCGB_STATS_SCREEN_HP_PALS
 	call GetSGBLayout
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 PrintPartyMonPage2:
 	call ClearBGPalettes
@@ -288,7 +288,7 @@ PrintPartyMonPage2:
 	call WaitBGMap
 	ld b, SCGB_STATS_SCREEN_HP_PALS
 	call GetSGBLayout
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 .PrintTempMonStats:
 	lb bc, 2, 3

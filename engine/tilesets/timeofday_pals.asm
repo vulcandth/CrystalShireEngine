@@ -115,7 +115,7 @@ FadeInPalettes::
 	ld c, 10
 	jmp FadePalettes
 
-FadeOutPalettes::
+FadeOutToWhite::
 	ld c, 10
 	jmp FadeToWhite
 
@@ -135,19 +135,20 @@ BattleTowerFade:
 	jr nz, .loop
 	ret
 
-FadeInQuickly:
+FadeInFromBlack:
 	ld c, $0
 	call GetTimePalFade
 	ld b, $4
 	jmp ConvertTimePalsIncHL
 
-FadeBlackQuickly:
+FadeOutToBlack:
 	ld c, $9
 	call GetTimePalFade
 	ld b, $4
 	jmp ConvertTimePalsDecHL
 
 FillWhiteBGColor:
+; Copy white palette of wBGPals1 Pal0 into white palette of wBGPals1 Pal1-Pal6
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)

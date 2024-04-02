@@ -556,7 +556,7 @@ LinkTimeout:
 	pop de
 	pop hl
 	bccoord 1, 14
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	ld c, 15
 	call FadeToWhite
 	call ClearScreen
@@ -1857,7 +1857,7 @@ LinkTrade_TradeStatsMenu:
 	dec a
 	ld [wCurTradePartyMon], a
 	ld [wPlayerLinkAction], a
-	call PrintWaitingTextAndSyncAndExchangeNybble
+	call PlaceWaitingTextAndSyncAndExchangeNybble
 	ld a, [wOtherPlayerLinkMode]
 	cp $f
 	jmp z, InitTradeMenuDisplay
@@ -1878,7 +1878,7 @@ LinkTrade_TradeStatsMenu:
 	farcall Link_WaitBGMap
 	ld hl, .LinkTradeCantBattleText
 	bccoord 1, 14
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	jr .cancel_trade
 
 .abnormal
@@ -1899,7 +1899,7 @@ LinkTrade_TradeStatsMenu:
 	farcall Link_WaitBGMap
 	ld hl, .LinkAbnormalMonText
 	bccoord 1, 14
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 
 .cancel_trade
 	hlcoord 0, 12
@@ -1910,7 +1910,7 @@ LinkTrade_TradeStatsMenu:
 	rst PlaceString
 	ld a, $1
 	ld [wPlayerLinkAction], a
-	call PrintWaitingTextAndSyncAndExchangeNybble
+	call PlaceWaitingTextAndSyncAndExchangeNybble
 	ld c, 100
 	call DelayFrames
 	jmp InitTradeMenuDisplay
@@ -1972,7 +1972,7 @@ LinkTradePartymonMenuCheckCancel:
 	ldcoord_a 9, 17
 	ld a, $f
 	ld [wPlayerLinkAction], a
-	call PrintWaitingTextAndSyncAndExchangeNybble
+	call PlaceWaitingTextAndSyncAndExchangeNybble
 	ld a, [wOtherPlayerLinkMode]
 	cp $f
 	jr nz, .loop1
@@ -2051,7 +2051,7 @@ LinkTrade:
 	call GetPokemonName
 	ld hl, LinkAskTradeForText
 	bccoord 1, 14
-	call PlaceHLTextAtBC
+	call PrintTextboxTextAt
 	call LoadStandardMenuHeader
 	hlcoord 10, 7
 	lb bc, 3, 7
@@ -2098,13 +2098,13 @@ LinkTrade:
 	hlcoord 1, 14
 	ld de, String_TooBadTheTradeWasCanceled
 	rst PlaceString
-	call PrintWaitingTextAndSyncAndExchangeNybble
+	call PlaceWaitingTextAndSyncAndExchangeNybble
 	jmp InitTradeMenuDisplay_Delay
 
 .try_trade
 	ld a, $2
 	ld [wPlayerLinkAction], a
-	call PrintWaitingTextAndSyncAndExchangeNybble
+	call PlaceWaitingTextAndSyncAndExchangeNybble
 	ld a, [wOtherPlayerLinkMode]
 	dec a
 	jr nz, .do_trade
@@ -2354,7 +2354,7 @@ LinkTrade:
 	ld a, b
 	ld [wPlayerLinkAction], a
 	push bc
-	call Serial_PrintWaitingTextAndSyncAndExchangeNybble
+	call Serial_PlaceWaitingTextAndSyncAndExchangeNybble
 	pop bc
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
@@ -2417,7 +2417,7 @@ LoadTradeScreenBorderGFX:
 
 SetTradeRoomBGPals:
 	call LoadTradeRoomBGPals
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 INCLUDE "engine/movie/trade_animation.asm"
 

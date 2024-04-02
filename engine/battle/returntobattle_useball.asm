@@ -16,4 +16,4 @@ _ReturnToBattle_UseBall:
 	call CloseWindow
 	call LoadStandardMenuHeader
 	call WaitBGMap
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP

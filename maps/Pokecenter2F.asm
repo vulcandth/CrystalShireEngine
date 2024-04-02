@@ -305,7 +305,7 @@ Script_LeftTimeCapsule:
 	end ; dummied out
 
 Pokecenter2FLinkRecordSign:
-	refreshscreen
+	reanchormap
 	special DisplayLinkRecord
 	closetext
 	end

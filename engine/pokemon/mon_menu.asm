@@ -161,7 +161,7 @@ SwitchPartyMons:
 	ld a, PARTYMENUACTION_MOVE
 	ld [wPartyMenuActionText], a
 	farcall WritePartyMenuTilemap
-	farcall PrintPartyMenuText
+	farcall PlacePartyMenuText
 
 	hlcoord 0, 1
 	ld bc, SCREEN_WIDTH * 2
@@ -170,7 +170,7 @@ SwitchPartyMons:
 	rst AddNTimes
 	ld [hl], "▷"
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 
 	farcall PartyMenuSelect
@@ -1202,7 +1202,7 @@ SetUpMoveList:
 	hlcoord 10, 4
 	predef ListMovePP
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wNumMoves]
 	inc a
 	ld [w2DMenuNumRows], a

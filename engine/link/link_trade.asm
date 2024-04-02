@@ -130,14 +130,14 @@ LoadCableTradeBorderTilemap:
 LinkTextbox:
 	jmp _LinkTextbox
 
-PrintWaitingTextAndSyncAndExchangeNybble:
+PlaceWaitingTextAndSyncAndExchangeNybble:
 	call LoadStandardMenuHeader
-	call .PrintWaitingText
+	call .PlaceWaitingText
 	call WaitLinkTransfer
 	call ExitMenu
 	jmp WaitBGMap2
 
-.PrintWaitingText:
+.PlaceWaitingText:
 	hlcoord 4, 10
 	lb bc, 1, 10
 	predef LinkTextboxAtHL

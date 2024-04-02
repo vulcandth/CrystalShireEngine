@@ -220,7 +220,7 @@ Function17d405:
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	rst CopyBytes
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	pop af
 	ldh [rSVBK], a
 	ret
@@ -374,7 +374,7 @@ Function17d93a:
 	ld a, [wc70c]
 	ld e, a
 	farcall LoadMonPaletteAsNthBGPal
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wc708]
 	ld l, a
 	ld a, [wc709]
@@ -408,7 +408,7 @@ Function17d98b:
 	ld a, [wc70b]
 	ld e, a
 	farcall LoadTrainerClassPaletteAsNthBGPal
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, [wc708]
 	ld e, a
 	ld a, [wc709]
@@ -887,7 +887,7 @@ Function17dd13:
 	push hl
 	pop bc
 	pop hl
-	jmp PlaceHLTextAtBC
+	jmp PrintTextboxTextAt
 
 Function17dd30:
 	call IncCrashCheckPointer

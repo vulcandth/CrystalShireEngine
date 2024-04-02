@@ -183,9 +183,9 @@ UseBillsPC:
 	farcall WipeAttrmap
 	call ClearSprites
 	farcall ClearSpriteAnims
-	ld a, [wVramState]
-	res 0, a
-	ld [wVramState], a
+	ld a, [wStateFlags]
+	res SPRITE_UPDATES_DISABLED_F, a
+	ld [wStateFlags], a
 
 	; the UI needs CGB Doublespeed to work as it should.
 	ldh a, [rIE]
@@ -3351,7 +3351,7 @@ BillsPC_PlaceHeldMon:
 
 BillsPC_SetPals:
 	call BillsPC_ApplyPals
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 BillsPC_ApplyPals:
 ; Sets palettes. This writes palette data for HBlank row1 mons/etc into

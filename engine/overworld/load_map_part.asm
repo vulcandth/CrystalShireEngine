@@ -22,7 +22,7 @@ MACRO addmapwidthoffset
 	ld d, a
 ENDM
 
-_LoadMapPart::
+_LoadOverworldTilemap::
 	ldh a, [rSVBK]
 	push af
 	ld a, [wOverworldMapAnchor]

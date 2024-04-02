@@ -53,7 +53,7 @@ NamingScreen:
 	call .GetNamingScreenSetup
 	call WaitBGMap
 	call WaitTop
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	jmp NamingScreen_InitNameEntry
 
 .GetNamingScreenSetup:
