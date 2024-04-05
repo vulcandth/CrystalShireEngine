@@ -1071,7 +1071,7 @@ IntroScene27:
 
 .done
 	call NextIntroScene
-	ld a, $80
+	ld a, $ff
 	ld [wIntroSceneFrameCounter], a
 	ret
 
@@ -1082,9 +1082,9 @@ IntroScene28:
 	and a
 	jr z, .done
 	dec [hl]
-	cp $18
+	cp $30
 	jr z, .clear
-	cp $8
+	cp $10
 	ret nz
 
 	ld de, SFX_INTRO_WHOOSH
@@ -1501,8 +1501,8 @@ Intro_ClearBGPals:
 	ldh [rSVBK], a
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
-	call DelayFrame
-	jmp DelayFrame
+	ld c, 64
+	jmp DelayFrames
 
 Intro_DecompressRequest2bpp_128Tiles:
 	ldh a, [rSVBK]
