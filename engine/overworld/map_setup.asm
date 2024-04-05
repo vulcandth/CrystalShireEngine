@@ -184,6 +184,9 @@ ForceMapMusic:
 	jmp TryRestartMapMusic
 
 DecompressMetatiles:
+	call TilesetUnchanged
+	ret z
+
 	ld hl, wTilesetBlocksBank
 	ld c, BANK(wDecompressedMetatiles)
 	call .Decompress

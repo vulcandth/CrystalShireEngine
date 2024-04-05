@@ -238,6 +238,8 @@ CheckIndoorMap::
 	ret
 
 LoadMapAttributes::
+	ld a, [wMapTileset]
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -245,6 +247,8 @@ LoadMapAttributes::
 	jr ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
+	ld a, -1
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -2109,7 +2113,19 @@ GetFishingGroup::
 	pop de
 	ret
 
+TilesetUnchanged:
+; returns z if tileset is unchanged from last tileset
+	push bc
+	ld a, [wOldTileset]
+	ld b, a
+	ld a, [wMapTileset]
+	cp b
+	pop bc
+	ret
+
 LoadMapTileset::
+	call TilesetUnchanged
+	ret z
 	push hl
 	push bc
 

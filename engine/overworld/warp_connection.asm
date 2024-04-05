@@ -315,9 +315,12 @@ LoadMapTimeOfDay:
 	ret
 
 DeferredLoadMapGraphics:
+	call TilesetUnchanged
+	jr z, .done
 	call LoadMapTileset
 	ld a, 3
 	ld [wPendingOverworldGraphics], a
+.done
 	xor a
 	ldh [hMapAnims], a
 	ldh [hTileAnimFrame], a

@@ -2485,6 +2485,7 @@ wMonTriedToEvolve:: db
 
 wTimeOfDay:: db
 
+wOldTileset:: db
 
 SECTION "Enemy Party", WRAMX
 
