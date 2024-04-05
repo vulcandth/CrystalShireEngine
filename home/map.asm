@@ -1163,17 +1163,12 @@ LoadTilesetGFX::
 
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wDecompressScratch)
-	ldh [rSVBK], a
 
 	ldh a, [hTilesetGFXBank]
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
+	ld b, a
+	ld c, $7f
 	ld de, vTiles2
-	ld bc, $7f tiles
-	rst CopyBytes
+	call DecompressRequest2bpp
 
 	ld a, BANK(vTiles5)
 	ldh [rVBK], a
@@ -1186,17 +1181,11 @@ LoadTilesetGFX::
 	ld h, [hl]
 	ld l, a
 
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
-
 	ld a, [hTilesetGFXBank]
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
+	ld b, a
+	ld c, $80
 	ld de, vTiles5
-	ld bc, $80 tiles
-	rst CopyBytes
+	call DecompressRequest2bpp
 
 	ld a, BANK(wTilesetvTiles4GFXAddress)
 	ld [rSVBK], a
@@ -1206,17 +1195,11 @@ LoadTilesetGFX::
 	ld h, [hl]
 	ld l, a
 
-	ld a, BANK(wDecompressScratch)
-	ld [rSVBK], a
-
 	ld a, [hTilesetGFXBank]
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
+	ld b, a
+	ld c, $80
 	ld de, vTiles4
-	ld bc, $80 tiles
-	rst CopyBytes
+	call DecompressRequest2bpp
 
 	xor a
 	ldh [rVBK], a

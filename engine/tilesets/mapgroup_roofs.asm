@@ -10,8 +10,11 @@ LoadMapGroupRoof::
 	ld hl, Roofs
 	ld bc, ROOF_LENGTH tiles
 	rst AddNTimes
-	ld de, vTiles2 tile $0a
-	ld bc, ROOF_LENGTH tiles
-	jmp CopyBytes
+
+	ld d, h
+	ld e, l
+	lb bc, BANK(Roofs), ROOF_LENGTH
+	ld hl, vTiles2 tile $0a
+	jmp Request2bpp
 
 INCLUDE "data/maps/roofs.asm"
