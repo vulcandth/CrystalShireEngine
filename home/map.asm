@@ -1153,29 +1153,24 @@ UpdateBGMapColumn::
 	ldh [hBGMapTileCount], a
 	ret
 
-LoadTilesetGFX::
-	ld hl, wTilesetvTiles2GFXAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+_LoadTilesetGFX:
+; Loads one of up to 3 tileset groups depending on a
+	push af
 	ld a, [wTilesetGFXBank]
 	ldh [hTilesetGFXBank], a
-
+	pop af
+	jr z, _LoadTilesetGFX2
+	dec a
+	jr z, _LoadTilesetGFX4
+_LoadTilesetGFX5:
 	ldh a, [rSVBK]
 	push af
-
-	ldh a, [hTilesetGFXBank]
-	ld b, a
-	ld c, $7f
-	ld de, vTiles2
-	call DecompressRequest2bpp
-
-	ld a, BANK(vTiles5)
-	ldh [rVBK], a
-
 	ld a, BANK(wTilesetvTiles5GFXAddress)
 	ld [rSVBK], a
-
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles5)
+	ldh [rVBK], a
 	ld hl, wTilesetvTiles5GFXAddress
 	ld a, [hli]
 	ld h, [hl]
@@ -1186,10 +1181,21 @@ LoadTilesetGFX::
 	ld c, $80
 	ld de, vTiles5
 	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
 
+_LoadTilesetGFX4:
+	ldh a, [rSVBK]
+	push af
 	ld a, BANK(wTilesetvTiles4GFXAddress)
 	ld [rSVBK], a
-
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles4)
+	ldh [rVBK], a
 	ld hl, wTilesetvTiles4GFXAddress
 	ld a, [hli]
 	ld h, [hl]
@@ -1200,26 +1206,58 @@ LoadTilesetGFX::
 	ld c, $80
 	ld de, vTiles4
 	call DecompressRequest2bpp
-
-	xor a
+	pop af
 	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
 
+_LoadTilesetGFX2:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTilesetvTiles2GFXAddress)
+	ld [rSVBK], a
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles2)
+	ldh [rVBK], a
+	ld hl, wTilesetvTiles2GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ld a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $7f
+	ld de, vTiles2
+	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
 	pop af
 	ldh [rSVBK], a
 
-; These tilesets support dynamic per-mapgroup roof tiles.
+	; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]
 	cp TILESET_JOHTO
 	jr z, .load_roof
 	cp TILESET_JOHTO_MODERN
 	jr z, .load_roof
 	cp TILESET_BATTLE_TOWER_OUTSIDE
-	jr nz, .skip_roof
+	ret nz
 ; fallthrough
 .load_roof
 	farcall LoadMapGroupRoof
+	ret
 
-.skip_roof
+
+LoadTilesetGFX::
+	xor a
+	ld [wPendingOverworldGraphics], a
+	ld a, [wTilesetGFXBank]
+	ldh [hTilesetGFXBank], a
+	call _LoadTilesetGFX5
+	call _LoadTilesetGFX4
+	call _LoadTilesetGFX2
 	xor a
 	ldh [hTileAnimFrame], a
 	ret

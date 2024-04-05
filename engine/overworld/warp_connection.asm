@@ -314,6 +314,15 @@ LoadMapTimeOfDay:
 	ldh [rVBK], a
 	ret
 
+DeferredLoadMapGraphics:
+	call LoadMapTileset
+	ld a, 3
+	ld [wPendingOverworldGraphics], a
+	xor a
+	ldh [hMapAnims], a
+	ldh [hTileAnimFrame], a
+	ret
+
 LoadMapGraphics:
 	call LoadMapTileset
 	call LoadTilesetGFX

@@ -15,6 +15,6 @@ LoadMapGroupRoof::
 	ld e, l
 	lb bc, BANK(Roofs), ROOF_LENGTH
 	ld hl, vTiles2 tile $0a
-	jmp Request2bpp
+	jmp Get2bpp
 
 INCLUDE "data/maps/roofs.asm"

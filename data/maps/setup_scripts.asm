@@ -89,7 +89,7 @@ MapSetupScript_Connection:
 	mapsetup LoadBlockData
 	mapsetup LoadMapTileset
 	mapsetup SaveScreen
-	mapsetup LoadMapGraphics
+	mapsetup DeferredLoadMapGraphics
 	mapsetup DecompressMetatiles
 	mapsetup LoadMapObjects
 	mapsetup FadeToMapMusic

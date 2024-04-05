@@ -1520,14 +1520,16 @@ wJoypadDisable::
 ; bit 7: ongoing sgb data transfer
 	db
 
-	ds 1
+wPendingOverworldGraphics:: db
 
 wInBattleTowerBattle::
 ; 0 not in BattleTower-Battle
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wOverworldDelaySkip::
+; amount of overworld frames to skip DelayFrame for
+	db
 
 wFXAnimID:: dw
 
