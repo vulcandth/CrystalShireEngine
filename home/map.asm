@@ -1170,7 +1170,7 @@ _LoadTilesetGFX5:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTilesetvTiles5GFXAddress)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ldh a, [rVBK]
 	push af
 	ld a, BANK(vTiles5)
@@ -1180,7 +1180,7 @@ _LoadTilesetGFX5:
 	ld h, [hl]
 	ld l, a
 
-	ld a, [hTilesetGFXBank]
+	ldh a, [hTilesetGFXBank]
 	ld b, a
 	ld c, $80
 	ld de, vTiles5
@@ -1195,7 +1195,7 @@ _LoadTilesetGFX4:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTilesetvTiles4GFXAddress)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ldh a, [rVBK]
 	push af
 	ld a, BANK(vTiles4)
@@ -1205,7 +1205,7 @@ _LoadTilesetGFX4:
 	ld h, [hl]
 	ld l, a
 
-	ld a, [hTilesetGFXBank]
+	ldh a, [hTilesetGFXBank]
 	ld b, a
 	ld c, $80
 	ld de, vTiles4
@@ -1220,7 +1220,7 @@ _LoadTilesetGFX2:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTilesetvTiles2GFXAddress)
-	ld [rSVBK], a
+	ldh [rSVBK], a
 	ldh a, [rVBK]
 	push af
 	ld a, BANK(vTiles2)
@@ -1230,7 +1230,7 @@ _LoadTilesetGFX2:
 	ld h, [hl]
 	ld l, a
 
-	ld a, [hTilesetGFXBank]
+	ldh a, [hTilesetGFXBank]
 	ld b, a
 	ld c, $7f
 	ld de, vTiles2
@@ -1250,8 +1250,7 @@ _LoadTilesetGFX2:
 	ret nz
 ; fallthrough
 .load_roof
-	farcall LoadMapGroupRoof
-	ret
+	farjp LoadMapGroupRoof
 
 
 LoadTilesetGFX::

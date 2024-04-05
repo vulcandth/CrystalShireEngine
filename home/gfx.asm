@@ -294,7 +294,7 @@ Get2bpp::
 ; copy c 2bpp tiles from b:de to hl
 	ldh a, [rLCDC]
 	bit rLCDC_ENABLE, a
-	jmp nz, Request2bpp
+	jr nz, Request2bpp
 	; fallthrough
 
 Copy2bpp:
