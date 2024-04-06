@@ -314,15 +314,25 @@ LoadMapTimeOfDay:
 	ldh [rVBK], a
 	ret
 
+DeferredLoadMapGraphics:
+	call TilesetUnchanged
+	jr z, .done
+	call LoadMapTileset
+	ld a, 3
+	ld [wPendingOverworldGraphics], a
+.done
+	xor a
+	ldh [hMapAnims], a
+	ldh [hTileAnimFrame], a
+	ret
+
 LoadMapGraphics:
 	call LoadMapTileset
 	call LoadTilesetGFX
 	xor a
 	ldh [hMapAnims], a
 	ldh [hTileAnimFrame], a
-	farcall RefreshSprites
-	call LoadFontsExtra
-	jmp LoadOverworldFont
+	farjp RefreshSprites
 
 LoadMapPalettes:
 	ld b, SCGB_MAPPALS
@@ -330,6 +340,8 @@ LoadMapPalettes:
 
 RefreshMapSprites:
 	call ClearSprites
+	xor a
+	ldh [hBGMapMode], a
 	farcall InitMapNameSign
 	call GetMovementPermissions
 	farcall RefreshPlayerSprite

@@ -156,12 +156,53 @@ MapEvents:
 NextOverworldFrame:
 	; If we haven't already performed a delay outside DelayFrame as a result
 	; of a busy LY overflow, perform that now.
+	ld a, [wOverworldDelaySkip]
+	and a
+	jr nz, .done
 	ldh a, [hDelayFrameLY]
 	inc a
-	jmp nz, DelayFrame
+	jr nz, .LoadMapGraphicsAndDelay
 	xor a
 	ldh [hDelayFrameLY], a
+.done
+	ld a, [wOverworldDelaySkip]
+	and a
+	ret z
+	dec a
+	ld [wOverworldDelaySkip], a
 	ret
+
+.LoadMapGraphicsAndDelay:
+	push hl
+	push de
+	push bc
+	ldh a, [rVBK]
+	push af
+	xor a
+	ldh [hDelayFrameLY], a
+
+	; only allow this if we have time to spare
+	ldh a, [rLY]
+	cp $20
+	jr nc, .gfx_done
+
+	ld a, [wPendingOverworldGraphics]
+	and a
+	jr z, .gfx_done
+
+	dec a
+	ld [wPendingOverworldGraphics], a
+	call _LoadTilesetGFX
+	xor a
+	ldh [hTileAnimFrame], a
+
+.gfx_done
+	ldh a, [hDelayFrameLY]
+	and a
+	call z, DelayFrame
+	pop af
+	ldh [rVBK], a
+	jmp PopBCDEHL
 
 HandleMapTimeAndJoypad:
 	ld a, [wMapEventStatus]

@@ -186,6 +186,14 @@ hFunctionTargetHi:: db
 
 hDelayFrameLY:: db
 
-	ds 12
+hRequested2bpp::        db
+hRequested1bpp::        db
+hRequestedVTileDest::   dw
+hRequestedVTileSource:: dw
+hRequestOpaque1bpp::    db
+
+hTilesetGFXBank:: db
+
+	ds 4
 
 ENDSECTION

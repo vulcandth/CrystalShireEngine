@@ -238,6 +238,8 @@ CheckIndoorMap::
 	ret
 
 LoadMapAttributes::
+	ld a, [wMapTileset]
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -245,6 +247,8 @@ LoadMapAttributes::
 	jr ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
+	ld a, -1
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -1153,57 +1157,110 @@ UpdateBGMapColumn::
 	ldh [hBGMapTileCount], a
 	ret
 
-LoadTilesetGFX::
-	ld hl, wTilesetAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wTilesetBank]
-	ld e, a
-
+_LoadTilesetGFX:
+; Loads one of up to 3 tileset groups depending on a
+	push af
+	ld a, [wTilesetGFXBank]
+	ldh [hTilesetGFXBank], a
+	pop af
+	jr z, _LoadTilesetGFX2
+	dec a
+	jr z, _LoadTilesetGFX4
+_LoadTilesetGFX5:
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wDecompressScratch)
+	ld a, BANK(wTilesetvTiles5GFXAddress)
 	ldh [rSVBK], a
-
-	ld a, e
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
-	ld de, vTiles2
-	ld bc, $7f tiles
-	rst CopyBytes
-
 	ldh a, [rVBK]
 	push af
 	ld a, BANK(vTiles5)
 	ldh [rVBK], a
+	ld hl, wTilesetvTiles5GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 
-	ld hl, wDecompressScratch + $80 tiles
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $80
 	ld de, vTiles5
-	ld bc, $80 tiles
-	rst CopyBytes
-
+	call DecompressRequest2bpp
 	pop af
 	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
 
+_LoadTilesetGFX4:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTilesetvTiles4GFXAddress)
+	ldh [rSVBK], a
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles4)
+	ldh [rVBK], a
+	ld hl, wTilesetvTiles4GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $80
+	ld de, vTiles4
+	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
+
+_LoadTilesetGFX2:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTilesetvTiles2GFXAddress)
+	ldh [rSVBK], a
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles2)
+	ldh [rVBK], a
+	ld hl, wTilesetvTiles2GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $7f
+	ld de, vTiles2
+	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
 	pop af
 	ldh [rSVBK], a
 
-; These tilesets support dynamic per-mapgroup roof tiles.
+	; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]
 	cp TILESET_JOHTO
 	jr z, .load_roof
 	cp TILESET_JOHTO_MODERN
 	jr z, .load_roof
 	cp TILESET_BATTLE_TOWER_OUTSIDE
-	jr nz, .skip_roof
+	ret nz
 ; fallthrough
 .load_roof
-	farcall LoadMapGroupRoof
+	farjp LoadMapGroupRoof
 
-.skip_roof
+
+LoadTilesetGFX::
+	xor a
+	ld [wPendingOverworldGraphics], a
+	ld a, [wTilesetGFXBank]
+	ldh [hTilesetGFXBank], a
+	call _LoadTilesetGFX5
+	call _LoadTilesetGFX4
+	call _LoadTilesetGFX2
 	xor a
 	ldh [hTileAnimFrame], a
 	ret
@@ -2055,16 +2112,29 @@ GetFishingGroup::
 	pop de
 	ret
 
+TilesetUnchanged:
+; returns z if tileset is unchanged from last tileset
+	push bc
+	ld a, [wOldTileset]
+	ld b, a
+	ld a, [wMapTileset]
+	cp b
+	pop bc
+	ret
+
 LoadMapTileset::
+	call TilesetUnchanged
+	ret z
 	push hl
 	push bc
 
 	ld hl, Tilesets
 	ld bc, TILESET_LENGTH
 	ld a, [wMapTileset]
+;	dec a
 	rst AddNTimes
 
-	ld de, wTilesetBank
+	ld de, wTilesetGFXBank
 	ld bc, TILESET_LENGTH
 
 	ld a, BANK(Tilesets)

@@ -1520,14 +1520,16 @@ wJoypadDisable::
 ; bit 7: ongoing sgb data transfer
 	db
 
-	ds 1
+wPendingOverworldGraphics:: db
 
 wInBattleTowerBattle::
 ; 0 not in BattleTower-Battle
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wOverworldDelaySkip::
+; amount of overworld frames to skip DelayFrame for
+	db
 
 wFXAnimID:: dw
 
@@ -2193,8 +2195,10 @@ wWestMapConnection::  map_connection_struct wWest
 wEastMapConnection::  map_connection_struct wEast
 
 wTileset::
-wTilesetBank:: db
-wTilesetAddress:: dw
+wTilesetGFXBank:: db
+wTilesetvTiles2GFXAddress:: dw
+wTilesetvTiles4GFXAddress:: dw
+wTilesetvTiles5GFXAddress:: dw
 wTilesetBlocksBank:: db
 wTilesetBlocksAddress:: dw
 wTilesetCollisionBank:: db
@@ -2481,6 +2485,7 @@ wMonTriedToEvolve:: db
 
 wTimeOfDay:: db
 
+wOldTileset:: db
 
 SECTION "Enemy Party", WRAMX
 
