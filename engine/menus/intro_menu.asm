@@ -564,7 +564,7 @@ if !DEF(_DEBUG)
 	call FadeToWhite
 	call ClearTilemap
 
-	ld hl, GASTLY
+	ld hl, WOOPER
 	call GetPokemonIDFromIndex
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
