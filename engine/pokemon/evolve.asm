@@ -199,9 +199,9 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 	ld a, [wTempMonLevel]
 	cp b
-	jmp c, .skip_half_species_parameter
+	jmp c, .skip_evolution_species
 	call IsMonHoldingEverstone
-	jmp z, .skip_half_species_parameter
+	jmp z, .skip_evolution_species
 
 .proceed
 	ld a, [wTempMonLevel]
