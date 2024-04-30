@@ -34,7 +34,7 @@ Script_Whiteout:
 .bug_contest
 	writetext .WhitedOutText
 	waitbutton
-	special FadeOutPalettes
+	special FadeOutToWhite
 	pause 40
 	special HealParty
 	jumpstd BugContestResultsWarpScript
