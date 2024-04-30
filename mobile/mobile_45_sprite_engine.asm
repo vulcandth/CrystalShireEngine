@@ -369,7 +369,7 @@ Function11636e:
 	rst CopyBytes
 	pop af
 	ldh [rSVBK], a
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ldh a, [rSVBK]
 	push af
 	ld a, $1
@@ -383,14 +383,13 @@ Function11636e:
 	call UpdateSprites
 	pop af
 	ldh [rSVBK], a
-	farcall ReloadMapPart
+	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld a, $8
 	ld [wMusicFade], a
 	ld a, [wMapMusic]
 	ld [wMusicFadeID], a
 	xor a
 	ld [wMusicFadeID + 1], a
-	xor a
 	ld [wc319], a
 	ld [wc30d], a
 	ret
@@ -418,7 +417,7 @@ Function1163c0:
 	rst CopyBytes
 	pop af
 	ldh [rSVBK], a
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 	ld a, $90
 	ldh [hWY], a
@@ -426,7 +425,7 @@ Function1163c0:
 	farcall _ClearSprites
 	pop af
 	ldh [rSVBK], a
-	farcall ReloadMapPart
+	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
 	jr z, .asm_11642a
@@ -456,14 +455,13 @@ Function116441:
 	farcall Function17d405
 	ld a, $90
 	ldh [hWY], a
-	farcall ReloadMapPart
+	farcall HDMATransferTilemapAndAttrmap_Overworld
 	ld a, $8
 	ld [wMusicFade], a
 	ld a, [wMapMusic]
 	ld [wMusicFadeID], a
 	xor a
 	ld [wMusicFadeID + 1], a
-	xor a
 	ld [wc319], a
 	ld [wc30d], a
 	ret

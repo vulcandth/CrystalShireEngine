@@ -91,16 +91,16 @@ SkipUpdateMapSprites:
 	ret
 
 CheckUpdatePlayerSprite:
-	call .CheckBiking
+	call .CheckForcedBiking
 	jr c, .ok
 	call .CheckSurfing
 	jr c, .ok
-	call .CheckSurfing2
+	call .ResetSurfingOrBikingState
 	ret nc
 .ok
 	jmp UpdatePlayerSprite
 
-.CheckBiking:
+.CheckForcedBiking:
 	and a
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
@@ -110,7 +110,7 @@ CheckUpdatePlayerSprite:
 	scf
 	ret
 
-.CheckSurfing2:
+.ResetSurfingOrBikingState:
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	jr z, .nope
@@ -171,7 +171,7 @@ FadeMapMusicAndPalettes:
 	lb de, HIGH(MUSIC_NONE), LOW(MUSIC_NONE)
 	ld a, $4
 	ld [wMusicFade], a
-	farjp FadeOutPalettes
+	farjp FadeOutToWhite
 
 ForceMapMusic:
 	ld a, [wPlayerState]
@@ -184,6 +184,9 @@ ForceMapMusic:
 	jmp TryRestartMapMusic
 
 DecompressMetatiles:
+	call TilesetUnchanged
+	ret z
+
 	ld hl, wTilesetBlocksBank
 	ld c, BANK(wDecompressedMetatiles)
 	call .Decompress

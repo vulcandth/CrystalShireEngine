@@ -248,7 +248,7 @@ _ShowLinkBattleParticipants:
 	call LinkBattle_TrainerHuds
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ld a, $e4
 	ldh [rOBP0], a
 	ret

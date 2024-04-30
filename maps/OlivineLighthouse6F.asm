@@ -50,7 +50,7 @@ OlivineLighthouseJasmine:
 	closetext
 	special RestartMapMusic
 	cry AMPHAROS
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special LoadMapPalettes
 	pause 10
 	special FadeInPalettes_EnableDynNoApply
@@ -122,10 +122,10 @@ OlivineLighthouseAmphy:
 	cry AMPHAROS
 	waitbutton
 	closetext
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special LoadMapPalettes
 	special FadeInPalettes_EnableDynNoApply
-	special FadeOutPalettes
+	special FadeOutToWhite
 	special LoadMapPalettes
 	special FadeInPalettes_EnableDynNoApply
 	end

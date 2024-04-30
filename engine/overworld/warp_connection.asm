@@ -247,13 +247,13 @@ EnterMapWarp:
 	ret
 
 LoadMapTimeOfDay:
-	ld hl, wVramState
-	res 6, [hl]
-	ld a, $1
+	ld hl, wStateFlags
+	res TEXT_STATE_F, [hl]
+	ld a, TRUE
 	ld [wSpriteUpdatesEnabled], a
 	farcall ReplaceTimeOfDayPals
 	farcall UpdateTimeOfDayPal
-	call OverworldTextModeSwitch
+	call LoadOverworldTilemapAndAttrmapPals
 	call .ClearBGMap
 	jr .PushAttrmap
 
@@ -314,16 +314,25 @@ LoadMapTimeOfDay:
 	ldh [rVBK], a
 	ret
 
+DeferredLoadMapGraphics:
+	call TilesetUnchanged
+	jr z, .done
+	call LoadMapTileset
+	ld a, 3
+	ld [wPendingOverworldGraphics], a
+.done
+	xor a
+	ldh [hMapAnims], a
+	ldh [hTileAnimFrame], a
+	ret
+
 LoadMapGraphics:
 	call LoadMapTileset
 	call LoadTilesetGFX
 	xor a
 	ldh [hMapAnims], a
-	xor a
 	ldh [hTileAnimFrame], a
-	farcall RefreshSprites
-	call LoadFontsExtra
-	jmp LoadOverworldFont
+	farjp RefreshSprites
 
 LoadMapPalettes:
 	ld b, SCGB_MAPPALS
@@ -331,6 +340,8 @@ LoadMapPalettes:
 
 RefreshMapSprites:
 	call ClearSprites
+	xor a
+	ldh [hBGMapMode], a
 	farcall InitMapNameSign
 	call GetMovementPermissions
 	farcall RefreshPlayerSprite
@@ -338,8 +349,8 @@ RefreshMapSprites:
 	ld hl, wPlayerSpriteSetupFlags
 	bit PLAYERSPRITESETUP_SKIP_RELOAD_GFX_F, [hl]
 	jr nz, .skip
-	ld hl, wVramState
-	set 0, [hl]
+	ld hl, wStateFlags
+	set SPRITE_UPDATES_DISABLED_F, [hl]
 	call SafeUpdateSprites
 .skip
 	ld a, [wPlayerSpriteSetupFlags]

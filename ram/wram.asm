@@ -1119,8 +1119,8 @@ SECTION "Video", WRAM0
 
 UNION
 ; bg map
-wBGMapBuffer::    ds 40
-wBGMapPalBuffer:: ds 40
+wBGMapBuffer::    ds 2 * SCREEN_WIDTH
+wBGMapPalBuffer:: ds 2 * SCREEN_WIDTH
 wBGMapBufferPointers:: ds 20 * 2
 wBGMapBufferEnd::
 
@@ -1521,14 +1521,16 @@ wJoypadDisable::
 ; bit 7: ongoing sgb data transfer
 	db
 
-	ds 1
+wPendingOverworldGraphics:: db
 
 wInBattleTowerBattle::
 ; 0 not in BattleTower-Battle
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wOverworldDelaySkip::
+; amount of overworld frames to skip DelayFrame for
+	db
 
 wFXAnimID:: dw
 
@@ -1964,7 +1966,7 @@ wWalkingDirection:: db
 wFacingDirection:: db
 wWalkingX:: db
 wWalkingY:: db
-wWalkingTile:: db
+wWalkingTileCollision:: db
 	ds 6
 wPlayerTurningDirection:: db
 
@@ -2058,12 +2060,11 @@ wBattlePlayerAction::
 wSolvedUnownPuzzle::
 	db
 
-wVramState::
+wStateFlags::
 ; bit 0: overworld sprite updating on/off
-; bit 1: something to do with sprite updates
-; bit 6: something to do with text
-; bit 7: on when surf initiates
-;        flickers when climbing waterfall
+; bit 1: last 12 sprite OAM structs reserved
+; bit 6: in text state
+; bit 7: in scripted movement
 	db
 
 wBattleResult::
@@ -2199,8 +2200,10 @@ wWestMapConnection::  map_connection_struct wWest
 wEastMapConnection::  map_connection_struct wEast
 
 wTileset::
-wTilesetBank:: db
-wTilesetAddress:: dw
+wTilesetGFXBank:: db
+wTilesetvTiles2GFXAddress:: dw
+wTilesetvTiles4GFXAddress:: dw
+wTilesetvTiles5GFXAddress:: dw
 wTilesetBlocksBank:: db
 wTilesetBlocksAddress:: dw
 wTilesetCollisionBank:: db
@@ -2488,6 +2491,7 @@ wMonTriedToEvolve:: db
 
 wTimeOfDay:: db
 
+wOldTileset:: db
 
 SECTION "Enemy Party", WRAMX
 
@@ -2553,7 +2557,7 @@ wMapEventStatus:: db
 wScriptFlags::
 ; bit 3: run deferred script
 	db
-wScriptFlags2::
+wEnabledPlayerEvents::
 ; bit 0: count steps
 ; bit 1: coord events
 ; bit 2: warps and connections
@@ -2896,8 +2900,8 @@ wWildBattlePanic:: db
 wCurMapSceneScriptPointer:: dw
 
 wCurCaller:: dw
-wCurMapWarpCount:: db
-wCurMapWarpsPointer:: dw
+wCurMapWarpEventCount:: db
+wCurMapWarpEventsPointer:: dw
 wCurMapCoordEventCount:: db
 wCurMapCoordEventsPointer:: dw
 wCurMapBGEventCount:: db

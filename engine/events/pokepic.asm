@@ -34,11 +34,10 @@ ClosePokepic::
 	call GetMemSGBLayout
 	xor a
 	ldh [hBGMapMode], a
-	call OverworldTextModeSwitch
+	call LoadOverworldTilemapAndAttrmapPals
 	call ApplyTilemap
 	call UpdateSprites
-	farcall EnableDynPalUpdates
-	jmp LoadStandardFont
+	farjp EnableDynPalUpdates
 
 PokepicMenuHeader:
 	db MENU_BACKUP_TILES ; flags

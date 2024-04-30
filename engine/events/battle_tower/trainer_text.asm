@@ -71,7 +71,7 @@ BattleTowerText::
 	bccoord 1, 14
 	pop af
 	ldh [rSVBK], a
-	jmp PlaceHLTextAtBC
+	jmp PrintTextboxTextAt
 
 INCLUDE "data/trainers/genders.asm"
 

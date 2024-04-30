@@ -113,22 +113,22 @@ UpdateOverworldMap:
 
 .step_down
 	call .ScrollOverworldMapDown
-	call _LoadMapPart
+	call _LoadOverworldTilemap
 	jmp ScrollMapDown
 
 .step_up
 	call .ScrollOverworldMapUp
-	call _LoadMapPart
+	call _LoadOverworldTilemap
 	jmp ScrollMapUp
 
 .step_left
 	call .ScrollOverworldMapLeft
-	call _LoadMapPart
+	call _LoadOverworldTilemap
 	jmp ScrollMapLeft
 
 .step_right
 	call .ScrollOverworldMapRight
-	call _LoadMapPart
+	call _LoadOverworldTilemap
 	jmp ScrollMapRight
 
 .ScrollOverworldMapDown:

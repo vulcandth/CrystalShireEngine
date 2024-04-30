@@ -209,7 +209,7 @@ _PlayersHousePC:
 	call _PlayersPC
 	and a
 	jr nz, .changed_deco_tiles
-	call OverworldTextModeSwitch
+	call LoadOverworldTilemapAndAttrmapPals
 	call ApplyTilemap
 	call UpdateSprites
 	call PC_PlayShutdownSound
@@ -333,7 +333,7 @@ ClearPCItemScreen:
 	lb bc, 4, 18
 	call Textbox
 	call WaitBGMap2
-	jmp SetPalettes ; load regular palettes?
+	jmp SetDefaultBGPAndOBP ; load regular palettes?
 
 PlayersPCAskWhatDoText:
 	text_far _PlayersPCAskWhatDoText

@@ -41,7 +41,7 @@ InitClock:
 	call Request1bpp
 	call .ClearScreen
 	call WaitBGMap
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 if !DEF(_DEBUG)
 	ld hl, OakTimeWokeUpText
 	call PrintText
@@ -527,7 +527,7 @@ InitialSetDSTFlag:
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	jmp PlaceHLTextAtBC
+	jmp PrintTextboxTextAt
 
 .Text:
 	text_asm
@@ -553,7 +553,7 @@ InitialClearDSTFlag:
 	lb bc, 3, 18
 	call ClearBox
 	ld hl, .Text
-	jmp PlaceHLTextAtBC
+	jmp PrintTextboxTextAt
 
 .Text:
 	text_asm

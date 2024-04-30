@@ -20,7 +20,7 @@ InitDisplayForHallOfFame:
 	ld hl, .SavingRecordText
 	call PrintText
 	call WaitBGMap2
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 .SavingRecordText:
 	text_far _SavingRecordText
@@ -55,7 +55,7 @@ InitDisplayForRedCredits:
 	ldh [hSCX], a
 	call EnableLCD
 	call WaitBGMap2
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 ResetDisplayBetweenHallOfFameMons:
 	ldh a, [rSVBK]

@@ -23,7 +23,7 @@ ENDM
 MapSetupScript_Teleport:
 	mapsetup ResetPlayerObjectAction
 MapSetupScript_Fly:
-	mapsetup FadeOutPalettes
+	mapsetup FadeOutToWhite
 	mapsetup JumpRoamMons
 MapSetupScript_Warp:
 	mapsetup DisableLCD
@@ -89,6 +89,7 @@ MapSetupScript_Connection:
 	mapsetup LoadBlockData
 	mapsetup LoadMapTileset
 	mapsetup SaveScreen
+	mapsetup DeferredLoadMapGraphics
 	mapsetup DecompressMetatiles
 	mapsetup LoadMapObjects
 	mapsetup FadeToMapMusic
@@ -104,7 +105,7 @@ MapSetupScript_Connection:
 MapSetupScript_Fall:
 	mapsetup ResetPlayerObjectAction
 MapSetupScript_Door:
-	mapsetup FadeOutPalettes
+	mapsetup FadeOutToWhite
 MapSetupScript_Train:
 	mapsetup EnterMapWarp
 	mapsetup LoadMapAttributes

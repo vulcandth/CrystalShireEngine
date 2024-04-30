@@ -198,14 +198,14 @@ CopyCoordsTileToLastCoordsTile:
 	ld hl, OBJECT_LAST_MAP_Y
 	add hl, bc
 	ld [hl], a
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
 	ld hl, OBJECT_LAST_TILE
 	add hl, bc
 	ld [hl], a
 	call SetTallGrassFlags
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
 	jr UselessAndA
@@ -230,12 +230,12 @@ UpdateTallGrassFlags:
 	add hl, bc
 	bit OVERHEAD_F, [hl]
 	jr z, .ok
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
 	call SetTallGrassFlags
 .ok
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
 	call UselessAndA
@@ -322,9 +322,9 @@ GetNextTile:
 	ld [hl], a
 	ld e, a
 	push bc
-	call GetCoordTile
+	call GetCoordTileCollision
 	pop bc
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld [hl], a
 	ret
@@ -498,9 +498,9 @@ StepFunction_Reset:
 	add hl, bc
 	ld e, [hl]
 	push bc
-	call GetCoordTile
+	call GetCoordTileCollision
 	pop bc
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld [hl], a
 	call CopyCoordsTileToLastCoordsTile
@@ -648,7 +648,7 @@ MovementFunction_Strength:
 	dw .stop
 
 .start:
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld a, [hl]
 	call CheckPitTile
@@ -1987,7 +1987,7 @@ SpawnShadow:
 
 .ShadowObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_SHADOW
+	db $80, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_SHADOW
 
 SpawnStrengthBoulderDust:
 	push bc
@@ -1999,7 +1999,7 @@ SpawnStrengthBoulderDust:
 
 .BoulderDustObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_BOULDERDUST
+	db $80, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_BOULDERDUST
 
 SpawnEmote:
 	push bc
@@ -2011,7 +2011,7 @@ SpawnEmote:
 
 .EmoteObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE_BLACK, SPRITEMOVEDATA_EMOTE
+	db $80, PAL_OW_EMOTE_BLACK, SPRITEMOVEDATA_EMOTE
 
 ShakeGrass:
 	push bc
@@ -2023,7 +2023,7 @@ ShakeGrass:
 
 .GrassObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_COPY_BG_GREEN, SPRITEMOVEDATA_GRASS
+	db $80, PAL_OW_COPY_BG_GREEN, SPRITEMOVEDATA_GRASS
 
 ShakeScreen:
 	push bc
@@ -2038,7 +2038,7 @@ ShakeScreen:
 
 .ScreenShakeObject:
 	; vtile, palette, movement
-	db $00, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_SCREENSHAKE
+	db $80, PAL_OW_EMOTE_GRAY, SPRITEMOVEDATA_SCREENSHAKE
 
 DespawnEmote:
 	push bc
@@ -2118,8 +2118,8 @@ CopyTempObjectData:
 	ret
 
 UpdateAllObjectsFrozen::
-	ld a, [wVramState]
-	bit 0, a
+	ld a, [wStateFlags]
+	bit SPRITE_UPDATES_DISABLED_F, a
 	ret z
 	ld bc, wObjectStructs
 	xor a
@@ -2224,9 +2224,9 @@ UpdateObjectTile:
 	ld hl, OBJECT_MAP_Y
 	add hl, bc
 	ld e, [hl]
-	call GetCoordTile
+	call GetCoordTileCollision
 	pop bc
-	ld hl, OBJECT_TILE
+	ld hl, OBJECT_TILE_COLLISION
 	add hl, bc
 	ld [hl], a
 	jmp UpdateTallGrassFlags
@@ -2643,8 +2643,8 @@ ResetObject:
 	db SPRITEMOVEDATA_STANDING_RIGHT
 
 _UpdateSprites::
-	ld a, [wVramState]
-	bit 0, a
+	ld a, [wStateFlags]
+	bit SPRITE_UPDATES_DISABLED_F, a
 	ret z
 	xor a
 	ldh [hUsedSpriteIndex], a
@@ -2659,8 +2659,8 @@ _UpdateSprites::
 	ret
 
 .fill
-	ld a, [wVramState]
-	bit 1, a
+	ld a, [wStateFlags]
+	bit LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
 	ld b, NUM_SPRITE_OAM_STRUCTS * SPRITEOAMSTRUCT_LENGTH
 	jr z, .ok
 	ld b, (NUM_SPRITE_OAM_STRUCTS - 12) * SPRITEOAMSTRUCT_LENGTH
@@ -2903,6 +2903,16 @@ InitSprites:
 	add [hl]
 	inc hl
 	ld [bc], a ; tile id
+	ld a, d
+	and VRAM_BANK_1
+	jr z, .vram0
+	ld a, [bc]
+	cp $80
+	jr c, .standing
+	sub $40
+	ld [bc], a
+.standing
+.vram0
 	inc c
 	ld a, e
 	bit RELATIVE_ATTRIBUTES_F, a

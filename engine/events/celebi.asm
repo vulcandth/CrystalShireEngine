@@ -1,10 +1,10 @@
 DEF SPECIALCELEBIEVENT_CELEBI EQU $84
 CelebiShrineEvent:
 	call DelayFrame
-	ld a, [wVramState]
+	ld a, [wStateFlags]
 	push af
 	xor a
-	ld [wVramState], a
+	ld [wStateFlags], a
 
 	ld a, PAL_OW_GREEN
 	farcall CopySpritePalToOBPal7
@@ -45,7 +45,7 @@ CelebiShrineEvent:
 
 .done
 	pop af
-	ld [wVramState], a
+	ld [wStateFlags], a
 	call .RestorePlayerSprite_DespawnLeaves
 	jmp CelebiEvent_SetBattleType
 

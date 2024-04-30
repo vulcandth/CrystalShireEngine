@@ -1,6 +1,6 @@
 CheckWarpCollision::
 ; Is this tile a warp?
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	cp COLL_PIT
 	jr z, .warp
 	cp COLL_PIT_68
@@ -18,7 +18,7 @@ CheckWarpCollision::
 CheckDirectionalWarp::
 ; If this is a directional warp, clear carry (press the designated button to warp).
 ; Else, set carry (immediate warp).
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	cp COLL_WARP_CARPET_DOWN
 	jr z, .directional
 	cp COLL_WARP_CARPET_LEFT
@@ -37,7 +37,7 @@ CheckDirectionalWarp::
 CheckWarpFacingDown:
 	ld de, 1
 	ld hl, .blocks
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	jmp IsInArray
 
 .blocks
@@ -53,7 +53,7 @@ CheckWarpFacingDown:
 	db -1
 
 CheckGrassCollision::
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	ld hl, .blocks
 	ld de, 1
 	jmp IsInArray
@@ -87,7 +87,7 @@ CheckCutCollision:
 	db -1
 
 GetWarpSFX::
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	ld de, SFX_ENTER_DOOR
 	cp COLL_DOOR
 	ret z

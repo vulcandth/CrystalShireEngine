@@ -13,7 +13,7 @@ BlankScreen:
 	ld a, $7
 	rst ByteFill
 	call WaitBGMap2
-	jmp SetPalettes
+	jmp SetDefaultBGPAndOBP
 
 SpawnPlayer:
 	ld a, -1
@@ -154,8 +154,8 @@ CopyObjectStruct::
 	ld d, h
 	ld e, l
 	call CopyMapObjectToObjectStruct
-	ld hl, wVramState
-	bit 7, [hl]
+	ld hl, wStateFlags
+	bit SCRIPTED_MOVEMENT_STATE_F, [hl]
 	ret z
 
 	ld hl, OBJECT_FLAGS2

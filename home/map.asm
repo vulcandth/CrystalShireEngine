@@ -78,10 +78,10 @@ GetMapSceneID::
 	pop bc
 	ret
 
-OverworldTextModeSwitch::
+LoadOverworldTilemapAndAttrmapPals::
 	; fallthrough
-LoadMapPart::
-	farjp _LoadMapPart
+LoadOverworldTilemap::
+	farjp _LoadOverworldTilemap
 
 ReturnToMapFromSubmenu::
 	ld a, MAPSETUP_SUBMENU
@@ -131,12 +131,12 @@ GetDestinationWarpNumber::
 	ld a, [wPlayerMapX]
 	sub 4
 	ld d, a
-	ld a, [wCurMapWarpCount]
+	ld a, [wCurMapWarpEventCount]
 	and a
 	ret z
 
 	ld c, a
-	ld hl, wCurMapWarpsPointer
+	ld hl, wCurMapWarpEventsPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -167,7 +167,7 @@ GetDestinationWarpNumber::
 	inc hl
 	inc hl
 
-	ld a, [wCurMapWarpCount]
+	ld a, [wCurMapWarpEventCount]
 	inc a
 	sub c
 	ld c, a
@@ -188,7 +188,7 @@ CopyWarpData::
 
 .CopyWarpData:
 	push bc
-	ld hl, wCurMapWarpsPointer
+	ld hl, wCurMapWarpEventsPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -238,6 +238,8 @@ CheckIndoorMap::
 	ret
 
 LoadMapAttributes::
+	ld a, [wMapTileset]
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -245,6 +247,8 @@ LoadMapAttributes::
 	jr ReadMapEvents
 
 LoadMapAttributes_SkipObjects::
+	ld a, -1
+	ld [wOldTileset], a
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
 	call ReadMapScripts
@@ -266,7 +270,7 @@ ReadMapEvents::
 	ld l, a
 	inc hl
 	inc hl
-	call ReadWarps
+	call ReadWarpEvents
 	call ReadCoordEvents
 	call ReadBGEvents
 
@@ -369,14 +373,14 @@ ReadMapCallbacks::
 	ld bc, CALLBACK_SIZE
 	jmp AddNTimes
 
-ReadWarps::
+ReadWarpEvents::
 	ld a, [hli]
 	ld c, a
-	ld [wCurMapWarpCount], a
+	ld [wCurMapWarpEventCount], a
 	ld a, l
-	ld [wCurMapWarpsPointer], a
+	ld [wCurMapWarpEventsPointer], a
 	ld a, h
-	ld [wCurMapWarpsPointer + 1], a
+	ld [wCurMapWarpEventsPointer + 1], a
 	ld a, c
 	and a
 	ret z
@@ -1153,57 +1157,110 @@ UpdateBGMapColumn::
 	ldh [hBGMapTileCount], a
 	ret
 
-LoadTilesetGFX::
-	ld hl, wTilesetAddress
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld a, [wTilesetBank]
-	ld e, a
-
+_LoadTilesetGFX:
+; Loads one of up to 3 tileset groups depending on a
+	push af
+	ld a, [wTilesetGFXBank]
+	ldh [hTilesetGFXBank], a
+	pop af
+	jr z, _LoadTilesetGFX2
+	dec a
+	jr z, _LoadTilesetGFX4
+_LoadTilesetGFX5:
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wDecompressScratch)
+	ld a, BANK(wTilesetvTiles5GFXAddress)
 	ldh [rSVBK], a
-
-	ld a, e
-	ld de, wDecompressScratch
-	call FarDecompress
-
-	ld hl, wDecompressScratch
-	ld de, vTiles2
-	ld bc, $7f tiles
-	rst CopyBytes
-
 	ldh a, [rVBK]
 	push af
 	ld a, BANK(vTiles5)
 	ldh [rVBK], a
+	ld hl, wTilesetvTiles5GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 
-	ld hl, wDecompressScratch + $80 tiles
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $80
 	ld de, vTiles5
-	ld bc, $80 tiles
-	rst CopyBytes
-
+	call DecompressRequest2bpp
 	pop af
 	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
 
+_LoadTilesetGFX4:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTilesetvTiles4GFXAddress)
+	ldh [rSVBK], a
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles4)
+	ldh [rVBK], a
+	ld hl, wTilesetvTiles4GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $80
+	ld de, vTiles4
+	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
+	pop af
+	ldh [rSVBK], a
+	ret
+
+_LoadTilesetGFX2:
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wTilesetvTiles2GFXAddress)
+	ldh [rSVBK], a
+	ldh a, [rVBK]
+	push af
+	ld a, BANK(vTiles2)
+	ldh [rVBK], a
+	ld hl, wTilesetvTiles2GFXAddress
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+
+	ldh a, [hTilesetGFXBank]
+	ld b, a
+	ld c, $7f
+	ld de, vTiles2
+	call DecompressRequest2bpp
+	pop af
+	ldh [rVBK], a
 	pop af
 	ldh [rSVBK], a
 
-; These tilesets support dynamic per-mapgroup roof tiles.
+	; These tilesets support dynamic per-mapgroup roof tiles.
 	ld a, [wMapTileset]
 	cp TILESET_JOHTO
 	jr z, .load_roof
 	cp TILESET_JOHTO_MODERN
 	jr z, .load_roof
 	cp TILESET_BATTLE_TOWER_OUTSIDE
-	jr nz, .skip_roof
+	ret nz
 ; fallthrough
 .load_roof
-	farcall LoadMapGroupRoof
+	farjp LoadMapGroupRoof
 
-.skip_roof
+
+LoadTilesetGFX::
+	xor a
+	ld [wPendingOverworldGraphics], a
+	ld a, [wTilesetGFXBank]
+	ldh [hTilesetGFXBank], a
+	call _LoadTilesetGFX5
+	call _LoadTilesetGFX4
+	call _LoadTilesetGFX2
 	xor a
 	ldh [hTileAnimFrame], a
 	ret
@@ -1330,12 +1387,12 @@ GetMovementPermissions::
 	ld d, a
 	ld a, [wPlayerMapY]
 	ld e, a
-	call GetCoordTile
-	ld [wPlayerTile], a
+	call GetCoordTileCollision
+	ld [wPlayerTileCollision], a
 	call .CheckHiNybble
 	ret nz
 
-	ld a, [wPlayerTile]
+	ld a, [wPlayerTileCollision]
 	and 7
 	add LOW(.MovementPermissionsData)
 	ld l, a
@@ -1366,13 +1423,13 @@ GetMovementPermissions::
 
 	push de
 	inc e
-	call GetCoordTile
+	call GetCoordTileCollision
 	ld [wTileDown], a
 	call .Down
 
 	pop de
 	dec e
-	call GetCoordTile
+	call GetCoordTileCollision
 	ld [wTileUp], a
 	jr .Up
 
@@ -1384,13 +1441,13 @@ GetMovementPermissions::
 
 	push de
 	dec d
-	call GetCoordTile
+	call GetCoordTileCollision
 	ld [wTileLeft], a
 	call .Left
 
 	pop de
 	inc d
-	call GetCoordTile
+	call GetCoordTileCollision
 	ld [wTileRight], a
 	jr .Right
 
@@ -1517,7 +1574,7 @@ GetFacingTileCoord::
 	db  1,  0
 	dw wTileRight
 
-GetCoordTile::
+GetCoordTileCollision::
 ; Get the collision byte for tile d, e
 	call GetBlockLocation
 	ld a, [hl]
@@ -1715,7 +1772,7 @@ FadeToMenu::
 	xor a
 	ldh [hBGMapMode], a
 	call LoadStandardMenuHeader
-	farcall FadeOutPalettes
+	farcall FadeOutToWhite
 	call ClearSprites
 	jmp DisableSpriteUpdates
 
@@ -1745,7 +1802,7 @@ FinishExitMenu::
 
 ReturnToMapWithSpeechTextbox::
 	push af
-	ld a, $1
+	ld a, TRUE
 	ld [wSpriteUpdatesEnabled], a
 	call ClearBGPalettes
 	call ClearSprites
@@ -1755,8 +1812,8 @@ ReturnToMapWithSpeechTextbox::
 	hlcoord 0, 12
 	lb bc, 4, 18
 	call Textbox
-	ld hl, wVramState
-	set 0, [hl]
+	ld hl, wStateFlags
+	set SPRITE_UPDATES_DISABLED_F, [hl]
 	call UpdateSprites
 	call WaitBGMap2
 	ld b, SCGB_MAPPALS
@@ -1784,7 +1841,7 @@ ReloadTilesetAndPalettes::
 	ld c, a
 	call SwitchToAnyMapAttributesBank
 	farcall UpdateTimeOfDayPal
-	call OverworldTextModeSwitch
+	call LoadOverworldTilemapAndAttrmapPals
 	call LoadTilesetGFX
 	ld a, 9
 	call SkipMusic
@@ -2055,16 +2112,29 @@ GetFishingGroup::
 	pop de
 	ret
 
+TilesetUnchanged:
+; returns z if tileset is unchanged from last tileset
+	push bc
+	ld a, [wOldTileset]
+	ld b, a
+	ld a, [wMapTileset]
+	cp b
+	pop bc
+	ret
+
 LoadMapTileset::
+	call TilesetUnchanged
+	ret z
 	push hl
 	push bc
 
 	ld hl, Tilesets
 	ld bc, TILESET_LENGTH
 	ld a, [wMapTileset]
+;	dec a
 	rst AddNTimes
 
-	ld de, wTilesetBank
+	ld de, wTilesetGFXBank
 	ld bc, TILESET_LENGTH
 
 	ld a, BANK(Tilesets)
