@@ -1910,7 +1910,7 @@ ApplyMovementToFollower:
 	ret z
 	cp movement_step_end
 	ret z
-	cp movement_step_4b
+	cp movement_step_stop
 	ret z
 	cp movement_step_bump
 	ret z
@@ -2672,7 +2672,7 @@ _UpdateSprites::
 	ld h, HIGH(wShadowOAM)
 	ld de, SPRITEOAMSTRUCT_LENGTH
 	ld a, b
-	ld c, SCREEN_HEIGHT_PX + 2 * TILE_WIDTH
+	ld c, OAM_YCOORD_HIDDEN
 .loop
 	ld [hl], c ; y
 	add hl, de

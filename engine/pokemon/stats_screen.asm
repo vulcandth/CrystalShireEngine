@@ -45,11 +45,11 @@ StatsScreenInit:
 StatsScreenMain:
 	xor a
 	ld [wJumptableIndex], a
-; ???
 	ld [wStatsScreenFlags], a
 	and ~STAT_PAGE_MASK
 	or PINK_PAGE ; first_page
 	ld [wStatsScreenFlags], a
+
 .loop
 	ld a, [wJumptableIndex]
 	and ~(1 << 7)

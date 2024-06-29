@@ -76,7 +76,7 @@ rsreset
 DEF MON_SPECIES            rb
 DEF MON_ITEM               rb
 DEF MON_MOVES              rb NUM_MOVES
-DEF MON_ID                 rw
+DEF MON_OT_ID              rw
 DEF MON_EXP                rb 3
 DEF MON_EVS                rb NUM_STATS
 rsset MON_EVS
