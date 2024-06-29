@@ -53,7 +53,7 @@ VBlankHandlers:
 	dw VBlank_Serial
 	dw VBlank_Credits
 	dw VBlank_DMATransfer
-	dw VBlank_Normal ; unused
+	dw VBlank7
 	assert_table_length NUM_VBLANK_HANDLERS
 
 VBlank_Normal::
