@@ -657,7 +657,7 @@ PCItemsJoypad:
 .MenuData:
 	db SCROLLINGMENU_ENABLE_SELECT | SCROLLINGMENU_ENABLE_FUNCTION3 | SCROLLINGMENU_DISPLAY_ARROWS ; flags
 	db 4, 8 ; rows, columns
-	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
+	db SCROLLINGMENU_ITEMS_16BIT_QUANTITY ; item format
 	dbw 0, wNumPCItems
 	dba PlaceMenuItemName
 	dba PlaceMenuItemQuantity
