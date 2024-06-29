@@ -854,7 +854,7 @@ Link_PrepPartyData_Gen1:
 	inc de
 	dec b
 	jr nz, .move_loop
-	ld c, MON_HAPPINESS - MON_ID
+	ld c, MON_HAPPINESS - MON_OT_ID
 	rst CopyBytes
 	pop bc
 
@@ -1176,7 +1176,7 @@ Link_BuildIndexList:
 	dec b
 	jr nz, .move_loop
 	ld a, c
-	ld c, PARTYMON_STRUCT_LENGTH - MON_ID
+	ld c, PARTYMON_STRUCT_LENGTH - MON_OT_ID
 	add hl, bc
 	ld c, a
 	dec c
@@ -1456,7 +1456,7 @@ Link_ConvertPartyStruct1to2:
 	inc de
 	dec b
 	jr nz, .move_loop
-	ld c, MON_HAPPINESS - MON_ID
+	ld c, MON_HAPPINESS - MON_OT_ID
 	rst CopyBytes
 	pop bc
 	ld d, h

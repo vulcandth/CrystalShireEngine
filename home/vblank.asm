@@ -181,7 +181,7 @@ VBlank_Cutscene::
 	ldh [rIF], a
 
 	ei
-	call VBlank2
+	call VBlank_SoundOnly
 	di
 
 	; get requested ints
@@ -252,7 +252,7 @@ VBlank_CutsceneCGB::
 	ldh [rIF], a
 
 	ei
-	call VBlank2
+	call VBlank_SoundOnly
 	di
 
 	; request lcdstat
@@ -288,7 +288,7 @@ VBlank_Serial::
 
 	call UpdateJoypad
 
-	jmp VBlank2
+	jmp VBlank_SoundOnly
 
 VBlank_Credits::
 ; scx
@@ -317,7 +317,7 @@ VBlank_Credits::
 	ldh [rIF], a
 
 	ei
-	call VBlank2
+	call VBlank_SoundOnly
 	di
 
 	xor a
@@ -345,7 +345,7 @@ VBlank_DMATransfer::
 	call DMATransfer
 .done
 
-	jmp VBlank2
+	jmp VBlank_SoundOnly
 
 VBlank7:
 	; special vblank routine
