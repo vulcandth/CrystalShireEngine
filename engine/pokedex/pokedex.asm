@@ -533,6 +533,10 @@ DexEntryScreen_MenuActionJumptable:
 
 .Cry:
 	ld a, [wCurPartySpecies]
+	call GetCryIndex
+	ret c
+	ld e, c
+	ld d, b
 	jmp PlayCry
 
 .Print:
