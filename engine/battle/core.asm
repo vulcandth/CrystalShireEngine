@@ -3738,7 +3738,8 @@ TryToRunAwayFromBattle:
 	cp BATTLEACTION_FORFEIT
 	ld a, DRAW
 	jr z, .fled
-	dec a ; LOSE
+	assert DRAW - 1 == LOSE
+	dec a
 .fled
 	ld b, a
 	ld a, [wBattleResult]
@@ -3762,9 +3763,9 @@ InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld de, wBattleMonSpecies
-	ld bc, MON_ID
+	ld bc, MON_OT_ID
 	rst CopyBytes
-	ld bc, MON_IVS - MON_ID
+	ld bc, MON_IVS - MON_OT_ID
 	add hl, bc
 	ld de, wBattleMonIVs
 	ld bc, MON_POKERUS - MON_IVS
@@ -3856,9 +3857,9 @@ InitEnemyMon:
 	ld hl, wOTPartyMon1Species
 	call GetPartyLocation
 	ld de, wEnemyMonSpecies
-	ld bc, MON_ID
+	ld bc, MON_OT_ID
 	rst CopyBytes
-	ld bc, MON_IVS - MON_ID
+	ld bc, MON_IVS - MON_OT_ID
 	add hl, bc
 	ld de, wEnemyMonIVs
 	ld bc, MON_POKERUS - MON_IVS
@@ -6753,7 +6754,8 @@ ApplyStatLevelMultiplier:
 	pop bc
 	ret
 
-INCLUDE "data/battle/stat_multipliers_2.asm"
+StatLevelMultipliers_Applied:
+INCLUDE "data/battle/stat_multipliers.asm"
 
 BadgeStatBoosts:
 ; Raise the stats of the battle mon in wBattleMon
@@ -7093,7 +7095,7 @@ GiveExperiencePoints:
 	call Divide
 ; Boost Experience for traded Pokemon
 	pop bc
-	ld hl, MON_ID
+	ld hl, MON_OT_ID
 	add hl, bc
 	ld a, [wPlayerID]
 	cp [hl]

@@ -90,9 +90,13 @@ SwitchItemsInBag:
 	ld e, l
 	ld a, [wScrollingMenuCursorPosition]
 	call ItemSwitch_GetNthItem
+	ld a, [wMenuData_ScrollingMenuItemFormat]
+	cp SCROLLINGMENU_ITEMS_16BIT_QUANTITY
+	jr z, .try_combining_stacks_handle_16_bit
 	ld a, [de]
 	cp [hl]
 	jr nz, .no_combine
+.check_stack_combine
 	ld a, [wScrollingMenuCursorPosition]
 	call ItemSwitch_GetItemQuantity
 	cp MAX_ITEM_STACK
@@ -108,14 +112,23 @@ SwitchItemsInBag:
 	scf
 	ret
 
+.try_combining_stacks_handle_16_bit
+	ld a, [de]
+	cp [hl]
+	jr nz, .no_combine
+	inc de
+	inc hl
+	ld a, [de]
+	cp [hl]
+	jr nz, .no_combine
+	jr .check_stack_combine
+
 .combine_stacks:
 	ld a, [wSwitchItem]
-	call ItemSwitch_GetNthItem
-	inc hl
+	call ItemSwitch_GetItemQuantityPointer
 	push hl
 	ld a, [wScrollingMenuCursorPosition]
-	call ItemSwitch_GetNthItem
-	inc hl
+	call ItemSwitch_GetItemQuantityPointer
 	ld a, [hl]
 	pop hl
 	add [hl]
@@ -124,12 +137,10 @@ SwitchItemsInBag:
 	sub MAX_ITEM_STACK
 	push af
 	ld a, [wScrollingMenuCursorPosition]
-	call ItemSwitch_GetNthItem
-	inc hl
+	call ItemSwitch_GetItemQuantityPointer
 	ld [hl], MAX_ITEM_STACK
 	ld a, [wSwitchItem]
-	call ItemSwitch_GetNthItem
-	inc hl
+	call ItemSwitch_GetItemQuantityPointer
 	pop af
 	ld [hl], a
 	xor a
@@ -139,8 +150,7 @@ SwitchItemsInBag:
 .merge_stacks:
 	push af
 	ld a, [wScrollingMenuCursorPosition]
-	call ItemSwitch_GetNthItem
-	inc hl
+	call ItemSwitch_GetItemQuantityPointer
 	pop af
 	ld [hl], a
 	ld hl, wMenuData_ItemsPointerAddr
@@ -238,13 +248,16 @@ ItemSwitch_GetItemFormatSize:
 	dw 0 ; unused
 	dw 1 ; SCROLLINGMENU_ITEMS_NORMAL
 	dw 2 ; SCROLLINGMENU_ITEMS_QUANTITY
+	dw 3 ; SCROLLINGMENU_ITEMS_16BIT_QUANTITY
 
 ItemSwitch_GetItemQuantity:
 	push af
 	call ItemSwitch_GetItemFormatSize
 	ld a, c
-	cp 2
-	jr nz, .no_quantity
+	cp 1
+	jr z, .no_quantity
+	cp 3
+	jr z, .item_16bit
 	pop af
 	call ItemSwitch_GetNthItem
 	inc hl
@@ -254,6 +267,32 @@ ItemSwitch_GetItemQuantity:
 .no_quantity
 	pop af
 	ld a, 1
+	ret
+
+.item_16bit
+	pop af
+	call ItemSwitch_GetNthItem
+	inc hl
+	inc hl
+	ld a, [hl]
+	ret
+
+ItemSwitch_GetItemQuantityPointer:
+	push af
+	call ItemSwitch_GetItemFormatSize
+	ld a, c
+	cp 3
+	jr z, .item_16bit
+	pop af
+	call ItemSwitch_GetNthItem
+	inc hl
+	ret
+
+.item_16bit
+	pop af
+	call ItemSwitch_GetNthItem
+	inc hl
+	inc hl
 	ret
 
 ItemSwitch_BackwardsCopyBytes:

@@ -24,7 +24,7 @@ CheckMagikarpLength:
 	endc
 	jr nz, .not_magikarp
 
-	; Now let's compute its length based on its IVs and ID.
+	; Now let's compute its length based on its IVs and Trainer ID.
 	; TODO: Check magikarp length change from DVs to IVs
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Species
@@ -36,7 +36,7 @@ CheckMagikarpLength:
 	ld d, h
 	ld e, l
 	pop hl
-	ld bc, MON_ID
+	ld bc, MON_OT_ID
 	add hl, bc
 	ld b, h
 	ld c, l

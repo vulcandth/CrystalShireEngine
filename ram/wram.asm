@@ -1772,7 +1772,7 @@ wEarthquakeMovementDataBuffer:: ds 5
 SECTION UNION "Miscellaneous WRAM 1", WRAMX
 
 ; switching items in pack
-wSwitchItemBuffer:: ds 2 ; may store 1 or 2 bytes
+wSwitchItemBuffer:: ds 3 ; may store 1 - 3 bytes
 
 
 SECTION UNION "Miscellaneous WRAM 1", WRAMX

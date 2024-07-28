@@ -70,10 +70,7 @@ CatchTutorial::
 	ld hl, wDudeNumBalls
 	ld a, 1
 	ld [hli], a
-	push hl
-	ld hl, POKE_BALL
-	call GetItemIDFromIndex
-	pop hl
+	ld a, LOW(POKE_BALL)
 	ld [hli], a
 	ld a, 5
 	ld [hli], a

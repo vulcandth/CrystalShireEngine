@@ -4,6 +4,8 @@ _UpdatePlayerSprite::
 	ldh [hUsedSpriteIndex], a
 	ld a, [wUsedSprites + 1]
 	ldh [hUsedSpriteTile], a
+	ld hl, wSpriteFlags
+	res 5, [hl]
 	jmp GetUsedSprite
 
 _RefreshSprites: ; mobile

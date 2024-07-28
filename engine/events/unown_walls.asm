@@ -118,7 +118,7 @@ DisplayUnownWords:
 	and a
 	jr z, .load
 
-	lb de, $0, $5
+	lb de, 0, UNOWN_WALL_MENU_HEADER_SIZE
 .loop
 	add hl, de
 	dec a
@@ -158,13 +158,16 @@ DisplayUnownWords:
 	call PlayClickSFX
 	jmp CloseWindow
 
+pushc
+setcharmap unown
+
 INCLUDE "data/events/unown_walls.asm"
 
 _DisplayUnownWords_FillAttr:
 	ld a, [de]
-	cp $ff
+	cp "@"
 	ret z
-	cp $60
+	cp "Y"
 	; a = carry ? (VRAM_BANK_1 | PAL_BG_BROWN) : PAL_BG_BROWN
 	sbc a
 	and VRAM_BANK_1
@@ -191,7 +194,7 @@ _DisplayUnownWords_CopyWord:
 	push de
 .word_loop
 	ld a, [de]
-	cp $ff
+	cp "@"
 	jr z, .word_done
 	ld c, a
 	call .ConvertChar
@@ -208,12 +211,12 @@ _DisplayUnownWords_CopyWord:
 .ConvertChar:
 	push hl
 	ld a, c
-	cp $60
-	jr z, .Tile60
-	cp $62
-	jr z, .Tile62
-	cp $64
-	jr z, .Tile64
+	cp "Y"
+	jr z, .YChar
+	cp "Z"
+	jr z, .ZChar
+	cp "-"
+	jr z, .DashChar
 	ld [hli], a
 	inc a
 	ld [hld], a
@@ -228,7 +231,7 @@ _DisplayUnownWords_CopyWord:
 	pop hl
 	ret
 
-.Tile60:
+.YChar:
 	ld a, $5b
 	ld [hli], a
 	ld [hl], $5c
@@ -240,7 +243,7 @@ _DisplayUnownWords_CopyWord:
 	pop hl
 	ret
 
-.Tile62:
+.ZChar:
 	ld a, $4e
 	ld [hli], a
 	ld [hl], $4f
@@ -252,7 +255,7 @@ _DisplayUnownWords_CopyWord:
 	pop hl
 	ret
 
-.Tile64:
+.DashChar:
 	ld a, $2
 	ld [hli], a
 	ld [hl], $3
@@ -263,3 +266,5 @@ _DisplayUnownWords_CopyWord:
 	ld [hl], $2
 	pop hl
 	ret
+
+popc

@@ -47,6 +47,7 @@ StatsScreenMain:
 	xor a
 	ld [wJumptableIndex], a
 	ld [wStatsScreenFlags], a
+
 .loop
 	ld a, [wJumptableIndex]
 	and ~(1 << 7)

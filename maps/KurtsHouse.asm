@@ -6,6 +6,7 @@
 	const KURTSHOUSE_TWIN2
 
 	const_def 1 ; locked Pokémon ID table entries, used for species checking
+	const KURTSHOUSE_INDEX_RED_APRICORN
 	const KURTSHOUSE_INDEX_BLU_APRICORN
 	const KURTSHOUSE_INDEX_YLW_APRICORN
 	const KURTSHOUSE_INDEX_GRN_APRICORN
@@ -21,6 +22,7 @@ KurtsHouse_MapScripts:
 	callback MAPCALLBACK_OBJECTS, KurtsHouseKurtCallback
 
 KurtsHouseLoadReservedIDsCallback:
+	loaditemindex KURTSHOUSE_INDEX_RED_APRICORN, RED_APRICORN
 	loaditemindex KURTSHOUSE_INDEX_BLU_APRICORN, BLU_APRICORN
 	loaditemindex KURTSHOUSE_INDEX_YLW_APRICORN, YLW_APRICORN
 	loaditemindex KURTSHOUSE_INDEX_GRN_APRICORN, GRN_APRICORN

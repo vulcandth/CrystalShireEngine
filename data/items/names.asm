@@ -96,9 +96,9 @@ ItemNames::
 	li "LUCKY EGG"    ; 005E
 	li "STARDUST"     ; 005F
 	li "STAR PIECE"   ; 0060
-	li "ZINC"         ; 0061
+	li "TERU-SAMA"    ; 0061
 	li "TERU-SAMA"    ; 0062
-	li "TERU-SAMA"    ; 0063
+	li "ZINC"         ; 0063
 	li "CHARCOAL"     ; 0064
 	li "BERRY JUICE"  ; 0065
 	li "SCOPE LENS"   ; 0066

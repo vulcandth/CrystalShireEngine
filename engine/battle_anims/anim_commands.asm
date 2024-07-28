@@ -21,11 +21,11 @@ _PlayBattleAnim:
 	call BattleAnimRequestPals
 	call DelayFrame
 
-	ld c, 1
+	ld c, VBLANK_CUTSCENE
 	ldh a, [rKEY1]
 	bit 7, a ; check CGB double speed mode
 	jr nz, .got_speed
-	ld c, 3
+	ld c, VBLANK_CUTSCENE_CGB
 
 .got_speed
 	ld hl, hVBlank

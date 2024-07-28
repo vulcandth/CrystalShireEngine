@@ -115,21 +115,27 @@ LoadFontsExtra::
 	farjp LoadFrame
 
 DecompressRequest2bpp::
+	ld a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ld [rSVBK], a
+
 	push de
-	ld a, BANK(sScratch)
-	call OpenSRAM
 	push bc
 
-	ld de, sScratch
+	ld de, wDecompressScratch
 	ld a, b
 	call FarDecompress
 
 	pop bc
 	pop hl
 
-	ld de, sScratch
+	ld de, wDecompressScratch
 	call Request2bpp
-	jmp CloseSRAM
+
+	pop af
+	ld [rSVBK], a
+	ret
 
 FarCopyBytes::
 ; copy bc bytes from a:hl to de

@@ -382,8 +382,18 @@ MoveList_InitAnimatedMonIcon:
 	ret
 
 Trade_LoadMonIconGFX:
+	; hl = wPlayerTrademonDVs or wOTTrademonDVs
+	ld h, b
+	ld l, c
 	ld a, [wTempIconSpecies]
+	ld [wCurPartySpecies], a
 	ld [wCurIcon], a
+	call GetMenuMonIconPalette
+	add a
+	add a
+	add a
+	ld e, a
+	farcall SetSecondOBJPalette
 	ld a, $62
 	ld [wCurIconTile], a
 	jr GetMemIconGFX
