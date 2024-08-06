@@ -211,7 +211,7 @@ BattleAnim_Doubleslap:
 
 .alternate:
 	anim_sound 0, 1, SFX_DOUBLESLAP
-	anim_obj BATTLE_ANIM_OBJ_PALM, 120, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_PALM_XFLIP, 120, 48, $0
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 48, $0
 	anim_wait 8
