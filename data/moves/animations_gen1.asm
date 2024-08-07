@@ -1453,6 +1453,7 @@ BattleAnim_StringShot:
 	anim_ret
 
 BattleAnim_DragonRage:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_DRAGON_RAGE
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
 .loop
 	anim_sound 6, 2, SFX_EMBER
