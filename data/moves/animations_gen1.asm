@@ -744,21 +744,21 @@ BattleAnim_Twineedle:
 	anim_ret
 
 BattleAnim_PinMissile:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
 	anim_2gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_HIT
-.loop
-	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 64, 92, $28
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 56, 84, $28
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 64, 92, $28
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 56, 84, $28
 	anim_sound 0, 1, SFX_POISON_STING
-	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 136, 56, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 52, 88, $28
+	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 56, $0
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 52, 88, $28
 	anim_sound 0, 1, SFX_POISON_STING
-	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 128, 48, $0
-	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HIT, 128, 48, $0
+	anim_wait 12
 	anim_sound 0, 1, SFX_POISON_STING
-	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 132, 52, $0
-	anim_loop 3, .loop
+	anim_obj BATTLE_ANIM_OBJ_HIT, 132, 52, $0
 	anim_wait 16
 	anim_ret
 
