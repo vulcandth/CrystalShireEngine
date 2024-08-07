@@ -1346,6 +1346,8 @@ BattleAnim_RazorLeaf:
 BattleAnim_Solarbeam:
 	anim_if_param_equal $0, .FireSolarBeam
 	; charge turn
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
 	anim_sound 0, 0, SFX_CHARGE
 	anim_obj BATTLE_ANIM_OBJ_ABSORB_CENTER, 48, 84, $0
@@ -1357,6 +1359,7 @@ BattleAnim_Solarbeam:
 	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $28
 	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $30
 	anim_obj BATTLE_ANIM_OBJ_SOLAR_BEAM_CHARGE, 48, 84, $38
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
 	anim_wait 104
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
 	anim_wait 64
