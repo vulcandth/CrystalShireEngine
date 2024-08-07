@@ -1054,6 +1054,7 @@ BattleAnim_Psybeam:
 	anim_ret
 
 BattleAnim_Bubblebeam:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
 	anim_1gfx BATTLE_ANIM_GFX_BUBBLE
 .loop
 	anim_sound 16, 2, SFX_BUBBLEBEAM
@@ -2309,6 +2310,7 @@ BattleAnim_Transform:
 	anim_ret
 
 BattleAnim_Bubble:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
 	anim_1gfx BATTLE_ANIM_GFX_BUBBLE
 	anim_sound 32, 2, SFX_WATER_GUN
 	anim_obj BATTLE_ANIM_OBJ_BUBBLE, 64, 92, $c1
