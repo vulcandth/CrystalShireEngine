@@ -859,6 +859,7 @@ BattleAnim_Disable:
 	anim_ret
 
 BattleAnim_Acid:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
 	anim_1gfx BATTLE_ANIM_GFX_POISON
 	anim_call BattleAnimSub_Acid
 	anim_wait 64
