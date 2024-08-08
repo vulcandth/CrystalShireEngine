@@ -2057,6 +2057,7 @@ BattleAnim_Smog:
 	anim_ret
 
 BattleAnim_Sludge:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx BATTLE_ANIM_GFX_POISON
 	anim_call BattleAnimSub_Sludge
 	anim_wait 56
