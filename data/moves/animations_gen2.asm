@@ -1731,9 +1731,9 @@ BattleAnimSub_Metallic:
 	anim_sound 0, 0, SFX_SHINE
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK, $0, BG_EFFECT_USER, $40
 	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_HARDEN, 48, 84, $0
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 48, 84, $0
 	anim_wait 32
-	anim_obj BATTLE_ANIM_OBJ_HARDEN, 48, 84, $0
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 48, 84, $0
 	anim_wait 64
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK
 	anim_ret
