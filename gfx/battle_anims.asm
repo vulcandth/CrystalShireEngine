@@ -41,3 +41,4 @@ AnimObjAeroblastGFX: INCBIN "gfx/battle_anims/aeroblast.2bpp.lz"
 ; New Graphics
 AnimObjBeamLightGFX: INCBIN "gfx/battle_anims/beamlight.2bpp.lz"
 AnimObjWindBGGFX:    INCBIN "gfx/battle_anims/wind_bg.2bpp.lz"
+AnimObjMisc2GFX:     INCBIN "gfx/battle_anims/misc2.2bpp.lz"

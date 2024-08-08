@@ -1797,16 +1797,26 @@ BattleAnim_Harden:
 	anim_ret
 
 BattleAnim_Minimize:
-	anim_sound 0, 0, SFX_SURF
-	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_2Row
-	anim_minimize
-	anim_bgeffect BATTLE_BG_EFFECT_WAVE_DEFORM_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 48
-	anim_updateactorpic
-	anim_incbgeffect BATTLE_BG_EFFECT_WAVE_DEFORM_MON
-	anim_wait 48
-	anim_call BattleAnim_ShowMon_0
+	anim_1gfx BATTLE_ANIM_GFX_MISC_2
+.loop
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_RETURN_MON, $0, $1, $0
+	anim_wait 12
+	anim_obj BATTLE_ANIM_OBJ_MINIMIZE, 48, 110, $0
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_MINIMIZE, 48, 110, $0
+	anim_wait 6
+	anim_loop 2, .loop
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_RETURN_MON, $0, $1, $0
+	anim_wait 16
+.mini
+	anim_obj BATTLE_ANIM_OBJ_MINIMIZE, 48, 110, $0
+	anim_wait 6
+	anim_loop 8, .mini
+	anim_sound 0, 1, SFX_LICK
+	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, $1, $0
+	anim_wait 12
 	anim_ret
 
 BattleAnim_Smokescreen:
