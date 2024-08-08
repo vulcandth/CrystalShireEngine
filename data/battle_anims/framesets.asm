@@ -190,6 +190,7 @@ BattleAnimFrameData:
 	dw .Frameset_PalmXFlip           ; BATTLE_ANIM_FRAMESET_PALM_XFLIP
 	dw .Frameset_MediumHorn          ; BATTLE_ANIM_FRAMESET_MEDIUM_HORN
 	dw .Frameset_Minimize            ; BATTLE_ANIM_FRAMESET_MINIMIZE
+	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1285,3 +1286,7 @@ BattleAnimFrameData:
 .Frameset_Minimize:
 	battleoamframe BATTLE_ANIM_OAMSET_14,  6
 	battleoamdelete
+
+.Frameset_BubbleSplash:
+	battleoamframe BATTLE_ANIM_OAMSET_20,  8
+	battleoamend
