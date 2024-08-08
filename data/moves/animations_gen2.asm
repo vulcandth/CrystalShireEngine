@@ -534,6 +534,7 @@ BattleAnim_ZapCannon:
 	anim_sound 6, 2, SFX_ZAP_CANNON
 	anim_obj BATTLE_ANIM_OBJ_ZAP_CANNON, 64, 92, $2
 	anim_wait 40
+	anim_obp0 $0
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_BALL, 136, 56, $2
 	anim_wait 16
