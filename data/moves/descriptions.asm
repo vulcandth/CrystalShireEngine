@@ -3,6 +3,7 @@ MoveDescriptions::
 	indirect_table 2, 1
 	indirect_entries GEN1_MOVES, MoveDescriptionsGen1
 	indirect_entries GEN2_MOVES, MoveDescriptionsGen2
+	indirect_entries GEN3_MOVES, MoveDescriptionsGen3
 	indirect_table_end
 
 MoveDescriptionsGen1:
@@ -260,7 +261,113 @@ MoveDescriptionsGen2:
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	.IndirectEnd::
+	
+	MoveDescriptionsGen3:
+	dw FakeOutDescription
+	dw UproarDescription
+	dw StockpileDescription
+	dw SpitUpDescription
+	dw SwallowDescription
+	dw HeatWaveDescription
+	dw HailDescription
+	dw TormentDescription
+	dw FlatterDescription
+	dw WillOWispDescription
+	dw MementoDescription
+	dw FacadeDescription
+	dw FocusPunchDescription
+	dw SmellingSaltsDescription
+	dw NaturePowerDescription
+	dw ChargeDescription
+	dw TauntDescription
+	dw TrickDescription
+	dw RolePlayDescription
+	dw WishDescription
+	dw AssistDescription
+	dw IngrainDescription
+	dw SuperpowerDescription
+	dw MagicCoatDescription
+	dw RecycleDescription
+	dw RevengeDescription
+	dw BrickBreakDescription
+	dw YawnDescription
+	dw KnockOffDescription
+	dw EndeavorDescription
+	dw EruptionDescription
+	dw SkillSwapDescription
+	dw ImprisonDescription
+	dw RefreshDescription
+	dw GrudgeDescription
+	dw SnatchDescription
+	dw SecretPowerDescription
+	dw DiveDescription
+	dw ArmThrustDescription
+	dw CamouflageDescription
+	dw TailGlowDescription
+	dw LusterPurgeDescription
+	dw MistBallDescription
+	dw FeatherDanceDescription
+	dw TeeterDanceDescription
+	dw BlazeKickDescription
+	dw MudSportDescription
+	dw IceBallDescription
+	dw NeedleArmDescription
+	dw SlackOffDescription
+	dw HyperVoiceDescription
+	dw PoisonFangDescription
+	dw CrushClawDescription
+	dw BlastBurnDescription
+	dw HydroCannonDescription
+	dw MeteorMashDescription
+	dw AstonishDescription
+	dw WeatherBallDescription
+	dw AromatherapyDescription
+	dw FakeTearsDescription
+	dw AirCutterDescription
+	dw OverheatDescription
+	dw OdorSleuthDescription
+	dw RockTombDescription
+	dw SilverWindDescription
+	dw MetalSoundDescription
+	dw GrassWhistleDescription
+	dw TickleDescription
+	dw CosmicPowerDescription
+	dw WaterSpoutDescription
+	dw SignalBeamDescription
+	dw ShadowPunchDescription
+	dw ExtrasensoryDescription
+	dw SkyUppercutDescription
+	dw SandTombDescription
+	dw SheerColdDescription
+	dw MuddyWaterDescription
+	dw BulletSeedDescription
+	dw AerialAceDescription
+	dw IcicleSpearDescription
+	dw IronDefenseDescription
+	dw BlockDescription
+	dw HowlDescription
+	dw DragonClawDescription
+	dw FrenzyPlantDescription
+	dw BulkUpDescription
+	dw BounceDescription
+	dw MudShotDescription
+	dw PoisonTailDescription
+	dw CovetDescription
+	dw VoltTackleDescription
+	dw MagicalLeafDescription
+	dw WaterSportDescription
+	dw CalmMindDescription
+	dw LeafBladeDescription
+	dw DragonDanceDescription
+	dw RockBlastDescription
+	dw ShockWaveDescription
+	dw WaterPulseDescription
+	dw DoomDesireDescription
+	dw PsychoBoostDescription
 .IndirectEnd::
+
+; Gen 1
 
 InvalidMoveDescription:
 	db "?@"
@@ -925,6 +1032,8 @@ StruggleDescription:
 	db   "Used only if all"
 	next "PP are exhausted.@"
 
+; Gen 2
+
 SketchDescription:
 	db   "Copies the foe's"
 	next "move permanently.@"
@@ -1268,3 +1377,409 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+; Gen 3
+
+FakeOutDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+UproarDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+StockpileDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SpitUpDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SwallowDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+HeatWaveDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+HailDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TormentDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FlatterDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WillOWispDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MementoDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FacadeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FocusPunchDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SmellingSaltsDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+NaturePowerDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ChargeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TauntDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TrickDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RolePlayDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WishDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+AssistDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+IngrainDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SuperpowerDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MagicCoatDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RecycleDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RevengeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BrickBreakDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+YawnDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+KnockOffDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+EndeavorDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+EruptionDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SkillSwapDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ImprisonDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RefreshDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+GrudgeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SnatchDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SecretPowerDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+DiveDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ArmThrustDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+CamouflageDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TailGlowDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+LusterPurgeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MistBallDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FeatherDanceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TeeterDanceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BlazeKickDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MudSportDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+IceBallDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+NeedleArmDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SlackOffDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+HyperVoiceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+PoisonFangDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+CrushClawDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BlastBurnDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+HydroCannonDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MeteorMashDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+AstonishDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WeatherBallDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+AromatherapyDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FakeTearsDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+AirCutterDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+OverheatDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+OdorSleuthDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RockTombDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SilverWindDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MetalSoundDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+GrassWhistleDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+TickleDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+CosmicPowerDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WaterSpoutDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SignalBeamDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ShadowPunchDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ExtrasensoryDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SkyUppercutDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SandTombDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+SheerColdDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MuddyWaterDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BulletSeedDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+AerialAceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+IcicleSpearDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+IronDefenseDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BlockDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+HowlDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+DragonClawDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+FrenzyPlantDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BulkUpDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+BounceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MudShotDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+PoisonTailDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+CovetDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+VoltTackleDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+MagicalLeafDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WaterSportDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+CalmMindDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+LeafBladeDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+DragonDanceDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+RockBlastDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+ShockWaveDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+WaterPulseDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+DoomDesireDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
+
+PsychoBoostDescription:
+	db   "Pounds with fore-"
+	next "legs or tail.@"
