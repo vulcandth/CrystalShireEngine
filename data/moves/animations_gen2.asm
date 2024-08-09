@@ -696,19 +696,36 @@ BattleAnim_Sandstorm:
 	anim_ret
 
 BattleAnim_GigaDrain:
-	anim_2gfx BATTLE_ANIM_GFX_BUBBLE, BATTLE_ANIM_GFX_CHARGE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_2gfx BATTLE_ANIM_GFX_CHARGE, BATTLE_ANIM_GFX_SHINE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MONS_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $10
+	anim_setvar $0
 	anim_sound 6, 3, SFX_GIGA_DRAIN
-	anim_call BattleAnimSub_Drain
-	anim_wait 48
-	anim_wait 128
+.loop
+	anim_obj BATTLE_ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 32, $4
+	anim_wait 3
+	anim_incvar
+	anim_if_var_equal $d, .done
+	anim_if_var_equal $4, .spawn
+	anim_jump .loop
+
+.spawn
+	anim_obj BATTLE_ANIM_OBJ_ABSORB_CENTER, 44, 88, $0
+	anim_jump .loop
+
+.done
+	anim_wait 32
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MONS_TO_BLACK_REPEATING
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 	anim_1gfx BATTLE_ANIM_GFX_SHINE
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-.loop
+.loop2
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 24, 64, $0
 	anim_wait 5
@@ -720,7 +737,7 @@ BattleAnim_GigaDrain:
 	anim_wait 5
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 40, 84, $0
 	anim_wait 5
-	anim_loop 2, .loop
+	anim_loop 2, .loop2
 	anim_wait 32
 	anim_ret
 
