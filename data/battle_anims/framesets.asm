@@ -191,6 +191,8 @@ BattleAnimFrameData:
 	dw .Frameset_MediumHorn          ; BATTLE_ANIM_FRAMESET_MEDIUM_HORN
 	dw .Frameset_Minimize            ; BATTLE_ANIM_FRAMESET_MINIMIZE
 	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
+	dw .Frameset_OctazookaSmoke      ; BATTLE_ANIM_FRAMESET_OCTAZOOKA_SMOKE
+	dw .Frameset_InkSplash           ; BATTLE_ANIM_FRAMESET_INK_SPLASH
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1289,4 +1291,13 @@ BattleAnimFrameData:
 
 .Frameset_BubbleSplash:
 	battleoamframe BATTLE_ANIM_OAMSET_20,  8
+	battleoamend
+
+.Frameset_OctazookaSmoke:
+	battleoamframe BATTLE_ANIM_OAMSET_20,  2
+	battleoamframe BATTLE_ANIM_OAMSET_21,  2
+	battleoamframe BATTLE_ANIM_OAMSET_1B,  2
+	battleoamdelete
+.Frameset_InkSplash:
+	battleoamframe BATTLE_ANIM_OAMSET_1F,  8
 	battleoamend
