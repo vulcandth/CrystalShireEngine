@@ -1633,6 +1633,7 @@ BattleAnimSub_Beam:
 	anim_ret
 
 BattleAnimSub_Explosion1:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_sound 0, 0, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION1, 24, 64, $0
 	anim_wait 5
@@ -1650,6 +1651,7 @@ BattleAnimSub_Explosion1:
 	anim_ret
 
 BattleAnimSub_Explosion2:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION1, 148, 32, $0
 	anim_wait 5
