@@ -600,10 +600,11 @@ BattleAnim_PerishSong:
 	anim_ret
 
 BattleAnim_IcyWind:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
 	anim_1gfx BATTLE_ANIM_GFX_SPEED
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
-	anim_battlergfx_1row
+	anim_playerheadobj
 	anim_sound 0, 0, SFX_PSYCHIC
 .loop
 	anim_wait 8
