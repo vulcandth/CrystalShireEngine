@@ -1592,17 +1592,6 @@ BattleAnim_BeatUp:
 	anim_wait 8
 	anim_ret
 
-BattleAnimSub_Drain:
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $0
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $8
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $10
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $18
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $20
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $28
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $30
-	anim_obj BATTLE_ANIM_OBJ_DRAIN, 132, 44, $38
-	anim_ret
-
 BattleAnimSub_EyeBeams:
 	anim_sound 6, 2, SFX_LEER
 	anim_obj BATTLE_ANIM_OBJ_LEER, 72, 84, $0
