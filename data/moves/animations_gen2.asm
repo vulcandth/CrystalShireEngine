@@ -1522,7 +1522,7 @@ BattleAnim_ShadowBall:
 	anim_ret
 
 BattleAnim_FutureSight:
-	anim_1gfx BATTLE_ANIM_GFX_WIND
+	anim_1gfx BATTLE_ANIM_GFX_WIND_BG
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_PSYCHIC, $0, $0, $0
