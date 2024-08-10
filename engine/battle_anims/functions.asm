@@ -100,6 +100,12 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_Cotton
 	; New Functions
 	dba BattleAnimFunc_BubbleSplash
+	dba BattleAnimFunction_RadialMoveOut
+	dba BattleAnimFunction_RadialMoveOut_CP_BG
+	dba BattleAnimFunction_RadialMoveOut_Slow
+	dba BattleAnimFunction_RadialMoveOut_VerySlow
+	dba BattleAnimFunction_RadialMoveOut_Fast
+	dba BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -4143,5 +4149,133 @@ BattleAnimFunc_AncientPower:
 
 .done
 	jmp DeinitBattleAnimation
+
+SECTION "BattleAnimFunction_RadialMoveOut", ROMX
+
+BattleAnimFunction_RadialMoveOut:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step
+
+BattleAnimFunction_RadialMoveOut_CP_BG:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_CP_BG
+
+BattleAnimFunction_RadialMoveOut_Slow:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Slow
+
+BattleAnimFunction_RadialMoveOut_VerySlow:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_VerySlow
+
+BattleAnimFunction_RadialMoveOut_Fast:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Fast
+
+BattleAnimFunction_RadialMoveOut_VeryFast_NoStop:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_VeryFast_NoStop
+
+InitRadial:
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	xor a
+	ld [hld], a
+	ld [hl], a ; initial position = 0
+	call BattleAnim_IncAnonJumptableIndex
+
+Step:
+	call Get_Rad_Pos
+	ld hl, 6.0 ; speed
+	call Set_Rad_Pos
+	cp 80 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_CP_BG:
+	call Get_Rad_Pos
+	ld hl, 0.08 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Slow:
+	call Get_Rad_Pos
+	ld hl, 1.5 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_VerySlow:
+	call Get_Rad_Pos
+	ld hl, 0.5 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Fast:
+	call Get_Rad_Pos
+	ld hl, 10.0 ; speed
+	call Set_Rad_Pos
+	cp 160 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+	
+Step_VeryFast_NoStop:
+	call Get_Rad_Pos
+	ld hl, 15.0 ; speed
+	call Set_Rad_Pos
+	jr Rad_Move
+
+Get_Rad_Pos:
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ret 
+
+Set_Rad_Pos:
+	add hl, de
+	ld a, h
+	ld e, l
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hli], a
+	ld [hl], e
+	ret
+
+Rad_Move:
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld e, [hl]
+	push de
+	ld a, e
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	ld a, e
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ret
 
 POPS ; restore the original section from the stack
