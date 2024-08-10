@@ -1381,8 +1381,8 @@ BeatUpDescription:
 ; Gen 3
 
 FakeOutDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "First-turn strike."
+	next "Forces flinching.@"
 
 UproarDescription:
 	db   "Pounds with fore-"

@@ -193,6 +193,9 @@ BattleAnimFrameData:
 	dw .Frameset_BubbleSplash        ; BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH
 	dw .Frameset_OctazookaSmoke      ; BATTLE_ANIM_FRAMESET_OCTAZOOKA_SMOKE
 	dw .Frameset_InkSplash           ; BATTLE_ANIM_FRAMESET_INK_SPLASH
+	dw .Frameset_SmellingSalt_L      ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_L
+	dw .Frameset_SmellingSalt_R      ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_R
+	dw .Frameset_SmellingSalt_Shock  ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_SHOCK
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1298,6 +1301,19 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_21,  2
 	battleoamframe BATTLE_ANIM_OAMSET_1B,  2
 	battleoamdelete
+
 .Frameset_InkSplash:
 	battleoamframe BATTLE_ANIM_OAMSET_1F,  8
 	battleoamend
+
+.Frameset_SmellingSalt_L:
+	battleoamframe BATTLE_ANIM_OAMSET_BB,  4
+	battleoamdelete
+
+.Frameset_SmellingSalt_R:
+	battleoamframe BATTLE_ANIM_OAMSET_BB,  4, OAM_X_FLIP
+	battleoamdelete
+
+.Frameset_SmellingSalt_Shock:
+	battleoamframe BATTLE_ANIM_OAMSET_D9,  6
+	battleoamdelete
