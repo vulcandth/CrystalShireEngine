@@ -100,13 +100,13 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_Cotton
 	; New Functions
 	dba BattleAnimFunc_BubbleSplash
-	dba BattleAnimFunction_RadialMoveOut
-	dba BattleAnimFunction_RadialMoveOut_CP_BG
-	dba BattleAnimFunction_RadialMoveOut_Slow
-	dba BattleAnimFunction_RadialMoveOut_VerySlow
-	dba BattleAnimFunction_RadialMoveOut_Fast
-	dba BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
-	dba BattleAnimFunction_RadialMoveIn
+	dba BattleAnimFunc_RadialMoveOut
+	dba BattleAnimFunc_RadialMoveOut_CP_BG
+	dba BattleAnimFunc_RadialMoveOut_Slow
+	dba BattleAnimFunc_RadialMoveOut_VerySlow
+	dba BattleAnimFunc_RadialMoveOut_Fast
+	dba BattleAnimFunc_RadialMoveOut_VeryFast_NoStop
+	dba BattleAnimFunc_RadialMoveIn
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -4151,39 +4151,39 @@ BattleAnimFunc_AncientPower:
 .done
 	jmp DeinitBattleAnimation
 
-SECTION "BattleAnimFunction_RadialMoveOut", ROMX
+SECTION "BattleAnimFunc_RadialMoveOut", ROMX
 
-BattleAnimFunction_RadialMoveOut:
+BattleAnimFunc_RadialMoveOut:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
 	dw Step
 
-BattleAnimFunction_RadialMoveOut_CP_BG:
+BattleAnimFunc_RadialMoveOut_CP_BG:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
 	dw Step_CP_BG
 
-BattleAnimFunction_RadialMoveOut_Slow:
+BattleAnimFunc_RadialMoveOut_Slow:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
 	dw Step_Slow
 
-BattleAnimFunction_RadialMoveOut_VerySlow:
+BattleAnimFunc_RadialMoveOut_VerySlow:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
 	dw Step_VerySlow
 
-BattleAnimFunction_RadialMoveOut_Fast:
+BattleAnimFunc_RadialMoveOut_Fast:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
 	dw Step_Fast
 
-BattleAnimFunction_RadialMoveOut_VeryFast_NoStop:
+BattleAnimFunc_RadialMoveOut_VeryFast_NoStop:
 	call BattleAnim_AnonJumptable
 
 	dw InitRadial
@@ -4279,9 +4279,9 @@ Rad_Move:
 	ld [hl], a
 	ret	
 
-SECTION "BattleAnimFunction_RadialMoveIn", ROMX
+SECTION "BattleAnimFunc_RadialMoveIn", ROMX
 
-BattleAnimFunction_RadialMoveIn:
+BattleAnimFunc_RadialMoveIn:
 	call BattleAnim_AnonJumptable
 
 	dw .zero
