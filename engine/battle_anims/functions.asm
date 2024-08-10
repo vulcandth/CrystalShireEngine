@@ -106,6 +106,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunction_RadialMoveOut_VerySlow
 	dba BattleAnimFunction_RadialMoveOut_Fast
 	dba BattleAnimFunction_RadialMoveOut_VeryFast_NoStop
+	dba BattleAnimFunction_RadialMoveIn
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -4276,6 +4277,57 @@ Rad_Move:
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
+	ret	
+
+SECTION "BattleAnimFunction_RadialMoveIn", ROMX
+
+BattleAnimFunction_RadialMoveIn:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, 40
+	ld [hli], a
+	ld [hl], 0
+.one
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld d, [hl]
+	push af
+	push de
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ld hl, -4.5
+	add hl, de
+	jmp nc, DeinitBattleAnimation
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, e
+	ld [hld], a
+	ld [hl], d
 	ret
 
 POPS ; restore the original section from the stack
