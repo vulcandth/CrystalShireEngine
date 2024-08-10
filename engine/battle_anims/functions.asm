@@ -4267,13 +4267,13 @@ Rad_Move:
 	ld e, [hl]
 	push de
 	ld a, e
-	call Sine
+	xcall Sine
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
 	pop de
 	ld a, e
-	call Cosine
+	xcall Cosine
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
@@ -4303,13 +4303,13 @@ BattleAnimFunc_RadialMoveIn:
 	ld d, [hl]
 	push af
 	push de
-	call Sine
+	xcall Sine
 	ld hl, BATTLEANIMSTRUCT_YOFFSET
 	add hl, bc
 	ld [hl], a
 	pop de
 	pop af
-	call Cosine
+	xcall Cosine
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
