@@ -198,6 +198,8 @@ BattleAnimFrameData:
 	dw .Frameset_SmellingSalt_Shock  ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_SHOCK
 	dw .Frameset_BigWave             ; BATTLE_ANIM_FRAMESET_BIG_WAVE
 	dw .Frameset_UproarNote          ; BATTLE_ANIM_FRAMESET_UPROAR_NOTE
+	dw .Frameset_EnergyOrb           ; BATTLE_ANIM_FRAMESET_ENERGY_ORB
+	dw .Frameset_EnergyOrbLong       ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_LONG
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1332,4 +1334,14 @@ BattleAnimFrameData:
 .Frameset_UproarNote:
 	battleoamwait 6
 	battleoamframe BATTLE_ANIM_OAMSET_DA,  16
+	battleoamdelete
+
+.Frameset_EnergyOrb:
+	battleoamframe BATTLE_ANIM_OAMSET_80,  8
+	battleoamend
+
+.Frameset_EnergyOrbLong:
+	battleoamframe BATTLE_ANIM_OAMSET_1E,  4
+	battleoamframe BATTLE_ANIM_OAMSET_55,  8
+	battleoamframe BATTLE_ANIM_OAMSET_54,  20
 	battleoamdelete

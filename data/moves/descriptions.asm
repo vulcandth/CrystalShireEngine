@@ -1389,8 +1389,8 @@ UproarDescription:
 	next "for 2-5 turns.@"
 
 StockpileDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Charges up power"
+	next "for up to 3 turns.@"
 
 SpitUpDescription:
 	db   "Pounds with fore-"

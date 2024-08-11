@@ -155,6 +155,32 @@ BattleAnim_Uproar:
 	anim_ret
 
 BattleAnim_Stockpile:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_1gfx BATTLE_ANIM_GFX_CHARGE
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $38
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $20
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $8
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $10
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $28
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $0
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $18
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB, 48, 88, $30
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 32
+	anim_ret
+    
 BattleAnim_SpitUp:
 BattleAnim_Swallow:
 BattleAnim_HeatWave:
