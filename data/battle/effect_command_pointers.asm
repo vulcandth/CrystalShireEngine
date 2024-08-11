@@ -180,5 +180,9 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+	;==========================
+	;	New Moves Start Here
+	;==========================
+	dw BattleCommand_StartHail
 	dw BattleCommand_LowKick
 	assert_table_length NUM_EFFECT_COMMANDS

@@ -2072,6 +2072,16 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+	
+;==========================
+;	New Moves Start Here
+;==========================
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove
 
 LowKick:
 	checkobedience

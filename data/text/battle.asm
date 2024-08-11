@@ -133,17 +133,22 @@ BattleText_MonsReflectFaded:
 BattleText_RainContinuesToFall:
 	text "Rain continues to"
 	line "fall."
-	prompt
+	done
 
 BattleText_TheSunlightIsStrong:
 	text "The sunlight is"
 	line "strong."
-	prompt
+	done
 
 BattleText_TheSandstormRages:
 	text "The SANDSTORM"
 	line "rages."
-	prompt
+	done
+
+BattleText_HailContinuesToFall:
+	text "Hail continues to"
+	line "fall."
+	done
 
 BattleText_TheRainStopped:
 	text "The rain stopped."
@@ -157,6 +162,9 @@ BattleText_TheSunlightFaded:
 BattleText_TheSandstormSubsided:
 	text "The SANDSTORM"
 	line "subsided."
+
+BattleText_TheHailStopped:
+	text "The HAIL stopped."
 	prompt
 
 BattleText_EnemyMonFainted:
@@ -164,6 +172,16 @@ BattleText_EnemyMonFainted:
 	text_ram wEnemyMonNickname
 	text_start
 	line "fainted!"
+	prompt
+
+ItStartedToHailText:
+	text "It started"
+	line "to hail!"
+	prompt
+
+PeltedByHailText:
+	text "<USER>"
+	line "is pelted by HAIL!"
 	prompt
 
 GotMoneyForWinningText:
