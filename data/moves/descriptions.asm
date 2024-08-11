@@ -1385,8 +1385,8 @@ FakeOutDescription:
 	next "Makes foe flinch.@"
 
 UproarDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Prevents sleep"
+	next "for 2-5 turns.@"
 
 StockpileDescription:
 	db   "Pounds with fore-"
