@@ -196,6 +196,8 @@ BattleAnimFrameData:
 	dw .Frameset_SmellingSalt_L      ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_L
 	dw .Frameset_SmellingSalt_R      ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_R
 	dw .Frameset_SmellingSalt_Shock  ; BATTLE_ANIM_FRAMESET_SMELLINGSALT_SHOCK
+	dw .Frameset_BigWave             ; BATTLE_ANIM_FRAMESET_BIG_WAVE
+	dw .Frameset_UproarNote          ; BATTLE_ANIM_FRAMESET_UPROAR_NOTE
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1316,4 +1318,18 @@ BattleAnimFrameData:
 
 .Frameset_SmellingSalt_Shock:
 	battleoamframe BATTLE_ANIM_OAMSET_D9,  6
+	battleoamdelete
+
+.Frameset_BigWave:
+	battleoamframe BATTLE_ANIM_OAMSET_18,  0
+	battleoamframe BATTLE_ANIM_OAMSET_70,  0
+	battleoamframe BATTLE_ANIM_OAMSET_71,  0
+	battleoamframe BATTLE_ANIM_OAMSET_72,  0
+	battleoamframe BATTLE_ANIM_OAMSET_73,  0
+	battleoamframe BATTLE_ANIM_OAMSET_BE,  0
+	battleoamdelete
+
+.Frameset_UproarNote:
+	oamwait 6
+	battleoamframe BATTLE_ANIM_OAMSET_DA,  16
 	battleoamdelete

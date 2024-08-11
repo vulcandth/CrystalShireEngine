@@ -21,7 +21,7 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjPokeBallGFX
 	anim_obj_gfx  9, AnimObjPoisonGFX
 	anim_obj_gfx 13, AnimObjBubbleGFX
-	anim_obj_gfx 16, AnimObjNoiseGFX
+	anim_obj_gfx 18, AnimObjNoiseGFX
 	anim_obj_gfx  2, AnimObjPowderGFX
 	anim_obj_gfx 11, AnimObjBeamGFX
 	anim_obj_gfx  9, AnimObjSpeedGFX
@@ -30,7 +30,7 @@ AnimObjGFX:
 	anim_obj_gfx 10, AnimObjWhipGFX
 	anim_obj_gfx 12, AnimObjEggGFX
 	anim_obj_gfx 18, AnimObjRopeGFX
-	anim_obj_gfx 13, AnimObjPsychicGFX
+	anim_obj_gfx 14, AnimObjPsychicGFX
 	anim_obj_gfx 10, AnimObjReflectGFX
 	anim_obj_gfx 27, AnimObjStatusGFX
 	anim_obj_gfx 12, AnimObjSandGFX

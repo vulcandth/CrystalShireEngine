@@ -123,6 +123,37 @@ BattleAnim_FakeOut:
 	anim_ret
 
 BattleAnim_Uproar:
+	anim_2gfx BATTLE_ANIM_GFX_PSYCHIC, BATTLE_ANIM_GFX_NOISE
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $2a
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $0a
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $1a
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $3a
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj BATTLE_ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 32
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $34
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $04
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $14
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $24
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj BATTLE_ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 32
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $2e
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $0e
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $1e
+	anim_obj BATTLE_ANIM_OBJ_UPROAR, 48, 96, $3e
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $08, $2, $0
+	anim_sound 6, 2, SFX_SNORE
+	anim_obj BATTLE_ANIM_OBJ_BIG_WAVE, 64, 88, $2
+	anim_wait 4
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Stockpile:
 BattleAnim_SpitUp:
 BattleAnim_Swallow:
