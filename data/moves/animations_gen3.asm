@@ -196,12 +196,13 @@ BattleAnim_SpitUp:
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 48, 88, $28
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 48, 88, $30
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 48, 88, $38
-	anim_wait 8
+	anim_wait 12
+	anim_clearobjs
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 32
 	anim_ret
-    
+
 BattleAnim_Swallow:
 BattleAnim_HeatWave:
 BattleAnim_Hail:
