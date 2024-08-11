@@ -1397,8 +1397,8 @@ SpitUpDescription:
 	next "STOCKPILE power.@"
 
 SwallowDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Restores HP using"
+	next "STOCKPILE power.@"
 
 HeatWaveDescription:
 	db   "Pounds with fore-"

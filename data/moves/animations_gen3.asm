@@ -204,6 +204,49 @@ BattleAnim_SpitUp:
 	anim_ret
 
 BattleAnim_Swallow:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_WATER
+	anim_2gfx BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_CHARGE
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, $1, $0
+	anim_wait 32
+	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
+	anim_call BattleAnim_ShowMon_0
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 44, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 36, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 52, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 28, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 60, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 20, 96, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT, 68, 96, $30
+	anim_wait 34
+	anim_sound 0, 0, SFX_UNKNOWN_66
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 44, 30, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 36, 30, $10
+	anim_wait 2
+	anim_sound 0, 0, SFX_UNKNOWN_66
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 52, 30, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 28, 30, $10
+	anim_wait 2
+	anim_sound 0, 0, SFX_UNKNOWN_66
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 60, 30, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 20, 30, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 68, 30, $10
+	anim_wait 2
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_call BattleAnimSub_Glimmer
+    anim_ret
+
 BattleAnim_HeatWave:
 BattleAnim_Hail:
 BattleAnim_Torment:
