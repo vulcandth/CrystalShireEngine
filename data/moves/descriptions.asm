@@ -1382,7 +1382,7 @@ BeatUpDescription:
 
 FakeOutDescription:
 	db   "First-turn strike."
-	next "Forces flinching.@"
+	next "Makes foe flinch.@"
 
 UproarDescription:
 	db   "Pounds with fore-"
