@@ -1393,8 +1393,8 @@ StockpileDescription:
 	next "for up to 3 turns.@"
 
 SpitUpDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Releases built up"
+	next "STOCKPILE power.@"
 
 SwallowDescription:
 	db   "Pounds with fore-"
