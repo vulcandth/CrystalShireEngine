@@ -1330,6 +1330,6 @@ BattleAnimFrameData:
 	battleoamdelete
 
 .Frameset_UproarNote:
-	oamwait 6
+	battleoamwait 6
 	battleoamframe BATTLE_ANIM_OAMSET_DA,  16
 	battleoamdelete
