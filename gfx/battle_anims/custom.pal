@@ -66,6 +66,11 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 22, 25
 	RGB 29, 11, 11
 	RGB 00, 00, 00
+; heatwave
+	RGB 31, 24, 02
+	RGB 29, 03, 04
+	RGB 29, 03, 04
+	RGB 00, 00, 00
 	
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr

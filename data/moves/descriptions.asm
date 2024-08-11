@@ -1401,8 +1401,8 @@ SwallowDescription:
 	next "STOCKPILE power.@"
 
 HeatWaveDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "may cause a burn.@"
 
 HailDescription:
 	db   "Pounds with fore-"
