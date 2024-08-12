@@ -82,6 +82,12 @@ _CGB_BattleGrayscale:
 	push af
 	ld a, BANK(wTempBattleMonSpecies)
 	ldh [rSVBK], a
+	call .do_it
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.do_it
 	ld a, b
 	and a ; PAL_BATTLE_BG_PLAYER
 	jr z, SetBattlePal_Player
