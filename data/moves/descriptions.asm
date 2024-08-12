@@ -1409,7 +1409,7 @@ HailDescription:
 	next "every turn.@"
 
 TormentDescription:
-	db   "Halts foe's use of"
+	db   "Prevents use of"
 	next "successive moves.@"
 
 FlatterDescription:
