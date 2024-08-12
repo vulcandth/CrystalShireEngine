@@ -445,7 +445,9 @@ BattleAnim_SmellingSalt:
 	anim_loop 2, .loop2
 	anim_ret
 
-BattleAnim_NaturePower:
+BattleAnim_NaturePower: ; - no animation needed
+	anim_ret
+
 BattleAnim_Charge:
 BattleAnim_Taunt:
 BattleAnim_Trick:
