@@ -787,6 +787,32 @@ BattleAnim_KnockOff:
 	anim_ret
 
 BattleAnim_Endeavor:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC_2
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, $1, $0
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 102, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_wait 21
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 82, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 82, $3b
+	anim_wait 21
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 102, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 102, $3b
+	anim_wait 21
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
+	anim_call BattleAnim_ShowMon_0
+	anim_clearobjs
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 16
+	anim_ret
+
 BattleAnim_Eruption:
 BattleAnim_SkillSwap:
 BattleAnim_Imprison:

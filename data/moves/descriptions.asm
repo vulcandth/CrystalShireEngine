@@ -1497,8 +1497,8 @@ KnockOffDescription:
 	next "of the foe's item.@"
 
 EndeavorDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Cuts foe's HP to"
+	next "equal the user's.@"
 
 EruptionDescription:
 	db   "Pounds with fore-"
