@@ -1417,8 +1417,8 @@ FlatterDescription:
 	next "Raises SPCL.ATK.@"
 
 WillOWispDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "A move that may"
+	next "burn the foe.@"
 
 MementoDescription:
 	db   "Pounds with fore-"
