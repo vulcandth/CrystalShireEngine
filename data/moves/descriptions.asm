@@ -1433,8 +1433,8 @@ FocusPunchDescription:
 	next "flinches if hit.@"
 
 SmellingSaltDescription:
-	db   "Boosted, but heals"
-	next "paralyzed foes.@"
+	db   "Heals paralyzed"
+	next "foes; hits harder.@"
 
 NaturePowerDescription:
 	db   "Attack varies dep-"
