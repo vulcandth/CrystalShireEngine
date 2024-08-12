@@ -1465,8 +1465,8 @@ AssistDescription:
 	next "ally's move.@"
 
 IngrainDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Restores HP, but"
+	next "cannot switch out.@"
 
 SuperpowerDescription:
 	db   "Pounds with fore-"

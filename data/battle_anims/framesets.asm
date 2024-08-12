@@ -208,6 +208,9 @@ BattleAnimFrameData:
 	dw .Frameset_ItemBagSidePunch	 ; BATTLE_ANIM_FRAMESET_ITEM_BAG_SIDE_PUNCH
 	dw .Frameset_CosmicPowerBG       ; BATTLE_ANIM_FRAMESET_COSMIC_POWER_BG
 	dw .Frameset_Assist              ; BATTLE_ANIM_FRAMESET_ASSIST
+	dw .Frameset_RootL               ; BATTLE_ANIM_FRAMESET_ROOT_L
+	dw .Frameset_RootR               ; BATTLE_ANIM_FRAMESET_ROOT_R
+	dw .Frameset_EnergyOrbIngrain    ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_INGRAIN
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1388,3 +1391,21 @@ BattleAnimFrameData:
 .Frameset_Assist:
 	battleoamframe BATTLE_ANIM_OAMSET_DC,  4
 	battleoamend
+
+.Frameset_RootL:
+	battleoamframe BATTLE_ANIM_OAMSET_DF,  8, OAM_X_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_E0,  8, OAM_X_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_E1,  8, OAM_X_FLIP
+	battleoamend
+
+.Frameset_RootR:
+	battleoamframe BATTLE_ANIM_OAMSET_DF,  8
+	battleoamframe BATTLE_ANIM_OAMSET_E0,  8
+	battleoamframe BATTLE_ANIM_OAMSET_E1,  8
+	battleoamend
+
+.Frameset_EnergyOrbIngrain:
+	battleoamframe BATTLE_ANIM_OAMSET_20,  8
+	battleoamframe BATTLE_ANIM_OAMSET_1F,  8
+	battleoamframe BATTLE_ANIM_OAMSET_1E,  8
+	battleoamdelete
