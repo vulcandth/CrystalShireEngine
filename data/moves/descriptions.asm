@@ -1421,8 +1421,8 @@ WillOWispDescription:
 	next "burn the foe.@"
 
 MementoDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "User faints. Low-"
+	next "ers foe's ATTACK.@"
 
 FacadeDescription:
 	db   "Pounds with fore-"

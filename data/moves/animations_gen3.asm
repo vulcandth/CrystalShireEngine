@@ -356,6 +356,18 @@ BattleAnim_WillOWisp:
 	anim_ret
 
 BattleAnim_Memento:
+	anim_1gfx BATTLE_ANIM_GFX_ANGELS
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, $1, $40
+	anim_wait 64
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
+	anim_bgp $1b
+	anim_obp0 $f
+	anim_obj BATTLE_ANIM_OBJ_SPITE, 124, 16, $0
+	anim_sound 0, 1, SFX_SPITE
+	anim_wait 96
+	anim_ret
+
 BattleAnim_Facade:
 BattleAnim_FocusPunch:
 BattleAnim_SmellingSalts:
