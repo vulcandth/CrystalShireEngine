@@ -1199,8 +1199,8 @@ FalseSwipeDescription:
 	next "with at least 1HP.@"
 
 SwaggerDescription:
-	db   "Causes confusion"
-	next "and raises ATTACK.@"
+	db   "Causes confusion."
+	next "Raises ATTACK.@"
 
 MilkDrinkDescription:
 	db   "Restores HP by 1/2"
@@ -1413,8 +1413,8 @@ TormentDescription:
 	next "successive moves.@"
 
 FlatterDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Causes confusion."
+	next "Raises SPCL.ATK.@"
 
 WillOWispDescription:
 	db   "Pounds with fore-"

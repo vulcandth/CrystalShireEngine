@@ -324,6 +324,22 @@ BattleAnim_Torment:
 	anim_ret
 
 BattleAnim_Flatter:
+	anim_1gfx BATTLE_ANIM_GFX_FLATTER
+	anim_sound 0, 0, SFX_ENCORE
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_1, 136, 46, $28
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_2, 136, 46, $5c
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_1, 136, 46, $10
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_2, 136, 46, $e8
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_1, 136, 46, $9c
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_2, 136, 46, $d0
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_1, 136, 46, $1c
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_2, 136, 46, $50
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_1, 136, 46, $dc
+	anim_obj BATTLE_ANIM_OBJ_FLATTER_2, 136, 46, $90
+	anim_wait 128
+	anim_ret
+
 BattleAnim_WillOWisp:
 BattleAnim_Memento:
 BattleAnim_Facade:
