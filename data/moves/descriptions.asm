@@ -1469,8 +1469,8 @@ IngrainDescription:
 	next "cannot switch out.@"
 
 SuperpowerDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Strong, but lowers"
+	next "physical stats.@"
 
 MagicCoatDescription:
 	db   "Pounds with fore-"
