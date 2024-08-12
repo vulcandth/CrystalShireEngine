@@ -532,6 +532,36 @@ BattleAnim_RolePlay:
 	anim_ret
 
 BattleAnim_Wish:
+	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_COSMIC
+	anim_2gfx BATTLE_ANIM_GFX_STARS, BATTLE_ANIM_GFX_COSMIC_POWER
+	anim_clearenemyhud
+	anim_bgp $1b
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $0, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_obj BATTLE_ANIM_OBJ_WISH_1, 30, 46, $42
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WISH_2, 50, 50, $0
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WISH_2, 70, 52, $0
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WISH_2, 90, 56, $0
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WISH_2, 110, 60, $0
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WISH_2, 130, 64, $0
+	anim_wait 80
+	anim_clearobjs
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 60, $30
+	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $0, $0
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_wait 42
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $0, $0
+	anim_ret
+
 BattleAnim_Assist:
 BattleAnim_Ingrain:
 BattleAnim_Superpower:

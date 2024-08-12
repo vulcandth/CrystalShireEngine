@@ -107,6 +107,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_RadialMoveOut_Fast
 	dba BattleAnimFunc_RadialMoveOut_VeryFast_NoStop
 	dba BattleAnimFunc_RadialMoveIn
+	dba BattleAnimFunction_ObjectHover
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -1050,7 +1051,7 @@ BattleAnimFunc_RockSmash:
 	and $40
 	rlca
 	rlca
-	add BATTLE_ANIM_FRAMESET_BIG_ROCK
+	add BATTLE_ANIM_FRAMESET_BIG_ROCK_STAR_HEART
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
@@ -4329,5 +4330,76 @@ BattleAnimFunc_RadialMoveIn:
 	ld [hld], a
 	ld [hl], d
 	ret
+
+
+SECTION "BattleAnimFunction_ObjectHover", ROMX
+
+BattleAnimFunction_ObjectHover:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp -1
+	jr nz, .not_done_climbing
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], 2
+	ret
+
+.not_done_climbing
+	ld d, a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld e, [hl]
+	ld hl, -$80
+	add hl, de
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], d
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], e
+	ret
+
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .delay_done
+	dec [hl]
+	ret
+
+.delay_done
+	ld [hl], 4
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cpl
+	inc a
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	ret
+
+.two
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $c0
+	ret nc
+	ld a, 8
+	jmp BattleAnim_StepToTarget
 
 POPS ; restore the original section from the stack

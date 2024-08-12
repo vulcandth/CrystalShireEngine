@@ -26,8 +26,8 @@ BattleAnimFrameData:
 	dw .Frameset_RazorLeaf1          ; BATTLE_ANIM_FRAMESET_RAZOR_LEAF_1
 	dw .Frameset_RazorLeaf2          ; BATTLE_ANIM_FRAMESET_RAZOR_LEAF_2
 	dw .Frameset_Explosion           ; BATTLE_ANIM_FRAMESET_EXPLOSION
-	dw .Frameset_BigRock             ; BATTLE_ANIM_FRAMESET_BIG_ROCK
-	dw .Frameset_SmallRock           ; BATTLE_ANIM_FRAMESET_SMALL_ROCK
+	dw .Frameset_BigRockStarHeart    ; BATTLE_ANIM_FRAMESET_BIG_ROCK_STAR_HEART
+	dw .Frameset_SmallRockStarHeart  ; BATTLE_ANIM_FRAMESET_SMALL_ROCK_STAR_HEART
 	dw .Frameset_Strength            ; BATTLE_ANIM_FRAMESET_STRENGTH
 	dw .Frameset_SkullCrossbone      ; BATTLE_ANIM_FRAMESET_SKULL_CROSSBONE
 	dw .Frameset_Acid                ; BATTLE_ANIM_FRAMESET_ACID
@@ -206,6 +206,7 @@ BattleAnimFrameData:
 	dw .Frameset_LongPunch           ; BATTLE_ANIM_FRAMESET_LONG_PUNCH
 	dw .Frameset_Taunt               ; BATTLE_ANIM_FRAMESET_TAUNT
 	dw .Frameset_ItemBagSidePunch	 ; BATTLE_ANIM_FRAMESET_ITEM_BAG_SIDE_PUNCH
+	dw .Frameset_CosmicPowerBG       ; BATTLE_ANIM_FRAMESET_COSMIC_POWER_BG
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -449,11 +450,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_1A,  4
 	battleoamdelete
 
-.Frameset_BigRock:
+.Frameset_BigRockStarHeart:
 	battleoamframe BATTLE_ANIM_OAMSET_1B,  8
 	battleoamend
 
-.Frameset_SmallRock:
+.Frameset_SmallRockStarHeart:
 	battleoamframe BATTLE_ANIM_OAMSET_0F,  8
 	battleoamend
 
@@ -1377,4 +1378,8 @@ BattleAnimFrameData:
 
 .Frameset_ItemBagSidePunch:
 	battleoamframe BATTLE_ANIM_OAMSET_B6,  8
+	battleoamend
+
+.Frameset_CosmicPowerBG:
+	battleoamframe BATTLE_ANIM_OAMSET_DE,  1
 	battleoamend

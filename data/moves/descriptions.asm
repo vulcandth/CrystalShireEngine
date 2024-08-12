@@ -1457,8 +1457,8 @@ RolePlayDescription:
 	next "special ability.@"
 
 WishDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "A move that heals"
+	next "on 2nd turn.@"
 
 AssistDescription:
 	db   "Pounds with fore-"

@@ -306,7 +306,7 @@ MovesGen3:
 	move EFFECT_NORMAL_HIT,          0, DARK,          100, 20,   0      ;TAUNT EFFECT_TAUNT
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,  100, 10,   0      ;TRICK
 	move EFFECT_NORMAL_HIT,          0, PSYCHIC_TYPE,  100, 10,   0      ;ROLE_PLAY
-	move EFFECT_NORMAL_HIT,          0, NORMAL,        100, 10,   0      ;WISH
+	move EFFECT_HEAL,                0, NORMAL,        100, 10,   0      ;WISH
 	move EFFECT_NORMAL_HIT,          0, NORMAL,        100, 20,   0      ;ASSIST EFFECT_ASSIST
 	move EFFECT_NORMAL_HIT,          0, GRASS,         100, 20,   0      ;INGRAIN
 	move EFFECT_NORMAL_HIT,        120, FIGHTING,      100,  5,   0      ;SUPERPOWER EFFECT_SUPERPOWER
