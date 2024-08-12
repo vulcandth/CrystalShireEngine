@@ -1429,8 +1429,8 @@ FacadeDescription:
 	next "status affliction.@"
 
 FocusPunchDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Powerful, but the"
+	next "flinches if hit.@"
 
 SmellingSaltsDescription:
 	db   "Pounds with fore-"

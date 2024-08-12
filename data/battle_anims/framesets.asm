@@ -203,6 +203,7 @@ BattleAnimFrameData:
 	dw .Frameset_Torment             ; BATTLE_ANIM_FRAMESET_TORMENT
 	dw .Frameset_DropletR            ; BATTLE_ANIM_FRAMESET_DROPLET_R
 	dw .Frameset_DropletL            ; BATTLE_ANIM_FRAMESET_DROPLET_L
+	dw .Frameset_LongPunch           ; BATTLE_ANIM_FRAMESET_LONG_PUNCH
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1361,3 +1362,8 @@ BattleAnimFrameData:
 .Frameset_DropletL:
 	battleoamframe BATTLE_ANIM_OAMSET_DD,  16, OAM_X_FLIP
 	battleoamdelete
+
+.Frameset_LongPunch:
+	battleoamframe BATTLE_ANIM_OAMSET_03,  4
+	battleoamframe BATTLE_ANIM_OAMSET_01,  1
+	battleoamrestart
