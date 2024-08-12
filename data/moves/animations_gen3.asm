@@ -566,6 +566,24 @@ BattleAnim_Wish:
 	anim_ret
 
 BattleAnim_Assist:
+	anim_1gfx BATTLE_ANIM_GFX_HIT
+	anim_obj BATTLE_ANIM_OBJ_ASSIST, 44, 88, $0
+	anim_obj BATTLE_ANIM_OBJ_ASSIST, 44, 88, $10
+	anim_obj BATTLE_ANIM_OBJ_ASSIST, 44, 88, $20
+	anim_obj BATTLE_ANIM_OBJ_ASSIST, 44, 88, $30
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_wait 8
+	anim_loop 6, .loop
+	anim_wait 8
+	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
+	anim_incobj 4
+	anim_wait 48
+	anim_ret
+
 BattleAnim_Ingrain:
 BattleAnim_Superpower:
 BattleAnim_MagicCoat:

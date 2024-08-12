@@ -1461,8 +1461,8 @@ WishDescription:
 	next "on 2nd turn.@"
 
 AssistDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Randomly uses an"
+	next "ally's move.@"
 
 IngrainDescription:
 	db   "Pounds with fore-"
