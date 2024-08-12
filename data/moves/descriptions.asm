@@ -1409,8 +1409,8 @@ HailDescription:
 	next "every turn.@"
 
 TormentDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Halts foe's use of"
+	next "successive moves.@"
 
 FlatterDescription:
 	db   "Pounds with fore-"

@@ -200,6 +200,7 @@ BattleAnimFrameData:
 	dw .Frameset_UproarNote          ; BATTLE_ANIM_FRAMESET_UPROAR_NOTE
 	dw .Frameset_EnergyOrb           ; BATTLE_ANIM_FRAMESET_ENERGY_ORB
 	dw .Frameset_EnergyOrbLong       ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_LONG
+	dw .Frameset_Torment             ; BATTLE_ANIM_FRAMESEt_TORMENT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1345,3 +1346,8 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_55,  8
 	battleoamframe BATTLE_ANIM_OAMSET_54,  20
 	battleoamdelete
+
+.Frameset_Torment
+	battleoamframe BATTLE_ANIM_OAMSET_DB,  4
+	battleoamframe BATTLE_ANIM_OAMSET_DB,  4, OAM_X_FLIP
+	battleoamrestart
