@@ -536,7 +536,7 @@ BattleAnim_Wish:
 	anim_2gfx BATTLE_ANIM_GFX_STARS, BATTLE_ANIM_GFX_COSMIC_POWER
 	anim_clearenemyhud
 	anim_bgp $1b
-	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 81, $30
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $0, $0
 	anim_wait 16
@@ -553,8 +553,11 @@ BattleAnim_Wish:
 	anim_wait 16
 	anim_obj BATTLE_ANIM_OBJ_WISH_2, 130, 64, $0
 	anim_wait 80
-	anim_clearobjs
-	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 60, $30
+	anim_setobj 3, 3
+	anim_setobj 4, 3
+	anim_setobj 5, 3
+	anim_setobj 6, 3
+	anim_setobj 7, 3
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $0, $0
 	anim_sound 0, 0, SFX_MOONLIGHT
