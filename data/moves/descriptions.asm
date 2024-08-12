@@ -1445,8 +1445,8 @@ ChargeDescription:
 	next "ELECTRIC attack.@"
 
 TauntDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Taunts foe to only"
+	next "use attack moves.@"
 
 TrickDescription:
 	db   "Pounds with fore-"

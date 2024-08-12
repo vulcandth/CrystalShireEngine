@@ -473,6 +473,22 @@ BattleAnim_Charge:
 	anim_ret
 
 BattleAnim_Taunt:
+	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_TAUNT
+	anim_obj BATTLE_ANIM_OBJ_TAUNT, 72, 84, $0
+	anim_wait 16
+.loop
+	anim_sound 0, 0, SFX_SQUEAK 
+	anim_wait 32
+	anim_loop 3, .loop
+	anim_clearobjs
+	anim_sound 0, 1, SFX_KINESIS_2
+	anim_obj BATTLE_ANIM_OBJ_ANGER, 112, 50, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_KINESIS_2
+	anim_obj BATTLE_ANIM_OBJ_ANGER, 148, 32, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Trick:
 BattleAnim_RolePlay:
 BattleAnim_Wish:
