@@ -1493,8 +1493,8 @@ YawnDescription:
 	next "sleep next turn.@"
 
 KnockOffDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Prevents the use"
+	next "of the foe's item.@"
 
 EndeavorDescription:
 	db   "Pounds with fore-"
