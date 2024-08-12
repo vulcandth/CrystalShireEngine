@@ -182,9 +182,15 @@ BattleAnimRequestPals:
 	jmp nz, BattleAnim_SetOBPals
 	ret
 
+BattleAnimCmd_ClearEnemyHud:
+	ldh a, [hBattleTurn]
+	xor 1
+	jr ClearActorHud.continue
+
 ClearActorHud:
 	ldh a, [hBattleTurn]
 	and a
+.continue
 	jr z, .player
 
 	hlcoord 1, 0
@@ -330,7 +336,7 @@ BattleAnimCommands::
 	dw BattleAnimCmd_OBP1              ; f3
 	dw BattleAnimCmd_KeepSprites       ; f4
 	dw BattleAnimCmd_KeepSpritesAndOAM ; f5
-	dw DoNothing ; BattleAnimCmd_F6    ; f6
+	dw BattleAnimCmd_ClearEnemyHud     ; f6
 	dw DoNothing ; BattleAnimCmd_F7    ; f7
 	dw BattleAnimCmd_IfParamEqual      ; f8
 	dw BattleAnimCmd_SetVar            ; f9

@@ -241,7 +241,10 @@ MACRO anim_keepspritesandoam
 	db anim_keepspritesandoam_command
 ENDM
 
-	const_skip ; $f6
+	const anim_clearenemyhud_command ; $f6
+MACRO anim_clearenemyhud
+	db anim_clearenemyhud_command
+ENDM
 
 	const_skip ; $f7
 
