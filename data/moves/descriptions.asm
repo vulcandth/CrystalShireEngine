@@ -1481,8 +1481,8 @@ RecycleDescription:
 	next "for one more use.@"
 
 RevengeDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Gains power if"
+	next "injured by foe.@"
 
 BrickBreakDescription:
 	db   "Pounds with fore-"
