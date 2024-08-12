@@ -200,7 +200,9 @@ BattleAnimFrameData:
 	dw .Frameset_UproarNote          ; BATTLE_ANIM_FRAMESET_UPROAR_NOTE
 	dw .Frameset_EnergyOrb           ; BATTLE_ANIM_FRAMESET_ENERGY_ORB
 	dw .Frameset_EnergyOrbLong       ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_LONG
-	dw .Frameset_Torment             ; BATTLE_ANIM_FRAMESEt_TORMENT
+	dw .Frameset_Torment             ; BATTLE_ANIM_FRAMESET_TORMENT
+	dw .Frameset_DropletR            ; BATTLE_ANIM_FRAMESET_DROPLET_R
+	dw .Frameset_DropletL            ; BATTLE_ANIM_FRAMESET_DROPLET_L
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1351,3 +1353,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_DB,  4
 	battleoamframe BATTLE_ANIM_OAMSET_DB,  4, OAM_X_FLIP
 	battleoamrestart
+
+.Frameset_DropletR:
+	battleoamframe BATTLE_ANIM_OAMSET_DD,  16
+	battleoamdelete
+
+.Frameset_DropletL:
+	battleoamframe BATTLE_ANIM_OAMSET_DD,  16, OAM_X_FLIP
+	battleoamdelete

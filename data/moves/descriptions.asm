@@ -1425,8 +1425,8 @@ MementoDescription:
 	next "ers foe's ATTACK.@"
 
 FacadeDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Attack boosted by"
+	next "status affliction.@"
 
 FocusPunchDescription:
 	db   "Pounds with fore-"
