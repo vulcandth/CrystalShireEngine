@@ -722,6 +722,21 @@ BattleAnim_Revenge:
 	anim_ret
 
 BattleAnim_BrickBreak:
+	anim_1gfx BATTLE_ANIM_GFX_HIT
+	anim_sound 6, 2, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_VERTICAL_CHOP_STILL, 136, 24, $30
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $55, $2, $0
+	anim_wait 64
+	anim_clearobjs
+	anim_obj BATTLE_ANIM_OBJ_VERTICAL_CHOP, 136, 82, $30
+	anim_wait 8
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 34
+	anim_ret
+
 BattleAnim_Yawn:
 BattleAnim_KnockOff:
 BattleAnim_Endeavor:

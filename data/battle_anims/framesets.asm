@@ -212,6 +212,7 @@ BattleAnimFrameData:
 	dw .Frameset_RootR               ; BATTLE_ANIM_FRAMESET_ROOT_R
 	dw .Frameset_EnergyOrbIngrain    ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_INGRAIN
 	dw .Frameset_Recycle             ; BATTLE_ANIM_FRAMESET_RECYCLE
+	dw .Frameset_VerticalChop        ; BATTLE_ANIM_FRAMESET_VERTICAL_CHOP
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1417,3 +1418,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_E4,  6
 	battleoamframe BATTLE_ANIM_OAMSET_E5,  6
 	battleoamrestart
+
+.Frameset_VerticalChop:
+	battleoamframe BATTLE_ANIM_OAMSET_DB,  8
+	battleoamend

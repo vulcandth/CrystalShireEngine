@@ -256,6 +256,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ROOT_R              ; de
 	const BATTLE_ANIM_OBJ_ENERGY_INGRAIN      ; df
 	const BATTLE_ANIM_OBJ_RECYCLE             ; e0
+	const BATTLE_ANIM_OBJ_VERTICAL_CHOP              ; e1
+	const BATTLE_ANIM_OBJ_VERTICAL_CHOP_STILL        ; e2
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -350,6 +352,7 @@ DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT_VERY_FAST_NO_STOP  ; 56
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_IN                     ; 57
 	const BATTLE_ANIM_FUNC_OBJECT_HOVER                       ; 58
+	const BATTLE_ANIM_FUNC_ROCK_TOMB                          ; 59
 DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
@@ -565,6 +568,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_ROOT_R                ; cf
 	const BATTLE_ANIM_FRAMESET_ENERGY_ORB_INGRAIN    ; d0
 	const BATTLE_ANIM_FRAMESET_RECYCLE               ; d1
+	const BATTLE_ANIM_FRAMESET_VERTICAL_CHOP         ; d2
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)

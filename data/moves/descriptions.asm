@@ -1485,8 +1485,8 @@ RevengeDescription:
 	next "injured by foe.@"
 
 BrickBreakDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Destroys REFLECT"
+	next "and LIGHT SCREEN.@"
 
 YawnDescription:
 	db   "Pounds with fore-"

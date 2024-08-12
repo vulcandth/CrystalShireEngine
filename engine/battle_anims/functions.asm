@@ -107,7 +107,8 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_RadialMoveOut_Fast
 	dba BattleAnimFunc_RadialMoveOut_VeryFast_NoStop
 	dba BattleAnimFunc_RadialMoveIn
-	dba BattleAnimFunction_ObjectHover
+	dba BattleAnimFunc_ObjectHover
+	dba BattleAnimFunc_RockTomb
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -4331,10 +4332,9 @@ BattleAnimFunc_RadialMoveIn:
 	ld [hl], d
 	ret
 
+SECTION "BattleAnimFunc_ObjectHover", ROMX
 
-SECTION "BattleAnimFunction_ObjectHover", ROMX
-
-BattleAnimFunction_ObjectHover:
+BattleAnimFunc_ObjectHover:
 	call BattleAnim_AnonJumptable
 
 	dw .zero
@@ -4405,5 +4405,38 @@ BattleAnimFunction_ObjectHover:
 
 .three
 	jmp DeinitBattleAnimation
+
+SECTION "BattleAnimFunc_RockTomb", ROMX
+
+BattleAnimFunc_RockTomb:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw DoNothing ; .two
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, $30
+	ld [hli], a
+	ld [hl], $48
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	xcall Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	inc [hl]
+	ld a, [hl]
+	and $3f
+	ret nz
+	jmp BattleAnim_IncAnonJumptableIndex
 
 POPS ; restore the original section from the stack
