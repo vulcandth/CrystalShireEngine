@@ -1426,7 +1426,7 @@ MementoDescription:
 
 FacadeDescription:
 	db   "Attack boosted by"
-	next "status affliction.@"
+	next "status condition.@"
 
 FocusPunchDescription:
 	db   "Powerful, but the"
