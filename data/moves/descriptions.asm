@@ -1429,7 +1429,7 @@ FacadeDescription:
 	next "status condition.@"
 
 FocusPunchDescription:
-	db   "Powerful, but the"
+	db   "Powerful, but user"
 	next "flinches if hit.@"
 
 SmellingSaltDescription:
