@@ -205,6 +205,7 @@ BattleAnimFrameData:
 	dw .Frameset_DropletL            ; BATTLE_ANIM_FRAMESET_DROPLET_L
 	dw .Frameset_LongPunch           ; BATTLE_ANIM_FRAMESET_LONG_PUNCH
 	dw .Frameset_Taunt               ; BATTLE_ANIM_FRAMESET_TAUNT
+	dw .Frameset_ItemBagSidePunch	 ; BATTLE_ANIM_FRAMESET_ITEM_BAG_SIDE_PUNCH
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1373,3 +1374,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_1B,  20
 	battleoamframe BATTLE_ANIM_OAMSET_21,  10
 	battleoamrestart
+
+.Frameset_ItemBagSidePunch:
+	battleoamframe BATTLE_ANIM_OAMSET_B6,  8
+	battleoamend

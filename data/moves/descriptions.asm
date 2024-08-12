@@ -1449,8 +1449,8 @@ TauntDescription:
 	next "use attack moves.@"
 
 TrickDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Tricks foe into"
+	next "trading held items.@"
 
 RolePlayDescription:
 	db   "Pounds with fore-"

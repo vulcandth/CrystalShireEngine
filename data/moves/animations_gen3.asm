@@ -489,7 +489,28 @@ BattleAnim_Taunt:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Trick:
+; BattleAnim_Trick:
+	BattleAnim_Trick:
+		anim_1gfx BATTLE_ANIM_GFX_STATUS
+		anim_clearenemyhud
+		anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $0, $0
+		anim_sound 0, 1, SFX_GET_COIN_FROM_SLOTS
+		anim_obj BATTLE_ANIM_OBJ_TRICK, 90, 68, $18
+		anim_obj BATTLE_ANIM_OBJ_TRICK, 90, 68, $38
+		anim_wait 16
+	.loop
+		anim_sound 0, 1, SFX_STOP_SLOT
+		anim_wait 32
+		anim_loop 4, .loop
+		anim_wait 7
+		anim_sound 0, 1, SFX_SLOT_MACHINE_START
+		anim_incobj 1
+		anim_incobj 2
+		anim_wait 6
+		anim_clearobjs
+		anim_wait 6
+		anim_ret
+
 BattleAnim_RolePlay:
 BattleAnim_Wish:
 BattleAnim_Assist:
