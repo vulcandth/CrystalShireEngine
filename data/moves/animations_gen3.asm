@@ -12,7 +12,7 @@ BattleAnimationsGen3::
 	dw BattleAnim_Memento
 	dw BattleAnim_Facade
 	dw BattleAnim_FocusPunch
-	dw BattleAnim_SmellingSalts
+	dw BattleAnim_SmellingSalt
 	dw BattleAnim_NaturePower
 	dw BattleAnim_Charge
 	dw BattleAnim_Taunt
@@ -426,7 +426,25 @@ BattleAnim_FocusPunch:
 	anim_loop 6, .loop2
 	anim_ret
 
-BattleAnim_SmellingSalts:
+BattleAnim_SmellingSalt:
+	anim_1gfx BATTLE_ANIM_GFX_OBJECTS
+	anim_call BattleAnim_UserObj_1Row
+.loop
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
+	anim_obj BATTLE_ANIM_OBJ_SMELLINGSALT_L, 120, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_SMELLINGSALT_R, 150, 48, $20
+	anim_wait 8
+	anim_sound 0, 1, SFX_DOUBLESLAP
+	anim_loop 6, .loop
+	anim_call BattleAnim_ShowMon_1
+	anim_wait 1
+.loop2
+	anim_sound 0, 1, SFX_PAY_DAY
+	anim_obj BATTLE_ANIM_OBJ_SMELLINGSALT_SHOCK, 136, 38, $0
+	anim_wait 8
+	anim_loop 2, .loop2
+	anim_ret
+
 BattleAnim_NaturePower:
 BattleAnim_Charge:
 BattleAnim_Taunt:

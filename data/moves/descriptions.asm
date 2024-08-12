@@ -277,7 +277,7 @@ MoveDescriptionsGen2:
 	dw MementoDescription
 	dw FacadeDescription
 	dw FocusPunchDescription
-	dw SmellingSaltsDescription
+	dw SmellingSaltDescription
 	dw NaturePowerDescription
 	dw ChargeDescription
 	dw TauntDescription
@@ -1432,9 +1432,9 @@ FocusPunchDescription:
 	db   "Powerful, but the"
 	next "flinches if hit.@"
 
-SmellingSaltsDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+SmellingSaltDescription:
+	db   "Boosted, but heals"
+	next "paralyzed foes.@"
 
 NaturePowerDescription:
 	db   "Pounds with fore-"
