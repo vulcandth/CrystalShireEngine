@@ -449,6 +449,29 @@ BattleAnim_NaturePower: ; - no animation needed
 	anim_ret
 
 BattleAnim_Charge:
+	anim_2gfx BATTLE_ANIM_GFX_CHARGE, BATTLE_ANIM_GFX_LIGHTNING
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $30
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $31
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $32
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $33
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $34
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $35
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $36
+	anim_obj BATTLE_ANIM_OBJ_CHARGE, 44, 88, $37
+	anim_wait 1
+.loop
+	anim_sound 0, 0, SFX_WARP_TO
+	anim_wait 16
+	anim_loop 6, .loop
+	anim_wait 40
+	anim_clearobjs
+	anim_sound 0, 0, SFX_ZAP_CANNON
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS, 44, 88, $0
+	anim_wait 40
+	anim_ret
+
 BattleAnim_Taunt:
 BattleAnim_Trick:
 BattleAnim_RolePlay:

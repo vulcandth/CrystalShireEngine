@@ -79,10 +79,10 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_THUNDER_LEFT        ; 2e
 	const BATTLE_ANIM_OBJ_THUNDER_RIGHT       ; 2f
 	const BATTLE_ANIM_OBJ_THUNDER_WAVE        ; 30
-	const BATTLE_ANIM_OBJ_SPARKS_CIRCLE_BIG   ; 31
-	const BATTLE_ANIM_OBJ_THUNDERBOLT_BALL    ; 32
-	const BATTLE_ANIM_OBJ_SPARKS_CIRCLE       ; 33
-	const BATTLE_ANIM_OBJ_THUNDERSHOCK_BALL   ; 34
+	const BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS  ; 31
+	const BATTLE_ANIM_OBJ_THUNDERBOLT_CORE    ; 32
+	const BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS       ; 33
+	const BATTLE_ANIM_OBJ_THUNDERSHOCK_CORE   ; 34
 	const BATTLE_ANIM_OBJ_CLAMP               ; 35
 	const BATTLE_ANIM_OBJ_BITE                ; 36
 	const BATTLE_ANIM_OBJ_CUT_DOWN_LEFT       ; 37
@@ -245,6 +245,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_DROPLET_R           ; d3
 	const BATTLE_ANIM_OBJ_DROPLET_L           ; d4
 	const BATTLE_ANIM_OBJ_LONG_PUNCH          ; d5
+	const BATTLE_ANIM_OBJ_CHARGE              ; d6
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)

@@ -1441,8 +1441,8 @@ NaturePowerDescription:
 	next "ending on area.@"
 
 ChargeDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Boosts the next"
+	next "ELECTRIC attack.@"
 
 TauntDescription:
 	db   "Pounds with fore-"
