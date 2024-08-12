@@ -738,6 +738,28 @@ BattleAnim_BrickBreak:
 	anim_ret
 
 BattleAnim_Yawn:
+	anim_2gfx BATTLE_ANIM_GFX_SMOKE_PUFF, BATTLE_ANIM_GFX_STARS
+	anim_obp0 $54
+	anim_sound 16, 2, SFX_CURSE
+.loop
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_YAWN_1, 64, 88, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_YAWN_1, 64, 80, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_YAWN_1, 64, 96, $4
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 22
+	anim_obp0 $70
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_YAWN_2, 126, 46, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_YAWN_2, 146, 46, $0
+	anim_wait 64
+	anim_ret
+
 BattleAnim_KnockOff:
 BattleAnim_Endeavor:
 BattleAnim_Eruption:

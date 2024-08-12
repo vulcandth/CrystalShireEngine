@@ -1489,8 +1489,8 @@ BrickBreakDescription:
 	next "and LIGHT SCREEN.@"
 
 YawnDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "May lull foe to"
+	next "sleep next turn.@"
 
 KnockOffDescription:
 	db   "Pounds with fore-"

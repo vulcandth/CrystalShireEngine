@@ -213,6 +213,7 @@ BattleAnimFrameData:
 	dw .Frameset_EnergyOrbIngrain    ; BATTLE_ANIM_FRAMESET_ENERGY_ORB_INGRAIN
 	dw .Frameset_Recycle             ; BATTLE_ANIM_FRAMESET_RECYCLE
 	dw .Frameset_VerticalChop        ; BATTLE_ANIM_FRAMESET_VERTICAL_CHOP
+	dw .Frameset_Drowziness          ; BATTLE_ANIM_FRAMESET_DROWZINESS
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1422,3 +1423,8 @@ BattleAnimFrameData:
 .Frameset_VerticalChop:
 	battleoamframe BATTLE_ANIM_OAMSET_DB,  8
 	battleoamend
+
+.Frameset_Drowziness:
+	battleoamframe BATTLE_ANIM_OAMSET_10, 32
+	battleoamframe BATTLE_ANIM_OAMSET_1E,  8
+	battleoamdelete
