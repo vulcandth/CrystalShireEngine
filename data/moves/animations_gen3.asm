@@ -679,6 +679,15 @@ BattleAnim_MagicCoat:
 	anim_ret
 	
 BattleAnim_Recycle:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RECYCLE
+	anim_1gfx BATTLE_ANIM_GFX_RECYCLE
+	anim_sound 0, 0, SFX_SHARPEN
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_obj BATTLE_ANIM_OBJ_RECYCLE, 48, 88, $0
+	anim_wait 104
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+	anim_ret
+
 BattleAnim_Revenge:
 BattleAnim_BrickBreak:
 BattleAnim_Yawn:

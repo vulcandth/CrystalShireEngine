@@ -1477,8 +1477,8 @@ MagicCoatDescription:
 	next "and status moves.@"
 
 RecycleDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Recycles used item"
+	next "for one more use.@"
 
 RevengeDescription:
 	db   "Pounds with fore-"
