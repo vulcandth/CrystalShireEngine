@@ -656,6 +656,28 @@ BattleAnim_Superpower:
 	anim_ret
 
 BattleAnim_MagicCoat:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_YELLOW
+	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_REFLECT
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $30
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $31
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $32
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $33
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $34
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $35
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $36
+	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $37
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_wait 24
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_wait 24
+	anim_clearobjs
+	anim_wait 40
+	anim_ret
+	
 BattleAnim_Recycle:
 BattleAnim_Revenge:
 BattleAnim_BrickBreak:

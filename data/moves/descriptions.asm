@@ -1473,8 +1473,8 @@ SuperpowerDescription:
 	next "physical stats.@"
 
 MagicCoatDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Reflect LEECH SEED"
+	next "and status moves.@"
 
 RecycleDescription:
 	db   "Pounds with fore-"
