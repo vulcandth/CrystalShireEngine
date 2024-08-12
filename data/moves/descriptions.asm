@@ -1453,8 +1453,8 @@ TrickDescription:
 	next "trading held items.@"
 
 RolePlayDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Copies the foe's"
+	next "special ability.@"
 
 WishDescription:
 	db   "Pounds with fore-"
