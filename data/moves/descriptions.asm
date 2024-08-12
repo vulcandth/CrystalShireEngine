@@ -1405,8 +1405,8 @@ HeatWaveDescription:
 	next "may cause a burn.@"
 
 HailDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Inflicts damage"
+	next "every turn.@"
 
 TormentDescription:
 	db   "Pounds with fore-"
