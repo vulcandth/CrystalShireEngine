@@ -882,10 +882,7 @@ BattleAnim_SkillSwap:
 BattleAnimSub_TransferOrbs:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
-	anim_call .to_user
-	anim_call .to_user
-	anim_wait 32
-	anim_ret
+	anim_setvar $0
 .to_user
 	anim_sound 6, 3, SFX_STOP_SLOT
 	anim_obj BATTLE_ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
@@ -896,6 +893,9 @@ BattleAnimSub_TransferOrbs:
 	anim_obj BATTLE_ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
 	anim_wait 6
 	anim_loop 4, .to_foe
+	anim_incvar
+	anim_if_var_equal $1, .to_user
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Imprison:
