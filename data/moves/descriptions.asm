@@ -1509,8 +1509,8 @@ SkillSwapDescription:
 	next "with the foe.@"
 
 ImprisonDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Prevents moves al-"
+	next "so known by user.@"
 
 RefreshDescription:
 	db   "Pounds with fore-"

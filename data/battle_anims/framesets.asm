@@ -214,6 +214,8 @@ BattleAnimFrameData:
 	dw .Frameset_Recycle             ; BATTLE_ANIM_FRAMESET_RECYCLE
 	dw .Frameset_VerticalChop        ; BATTLE_ANIM_FRAMESET_VERTICAL_CHOP
 	dw .Frameset_Drowziness          ; BATTLE_ANIM_FRAMESET_DROWZINESS
+	dw .Frameset_ImprisonRing        ; BATTLE_ANIM_FRAMESET_IMPRISON_RING
+	dw .Frameset_BigRedXFlashing     ; BATTLE_ANIM_FRAMESET_BIG_RED_X_FLASHING
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1428,3 +1430,11 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_10, 32
 	battleoamframe BATTLE_ANIM_OAMSET_1E,  8
 	battleoamdelete
+
+.Frameset_ImprisonRing:
+	battleoamframe BATTLE_ANIM_OAMSET_17,  8
+	battleoamend
+
+.Frameset_BigRedXFlashing:
+	battleoamframe BATTLE_ANIM_OAMSET_E6,  8
+	battleoamend

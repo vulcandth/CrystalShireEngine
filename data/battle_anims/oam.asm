@@ -237,6 +237,7 @@ BattleAnimOAMData:
 	battleanimoam $10, 16, .OAMData_e2 ; BATTLE_ANIM_OAMSET_E3
 	battleanimoam $20, 16, .OAMData_e2 ; BATTLE_ANIM_OAMSET_E4
 	battleanimoam $30, 16, .OAMData_e2 ; BATTLE_ANIM_OAMSET_E5
+	battleanimoam $12, 16, .OAMData_e6 ; BATTLE_ANIM_OAMSET_E6
 	assert_table_length NUM_BATTLE_ANIM_OAMSETS
 
 .OAMData_11:
@@ -1219,3 +1220,21 @@ BattleAnimOAMData:
 	dbsprite  -1,   1, 0, 0, $0d, $0
 	dbsprite   0,   1, 0, 0, $0e, $0
 	dbsprite   1,   1, 0, 0, $0f, $0
+
+.OAMData_e6:
+	dbsprite  -2,  -1, 0, 0, $00, $0
+	dbsprite  -1,  -1, 0, 0, $02, X_FLIP | Y_FLIP
+	dbsprite  -2,   0, 0, 0, $02, $0
+	dbsprite  -1,   0, 0, 0, $01, $0
+	dbsprite   0,  -1, 0, 0, $02, Y_FLIP
+	dbsprite   1,  -1, 0, 0, $00, X_FLIP
+	dbsprite   0,   0, 0, 0, $01, $0
+	dbsprite   1,   0, 0, 0, $02, X_FLIP
+	dbsprite  -2,   1, 0, 0, $02, Y_FLIP
+	dbsprite  -1,   1, 0, 0, $01, $0
+	dbsprite  -2,   2, 0, 0, $00, Y_FLIP
+	dbsprite  -1,   2, 0, 0, $02, X_FLIP
+	dbsprite   0,   1, 0, 0, $01, $0
+	dbsprite   1,   1, 0, 0, $02, X_FLIP | Y_FLIP
+	dbsprite   0,   2, 0, 0, $02, $0
+	dbsprite   1,   2, 0, 0, $00, X_FLIP | Y_FLIP
