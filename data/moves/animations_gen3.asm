@@ -814,6 +814,70 @@ BattleAnim_Endeavor:
 	anim_ret
 
 BattleAnim_Eruption:
+	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_LAVA_ROCKS
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_2gfx BATTLE_ANIM_GFX_LAVA_ROCKS, BATTLE_ANIM_GFX_FIRE
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_WITHDRAW, $0, $1, $50
+	anim_wait 8
+	anim_sound 0, 1, SFX_OUTRAGE
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_wait 64
+	anim_incbgeffect BATTLE_BG_EFFECT_WITHDRAW
+	anim_call BattleAnimSub_Eruption
+	anim_bgeffect BATTLE_BG_EFFECT_WITHDRAW, $0, $1, $50
+	anim_wait 24
+	anim_incbgeffect BATTLE_BG_EFFECT_WITHDRAW
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+	anim_call BattleAnimSub_Eruption
+	anim_wait 16
+	anim_call BattleAnim_ShowMon_0
+	anim_clearobjs
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 128, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 152, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 112, 70, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 120, 68, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $4, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 144, 68, $30
+	anim_wait 12
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $4, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_Eruption:
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $32
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $5c
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $e8
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME, 38, 88, $d0
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME, 58, 88, $50
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $30
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $2e
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $31
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $33
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_BIG_ROCK, 48, 88, $2f
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_ERUPTION_SMALL_ROCK, 48, 88, $30
+	anim_wait 16
+	anim_ret
+
 BattleAnim_SkillSwap:
 BattleAnim_Imprison:
 BattleAnim_Refresh:

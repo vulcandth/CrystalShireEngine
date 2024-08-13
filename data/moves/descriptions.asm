@@ -1501,8 +1501,8 @@ EndeavorDescription:
 	next "equal the user's.@"
 
 EruptionDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Stronger if the"
+	next "user's HP is high.@"
 
 SkillSwapDescription:
 	db   "Pounds with fore-"
