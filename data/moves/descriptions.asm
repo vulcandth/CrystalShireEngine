@@ -1517,8 +1517,8 @@ RefreshDescription:
 	next "status problems.@"
 
 GrudgeDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Delete foe's PP if"
+	next "the user faints.@"
 
 SnatchDescription:
 	db   "Pounds with fore-"
