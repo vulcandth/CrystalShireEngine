@@ -1505,8 +1505,8 @@ EruptionDescription:
 	next "user's HP is high.@"
 
 SkillSwapDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Swaps abilities"
+	next "with the foe.@"
 
 ImprisonDescription:
 	db   "Pounds with fore-"

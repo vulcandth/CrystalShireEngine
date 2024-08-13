@@ -879,6 +879,29 @@ BattleAnimSub_Eruption:
 	anim_ret
 
 BattleAnim_SkillSwap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SKILL_SWAP
+	anim_call BattleAnimSub_TransferOrbs
+	anim_ret
+
+BattleAnimSub_TransferOrbs:
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_1gfx BATTLE_ANIM_GFX_CHARGE
+	anim_call .to_user
+	anim_call .to_user
+	anim_wait 32
+	anim_ret
+.to_user
+	anim_sound 6, 3, SFX_STOP_SLOT
+	anim_obj BATTLE_ANIM_OBJ_SKILL_SWAP_1, 136, 64, $2
+	anim_wait 6
+	anim_loop 4, .to_user
+.to_foe
+	anim_sound 6, 3, SFX_UNKNOWN_66
+	anim_obj BATTLE_ANIM_OBJ_SKILL_SWAP_2, 52, 88, $8
+	anim_wait 6
+	anim_loop 4, .to_foe
+	anim_ret
+
 BattleAnim_Imprison:
 BattleAnim_Refresh:
 BattleAnim_Grudge:

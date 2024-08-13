@@ -264,6 +264,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_ERUPTION_BIG_ROCK       ; e6
 	const BATTLE_ANIM_OBJ_ERUPTION_SMALL_ROCK     ; e7
 	const BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME    ; e8
+	const BATTLE_ANIM_OBJ_SKILL_SWAP_1            ; e9
+	const BATTLE_ANIM_OBJ_SKILL_SWAP_2            ; ea
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -998,6 +1000,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_COSMIC         ; 15
 	const PAL_BTLCUSTOM_RECYCLE        ; 16
 	const PAL_BTLCUSTOM_LAVA_ROCKS     ; 17
+	const PAL_BTLCUSTOM_SKILL_SWAP     ; 18
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
