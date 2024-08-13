@@ -1513,8 +1513,8 @@ ImprisonDescription:
 	next "so known by user.@"
 
 RefreshDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Eliminates all"
+	next "status problems.@"
 
 GrudgeDescription:
 	db   "Pounds with fore-"
