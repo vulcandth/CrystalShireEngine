@@ -1561,8 +1561,8 @@ TeeterDanceDescription:
 	next "causes confusion.@"
 
 BlazeKickDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "High critical hit."
+	next "May cause burn.@"
 
 MudSportDescription:
 	db   "Pounds with fore-"

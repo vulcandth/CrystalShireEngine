@@ -1131,7 +1131,7 @@ BattleAnim_FeatherDance:
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
 	anim_call BattleAnim_ShowMon_1
 	anim_ret
-	
+
 BattleAnim_TeeterDance:
 	anim_1gfx BATTLE_ANIM_GFX_NOISE
 	anim_call BattleAnim_TargetObj_2Row
@@ -1154,6 +1154,43 @@ BattleAnim_TeeterDance:
 	anim_ret
 
 BattleAnim_BlazeKick:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_FIRE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
+	anim_wait 32
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $3
+	anim_sound 0, 1, SFX_EMBER
+	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $30
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $38
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $20
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $18
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $4
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2b
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $14
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $3b
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
+	anim_wait 32
+	anim_ret
+
 BattleAnim_MudSport:
 BattleAnim_IceBall:
 BattleAnim_NeedleArm:
