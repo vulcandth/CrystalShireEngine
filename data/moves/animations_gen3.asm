@@ -1232,6 +1232,33 @@ BattleAnimSub_MudSport1:
 	anim_ret
 
 BattleAnim_IceBall:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+	anim_2gfx BATTLE_ANIM_GFX_ICE, BATTLE_ANIM_GFX_HIT
+	anim_sound 6, 2, SFX_THROW_BALL
+	anim_obj BATTLE_ANIM_OBJ_ICE_BALL, 64, 92, $10
+	anim_wait 36
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 8
+	
+BattleAnimSub_IceBall1:
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $28
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $9c
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $d0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $1c
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $50
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $dc
+	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $90
+	anim_wait 16
+	anim_ret
+
 BattleAnim_NeedleArm:
 BattleAnim_SlackOff:
 BattleAnim_HyperVoice:

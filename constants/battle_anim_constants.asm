@@ -279,6 +279,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW       ; f5
 	const BATTLE_ANIM_OBJ_MUD_SPORT_1             ; f6
 	const BATTLE_ANIM_OBJ_MUD_SPORT_2             ; f7
+	const BATTLE_ANIM_OBJ_ICE_BALL                ; f8
+	const BATTLE_ANIM_OBJ_ICE_SPLASH              ; f9
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -530,7 +532,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_MIND_READER_3         ; 95
 	const BATTLE_ANIM_FRAMESET_MIND_READER_4         ; 96
 	const BATTLE_ANIM_FRAMESET_SAFEGUARD             ; 97
-	const BATTLE_ANIM_FRAMESET_FEATHER      ; 98
+	const BATTLE_ANIM_FRAMESET_FEATHER               ; 98
 	const BATTLE_ANIM_FRAMESET_ITEM_BAG              ; 99
 	const BATTLE_ANIM_FRAMESET_SPIDER_WEB            ; 9a
 	const BATTLE_ANIM_FRAMESET_UNUSED_CAKE           ; 9b
@@ -599,6 +601,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_BIG_GLOW              ; d9
 	const BATTLE_ANIM_FRAMESET_TEETER_DANCE          ; da
 	const BATTLE_ANIM_FRAMESET_BURNED_SHORT          ; db
+	const BATTLE_ANIM_FRAMESET_ICE_BALL              ; dc
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -837,6 +840,7 @@ DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 	const BATTLE_ANIM_OAMSET_E6
 	const BATTLE_ANIM_OAMSET_E7
 	const BATTLE_ANIM_OAMSET_E8
+	const BATTLE_ANIM_OAMSET_E9
 DEF NUM_BATTLE_ANIM_OAMSETS EQU const_value
 
 assert NUM_BATTLE_ANIM_OAMSETS <= FIRST_OAM_CMD, \

@@ -222,6 +222,7 @@ BattleAnimFrameData:
 	dw .Frameset_BigGlow             ; BATTLE_ANIM_FRAMESET_BIG_GLOW
 	dw .Frameset_TeeterDance         ; BATTLE_ANIM_FRAMESET_TEETER_DANCE
 	dw .Frameset_BurnedShort         ; BATTLE_ANIM_FRAMESET_BURNED_SHORT
+	dw .Frameset_IceBall             ; BATTLE_ANIM_FRAMESET_ICE_BALL
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1476,3 +1477,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_0E,  4
 	battleoamframe BATTLE_ANIM_OAMSET_0A,  4
 	battleoamdelete
+
+.Frameset_IceBall:
+	battleoamframe BATTLE_ANIM_OAMSET_E9, 32
+	battleoamend

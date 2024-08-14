@@ -1569,8 +1569,8 @@ MudSportDescription:
 	next "type attacks.@"
 
 IceBallDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Attacks 5 turns"
+	next "with rising power.@"
 
 NeedleArmDescription:
 	db   "Pounds with fore-"
