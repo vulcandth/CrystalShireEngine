@@ -38,7 +38,7 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjHazeGFX
 	anim_obj_gfx 13, AnimObjHornGFX
 	anim_obj_gfx  8, AnimObjFlowerGFX
-	anim_obj_gfx 40, AnimObjMiscGFX
+	anim_obj_gfx 40, AnimObjMisc1GFX
 	anim_obj_gfx 36, AnimObjSkyAttackGFX
 	anim_obj_gfx 16, AnimObjGlobeGFX
 	anim_obj_gfx 48, AnimObjShapesGFX

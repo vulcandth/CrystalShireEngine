@@ -1995,7 +1995,7 @@ BattleAnim_Bide:
 	anim_ret
 
 BattleAnim_Metronome:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_SPEED
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_SPEED
 	anim_sound 0, 0, SFX_METRONOME
 	anim_obj BATTLE_ANIM_OBJ_METRONOME_HAND, 72, 88, $0
 .loop
@@ -2065,7 +2065,7 @@ BattleAnim_Sludge:
 	anim_ret
 
 BattleAnim_BoneClub:
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC_1
 	anim_obj BATTLE_ANIM_OBJ_BONE_CLUB, 64, 88, $2
 	anim_wait 32
 	anim_sound 0, 1, SFX_BONE_CLUB
@@ -2246,7 +2246,7 @@ BattleAnim_Amnesia:
 	anim_ret
 
 BattleAnim_Kinesis:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_NOISE
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_NOISE
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_KINESIS, 80, 76, $0
 	anim_wait 32
@@ -2571,7 +2571,7 @@ BattleAnim_FurySwipes:
 	anim_ret
 
 BattleAnim_Bonemerang:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_HIT
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_HIT
 	anim_sound 6, 2, SFX_HYDRO_PUMP
 	anim_obj BATTLE_ANIM_OBJ_BONEMERANG, 88, 56, $1c
 	anim_wait 24

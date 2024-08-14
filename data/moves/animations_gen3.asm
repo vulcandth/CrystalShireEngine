@@ -291,7 +291,7 @@ BattleAnim_Hail:
 	anim_ret
 
 BattleAnim_Torment:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_STATUS
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_STATUS
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 64, 106, $2
 	anim_wait 32
@@ -471,7 +471,7 @@ BattleAnim_Charge:
 	anim_ret
 
 BattleAnim_Taunt:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_TAUNT
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_TAUNT
 	anim_obj BATTLE_ANIM_OBJ_TAUNT, 72, 84, $0
 	anim_wait 16
 .loop
@@ -1120,7 +1120,7 @@ BattleAnim_MistBall:
 	anim_ret
 
 BattleAnim_FeatherDance:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 0, SFX_MORNING_SUN 
 .loop
 	anim_obj BATTLE_ANIM_OBJ_FEATHERDANCE, 132, 36, $0

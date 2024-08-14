@@ -156,7 +156,7 @@ BattleAnim_SpiderWeb:
 	anim_ret
 
 BattleAnim_MindReader:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 1, SFX_MIND_READER
 .loop
 	anim_obj BATTLE_ANIM_OBJ_MIND_READER, 132, 48, $3
@@ -312,7 +312,7 @@ BattleAnim_Aeroblast:
 
 BattleAnim_CottonSpore:
 	anim_obp0 $54
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 1, SFX_POWDER
 .loop
 	anim_obj BATTLE_ANIM_OBJ_COTTON_SPORE, 132, 32, $0
@@ -525,7 +525,7 @@ BattleAnim_Octazooka:
 	anim_ret
 
 BattleAnim_Spikes:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 6, 2, SFX_MENU
 	anim_obj BATTLE_ANIM_OBJ_SPIKES, 48, 88, $20
 	anim_wait 8
@@ -636,7 +636,7 @@ BattleAnim_Detect:
 	anim_ret
 
 BattleAnim_BoneRush:
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 1, SFX_BONE_CLUB
 	anim_obj BATTLE_ANIM_OBJ_BONE_RUSH, 132, 56, $2
 	anim_wait 16
@@ -649,7 +649,7 @@ BattleAnim_BoneRush:
 	anim_ret
 
 BattleAnim_LockOn:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 1, SFX_MIND_READER
 .loop
 	anim_obj BATTLE_ANIM_OBJ_LOCK_ON, 132, 48, $3
@@ -804,7 +804,7 @@ BattleAnim_FalseSwipe:
 	anim_ret
 
 BattleAnim_Swagger:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_WIND
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_WIND
 .loop
 	anim_sound 0, 0, SFX_MENU
 	anim_obj BATTLE_ANIM_OBJ_SWAGGER, 72, 88, $44
@@ -817,7 +817,7 @@ BattleAnim_Swagger:
 	anim_ret
 
 BattleAnim_MilkDrink:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_BUBBLE
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_BUBBLE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_obj BATTLE_ANIM_OBJ_MILK_DRINK, 74, 104, $0
 	anim_wait 16
@@ -934,7 +934,7 @@ BattleAnim_SleepTalk:
 	anim_ret
 
 BattleAnim_HealBell:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_NOISE
+	anim_2gfx BATTLE_ANIM_GFX_MISC_1, BATTLE_ANIM_GFX_NOISE
 	anim_obj BATTLE_ANIM_OBJ_HEAL_BELL, 72, 56, $0
 	anim_wait 32
 .loop
@@ -1002,7 +1002,7 @@ BattleAnim_Present:
 	anim_ret
 
 BattleAnim_Frustration:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 0, SFX_KINESIS_2
 	anim_obj BATTLE_ANIM_OBJ_ANGER, 72, 80, $0
 	anim_wait 40
@@ -1025,7 +1025,7 @@ BattleAnim_Frustration:
 	anim_ret
 
 BattleAnim_Safeguard:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_obj BATTLE_ANIM_OBJ_SAFEGUARD, 80, 80, $0
 	anim_obj BATTLE_ANIM_OBJ_SAFEGUARD, 80, 80, $d
@@ -1127,7 +1127,7 @@ BattleAnim_Dragonbreath:
 	anim_ret
 
 BattleAnim_BatonPass:
-	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_1gfx BATTLE_ANIM_GFX_MISC_1
 	anim_obj BATTLE_ANIM_OBJ_BATON_PASS, 44, 104, $20
 	anim_sound 0, 0, SFX_BATON_PASS
 	anim_call BattleAnimSub_Return
@@ -1176,7 +1176,7 @@ BattleAnim_RapidSpin:
 	anim_ret
 
 BattleAnim_SweetScent:
-	anim_2gfx BATTLE_ANIM_GFX_FLOWER, BATTLE_ANIM_GFX_MISC
+	anim_2gfx BATTLE_ANIM_GFX_FLOWER, BATTLE_ANIM_GFX_MISC_1
 	anim_sound 0, 0, SFX_SWEET_SCENT
 	anim_obj BATTLE_ANIM_OBJ_FLOWER, 64, 96, $2
 	anim_wait 2

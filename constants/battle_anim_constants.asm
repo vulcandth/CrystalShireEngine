@@ -926,7 +926,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_HAZE           ; 1c
 	const BATTLE_ANIM_GFX_HORN           ; 1d
 	const BATTLE_ANIM_GFX_FLOWER         ; 1e
-	const BATTLE_ANIM_GFX_MISC           ; 1f
+	const BATTLE_ANIM_GFX_MISC_1         ; 1f
 	const BATTLE_ANIM_GFX_SKY_ATTACK     ; 20
 	const BATTLE_ANIM_GFX_GLOBE          ; 21
 	const BATTLE_ANIM_GFX_SHAPES         ; 22
