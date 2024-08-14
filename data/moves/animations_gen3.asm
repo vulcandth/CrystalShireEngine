@@ -1120,6 +1120,17 @@ BattleAnim_MistBall:
 	anim_ret
 
 BattleAnim_FeatherDance:
+	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_MORNING_SUN 
+.loop
+	anim_obj BATTLE_ANIM_OBJ_FEATHERDANCE, 132, 36, $0
+	anim_wait 16
+	anim_loop 5, .loop
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+	anim_wait 96
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
+	anim_call BattleAnim_ShowMon_1
+	anim_ret
 BattleAnim_TeeterDance:
 BattleAnim_BlazeKick:
 BattleAnim_MudSport:

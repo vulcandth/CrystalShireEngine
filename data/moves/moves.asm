@@ -330,7 +330,7 @@ MovesGen3:
 	move EFFECT_NORMAL_HIT,          0, BUG,           100, 20,   0      ;TAIL_GLOW
 	move EFFECT_SP_DEF_DOWN_HIT,    70, PSYCHIC_TYPE,  100,  5,  50      ;LUSTER_PURGE
 	move EFFECT_SP_DEF_DOWN_HIT,    70, PSYCHIC_TYPE,  100,  5,  50      ;MIST_BALL EFFECT_SP_ATK_DOWN_HIT
-	move EFFECT_NORMAL_HIT,          0, FLYING,        100, 15,   0      ;FEATHER_DANCE
+	move EFFECT_NORMAL_HIT,          0, FLYING,        100, 15,   0      ;FEATHERDANCE
 	move EFFECT_CONFUSE,             0, NORMAL,        100, 20,   0      ;TEETER_DANCE
 	move EFFECT_BURN_HIT,           85, FIRE,           90, 10,  10      ;BLAZE_KICK
 	move EFFECT_NORMAL_HIT,          0, GROUND,        100, 15,   0      ;MUD_SPORT 

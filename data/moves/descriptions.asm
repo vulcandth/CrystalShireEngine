@@ -1553,8 +1553,8 @@ MistBallDescription:
 	next "lower SPCL.ATK.@"
 
 FeatherDanceDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply reduces"
+	next "the foe's ATTACK.@"
 
 TeeterDanceDescription:
 	db   "Pounds with fore-"

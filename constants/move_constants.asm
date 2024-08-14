@@ -302,7 +302,7 @@ DEF GEN2_MOVES EQU const_value - 1
 	const TAIL_GLOW    ; 124
 	const LUSTER_PURGE ; 125
 	const MIST_BALL    ; 126
-	const FEATHER_DANCE ; 127
+	const FEATHERDANCE ; 127
 	const TEETER_DANCE ; 128
 	const BLAZE_KICK   ; 129
 	const MUD_SPORT    ; 12a

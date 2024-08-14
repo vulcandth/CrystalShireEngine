@@ -153,7 +153,7 @@ BattleAnimFrameData:
 	dw .Frameset_MindReader3         ; BATTLE_ANIM_FRAMESET_MIND_READER_3
 	dw .Frameset_MindReader4         ; BATTLE_ANIM_FRAMESET_MIND_READER_4
 	dw .Frameset_Safeguard           ; BATTLE_ANIM_FRAMESET_SAFEGUARD
-	dw .Frameset_MegaphoneUnused     ; BATTLE_ANIM_FRAMESET_MEGAPHONE_UNUSED
+	dw .Frameset_Feather             ; BATTLE_ANIM_FRAMESET_FEATHER
 	dw .Frameset_ItemBag             ; BATTLE_ANIM_FRAMESET_ITEM_BAG
 	dw .Frameset_SpiderWeb           ; BATTLE_ANIM_FRAMESET_SPIDER_WEB
 	dw .Frameset_UnusedCake          ; BATTLE_ANIM_FRAMESET_UNUSED_CAKE
