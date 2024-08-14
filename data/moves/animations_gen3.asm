@@ -1131,7 +1131,28 @@ BattleAnim_FeatherDance:
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
 	anim_call BattleAnim_ShowMon_1
 	anim_ret
+	
 BattleAnim_TeeterDance:
+	anim_1gfx BATTLE_ANIM_GFX_NOISE
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_FLAIL, $0, $1, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_TEETER_DANCE, 64, 80, $0
+	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_TEETER_DANCE, 16, 80, $2
+	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_TEETER_DANCE, 70, 80, $1
+	anim_wait 32
+	anim_sound 0, 0, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_TEETER_DANCE, 32, 80, $2
+	anim_wait 24
+	anim_incbgeffect BATTLE_BG_EFFECT_FLAIL
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_BlazeKick:
 BattleAnim_MudSport:
 BattleAnim_IceBall:

@@ -220,6 +220,7 @@ BattleAnimFrameData:
 	dw .Frameset_SeismicTossFlipped  ; BATTLE_ANIM_FRAMESET_SEISMIC_TOSS_FLIPPED
 	dw .Frameset_SmallGlow           ; BATTLE_ANIM_FRAMESET_SMALL_GLOW
 	dw .Frameset_BigGlow             ; BATTLE_ANIM_FRAMESET_BIG_GLOW
+	dw .Frameset_TeeterDance         ; BATTLE_ANIM_FRAMESET_TEETER_DANCE
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1461,3 +1462,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_E7,  1
 	battleoamframe BATTLE_ANIM_OAMSET_E8,  1
 	battleoamrestart
+
+.Frameset_TeeterDance:
+	battleoamframe BATTLE_ANIM_OAMSET_1B,  40
+	battleoamdelete

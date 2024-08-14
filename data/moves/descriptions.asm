@@ -1557,8 +1557,8 @@ FeatherDanceDescription:
 	next "the foe's ATTACK.@"
 
 TeeterDanceDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Wobbly dance that"
+	next "causes confusion.@"
 
 BlazeKickDescription:
 	db   "Pounds with fore-"
