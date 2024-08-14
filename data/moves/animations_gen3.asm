@@ -924,10 +924,10 @@ BattleAnim_Imprison:
 	anim_ret
 
 BattleAnim_Refresh:
-	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_SHINE
-	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_REFRESH
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_ICE
+	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_SHINE
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
 .loop
@@ -978,8 +978,8 @@ BattleAnim_SecretPower:
 	anim_ret
 
 BattleAnim_Dive:
-	anim_3gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_BUBBLE, BATTLE_ANIM_GFX_MISC_2
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_3gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_BUBBLE, BATTLE_ANIM_GFX_MISC_2
 	anim_if_param_equal $0, .hit
 	anim_if_param_equal $2, .fail
 	anim_call BattleAnim_TargetObj_2Row
@@ -1053,8 +1053,8 @@ BattleAnim_Camouflage:
 	anim_ret
 
 BattleAnim_TailGlow:
-	anim_1gfx BATTLE_ANIM_GFX_GLOW
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_1gfx BATTLE_ANIM_GFX_GLOW
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
