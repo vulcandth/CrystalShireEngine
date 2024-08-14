@@ -6866,3 +6866,4 @@ CheckMoveInList:
 	ret
 
 INCLUDE "engine/battle/move_effects/low_kick.asm"
+INCLUDE "engine/battle/move_effects/snatch.asm"

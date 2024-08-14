@@ -1,4 +1,5 @@
 MoveEffectPriorities:
+	db SNATCH,       3
 	dw PROTECT,      3
 	dw DETECT,       3
 	dw ENDURE,       3

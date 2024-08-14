@@ -163,5 +163,6 @@ MoveEffectsPointers:
 	;==========================
 	dw FreezeHit ; for Blizzard, purposefully with different EFFECT_* constant
 	dw Hail
+	dw Snatch
 	dw LowKick
 	assert_table_length NUM_MOVE_EFFECTS

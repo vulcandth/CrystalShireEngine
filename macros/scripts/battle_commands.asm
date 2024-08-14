@@ -184,7 +184,9 @@ ENDM
 	;	New Moves Start Here
 	;==========================
 	command starthail               ; b0
-	command lowkick                 ; b1
+	command snatch                  ; b1
+	command checksnatch             ; b2
+	command lowkick                 ; b3
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

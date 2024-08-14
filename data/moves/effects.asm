@@ -188,6 +188,7 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	attackup
 	lowersub
 	statupanim
@@ -200,6 +201,7 @@ DefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	defenseup
 	lowersub
 	statupanim
@@ -212,6 +214,7 @@ SpeedUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	speedup
 	lowersub
 	statupanim
@@ -224,6 +227,7 @@ SpecialAttackUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	specialattackup
 	lowersub
 	statupanim
@@ -236,6 +240,7 @@ SpecialDefenseUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	specialdefenseup
 	lowersub
 	statupanim
@@ -248,6 +253,7 @@ AccuracyUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	accuracyup
 	lowersub
 	statupanim
@@ -260,6 +266,7 @@ EvasionUp:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	lowersub
 	evasionup
 	statupanim
@@ -273,6 +280,7 @@ AttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	attackup2
 	lowersub
 	statupanim
@@ -285,6 +293,7 @@ DefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	defenseup2
 	lowersub
 	statupanim
@@ -297,6 +306,7 @@ SpeedUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	speedup2
 	lowersub
 	statupanim
@@ -309,6 +319,7 @@ SpecialAttackUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	specialattackup2
 	lowersub
 	statupanim
@@ -321,6 +332,7 @@ SpecialDefenseUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	specialdefenseup2
 	lowersub
 	statupanim
@@ -333,6 +345,7 @@ AccuracyUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	accuracyup2
 	lowersub
 	statupanim
@@ -345,6 +358,7 @@ EvasionUp2:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	evasionup2
 	lowersub
 	statupanim
@@ -779,6 +793,7 @@ Conversion:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	conversion
 	endmove
 
@@ -951,6 +966,7 @@ Mist:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	mist
 	endmove
 
@@ -958,6 +974,7 @@ FocusEnergy:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	focusenergy
 	endmove
 
@@ -995,6 +1012,7 @@ Heal:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	heal
 	endmove
 
@@ -1010,6 +1028,7 @@ Reflect:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	screen
 	endmove
 
@@ -1082,6 +1101,7 @@ Substitute:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	substitute
 	endmove
 
@@ -1666,6 +1686,7 @@ Safeguard:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	safeguard
 	endmove
 
@@ -1766,6 +1787,7 @@ MorningSun:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healmorn
 	endmove
 
@@ -1773,6 +1795,7 @@ Synthesis:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healday
 	endmove
 
@@ -1780,6 +1803,7 @@ Moonlight:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	healnite
 	endmove
 
@@ -1831,6 +1855,7 @@ BellyDrum:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	bellydrum
 	endmove
 
@@ -2064,6 +2089,7 @@ DefenseCurl:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	defenseup
 	curl
 	lowersub
@@ -2081,6 +2107,13 @@ Hail:
 	usedmovetext
 	doturn
 	starthail
+	endmove
+
+Snatch:
+	checkobedience
+	usedmovetext
+	doturn
+	snatch
 	endmove
 
 LowKick:
