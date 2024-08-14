@@ -1044,6 +1044,14 @@ BattleAnim_ArmThrust:
 	anim_ret
 
 BattleAnim_Camouflage:
+	anim_sound 6, 3, SFX_WARP_TO
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_WHITE_WAIT_FADE_BACK, $0, $1, $60
+	anim_wait 112
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_WHITE_WAIT_FADE_BACK
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
+	anim_ret
+
 BattleAnim_TailGlow:
 BattleAnim_LusterPurge:
 BattleAnim_MistBall:

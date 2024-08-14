@@ -1537,8 +1537,8 @@ ArmThrustDescription:
 	next "2-5 times.@"
 
 CamouflageDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Alters user's type"
+	next "depending on area.@"
 
 TailGlowDescription:
 	db   "Pounds with fore-"
