@@ -1533,8 +1533,8 @@ DiveDescription:
 	next "2nd turn: Attack@"
 
 ArmThrustDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Repeatedly punches"
+	next "2-5 times.@"
 
 CamouflageDescription:
 	db   "Pounds with fore-"

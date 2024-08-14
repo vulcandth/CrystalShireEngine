@@ -1028,6 +1028,21 @@ BattleAnim_Dive:
 	anim_ret
 	
 BattleAnim_ArmThrust:
+	anim_1gfx BATTLE_ANIM_GFX_HIT
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_if_param_equal $1, .flipped
+	anim_obj BATTLE_ANIM_OBJ_PALM, 144, 48, $0
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 144, 48, $0
+	anim_jump .done
+.flipped
+	anim_obj BATTLE_ANIM_OBJ_PALM_XFLIP, 120, 48, $0
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 120, 48, $0
+.done
+	anim_wait 8
+	anim_ret
+
 BattleAnim_Camouflage:
 BattleAnim_TailGlow:
 BattleAnim_LusterPurge:
