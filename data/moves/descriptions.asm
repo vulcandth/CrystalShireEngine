@@ -1529,8 +1529,8 @@ SecretPowerDescription:
 	next "ending on area.@"
 
 DiveDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "1st turn: Dive"
+	next "2nd turn: Attack@"
 
 ArmThrustDescription:
 	db   "Pounds with fore-"

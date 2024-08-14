@@ -976,8 +976,57 @@ BattleAnim_Snatch:
 
 BattleAnim_SecretPower:
 	anim_ret
-	
+
 BattleAnim_Dive:
+	anim_3gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_BUBBLE, BATTLE_ANIM_GFX_MISC_2
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_if_param_equal $0, .hit
+	anim_if_param_equal $2, .fail
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, $1, $0
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
+	anim_wait 8
+	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 92, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 40
+	anim_ret
+.hit
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_sound 0, 1, SFX_BUBBLEBEAM
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $50
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 32, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 24, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $d0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $50
+	anim_wait 8
+.fail
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, $1, $0
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 92, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_wait 16
+	anim_ret
+	
 BattleAnim_ArmThrust:
 BattleAnim_Camouflage:
 BattleAnim_TailGlow:
