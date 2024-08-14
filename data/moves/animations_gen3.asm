@@ -1192,6 +1192,45 @@ BattleAnim_BlazeKick:
 	anim_ret
 
 BattleAnim_MudSport:
+	anim_1gfx BATTLE_ANIM_GFX_POISON
+	anim_obp0 $fc
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, $1, $0
+	anim_wait 22
+.loop
+	anim_sound 0, 1, SFX_AEROBLAST
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_1, 48, 88, $32
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_1, 48, 88, $2e
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_1, 48, 88, $31
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_1, 48, 88, $2f
+	anim_wait 28
+	anim_loop 2, .loop
+	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
+	anim_call BattleAnim_ShowMon_0
+	anim_clearobjs
+.loop2
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 30, 20, $10
+	anim_call BattleAnimSub_MudSport1
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 80, 20, $10
+	anim_call BattleAnimSub_MudSport1
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 130, 20, $10
+	anim_call BattleAnimSub_MudSport1
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 55, 20, $10
+	anim_call BattleAnimSub_MudSport1
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 105, 20, $10
+	anim_call BattleAnimSub_MudSport1
+	anim_loop 2, .loop2
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_MudSport1:
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_ret
+
 BattleAnim_IceBall:
 BattleAnim_NeedleArm:
 BattleAnim_SlackOff:

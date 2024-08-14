@@ -1565,8 +1565,8 @@ BlazeKickDescription:
 	next "May cause burn.@"
 
 MudSportDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Weakens ELECTRIC-"
+	next "type attacks.@"
 
 IceBallDescription:
 	db   "Pounds with fore-"
