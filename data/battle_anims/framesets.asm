@@ -1125,7 +1125,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_B4,  8
 	battleoamend
 
-.Frameset_MegaphoneUnused:
+.Frameset_Feather:
 	battleoamframe BATTLE_ANIM_OAMSET_6B,  8
 	battleoamend
 
