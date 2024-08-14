@@ -962,6 +962,18 @@ BattleAnim_Grudge:
 	anim_ret
 
 BattleAnim_Snatch:
+	anim_1gfx BATTLE_ANIM_GFX_SHINE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_VITAL_THROW, $0, $1, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_FORESIGHT
+	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 48, 88, $0
+	anim_wait 32
+	anim_incbgeffect BATTLE_BG_EFFECT_VITAL_THROW
+	anim_wait 16
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_SecretPower:
 BattleAnim_Dive:
 BattleAnim_ArmThrust:

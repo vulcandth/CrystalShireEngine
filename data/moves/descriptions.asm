@@ -1521,8 +1521,8 @@ GrudgeDescription:
 	next "the user faints.@"
 
 SnatchDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Steals foe's next"
+	next "heal or stat move.@"
 
 SecretPowerDescription:
 	db   "Pounds with fore-"
