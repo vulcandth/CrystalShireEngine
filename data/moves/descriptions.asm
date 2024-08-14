@@ -1549,8 +1549,8 @@ LusterPurgeDescription:
 	next "lower SPCL.DEF.@"
 
 MistBallDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "lower SPCL.ATK.@"
 
 FeatherDanceDescription:
 	db   "Pounds with fore-"
