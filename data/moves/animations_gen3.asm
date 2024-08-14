@@ -975,6 +975,8 @@ BattleAnim_Snatch:
 	anim_ret
 
 BattleAnim_SecretPower:
+	anim_ret
+	
 BattleAnim_Dive:
 BattleAnim_ArmThrust:
 BattleAnim_Camouflage:

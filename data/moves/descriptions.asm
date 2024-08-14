@@ -1525,8 +1525,8 @@ SnatchDescription:
 	next "heal or stat move.@"
 
 SecretPowerDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Attack varies dep-"
+	next "ending on area.@"
 
 DiveDescription:
 	db   "Pounds with fore-"
