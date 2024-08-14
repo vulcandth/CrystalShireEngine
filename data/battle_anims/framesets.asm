@@ -218,6 +218,7 @@ BattleAnimFrameData:
 	dw .Frameset_BigRedXFlashing     ; BATTLE_ANIM_FRAMESET_BIG_RED_X_FLASHING
 	dw .Frameset_SparkleLong         ; BATTLE_ANIM_FRAMESET_SPARKLE_LONG
 	dw .Frameset_SeismicTossFlipped  ; BATTLE_ANIM_FRAMESET_SEISMIC_TOSS_FLIPPED
+	dw .Frameset_SmallGlow           ; BATTLE_ANIM_FRAMESET_SMALL_GLOW
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1448,4 +1449,9 @@ BattleAnimFrameData:
 
 .Frameset_SeismicTossFlipped:
 	battleoamframe BATTLE_ANIM_OAMSET_A3,  8, OAM_X_FLIP
+	battleoamrestart
+
+.Frameset_SmallGlow:
+	battleoamframe BATTLE_ANIM_OAMSET_54,  1
+	battleoamframe BATTLE_ANIM_OAMSET_53,  1
 	battleoamrestart

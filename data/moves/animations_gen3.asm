@@ -1053,6 +1053,16 @@ BattleAnim_Camouflage:
 	anim_ret
 
 BattleAnim_TailGlow:
+	anim_1gfx BATTLE_ANIM_GFX_GLOW
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_YELLOW
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_obj BATTLE_ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_wait 112
+	anim_ret
+
 BattleAnim_LusterPurge:
 BattleAnim_MistBall:
 BattleAnim_FeatherDance:

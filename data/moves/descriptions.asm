@@ -1541,8 +1541,8 @@ CamouflageDescription:
 	next "depending on area.@"
 
 TailGlowDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
 
 LusterPurgeDescription:
 	db   "Pounds with fore-"

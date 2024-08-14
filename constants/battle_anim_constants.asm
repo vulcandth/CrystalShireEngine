@@ -272,6 +272,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_GRUDGE                  ; ee
 	const BATTLE_ANIM_OBJ_SNATCH_1                ; ef
 	const BATTLE_ANIM_OBJ_SNATCH_2                ; f0
+	const BATTLE_ANIM_OBJ_SMALL_GLOW              ; f1
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -588,6 +589,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_BIG_RED_X_FLASHING    ; d5
 	const BATTLE_ANIM_FRAMESET_SPARKLE_LONG          ; d6
 	const BATTLE_ANIM_FRAMESET_SEISMIC_TOSS_FLIPPED  ; d7
+	const BATTLE_ANIM_FRAMESET_SMALL_GLOW            ; d8
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -943,6 +945,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_RECYCLE        ; 32
 	const BATTLE_ANIM_GFX_LAVA_ROCKS     ; 33
 	const BATTLE_ANIM_GFX_SNATCH         ; 34
+	const BATTLE_ANIM_GFX_GLOW           ; 35
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
@@ -1014,6 +1017,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_LAVA_ROCKS     ; 17
 	const PAL_BTLCUSTOM_SKILL_SWAP     ; 18
 	const PAL_BTLCUSTOM_REFRESH        ; 19
+	const PAL_BTLCUSTOM_GLOW_YELLOW    ; 1a
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
