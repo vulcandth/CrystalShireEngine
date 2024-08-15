@@ -1613,8 +1613,8 @@ WeatherBallDescription:
 	next "ending on weather.@"
 
 AromatherapyDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Eliminates all"
+	next "status problems.@"
 
 FakeTearsDescription:
 	db   "Pounds with fore-"

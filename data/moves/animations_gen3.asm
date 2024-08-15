@@ -1644,6 +1644,30 @@ BattleAnim_WeatherBall:
 	anim_jump BattleAnimSub_IceBall1
 
 BattleAnim_Aromatherapy:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_REFRESH
+	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GREEN
+	anim_3gfx BATTLE_ANIM_GFX_FLOWER, BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_SHINE
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+.loop
+	anim_obj BATTLE_ANIM_OBJ_AROMATHERAPY, 148, 88, $22
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 148, 88, $23
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_AROMATHERAPY, 148, 88, $1f
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 148, 88, $20
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 148, 88, $21
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 64
+	anim_call BattleAnimSub_Glimmer
+	anim_ret
+
 BattleAnim_FakeTears:
 BattleAnim_AirCutter:
 BattleAnim_Overheat:
