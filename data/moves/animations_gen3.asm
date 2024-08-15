@@ -1531,6 +1531,118 @@ BattleAnim_Astonish:
 	anim_ret
 
 BattleAnim_WeatherBall:
+	anim_2gfx BATTLE_ANIM_GFX_WEATHER_BALL, BATTLE_ANIM_GFX_HIT
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_RISE, 48, 88, $32
+	anim_wait 64
+	anim_clearobjs
+
+	; default to NORMAL
+	anim_if_param_equal $1, .water
+	anim_if_param_equal $2, .fire
+	anim_if_param_equal $3, .rock
+	anim_if_param_equal $4, .ice
+
+	; NORMAL
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_FALL, 112, 188, $0e
+	anim_wait 80
+	anim_sound 0, 1, SFX_HEADBUTT
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 16
+	anim_ret
+
+.water
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_3gfx BATTLE_ANIM_GFX_WEATHER_BALL, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_BUBBLE
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_FALL, 112, 188, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 64
+	anim_sound 0, 0, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $28
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $9c
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $d0
+	anim_wait 6
+	anim_sound 0, 0, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $1c
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $50
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $dc
+	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 136, 56, $90
+	anim_wait 16
+	anim_ret
+
+.fire
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_3gfx BATTLE_ANIM_GFX_WEATHER_BALL, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_FIRE
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_FALL, 112, 188, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 64
+	anim_sound 0, 0, SFX_BURN
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $6
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $16
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $26
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $36
+	anim_wait 6
+	anim_sound 0, 0, SFX_BURN
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $e
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $1e
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $2e
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 48, $3e
+	anim_wait 16
+	anim_ret
+
+.rock
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
+	anim_3gfx BATTLE_ANIM_GFX_WEATHER_BALL, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_ROCKS
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_FALL, 112, 188, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 64
+	anim_sound 6, 2, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $28
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $9c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $d0
+	anim_wait 6
+	anim_sound 6, 2, SFX_SPARK
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $1c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $50
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $dc
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 136, 56, $90
+	anim_wait 16
+	anim_ret
+
+.ice
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
+	anim_3gfx BATTLE_ANIM_GFX_WEATHER_BALL, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_ICE
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_WHITE, $0, $4, $2
+	anim_sound 0, 0, SFX_SWEET_KISS
+	anim_obj BATTLE_ANIM_OBJ_WEATHER_BALL_FALL, 112, 188, $0e
+	anim_wait 16
+	anim_sound 0, 0, SFX_METRONOME
+	anim_wait 64
+	anim_jump BattleAnimSub_IceBall1
+
 BattleAnim_Aromatherapy:
 BattleAnim_FakeTears:
 BattleAnim_AirCutter:

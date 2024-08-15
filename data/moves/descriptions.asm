@@ -1609,8 +1609,8 @@ AstonishDescription:
 	next "cause flinching.@"
 
 WeatherBallDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Attack varies dep-"
+	next "ending on weather.@"
 
 AromatherapyDescription:
 	db   "Pounds with fore-"
