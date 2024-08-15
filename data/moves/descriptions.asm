@@ -1060,7 +1060,7 @@ NightmareDescription:
 
 FlameWheelDescription:
 	db   "An attack that may"
-	next "cause a burn.@"
+	next "inflict a burn.@"
 
 SnoreDescription:
 	db   "An attack useable"
