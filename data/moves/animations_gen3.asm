@@ -1373,6 +1373,67 @@ BattleAnim_CrushClaw:
 	anim_ret
 
 BattleAnim_BlastBurn:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
+	anim_2gfx BATTLE_ANIM_GFX_BLAST_BURN, BATTLE_ANIM_GFX_FIRE
+	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 32, 104, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 64, 104, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 42, 98, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 54, 98, $0
+	anim_wait 20
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 12, 100, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 84, 100, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 34, 90, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 62, 90, $0
+	anim_wait 20
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 104, 96, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 26, 82, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 70, 82, $0
+	anim_wait 20
+	anim_sound 0, 1, SFX_EMBER
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $4, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $2, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 128, 62, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 152, 60, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 112, 60, $0
+	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 136, 58, $0
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $30
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $38
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $20
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $8
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $18
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $4
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2b
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $14
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $3b
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
+	anim_wait 32
+	anim_ret
+
 BattleAnim_HydroCannon:
 BattleAnim_MeteorMash:
 BattleAnim_Astonish:

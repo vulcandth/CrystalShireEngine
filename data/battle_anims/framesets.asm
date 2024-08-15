@@ -228,6 +228,7 @@ BattleAnimFrameData:
 	dw .Frameset_NeedleArmE          ; BATTLE_ANIM_FRAMESET_NEEDLE_ARM_E
 	dw .Frameset_NeedleArmSE         ; BATTLE_ANIM_FRAMESET_NEEDLE_ARM_SE
 	dw .Frameset_ClawTear            ; BATTLE_ANIM_FRAMESET_CLAW_TEAR
+	dw .Frameset_BlastBurn           ; BATTLE_ANIM_FRAMESET_BLAST_BURN
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1500,3 +1501,10 @@ BattleAnimFrameData:
 .Frameset_ClawTear:
 	battleoamframe BATTLE_ANIM_OAMSET_EA, 16
 	battleoamend
+
+.Frameset_BlastBurn:
+	battleoamframe BATTLE_ANIM_OAMSET_0A,  4
+	battleoamframe BATTLE_ANIM_OAMSET_EB,  4
+	battleoamframe BATTLE_ANIM_OAMSET_EC,  4
+	battleoamframe BATTLE_ANIM_OAMSET_ED,  4
+	battleoamdelete
