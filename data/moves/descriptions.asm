@@ -1601,8 +1601,8 @@ HydroCannonDescription:
 	next "2nd turn: Rest@"
 
 MeteorMashDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "up user's ATTACK.@"
 
 AstonishDescription:
 	db   "Pounds with fore-"

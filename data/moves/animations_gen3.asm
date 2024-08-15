@@ -1464,6 +1464,46 @@ BattleAnim_HydroCannon:
 	anim_ret
 
 BattleAnim_MeteorMash:
+	anim_3gfx BATTLE_ANIM_GFX_STARS, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_WATER
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_MORNING_SUN
+	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
+	anim_wait 64
+	anim_clearobjs
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $28, $2, $0
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj BATTLE_ANIM_OBJ_LONG_PUNCH, 136, 56, $0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $28
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $5c
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $10
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $e8
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $9c
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $d0
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $1c
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $50
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $dc
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $90
+	anim_wait 32
+	anim_ret
+
 BattleAnim_Astonish:
 BattleAnim_WeatherBall:
 BattleAnim_Aromatherapy:
