@@ -1577,8 +1577,8 @@ NeedleArmDescription:
 	next "cause flinching.@"
 
 SlackOffDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Restores HP by 1/2"
+	next "the max HP.@"
 
 HyperVoiceDescription:
 	db   "Pounds with fore-"
