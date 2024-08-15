@@ -1581,8 +1581,8 @@ SlackOffDescription:
 	next "the max HP.@"
 
 HyperVoiceDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sound waves that"
+	next "deal damage.@"
 
 PoisonFangDescription:
 	db   "Pounds with fore-"
