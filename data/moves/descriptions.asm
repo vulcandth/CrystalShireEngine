@@ -1585,8 +1585,8 @@ HyperVoiceDescription:
 	next "deal damage.@"
 
 PoisonFangDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "badly poison foe.@"
 
 CrushClawDescription:
 	db   "Pounds with fore-"
