@@ -1435,6 +1435,34 @@ BattleAnim_BlastBurn:
 	anim_ret
 
 BattleAnim_HydroCannon:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BUBBLE
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_BUBBLE
+	anim_2gfx BATTLE_ANIM_GFX_VORTEX, BATTLE_ANIM_GFX_GLOW
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING, $0, $1, $20
+	anim_sound 0, 1, SFX_OUTRAGE
+	anim_obj BATTLE_ANIM_OBJ_VORTEX, 44, 96, $0
+	anim_wait 56
+	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_clearobjs
+	anim_sound 0, 1, SFX_SLUDGE_BOMB
+	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 44, 96, $0
+	anim_wait 10
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_HYDRO_CANNON
+	anim_bgp $1b
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_WATER
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $70, $3, $0
+.loop
+	anim_sound 0, 1, SFX_AEROBLAST
+	anim_obj BATTLE_ANIM_OBJ_HYDRO_CANNON, 64, 88, $A
+	anim_wait 3
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 52, $0
+	anim_loop 22, .loop
+	anim_wait 32
+	anim_ret
+
 BattleAnim_MeteorMash:
 BattleAnim_Astonish:
 BattleAnim_WeatherBall:

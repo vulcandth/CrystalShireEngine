@@ -229,6 +229,8 @@ BattleAnimFrameData:
 	dw .Frameset_NeedleArmSE         ; BATTLE_ANIM_FRAMESET_NEEDLE_ARM_SE
 	dw .Frameset_ClawTear            ; BATTLE_ANIM_FRAMESET_CLAW_TEAR
 	dw .Frameset_BlastBurn           ; BATTLE_ANIM_FRAMESET_BLAST_BURN
+	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
+	dw .Frameset_ShrinkingGlow       ; BATTLE_ANIM_FRAMESET_SHRINKING_GLOW
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1507,4 +1509,17 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_EB,  4
 	battleoamframe BATTLE_ANIM_OAMSET_EC,  4
 	battleoamframe BATTLE_ANIM_OAMSET_ED,  4
+	battleoamdelete
+
+.Frameset_Vortex:
+	battleoamframe BATTLE_ANIM_OAMSET_EE,  1
+	battleoamframe BATTLE_ANIM_OAMSET_EF,  1
+	battleoamframe BATTLE_ANIM_OAMSET_F0,  1
+	battleoamframe BATTLE_ANIM_OAMSET_F1,  1
+	battleoamrestart
+
+.Frameset_ShrinkingGlow:
+	battleoamframe BATTLE_ANIM_OAMSET_54,  2
+	battleoamframe BATTLE_ANIM_OAMSET_53,  2
+	battleoamframe BATTLE_ANIM_OAMSET_55,  2
 	battleoamdelete

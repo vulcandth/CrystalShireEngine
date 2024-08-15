@@ -1597,8 +1597,8 @@ BlastBurnDescription:
 	next "2nd turn: Rest@"
 
 HydroCannonDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "1st turn: Attack"
+	next "2nd turn: Rest@"
 
 MeteorMashDescription:
 	db   "Pounds with fore-"

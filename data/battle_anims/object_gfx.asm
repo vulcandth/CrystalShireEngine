@@ -66,4 +66,6 @@ AnimObjGFX:
 	anim_obj_gfx 13, AnimObjBigGlowGFX
 	anim_obj_gfx  9, AnimObjTearGFX
 	anim_obj_gfx 16, AnimObjBlastBurnGFX
+	anim_obj_gfx 32, AnimObjVortexGFX
+	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
