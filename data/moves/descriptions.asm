@@ -1605,8 +1605,8 @@ MeteorMashDescription:
 	next "up user's ATTACK.@"
 
 AstonishDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 WeatherBallDescription:
 	db   "Pounds with fore-"

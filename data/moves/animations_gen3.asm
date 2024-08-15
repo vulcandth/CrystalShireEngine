@@ -1505,6 +1505,31 @@ BattleAnim_MeteorMash:
 	anim_ret
 
 BattleAnim_Astonish:
+	anim_2gfx BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_MISC_2
+	anim_battlergfx_2row
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, $0, $0
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, $1, $0
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 12
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $0, $0
+	anim_wait 1
+	anim_incobj 1
+	anim_battlergfx_2row
+	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 1
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 0, SFX_RAGE
+	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 136, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 126, 52, $28
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 146, 52, $38
+	anim_wait 32
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_wait 4
+	anim_ret
+
 BattleAnim_WeatherBall:
 BattleAnim_Aromatherapy:
 BattleAnim_FakeTears:
