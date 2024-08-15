@@ -1669,6 +1669,23 @@ BattleAnim_Aromatherapy:
 	anim_ret
 
 BattleAnim_FakeTears:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_1gfx BATTLE_ANIM_GFX_MISC_2
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
+.loop
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_TEARS_1, 44, 82, $24
+	anim_wait 8
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_TEARS_2, 64, 82, $3b
+	anim_wait 8
+	anim_loop 6, .loop
+	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 12
+	anim_ret
+
 BattleAnim_AirCutter:
 BattleAnim_Overheat:
 BattleAnim_OdorSleuth:
