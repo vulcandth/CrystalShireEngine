@@ -1573,8 +1573,8 @@ IceBallDescription:
 	next "with rising power.@"
 
 NeedleArmDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 SlackOffDescription:
 	db   "Pounds with fore-"

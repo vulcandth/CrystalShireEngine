@@ -276,6 +276,14 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_MUD_SPORT_2             ; f3
 	const BATTLE_ANIM_OBJ_ICE_BALL                ; f4
 	const BATTLE_ANIM_OBJ_ICE_SPLASH              ; f5
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_N            ; f6
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_NE           ; f7
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_E            ; f8
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_SE           ; f9
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_S            ; fa
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_SW           ; fb
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_W            ; fc
+	const BATTLE_ANIM_OBJ_NEEDLE_ARM_NW           ; fd
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -592,6 +600,14 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_TEETER_DANCE          ; d6
 	const BATTLE_ANIM_FRAMESET_BURNED_SHORT          ; d7
 	const BATTLE_ANIM_FRAMESET_ICE_BALL              ; d8
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_S          ; d9
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_SW         ; da
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_W          ; db
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_NW         ; dc
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_N          ; dd
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_NE         ; de
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_E          ; df
+	const BATTLE_ANIM_FRAMESET_NEEDLE_ARM_SE         ; e0
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
