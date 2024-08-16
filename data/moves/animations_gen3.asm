@@ -1778,6 +1778,30 @@ BattleAnim_OdorSleuth:
 	anim_ret
 
 BattleAnim_RockTomb:
+	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_OBJECTS
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 128, 70, $30
+	anim_call BattleAnimSub_RockTomb1
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 152, 68, $30
+	anim_call BattleAnimSub_RockTomb1
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 112, 68, $30
+	anim_call BattleAnimSub_RockTomb1
+	anim_obj BATTLE_ANIM_OBJ_ROCK_TOMB, 136, 66, $30
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
+	anim_wait 40
+	anim_clearobjs
+	anim_sound 6, 3, SFX_PLACE_PUZZLE_PIECE_DOWN
+	anim_obj BATTLE_ANIM_OBJ_RED_X, 132, 44, $2e
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_RockTomb1:
+	anim_wait 18
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_ret
+
 BattleAnim_SilverWind:
 BattleAnim_MetalSound:
 BattleAnim_GrassWhistle:
