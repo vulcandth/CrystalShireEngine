@@ -122,6 +122,7 @@ BattleAnim_FakeOut1:
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_R, 158, 48, $0
 	anim_wait 32
+	anim_ret
 
 BattleAnim_Uproar:
 	anim_2gfx BATTLE_ANIM_GFX_PSYCHIC, BATTLE_ANIM_GFX_NOISE
