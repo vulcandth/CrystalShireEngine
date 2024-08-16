@@ -1653,8 +1653,8 @@ TickleDescription:
 	next "physical stats.@"
 
 CosmicPowerDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Raises the user's"
+	next "special stats.@"
 
 WaterSpoutDescription:
 	db   "Pounds with fore-"

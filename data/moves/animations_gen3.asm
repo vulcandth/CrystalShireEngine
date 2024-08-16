@@ -1881,6 +1881,33 @@ BattleAnim_Tickle:
 	anim_ret
 
 BattleAnim_CosmicPower:
+	anim_setobjpal PAL_BATTLE_OB_GREEN, PAL_BTLCUSTOM_COSMIC
+	anim_2gfx BATTLE_ANIM_GFX_STARS, BATTLE_ANIM_GFX_COSMIC_POWER
+	anim_clearenemyhud
+	anim_bgp $1b
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $0, $0
+	anim_sound 0, 0, SFX_GAME_FREAK_LOGO_GS
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER_BG, 61, 75, $30
+	anim_wait 64
+	anim_sound 0, 0, SFX_METRONOME
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $4, $0
+.loop
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER, 56, 88, $32
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER, 40, 88, $2c
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER, 60, 104, $34
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_COSMIC_POWER, 36, 104, $2e
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_wait 32
+	anim_clearobjs
+	anim_wait 1
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $0, $0
+	anim_ret
+
 BattleAnim_WaterSpout:
 BattleAnim_SignalBeam:
 BattleAnim_ShadowPunch:
