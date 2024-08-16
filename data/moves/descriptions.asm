@@ -1649,8 +1649,8 @@ GrassWhistleDescription:
 	next "to fall asleep.@"
 
 TickleDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Lowers the foe's"
+	next "physical stats.@"
 
 CosmicPowerDescription:
 	db   "Pounds with fore-"
