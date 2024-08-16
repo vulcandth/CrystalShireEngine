@@ -237,6 +237,8 @@ BattleAnimFrameData:
 	dw .Frameset_WaterSpoutRising    ; BATTLE_ANIM_FRAMESET_WATER_SPOUT_RISING
 	dw .Frameset_WaterSpoutFalling   ; BATTLE_ANIM_FRAMESET_WATER_SPOUT_FALLING
 	dw .Frameset_TinyGlow            ; BATTLE_ANIM_FRAMESET_TINY_GLOW
+	dw .Frameset_VerticalAgility     ; BATTLE_ANIM_FRAMESET_VERTICAL_AGILITY
+	dw .Frameset_LongHit             ; BATTLE_ANIM_FRAMESET_LONG_HIT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1557,3 +1559,15 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_54,  1
 	battleoamframe BATTLE_ANIM_OAMSET_55,  1
 	battleoamrestart
+
+.Frameset_VerticalAgility:
+	battleoamframe BATTLE_ANIM_OAMSET_F5,  8
+	battleoamend
+
+.Frameset_LongHit:
+	battleoamframe BATTLE_ANIM_OAMSET_01,  6
+	battleoamwait 4
+	battleoamframe BATTLE_ANIM_OAMSET_01,  6
+	battleoamwait 4
+	battleoamframe BATTLE_ANIM_OAMSET_01,  6
+	battleoamdelete

@@ -1673,8 +1673,8 @@ ExtrasensoryDescription:
 	next "cause flinching.@"
 
 SkyUppercutDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An uppercut thrown"
+	next "towards the skies.@"
 
 SandTombDescription:
 	db   "Pounds with fore-"

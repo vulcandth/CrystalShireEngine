@@ -2034,6 +2034,25 @@ BattleAnimSub_Extrasensory1:
 	anim_ret
 
 BattleAnim_SkyUppercut:
+	anim_2gfx BATTLE_ANIM_GFX_WIND_BG, BATTLE_ANIM_GFX_HIT
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT,  12, 36, $30
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT,  40, 133, $30
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT,  68, 67, $30
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT,  96, 11, $30
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT, 122, 109, $30
+	anim_obj BATTLE_ANIM_OBJ_SKY_UPPERCUT, 140, 162, $30
+	anim_wait 40
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $28, $2, $0
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj BATTLE_ANIM_OBJ_UPPERCUT_PUNCH, 136, 86, $30
+	anim_wait 6
+	anim_obj BATTLE_ANIM_OBJ_RISING_HIT, 136, 56, $30
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 14
+	anim_ret
+
 BattleAnim_SandTomb:
 BattleAnim_SheerCold:
 BattleAnim_MuddyWater:
