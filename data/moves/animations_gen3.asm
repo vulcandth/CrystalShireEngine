@@ -104,9 +104,7 @@ BattleAnimationsGen3::
 
 BattleAnim_FakeOut:
 	anim_1gfx BATTLE_ANIM_GFX_OBJECTS
-	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_R, 158, 48, $0
-	anim_wait 32
+	anim_call BattleAnim_FakeOut1
 	anim_clearobjs
 	anim_sound 0, 0, SFX_DOUBLESLAP
 	anim_obj BATTLE_ANIM_OBJ_SMELLINGSALT_L, 112, 48, $0
@@ -116,11 +114,14 @@ BattleAnim_FakeOut:
 	anim_clearobjs
 	anim_wait 1
 	anim_sound 0, 0, SFX_RAGE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
+	anim_call BattleAnim_FakeOut1
+	anim_ret
+
+BattleAnim_FakeOut1:
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_R, 158, 48, $0
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 32
-	anim_ret
 
 BattleAnim_Uproar:
 	anim_2gfx BATTLE_ANIM_GFX_PSYCHIC, BATTLE_ANIM_GFX_NOISE
