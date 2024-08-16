@@ -1625,8 +1625,8 @@ AirCutterDescription:
 	next "cal hit ratio.@"
 
 OverheatDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Full-power. Lowers"
+	next "SPCL.ATK sharply.@"
 
 OdorSleuthDescription:
 	db   "Pounds with fore-"

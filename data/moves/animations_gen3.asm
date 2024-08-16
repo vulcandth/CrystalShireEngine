@@ -1710,6 +1710,54 @@ BattleAnim_AirCutter:
 	anim_ret
 
 BattleAnim_Overheat:
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_FIRE
+	anim_2gfx BATTLE_ANIM_GFX_FIRE, BATTLE_ANIM_GFX_SMOKE_PUFF
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_FIRE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $44, $2, $0
+	anim_sound 0, 0, SFX_EMBER
+.loop
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $0
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $28
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $30
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $38
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $20
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $8
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $18
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $4
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $2b
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $14
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $3b
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $24
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME, 44, 88, $b
+	anim_wait 12
+	anim_clearobjs
+	anim_loop 5, .loop
+	anim_sound 0, 0, SFX_BURN
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $6
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2c
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $1d
+	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $39
+	anim_wait 16
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+	anim_obp0 $fc
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_CHARRED
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_CHARRED
+	anim_sound 0, 0, SFX_BALL_POOF
+.loop2
+	anim_obj BATTLE_ANIM_OBJ_OVERHEAT_SMOKE, 36, 84, $30
+	anim_obj BATTLE_ANIM_OBJ_OVERHEAT_SMOKE, 120, 46, $30
+	anim_wait 1
+	anim_obj BATTLE_ANIM_OBJ_OVERHEAT_SMOKE, 60, 96, $30
+	anim_obj BATTLE_ANIM_OBJ_OVERHEAT_SMOKE, 144, 34, $30
+	anim_wait 8
+	anim_loop 6, .loop2
+	anim_wait 32
+	anim_ret
+
 BattleAnim_OdorSleuth:
 BattleAnim_RockTomb:
 BattleAnim_SilverWind:
