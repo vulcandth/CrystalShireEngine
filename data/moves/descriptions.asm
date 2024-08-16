@@ -1661,8 +1661,8 @@ WaterSpoutDescription:
 	next "user's HP is high.@"
 
 SignalBeamDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "cause confusion.@"
 
 ShadowPunchDescription:
 	db   "Pounds with fore-"
