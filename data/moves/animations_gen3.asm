@@ -2118,6 +2118,12 @@ BattleAnimSub_SheerCold1:
 	anim_ret
 
 BattleAnim_MuddyWater:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BROWN
+	anim_1gfx BATTLE_ANIM_GFX_BUBBLE
+	anim_bgp $f8
+	anim_call BattleAnimSub_Surf1
+	anim_ret
+
 BattleAnim_BulletSeed:
 BattleAnim_AerialAce:
 BattleAnim_IcicleSpear:

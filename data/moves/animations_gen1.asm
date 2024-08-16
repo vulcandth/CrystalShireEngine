@@ -989,6 +989,8 @@ BattleAnim_HydroPump:
 BattleAnim_Surf:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_1gfx BATTLE_ANIM_GFX_BUBBLE
+	;fallthrough
+BattleAnimSub_Surf1:
 	anim_bgeffect BATTLE_BG_EFFECT_SURF, $0, $0, $0
 	anim_obj BATTLE_ANIM_OBJ_SURF, 88, 104, $8
 .loop
