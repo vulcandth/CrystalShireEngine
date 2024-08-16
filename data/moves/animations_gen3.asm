@@ -1163,7 +1163,7 @@ BattleAnim_BlazeKick:
 	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 6
-
+;fallthrough
 BattleAnimSub_RadialFlame:
 	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
 	anim_wait 1
