@@ -1641,8 +1641,8 @@ SilverWindDescription:
 	next "raise all stats.@"
 
 MetalSoundDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply lowers the"
+	next "foe's SPCL.DEF.@"
 
 GrassWhistleDescription:
 	db   "Pounds with fore-"

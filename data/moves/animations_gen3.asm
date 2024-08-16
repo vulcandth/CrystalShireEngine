@@ -1835,6 +1835,17 @@ BattleAnimSub_SilverWind4:
 	anim_ret
 
 BattleAnim_MetalSound:
+	anim_1gfx BATTLE_ANIM_GFX_PSYCHIC
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $16, $1, $20
+	anim_sound 6, 2, SFX_METAL_SOUND
+.loop
+	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 2
+	anim_loop 3, .loop
+	anim_wait 62
+	anim_ret
+
 BattleAnim_GrassWhistle:
 BattleAnim_Tickle:
 BattleAnim_CosmicPower:

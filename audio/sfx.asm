@@ -462,13 +462,13 @@ Sfx_Shine:
 	channel_count 1
 	channel 5, Sfx_Shine_Ch5
 
-Sfx_Unknown5F:
+Sfx_MetalSound:
 	channel_count 3
-	channel 5, Sfx_Unknown5F_Ch5
-	channel 6, Sfx_Unknown5F_Ch6
+	channel 5, Sfx_MetalSound_Ch5
+	channel 6, Sfx_MetalSound_Ch6
 Sfx_Sandstorm:
 	channel 8, Sfx_Sandstorm_Ch8
-	assert Sfx_Sandstorm_Ch8 == Sfx_Unknown5F_Ch8
+	assert Sfx_Sandstorm_Ch8 == Sfx_MetalSound_Ch8
 
 Sfx_HangUp:
 	channel_count 1
@@ -4915,18 +4915,18 @@ Sfx_Metronome_Ch5:
 	pitch_sweep 0, 8
 	sound_ret
 
-Sfx_Unknown5F_Ch5:
+Sfx_MetalSound_Ch5:
 .loop:
 	square_note 2, 15, 7, 1537
 	square_note 2, 15, 7, 1793
 	sound_loop 8, .loop
 	sound_ret
 
-Sfx_Unknown5F_Ch6:
+Sfx_MetalSound_Ch6:
 	square_note 1, 15, 7, 65535
 	square_note 2, 15, 7, 1538
 	square_note 2, 15, 7, 1794
-	sound_loop 8, Sfx_Unknown5F_Ch5.loop
+	sound_loop 8, Sfx_MetalSound_Ch5.loop
 	sound_ret
 
 Sfx_Fanfare2_Ch5:
@@ -5097,7 +5097,7 @@ Sfx_NoSignal_Ch5:
 	sound_loop 3, Sfx_NoSignal_Ch5
 	sound_ret
 
-Sfx_Unknown5F_Ch8:
+Sfx_MetalSound_Ch8:
 Sfx_Sandstorm_Ch8:
 	noise_note 1, 15, 8, 65
 	noise_note 2, 9, -4, 36

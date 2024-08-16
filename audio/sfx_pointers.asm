@@ -96,7 +96,7 @@ SFX:
 	dba Sfx_Sing
 	dba Sfx_HyperBeam
 	dba Sfx_Shine
-	dba Sfx_Unknown5F
+	dba Sfx_MetalSound
 	dba Sfx_Unknown60
 	dba Sfx_Unknown61
 	dba Sfx_SwitchPockets
