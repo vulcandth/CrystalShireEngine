@@ -233,6 +233,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShrinkingGlow       ; BATTLE_ANIM_FRAMESET_SHRINKING_GLOW
 	dw .Frameset_WeatherBall         ; BATTLE_ANIM_FRAMESET_WEATHER_BALL
 	dw .Frameset_AirCutter           ; BATTLE_ANIM_FRAMESET_AIR_CUTTER
+	dw .Frameset_GrassWhistleLeaf    ; BATTLE_ANIM_FRAMESET_GRASS_WHISTLE_LEAF
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1536,3 +1537,7 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_57,  1
 	battleoamframe BATTLE_ANIM_OAMSET_58,  1
 	battleoamrestart
+
+.Frameset_GrassWhistleLeaf:
+	battleoamframe BATTLE_ANIM_OAMSET_14, 32
+	battleoamdelete

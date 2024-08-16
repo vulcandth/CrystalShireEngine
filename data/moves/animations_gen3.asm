@@ -1847,6 +1847,25 @@ BattleAnim_MetalSound:
 	anim_ret
 
 BattleAnim_GrassWhistle:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_GRASSWHISTLE
+	anim_2gfx BATTLE_ANIM_GFX_NOISE, BATTLE_ANIM_GFX_PLANT
+	anim_sound 16, 2, SFX_GRASS_WHISTLE
+.loop
+	anim_obj BATTLE_ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $3e
+	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $0
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $1
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $1
+	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $2
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $1
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Tickle:
 BattleAnim_CosmicPower:
 BattleAnim_WaterSpout:

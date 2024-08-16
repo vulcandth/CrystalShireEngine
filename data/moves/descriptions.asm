@@ -1645,8 +1645,8 @@ MetalSoundDescription:
 	next "foe's SPCL.DEF.@"
 
 GrassWhistleDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "May cause the foe"
+	next "to fall asleep.@"
 
 TickleDescription:
 	db   "Pounds with fore-"

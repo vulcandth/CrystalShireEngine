@@ -300,6 +300,7 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_AIR_CUTTER              ; 10b
 	const BATTLE_ANIM_OBJ_OVERHEAT_SMOKE          ; 10c
 	const BATTLE_ANIM_OBJ_WIND                    ; 10d
+	const BATTLE_ANIM_OBJ_GRASS_WHISTLE_LEAF      ; 10e
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -631,6 +632,7 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_SHRINKING_GLOW        ; e4
 	const BATTLE_ANIM_FRAMESET_WEATHER_BALL          ; e5
 	const BATTLE_ANIM_FRAMESET_AIR_CUTTER            ; e6
+	const BATTLE_ANIM_FRAMESET_GRASS_WHISTLE_LEAF    ; e7
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -1080,6 +1082,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_VERY_BRIGHT    ; 1c
 	const PAL_BTLCUSTOM_BRIGHT         ; 1d
 	const PAL_BTLCUSTOM_CHARRED        ; 1e
+	const PAL_BTLCUSTOM_GRASSWHISTLE   ; 1f
 DEF NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 DEF PAL_BTLCUSTOM_DEFAULT EQU -1
