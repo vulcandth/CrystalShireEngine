@@ -1909,6 +1909,68 @@ BattleAnim_CosmicPower:
 	anim_ret
 
 BattleAnim_WaterSpout:
+	anim_2gfx BATTLE_ANIM_GFX_WATER, BATTLE_ANIM_GFX_HIT
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+.loop
+	anim_call BattleAnimSub_WaterSpout1
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_RISING, 52, 80, $30
+	anim_call BattleAnimSub_WaterSpout1
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_RISING, 46, 80, $30
+	anim_call BattleAnimSub_WaterSpout1
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_RISING, 54, 80, $30
+	anim_call BattleAnimSub_WaterSpout1
+	anim_loop 3, .loop
+	anim_wait 32
+	anim_sound 0, 0, SFX_BUBBLEBEAM
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 108, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 156, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 116, 1, $10
+	anim_wait 2
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $55, $1, $0
+.loop2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 108, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 150, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 156, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 124, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 116, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 140, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 150, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 132, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 124, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 108, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 140, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 156, 1, $10
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 132, 68, $0
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING, 116, 1, $10
+	anim_wait 2
+	anim_loop 2, .loop2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 108, 68, $0
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 156, 68, $0
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 116, 68, $0
+	anim_wait 2
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_WaterSpout1:
+	anim_wait 2
+	anim_sound 0, 0, SFX_WATER_GUN
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
+	anim_ret
+	
 BattleAnim_SignalBeam:
 BattleAnim_ShadowPunch:
 BattleAnim_Extrasensory:

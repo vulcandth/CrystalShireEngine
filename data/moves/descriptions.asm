@@ -1657,8 +1657,8 @@ CosmicPowerDescription:
 	next "special stats.@"
 
 WaterSpoutDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Stronger if the"
+	next "user's HP is high.@"
 
 SignalBeamDescription:
 	db   "Pounds with fore-"
