@@ -1356,19 +1356,21 @@ BattleAnim_PoisonFang:
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 ;fallthrough
-BattleAnimSub_PoisonBubble:
+BattleAnimSub_PoisonBubble1:
 .loop
-	anim_sound 0, 1, SFX_TOXIC
+	anim_call BattleAnimSub_PoisonBubble2
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 132, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
+	anim_call BattleAnimSub_PoisonBubble2
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 116, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
+	anim_call BattleAnimSub_PoisonBubble2
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 48
+	anim_ret
+
+BattleAnimSub_PoisonBubble2:
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
 	anim_ret
 	
 BattleAnim_CrushClaw:
