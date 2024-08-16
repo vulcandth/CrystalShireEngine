@@ -1260,7 +1260,7 @@ BattleAnim_IceBall:
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	
+;fallthrough
 BattleAnimSub_IceBall1:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE_SPLASH, 136, 56, $28
