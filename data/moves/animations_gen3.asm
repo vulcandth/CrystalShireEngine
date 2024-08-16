@@ -1803,6 +1803,54 @@ BattleAnimSub_RockTomb1:
 	anim_ret
 
 BattleAnim_SilverWind:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_2gfx BATTLE_ANIM_GFX_HAZE, BATTLE_ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgp $90
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_call BattleAnimSub_SilverWind1 
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
+	anim_call BattleAnimSub_SilverWind2
+	anim_call BattleAnimSub_SilverWind3
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 80, 56, $1
+	anim_call BattleAnimSub_SilverWind4
+	anim_obj BATTLE_ANIM_OBJ_WIND, 88, 64, $1
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 64, $1
+	anim_obj BATTLE_ANIM_OBJ_WIND, 56, 48, $1
+	anim_wait 8
+	anim_call BattleAnimSub_SilverWind2
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 64, 32, $1
+	anim_call BattleAnimSub_SilverWind3
+	anim_call BattleAnimSub_SilverWind4
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 32, 96, $1
+	anim_call BattleAnimSub_SilverWind1 
+	anim_call BattleAnimSub_SilverWind2
+	anim_call BattleAnimSub_SilverWind3
+	anim_ret
+
+BattleAnimSub_SilverWind1:
+	anim_obj BATTLE_ANIM_OBJ_WIND, 88, 32, $1
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_WIND, 56, 48, $1
+	anim_wait 8
+	anim_ret
+
+BattleAnimSub_SilverWind2:
+	anim_obj BATTLE_ANIM_OBJ_WIND, 72, 64, $1
+	anim_wait 8
+	anim_ret
+
+BattleAnimSub_SilverWind3:
+	anim_obj BATTLE_ANIM_OBJ_WIND, 24, 80, $1
+	anim_wait 8
+	anim_ret
+
+BattleAnimSub_SilverWind4:
+	anim_obj BATTLE_ANIM_OBJ_WIND, 40, 96, $1
+	anim_wait 8
+	anim_ret
+
 BattleAnim_MetalSound:
 BattleAnim_GrassWhistle:
 BattleAnim_Tickle:

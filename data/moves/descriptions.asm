@@ -1637,8 +1637,8 @@ RockTombDescription:
 	next "lower DEFENSE.@"
 
 SilverWindDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "raise all stats.@"
 
 MetalSoundDescription:
 	db   "Pounds with fore-"
