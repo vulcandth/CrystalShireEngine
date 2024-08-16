@@ -104,7 +104,7 @@ BattleAnimationsGen3::
 
 BattleAnim_FakeOut:
 	anim_1gfx BATTLE_ANIM_GFX_OBJECTS
-	anim_call BattleAnim_FakeOut1
+	anim_call BattleAnimSub_FakeOut1
 	anim_clearobjs
 	anim_sound 0, 0, SFX_DOUBLESLAP
 	anim_obj BATTLE_ANIM_OBJ_SMELLINGSALT_L, 112, 48, $0
@@ -115,7 +115,7 @@ BattleAnim_FakeOut:
 	anim_wait 1
 	anim_sound 0, 0, SFX_RAGE
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
-	anim_call BattleAnim_FakeOut1
+	anim_call BattleAnimSub_FakeOut1
 	anim_ret
 
 BattleAnimSub_FakeOut1:
@@ -1399,19 +1399,19 @@ BattleAnim_BlastBurn:
 	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
 	anim_2gfx BATTLE_ANIM_GFX_BLAST_BURN, BATTLE_ANIM_GFX_FIRE
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
-	anim_call BattleAnim_BlastBurn1
+	anim_call BattleAnimSub_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 32, 104, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 64, 104, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 42, 98, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 54, 98, $0
 	anim_wait 20
-	anim_call BattleAnim_BlastBurn1
+	anim_call BattleAnimSub_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 12, 100, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 84, 100, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 34, 90, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 62, 90, $0
 	anim_wait 20
-	anim_call BattleAnim_BlastBurn1
+	anim_call BattleAnimSub_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 104, 96, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 26, 82, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 70, 82, $0
@@ -1673,13 +1673,13 @@ BattleAnim_AirCutter:
 	anim_call BattleAnim_UserObj_2Row
 	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $0, $0
 .loop
-	anim_call BattleAnimSub_RazorWind1
+	anim_call BattleAnimSub_AirCutter1
 	anim_obj BATTLE_ANIM_OBJ_AIR_CUTTER, 64, 80, $18
-	anim_call BattleAnimSub_RazorWind1
+	anim_call BattleAnimSub_AirCutter1
 	anim_obj BATTLE_ANIM_OBJ_AIR_CUTTER, 64, 96, $18
-	anim_call BattleAnimSub_RazorWind1
+	anim_call BattleAnimSub_AirCutter1
 	anim_obj BATTLE_ANIM_OBJ_AIR_CUTTER, 64, 88, $18
-	anim_call BattleAnimSub_RazorWind1
+	anim_call BattleAnimSub_AirCutter1
 	anim_obj BATTLE_ANIM_OBJ_AIR_CUTTER, 64, 104, $18
 	anim_loop 3, .loop
 	anim_wait 36
