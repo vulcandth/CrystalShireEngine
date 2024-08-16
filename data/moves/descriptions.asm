@@ -1621,8 +1621,8 @@ FakeTearsDescription:
 	next "foe's SPCL.ATK.@"
 
 AirCutterDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 OverheatDescription:
 	db   "Pounds with fore-"

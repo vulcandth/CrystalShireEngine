@@ -232,6 +232,7 @@ BattleAnimFrameData:
 	dw .Frameset_Vortex              ; BATTLE_ANIM_FRAMESET_VORTEX
 	dw .Frameset_ShrinkingGlow       ; BATTLE_ANIM_FRAMESET_SHRINKING_GLOW
 	dw .Frameset_WeatherBall         ; BATTLE_ANIM_FRAMESET_WEATHER_BALL
+	dw .Frameset_AirCutter           ; BATTLE_ANIM_FRAMESET_AIR_CUTTER
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1528,3 +1529,10 @@ BattleAnimFrameData:
 .Frameset_WeatherBall:
 	battleoamframe BATTLE_ANIM_OAMSET_F2,  8
 	battleoamend
+
+.Frameset_AirCutter:
+	battleoamframe BATTLE_ANIM_OAMSET_57,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_58,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_57,  1
+	battleoamframe BATTLE_ANIM_OAMSET_58,  1
+	battleoamrestart
