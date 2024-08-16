@@ -1677,8 +1677,8 @@ SkyUppercutDescription:
 	next "towards the skies.@"
 
 SandTombDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Traps the foe for"
+	next "2-5 turns.@"
 
 SheerColdDescription:
 	db   "Pounds with fore-"

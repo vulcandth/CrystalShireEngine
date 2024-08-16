@@ -361,7 +361,7 @@ MovesGen3:
 	move EFFECT_ALWAYS_HIT,         60, GHOST,         100, 20,   0      ;SHADOW_PUNCH
 	move EFFECT_FLINCH_HIT,         80, PSYCHIC_TYPE,  100, 30,  10      ;EXTRASENSORY
 	move EFFECT_NORMAL_HIT,         85, FIGHTING,       90, 15,   0      ;SKY_UPPERCUT
-	move EFFECT_TRAP_TARGET,        15, GROUND,         70, 15,   0      ;SAND_TOMB
+	move EFFECT_NORMAL_HIT ,        15, GROUND,         70, 15,   0      ;SAND_TOMB - Needs text
 	move EFFECT_OHKO,                1, ICE,            30,  5,   0      ;SHEER_COLD
 	move EFFECT_ACCURACY_DOWN_HIT,  95, WATER,          85, 10,  30      ;MUDDY_WATER
 	move EFFECT_MULTI_HIT,          10, GRASS,         100, 30,   0      ;BULLET_SEED

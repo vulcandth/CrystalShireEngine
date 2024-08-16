@@ -2054,6 +2054,21 @@ BattleAnim_SkyUppercut:
 	anim_ret
 
 BattleAnim_SandTomb:
+	anim_1gfx BATTLE_ANIM_GFX_POWDER
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING, $0, $0, $40
+.loop
+	anim_sound 0, 0, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SAND_TOMB, 136, 70, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SAND_TOMB, 136, 62, $0
+	anim_wait 4
+	anim_loop 7, .loop
+	anim_wait 40
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_BLACK_REPEATING
+	anim_call BattleAnim_ShowMon_1
+	anim_ret
+
 BattleAnim_SheerCold:
 BattleAnim_MuddyWater:
 BattleAnim_BulletSeed:
