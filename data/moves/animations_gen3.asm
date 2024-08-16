@@ -1163,6 +1163,8 @@ BattleAnim_BlazeKick:
 	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 6
+
+BattleAnimSub_RadialFlame:
 	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
 	anim_wait 1
 	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
@@ -1188,7 +1190,7 @@ BattleAnim_BlazeKick:
 	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
 	anim_wait 1
 	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
-	anim_wait 32
+	anim_wait 16
 	anim_ret
 
 BattleAnim_MudSport:
@@ -1406,33 +1408,7 @@ BattleAnim_BlastBurn:
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 112, 60, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 136, 58, $0
 	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $0
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $28
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $30
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $38
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $20
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $8
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $18
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $4
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $2b
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $14
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $3b
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $24
-	anim_wait 1
-	anim_obj BATTLE_ANIM_OBJ_RADIAL_FLAME_SLOW, 136, 56, $b
-	anim_wait 32
-	anim_ret
+	anim_jump BattleAnimSub_RadialFlame
 
 BattleAnim_HydroCannon:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
