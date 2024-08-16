@@ -1001,8 +1001,7 @@ BattleAnim_Dive:
 	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
-	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 92, $24
-	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 92, $3b
+	anim_call BattleAnimSub_Dive1
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 40
 	anim_ret
@@ -1034,9 +1033,13 @@ BattleAnim_Dive:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, $1, $0
 	anim_wait 8
+	anim_call BattleAnimSub_Dive1
+	anim_wait 16
+	anim_ret
+
+BattleAnimSub_Dive1:
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 92, $24
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 92, $3b
-	anim_wait 16
 	anim_ret
 	
 BattleAnim_ArmThrust:
