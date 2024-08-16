@@ -1665,8 +1665,8 @@ SignalBeamDescription:
 	next "cause confusion.@"
 
 ShadowPunchDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "never misses.@"
 
 ExtrasensoryDescription:
 	db   "Pounds with fore-"
