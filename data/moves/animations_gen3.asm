@@ -591,25 +591,30 @@ BattleAnim_Ingrain:
 	anim_2gfx BATTLE_ANIM_GFX_ROOTS, BATTLE_ANIM_GFX_CHARGE
 	anim_sound 16, 2, SFX_VINE_WHIP
 	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 24, 104, $0
-	anim_wait 16
-	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_call BattleAnimSub_Ingrain1
 	anim_obj BATTLE_ANIM_OBJ_ROOT_L, 64, 104, $0
-	anim_wait 16
-	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_call BattleAnimSub_Ingrain1
 	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 34, 104, $0
-	anim_wait 16
-	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_call BattleAnimSub_Ingrain1
 	anim_obj BATTLE_ANIM_OBJ_ROOT_L, 69, 104, $0
-	anim_wait 32
-	anim_sound 6, 3, SFX_WATER_GUN
+	anim_wait 26
+	anim_call BattleAnimSub_Ingrain2
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $10
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
+	anim_call BattleAnimSub_Ingrain2
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $8
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
+	anim_call BattleAnimSub_Ingrain2
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_INGRAIN, 48, 68, $18
 	anim_wait 38
+	anim_ret
+
+BattleAnimSub_Ingrain1:
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_ret
+
+BattleAnimSub_Ingrain2:
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
 	anim_ret
 
 BattleAnim_Superpower:
