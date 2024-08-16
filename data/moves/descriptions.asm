@@ -1617,8 +1617,8 @@ AromatherapyDescription:
 	next "status problems.@"
 
 FakeTearsDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply lowers the"
+	next "foe's SPCL.ATK.@"
 
 AirCutterDescription:
 	db   "Pounds with fore-"
