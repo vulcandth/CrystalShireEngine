@@ -1669,8 +1669,8 @@ ShadowPunchDescription:
 	next "never misses.@"
 
 ExtrasensoryDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "cause flinching.@"
 
 SkyUppercutDescription:
 	db   "Pounds with fore-"
