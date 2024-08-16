@@ -1399,22 +1399,19 @@ BattleAnim_BlastBurn:
 	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_FIRE
 	anim_2gfx BATTLE_ANIM_GFX_BLAST_BURN, BATTLE_ANIM_GFX_FIRE
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
-	anim_sound 0, 1, SFX_TACKLE
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_call BattleAnim_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 32, 104, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 64, 104, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 42, 98, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 54, 98, $0
 	anim_wait 20
-	anim_sound 0, 1, SFX_TACKLE
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_call BattleAnim_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 12, 100, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 84, 100, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 34, 90, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 62, 90, $0
 	anim_wait 20
-	anim_sound 0, 1, SFX_TACKLE
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_call BattleAnim_BlastBurn1
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 104, 96, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 26, 82, $0
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 70, 82, $0
@@ -1428,6 +1425,11 @@ BattleAnim_BlastBurn:
 	anim_obj BATTLE_ANIM_OBJ_BLAST_BURN, 136, 58, $0
 	anim_wait 16
 	anim_jump BattleAnimSub_RadialFlame
+
+BattleAnim_BlastBurn1:
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
+	anim_ret
 
 BattleAnim_HydroCannon:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_BUBBLE
