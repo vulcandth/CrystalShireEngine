@@ -709,16 +709,13 @@ BattleAnim_Revenge:
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
 	anim_clearobjs
-	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_call BattleAnimSub_Revenge1
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 64, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_call BattleAnimSub_Revenge1
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 126, 56, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_call BattleAnimSub_Revenge1
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 130, 48, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_call BattleAnimSub_Revenge1
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 133, 40, $0
 	anim_wait 1
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $3
@@ -726,6 +723,11 @@ BattleAnim_Revenge:
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 32, $0
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 32
+	anim_ret
+
+BattleAnimSub_Revenge1:
+	anim_wait 2
+	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_ret
 
 BattleAnim_BrickBreak:
