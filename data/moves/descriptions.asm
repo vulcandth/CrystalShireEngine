@@ -1629,12 +1629,12 @@ OverheatDescription:
 	next "SPCL.ATK sharply.@"
 
 OdorSleuthDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Negates accuracy"
+	next "reduction moves.@"
 
 RockTombDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "lower DEFENSE.@"
 
 SilverWindDescription:
 	db   "Pounds with fore-"
