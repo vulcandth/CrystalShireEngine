@@ -1681,8 +1681,8 @@ SandTombDescription:
 	next "2-5 turns.@"
 
 SheerColdDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "A freezing,"
+	next "one-hit KO attack.@"
 
 MuddyWaterDescription:
 	db   "Pounds with fore-"
