@@ -118,7 +118,7 @@ BattleAnim_FakeOut:
 	anim_call BattleAnim_FakeOut1
 	anim_ret
 
-BattleAnim_FakeOut1:
+BattleAnimSub_FakeOut1:
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_L, 112, 48, $0
 	anim_obj BATTLE_ANIM_OBJ_FAKE_OUT_R, 158, 48, $0
 	anim_wait 32
@@ -1426,7 +1426,7 @@ BattleAnim_BlastBurn:
 	anim_wait 16
 	anim_jump BattleAnimSub_RadialFlame
 
-BattleAnim_BlastBurn1:
+BattleAnimSub_BlastBurn1:
 	anim_sound 0, 1, SFX_TACKLE
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $4, $2, $0
 	anim_ret
