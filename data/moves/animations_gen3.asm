@@ -1759,6 +1759,24 @@ BattleAnim_Overheat:
 	anim_ret
 
 BattleAnim_OdorSleuth:
+	anim_1gfx BATTLE_ANIM_GFX_SHINE
+	anim_call BattleAnim_UserObj_2Row
+	anim_sound 0, 0, SFX_TAIL_WHIP
+	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $0, $0
+.loop
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_1
+	anim_wait 24
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 64, 88, $0
+	anim_wait 24
+	anim_ret
+
 BattleAnim_RockTomb:
 BattleAnim_SilverWind:
 BattleAnim_MetalSound:
