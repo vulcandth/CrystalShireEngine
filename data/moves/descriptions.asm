@@ -1733,8 +1733,8 @@ MudShotDescription:
 	next "reduce SPEED.@"
 
 PoisonTailDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "High critical hit."
+	next "May poison foe.@"
 
 CovetDescription:
 	db   "Pounds with fore-"

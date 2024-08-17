@@ -2400,6 +2400,18 @@ BattleAnimSub_MudShot2:
 	anim_ret
 
 BattleAnim_PoisonTail:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
+	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_POISON
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_MEGA_KICK
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
+	anim_wait 8
+	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0
+	anim_jump BattleAnimSub_PoisonBubble1
+
 BattleAnim_Covet:
 BattleAnim_VoltTackle:
 BattleAnim_MagicalLeaf:
