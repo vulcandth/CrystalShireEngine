@@ -491,7 +491,7 @@ BattleAnim_Taunt:
 	anim_sound 0, 0, SFX_SQUEAK 
 	anim_wait 32
 	anim_loop 3, .loop
-	anim_call BattleAnimSub_Anger
+	anim_jump BattleAnimSub_Anger
 
 BattleAnim_Trick:
 	anim_1gfx BATTLE_ANIM_GFX_STATUS
