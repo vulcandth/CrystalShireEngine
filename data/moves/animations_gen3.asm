@@ -256,6 +256,12 @@ BattleAnim_HeatWave:
 	anim_bgp $90
 	anim_bgeffect BATTLE_BG_EFFECT_WHIRLPOOL, $0, $0, $0
 	anim_sound 0, 0, SFX_EMBER
+	anim_call BattleAnimSub_Mist
+	anim_wait 160
+	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
+	anim_ret
+
+BattleAnimSub_Mist:
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 24, $10
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 48, $2
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 88, $8
@@ -264,8 +270,6 @@ BattleAnim_HeatWave:
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 56, $c
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 80, $4
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 104, $e
-	anim_wait 160
-	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
 	anim_ret
 	
 BattleAnim_Hail:
@@ -1127,14 +1131,7 @@ BattleAnim_MistBall:
 	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_VERY_BRIGHT
 	anim_setbgpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_VERY_BRIGHT
 	anim_sound 0, 1, SFX_SPITE
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 24, $10
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 48, $2
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 88, $8
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 32, $6
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 56, $c
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 80, $4
-	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 104, $e
+	anim_call BattleAnimSub_Mist
 	anim_wait 64
 	anim_ret
 
