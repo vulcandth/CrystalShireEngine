@@ -1749,8 +1749,8 @@ MagicalLeafDescription:
 	next "never misses.@"
 
 WaterSportDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Weakens FIRE-"
+	next "type attacks.@"
 
 CalmMindDescription:
 	db   "Pounds with fore-"
