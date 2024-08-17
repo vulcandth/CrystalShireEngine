@@ -253,6 +253,10 @@ BattleAnimOAMData:
 	battleanimoam $0a,  1, .OAMData_f3 ; BATTLE_ANIM_OAMSET_F3
 	battleanimoam $0a,  1, .OAMData_60 ; BATTLE_ANIM_OAMSET_F4
 	battleanimoam $02,  4, .OAMData_f5 ; BATTLE_ANIM_OAMSET_F5
+	battleanimoam $00,  4, .OAMData_f6 ; BATTLE_ANIM_OAMSET_F6
+	battleanimoam $00,  8, .OAMData_f7 ; BATTLE_ANIM_OAMSET_F7
+	battleanimoam $00, 12, .OAMData_f8 ; BATTLE_ANIM_OAMSET_F8
+	battleanimoam $00, 16, .OAMData_f9 ; BATTLE_ANIM_OAMSET_F9
 	assert_table_length NUM_BATTLE_ANIM_OAMSETS
 
 .OAMData_11:
@@ -1388,3 +1392,51 @@ BattleAnimOAMData:
 	dbsprite   0,  -1, 0, 0, $01, $0
 	dbsprite   0,   0, 0, 0, $01, Y_FLIP
 	dbsprite   0,   1, 0, 0, $00, Y_FLIP
+
+.OAMData_f6:
+	dbsprite  -1,  1, 0, 0, $00, $0
+	dbsprite  -3,  2, 0, 0, $01, $0
+	dbsprite  -2,  2, 0, 0, $02, $0
+	dbsprite  -1,  2, 0, 0, $03, $0
+
+.OAMData_f7:
+	dbsprite   0,  0, 0, 0, $00, $0
+	dbsprite  -2,  1, 0, 0, $01, $0
+	dbsprite  -1,  1, 0, 0, $02, $0
+	dbsprite   0,  1, 0, 0, $03, $0
+	dbsprite  -3,  2, 0, 0, $04, $0
+	dbsprite  -2,  2, 0, 0, $05, $0
+	dbsprite  -1,  2, 0, 0, $06, $0
+	dbsprite   0,  2, 0, 0, $07, $0
+
+.OAMData_f8:
+	dbsprite   1, -1, 0, 0, $00, $0
+	dbsprite  -1,  0, 0, 0, $01, $0
+	dbsprite   0,  0, 0, 0, $02, $0
+	dbsprite   1,  0, 0, 0, $03, $0
+	dbsprite  -2,  1, 0, 0, $04, $0
+	dbsprite  -1,  1, 0, 0, $05, $0
+	dbsprite   0,  1, 0, 0, $06, $0
+	dbsprite   1,  1, 0, 0, $07, $0
+	dbsprite  -3,  2, 0, 0, $08, $0
+	dbsprite  -2,  2, 0, 0, $09, $0
+	dbsprite  -1,  2, 0, 0, $0a, $0
+	dbsprite   0,  2, 0, 0, $0b, $0
+
+.OAMData_f9:
+	dbsprite   2, -2, 0, 0, $00, $0
+	dbsprite   0, -1, 0, 0, $01, $0
+	dbsprite   1, -1, 0, 0, $02, $0
+	dbsprite   2, -1, 0, 0, $03, $0
+	dbsprite  -1,  0, 0, 0, $04, $0
+	dbsprite   0,  0, 0, 0, $05, $0
+	dbsprite   1,  0, 0, 0, $06, $0
+	dbsprite   2,  0, 0, 0, $07, $0
+	dbsprite  -2,  1, 0, 0, $08, $0
+	dbsprite  -1,  1, 0, 0, $09, $0
+	dbsprite   0,  1, 0, 0, $0a, $0
+	dbsprite   1,  1, 0, 0, $0b, $0
+	dbsprite  -3,  2, 0, 0, $0c, $0
+	dbsprite  -2,  2, 0, 0, $0d, $0
+	dbsprite  -1,  2, 0, 0, $0e, $0
+	dbsprite   0,  2, 0, 0, $0f, $0

@@ -2277,6 +2277,50 @@ BattleAnim_DragonClaw:
 	anim_ret
 
 BattleAnim_FrenzyPlant:
+	anim_3gfx BATTLE_ANIM_GFX_FRENZY_PLANT, BATTLE_ANIM_GFX_ROOTS, BATTLE_ANIM_GFX_PLANT
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $80, $2, $0
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 40, 98, $0
+	anim_wait 16
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_L, 104, 94, $0
+	anim_wait 16
+	anim_incobj 1
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 60, 86, $0
+	anim_wait 16
+	anim_incobj 2
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_L, 124, 82, $0
+	anim_wait 16
+	anim_incobj 3
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 80, 70, $0
+	anim_wait 16
+	anim_incobj 4
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_obj BATTLE_ANIM_OBJ_ROOT_L, 144, 66, $0
+	anim_wait 16
+	anim_incobj 5
+	anim_bgp $1b
+	anim_setobjpal PAL_BATTLE_BG_USER, PAL_BTLCUSTOM_GREEN
+	anim_setobjpal PAL_BATTLE_BG_TARGET, PAL_BTLCUSTOM_GREEN
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $40, $4, $0
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj BATTLE_ANIM_OBJ_FRENZY_PLANT_L, 134, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 134, 48, $28
+	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 134, 48, $5c
+	anim_wait 16
+	anim_incobj 6
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $70, $4, $0
+	anim_sound 16, 2, SFX_THUNDER
+	anim_obj BATTLE_ANIM_OBJ_FRENZY_PLANT_R, 138, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 138, 48, $9c
+	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 138, 48, $d0
+	anim_wait 96
+	anim_ret
+
 BattleAnim_BulkUp:
 BattleAnim_Bounce:
 BattleAnim_MudShot:

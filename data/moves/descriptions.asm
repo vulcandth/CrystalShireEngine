@@ -1717,8 +1717,8 @@ DragonClawDescription:
 	next "with sharp claws.@"
 
 FrenzyPlantDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "1st turn: Attack"
+	next "2nd turn: Rest@"
 
 BulkUpDescription:
 	db   "Pounds with fore-"

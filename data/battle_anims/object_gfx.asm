@@ -69,4 +69,5 @@ AnimObjGFX:
 	anim_obj_gfx 32, AnimObjVortexGFX
 	anim_obj_gfx  4, AnimObjHydroCannonGFX
 	anim_obj_gfx  8, AnimObjWeatherBallGFX
+	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1
