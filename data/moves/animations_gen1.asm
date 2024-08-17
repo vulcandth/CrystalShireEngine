@@ -324,21 +324,22 @@ BattleAnim_RazorWind:
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 152, 40, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_call BattleAnimSub_RazorWind1
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 136, 56, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_call BattleAnimSub_RazorWind1
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND2, 152, 64, $3
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_call BattleAnimSub_RazorWind1
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND1, 120, 40, $83
-	anim_wait 4
-	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_call BattleAnimSub_RazorWind1
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_WIND1, 120, 64, $83
 	anim_wait 4
 	anim_loop 3, .loop
 	anim_wait 24
+	anim_ret
+
+BattleAnimSub_RazorWind1:
+	anim_wait 4
+	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_ret
 
 BattleAnim_SwordsDance:
