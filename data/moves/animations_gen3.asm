@@ -305,16 +305,21 @@ BattleAnim_Torment:
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 64, 106, $2
 	anim_wait 16
-	anim_call BattleAnimSub_Torment1
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 32, 62, $2
 	anim_wait 16
-	anim_call BattleAnimSub_Torment1
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 76, 84, $2
-	anim_call BattleAnimSub_Torment1
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 32, 106, $2
-	anim_call BattleAnimSub_Torment1
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 20, 84, $2
-	anim_call BattleAnimSub_Torment1
+	anim_wait 16
+	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_TORMENT, 64, 62, $2
 	anim_wait 48
 	anim_clearobjs
@@ -324,11 +329,6 @@ BattleAnim_Torment:
 	anim_sound 0, 1, SFX_KINESIS_2
 	anim_obj BATTLE_ANIM_OBJ_ANGER, 148, 32, $0
 	anim_wait 32
-	anim_ret
-
-BattleAnimSub_Torment1:
-	anim_wait 16
-	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_ret
 
 BattleAnim_Flatter:
