@@ -1689,8 +1689,8 @@ MuddyWaterDescription:
 	next "reduce accuracy.@"
 
 BulletSeedDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Fires seeds that"
+	next "strike 2-5 times.@"
 
 AerialAceDescription:
 	db   "Pounds with fore-"
