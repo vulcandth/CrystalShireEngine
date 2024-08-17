@@ -1713,8 +1713,8 @@ HowlDescription:
 	next "user's ATTACK.@"
 
 DragonClawDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Slashes the foe"
+	next "with sharp claws.@"
 
 FrenzyPlantDescription:
 	db   "Pounds with fore-"

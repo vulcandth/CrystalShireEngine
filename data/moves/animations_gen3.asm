@@ -2240,6 +2240,42 @@ BattleAnim_Howl:
 	anim_ret
 
 BattleAnim_DragonClaw:
+	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
+	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_DRAGONBREATH
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_DRAGONBREATH
+	anim_3gfx BATTLE_ANIM_GFX_CUT, BATTLE_ANIM_GFX_FIRE, BATTLE_ANIM_GFX_TEAR
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+.loop
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 44, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 36, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 52, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 28, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 60, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 20, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FLARE, 68, 108, $8
+	anim_wait 2
+	anim_loop 2, .loop
+	anim_wait 16
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
+	anim_wait 1
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_CUT
+	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
+	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
+	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_CLAW_TEAR, 144, 48, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_FrenzyPlant:
 BattleAnim_BulkUp:
 BattleAnim_Bounce:
