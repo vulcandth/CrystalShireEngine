@@ -1769,8 +1769,8 @@ RockBlastDescription:
 	next "strike 2-5 times.@"
 
 ShockWaveDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "never misses.@"
 
 WaterPulseDescription:
 	db   "Pounds with fore-"
