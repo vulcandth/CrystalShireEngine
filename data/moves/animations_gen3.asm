@@ -622,20 +622,7 @@ BattleAnim_Superpower:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop
 	anim_sound 0, 0, SFX_MEGA_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 44, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 36, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 52, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 28, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 60, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 20, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 68, 108, $8
-	anim_wait 2
+	anim_call BattleAnimSub_FocusedPower
 	anim_loop 3, .loop
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
@@ -657,6 +644,23 @@ BattleAnim_Superpower:
 	anim_wait 20
 	anim_loop 3, .loop2
 	anim_wait 16
+	anim_ret
+
+BattleAnimSub_FocusedPower:
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 44, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 36, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 52, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 28, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 60, 108, $6
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 20, 108, $8
+	anim_wait 2
+	anim_obj BATTLE_ANIM_OBJ_FOCUS, 68, 108, $8
+	anim_wait 2
 	anim_ret
 
 BattleAnim_MagicCoat:
@@ -2607,20 +2611,7 @@ BattleAnim_DragonDance:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 .loop2
 	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 44, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 36, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 52, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 28, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 60, 108, $6
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 20, 108, $8
-	anim_wait 2
-	anim_obj BATTLE_ANIM_OBJ_FOCUS, 68, 108, $8
-	anim_wait 2
+	anim_call BattleAnimSub_FocusedPower
 	anim_loop 3, .loop2
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
