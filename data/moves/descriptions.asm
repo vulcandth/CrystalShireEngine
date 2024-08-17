@@ -1777,8 +1777,8 @@ WaterPulseDescription:
 	next "cause confusion.@"
 
 DoomDesireDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "hits on 3rd turn.@"
 
 PsychoBoostDescription:
 	db   "Pounds with fore-"
