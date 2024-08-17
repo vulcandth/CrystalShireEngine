@@ -1737,8 +1737,8 @@ PoisonTailDescription:
 	next "May poison foe.@"
 
 CovetDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "A cute beg to"
+	next "steal a held item.@"
 
 VoltTackleDescription:
 	db   "Pounds with fore-"

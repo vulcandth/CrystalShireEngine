@@ -2413,6 +2413,26 @@ BattleAnim_PoisonTail:
 	anim_jump BattleAnimSub_PoisonBubble1
 
 BattleAnim_Covet:
+	anim_2gfx BATTLE_ANIM_GFX_OBJECTS, BATTLE_ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_HEART, 64, 80, $0
+	anim_wait 32
+	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 1
+	anim_clearobjs
+	anim_wait 1
+	anim_1gfx BATTLE_ANIM_GFX_STATUS
+	anim_call BattleAnim_UserObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
+	anim_sound 0, 1, SFX_THIEF_2
+	anim_obj BATTLE_ANIM_OBJ_THIEF, 120, 76, $1
+	anim_wait 64
+	anim_call BattleAnim_ShowMon_1
+	anim_ret
+
 BattleAnim_VoltTackle:
 BattleAnim_MagicalLeaf:
 BattleAnim_WaterSport:
