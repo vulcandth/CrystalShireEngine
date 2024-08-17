@@ -1697,8 +1697,8 @@ AerialAceDescription:
 	next "never misses.@"
 
 IcicleSpearDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Fires icicles that"
+	next "strike 2-5 times.@"
 
 IronDefenseDescription:
 	db   "Pounds with fore-"
