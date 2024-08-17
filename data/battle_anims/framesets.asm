@@ -240,8 +240,8 @@ BattleAnimFrameData:
 	dw .Frameset_VerticalAgility     ; BATTLE_ANIM_FRAMESET_VERTICAL_AGILITY
 	dw .Frameset_LongHit             ; BATTLE_ANIM_FRAMESET_LONG_HIT
 	dw .Frameset_BigRedX             ; BATTLE_ANIM_FRAMESET_BIG_RED_X
-	dw .Framset_FrenzyPlantL         ; BATTLE_ANIM_FRAMESET_FRENZY_PLANT_L
-	dw .Framset_FrenzyPlantR         ; BATTLE_ANIM_FRAMESET_FRENZY_PLANT_R
+	dw .Frameset_FrenzyPlantL        ; BATTLE_ANIM_FRAMESET_FRENZY_PLANT_L
+	dw .Frameset_FrenzyPlantR        ; BATTLE_ANIM_FRAMESET_FRENZY_PLANT_R
 	dw .Frameset_BulkUp              ; BATTLE_ANIM_FRAMESET_BULK_UP
 	dw .Frameset_BlurVerticalUp      ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP
 	dw .Frameset_BlurVerticalDown    ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN
@@ -251,6 +251,7 @@ BattleAnimFrameData:
 	dw .Frameset_ShrinkingRingBig    ; BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG
 	dw .Frameset_CutLongUpRight      ; BATTLE_ANIM_FRAMESET_CUT_LONG_UP_RIGHT
 	dw .Frameset_CutLongUpLeft       ; BATTLE_ANIM_FRAMESET_CUT_LONG_UP_LEFT
+	dw .Frameset_PulsingEnergyOrbBig ; BATTLE_ANIM_FRAMESET_PULSING_ENERGY_ORB_BIG
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1593,14 +1594,14 @@ BattleAnimFrameData:
 	battleoamframe BATTLE_ANIM_OAMSET_0E6,  6
 	battleoamdelete
 
-.Framset_FrenzyPlantL:
+.Frameset_FrenzyPlantL:
 	battleoamframe BATTLE_ANIM_OAMSET_0F6,  1
 	battleoamframe BATTLE_ANIM_OAMSET_0F7,  1
 	battleoamframe BATTLE_ANIM_OAMSET_0F8,  1
 	battleoamframe BATTLE_ANIM_OAMSET_0F9,  1
 	battleoamend
 
-.Framset_FrenzyPlantR:
+.Frameset_FrenzyPlantR:
 	battleoamframe BATTLE_ANIM_OAMSET_0F6,  1, OAM_X_FLIP
 	battleoamframe BATTLE_ANIM_OAMSET_0F7,  1, OAM_X_FLIP
 	battleoamframe BATTLE_ANIM_OAMSET_0F8,  1, OAM_X_FLIP
@@ -1670,3 +1671,8 @@ BattleAnimFrameData:
 	battleoamwait 2
 	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_Y_FLIP
 	battleoamdelete
+
+.Frameset_PulsingEnergyOrbBig:
+	battleoamframe BATTLE_ANIM_OAMSET_054,  1
+	battleoamframe BATTLE_ANIM_OAMSET_0FD,  1
+	battleoamrestart

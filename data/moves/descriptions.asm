@@ -1761,8 +1761,8 @@ LeafBladeDescription:
 	next "cal hit ratio.@"
 
 DragonDanceDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Raises the user's"
+	next "SPEED and ATTACK.@"
 
 RockBlastDescription:
 	db   "Pounds with fore-"
