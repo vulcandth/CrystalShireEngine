@@ -1765,8 +1765,8 @@ DragonDanceDescription:
 	next "SPEED and ATTACK.@"
 
 RockBlastDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Fires rocks that"
+	next "strike 2-5 times.@"
 
 ShockWaveDescription:
 	db   "Pounds with fore-"
