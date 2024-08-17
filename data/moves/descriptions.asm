@@ -1709,8 +1709,8 @@ BlockDescription:
 	next "or switching.@"
 
 HowlDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply increases"
+	next "user's ATTACK.@"
 
 DragonClawDescription:
 	db   "Pounds with fore-"

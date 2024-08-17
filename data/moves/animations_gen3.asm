@@ -2222,6 +2222,23 @@ BattleAnim_Block:
 	anim_ret
 
 BattleAnim_Howl:
+	anim_1gfx BATTLE_ANIM_GFX_NOISE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_wait 1
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $1, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, $1, $40
+	anim_cry 1
+.loop
+	anim_obj BATTLE_ANIM_OBJ_SOUND, 64, 76, $0
+	anim_obj BATTLE_ANIM_OBJ_SOUND, 64, 88, $1
+	anim_obj BATTLE_ANIM_OBJ_SOUND, 64, 100, $2
+	anim_wait 16
+	anim_loop 3, .loop
+	anim_wait 16
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_DragonClaw:
 BattleAnim_FrenzyPlant:
 BattleAnim_BulkUp:
