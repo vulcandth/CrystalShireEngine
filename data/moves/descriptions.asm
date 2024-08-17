@@ -1757,8 +1757,8 @@ CalmMindDescription:
 	next "special stats.@"
 
 LeafBladeDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 DragonDanceDescription:
 	db   "Pounds with fore-"

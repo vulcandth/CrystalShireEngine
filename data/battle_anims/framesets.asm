@@ -249,6 +249,8 @@ BattleAnimFrameData:
 	dw .Frameset_VoltTackleSparks    ; BATTLE_ANIM_FRAMESET_VOLT_TACKLE_SPARKS
 	dw .Frameset_ShrinkingRing       ; BATTLE_ANIM_FRAMESET_SHRINKING_RING
 	dw .Frameset_ShrinkingRingBig    ; BATTLE_ANIM_FRAMESET_SHRINKING_RING_BIG
+	dw .Frameset_CutLongUpRight      ; BATTLE_ANIM_FRAMESET_CUT_LONG_UP_RIGHT
+	dw .Frameset_CutLongUpLeft       ; BATTLE_ANIM_FRAMESET_CUT_LONG_UP_LEFT
 	assert_table_length NUM_BATTLE_ANIM_FRAMESETS
 
 .Frameset_HitBig:
@@ -1635,4 +1637,36 @@ BattleAnimFrameData:
 .Frameset_ShrinkingRingBig:
 	battleoamframe BATTLE_ANIM_OAMSET_100,  2
 	battleoamframe BATTLE_ANIM_OAMSET_0E8,  2
+	battleoamdelete
+
+.Frameset_CutLongUpRight:
+	battleoamframe BATTLE_ANIM_OAMSET_04B,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04C,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04D,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04F,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_050,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_051,  1, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_X_FLIP, OAM_Y_FLIP
+	battleoamdelete
+
+.Frameset_CutLongUpLeft:
+	battleoamframe BATTLE_ANIM_OAMSET_04B,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04C,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04D,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_04F,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_050,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_051,  1, OAM_Y_FLIP
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_Y_FLIP
+	battleoamwait 2
+	battleoamframe BATTLE_ANIM_OAMSET_052,  2, OAM_Y_FLIP
 	battleoamdelete
