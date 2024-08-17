@@ -1891,11 +1891,9 @@ BattleAnim_Barrier:
 	anim_battlergfx_2row
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_wait 8
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_ShineScreen
 	anim_wait 32
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_ShineScreen
 	anim_wait 32
 	anim_ret
 
@@ -1940,9 +1938,7 @@ BattleAnim_Reflect:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_REFLECT
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_InvertedShineScreen
 	anim_obj BATTLE_ANIM_OBJ_DAZZLE, 72, 80, $0
 	anim_obj BATTLE_ANIM_OBJ_DAZZLE, 72, 80, $8
 	anim_obj BATTLE_ANIM_OBJ_DAZZLE, 72, 80, $10
@@ -1952,10 +1948,16 @@ BattleAnim_Reflect:
 	anim_obj BATTLE_ANIM_OBJ_DAZZLE, 72, 80, $30
 	anim_obj BATTLE_ANIM_OBJ_DAZZLE, 72, 80, $38
 	anim_wait 24
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_InvertedShineScreen
 	anim_wait 64
+	anim_ret
+
+BattleAnimSub_InvertedShineScreen:
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+BattleAnimSub_ShineScreen:
+	anim_sound 0, 0, SFX_SHINE
+BattleAnimSub_Screen:
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
 	anim_ret
 
 BattleAnim_FocusEnergy:

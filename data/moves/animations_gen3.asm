@@ -676,11 +676,9 @@ BattleAnim_MagicCoat:
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $35
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $36
 	anim_obj BATTLE_ANIM_OBJ_MASTER_BALL_SPARKLE, 72, 80, $37
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_Screen
 	anim_wait 24
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_call BattleAnimSub_InvertedShineScreen
 	anim_wait 24
 	anim_clearobjs
 	anim_wait 40
