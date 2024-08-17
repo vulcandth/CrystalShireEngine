@@ -1745,8 +1745,8 @@ VoltTackleDescription:
 	next "hurts the user.@"
 
 MagicalLeafDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "never misses.@"
 
 WaterSportDescription:
 	db   "Pounds with fore-"

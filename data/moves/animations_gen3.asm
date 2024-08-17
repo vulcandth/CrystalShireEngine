@@ -2482,6 +2482,37 @@ BattleAnim_VoltTackle:
 	anim_ret
 
 BattleAnim_MagicalLeaf:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_AURORA
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_call BattleAnimSub_Leaves
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 3
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 5
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 7
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 9
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 1
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 2
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 4
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 6
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 8
+	anim_call BattleAnimSub_MagicalLeaf1
+	anim_incobj 10
+	anim_wait 64
+	anim_ret
+
+BattleAnimSub_MagicalLeaf1:
+	anim_wait 2
+	anim_sound 16, 2, SFX_SWEET_SCENT
+	anim_ret
+	
 BattleAnim_WaterSport:
 BattleAnim_CalmMind:
 BattleAnim_LeafBlade:

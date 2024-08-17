@@ -1300,6 +1300,36 @@ BattleAnim_Growth:
 
 BattleAnim_RazorLeaf:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
+	anim_call BattleAnimSub_Leaves
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 3
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 5
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 7
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 9
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 1
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 2
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 4
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 6
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 8
+	anim_call BattleAnimSub_RazorLeaf1
+	anim_incobj 10
+	anim_wait 64
+	anim_ret
+
+BattleAnimSub_RazorLeaf1:
+	anim_wait 2
+	anim_sound 16, 2, SFX_VINE_WHIP
+	anim_ret
+
+BattleAnimSub_Leaves:
 	anim_1gfx BATTLE_ANIM_GFX_PLANT
 	anim_sound 0, 0, SFX_VINE_WHIP
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 48, 80, $28
@@ -1313,37 +1343,7 @@ BattleAnim_RazorLeaf:
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 48, 80, $50
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 48, 80, $dc
 	anim_obj BATTLE_ANIM_OBJ_RAZOR_LEAF, 48, 80, $90
-	anim_wait 80
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 3
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 5
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 7
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 9
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 1
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 2
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 4
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 6
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 8
-	anim_wait 2
-	anim_sound 16, 2, SFX_VINE_WHIP
-	anim_incobj 10
-	anim_wait 64
+	anim_wait 78
 	anim_ret
 
 BattleAnim_Solarbeam:
