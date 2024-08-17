@@ -1781,5 +1781,5 @@ DoomDesireDescription:
 	next "hits on 3rd turn.@"
 
 PsychoBoostDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Full-power. Lowers"
+	next "SPCL.ATK sharply.@"
