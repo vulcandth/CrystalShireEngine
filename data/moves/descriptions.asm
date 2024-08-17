@@ -1741,8 +1741,8 @@ CovetDescription:
 	next "steal a held item.@"
 
 VoltTackleDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "A tackle that also"
+	next "hurts the user.@"
 
 MagicalLeafDescription:
 	db   "Pounds with fore-"
