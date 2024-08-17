@@ -1701,8 +1701,8 @@ IcicleSpearDescription:
 	next "strike 2-5 times.@"
 
 IronDefenseDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Sharply increases"
+	next "user's DEFENSE.@"
 
 BlockDescription:
 	db   "Pounds with fore-"
