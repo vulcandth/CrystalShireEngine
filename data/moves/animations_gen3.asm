@@ -2709,6 +2709,31 @@ BattleAnim_ShockWave:
 	anim_ret
 
 BattleAnim_WaterPulse:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
+	anim_2gfx BATTLE_ANIM_GFX_BUBBLE, BATTLE_ANIM_GFX_PSYCHIC
+	anim_battlergfx_2row
+	anim_bgeffect BATTLE_BG_EFFECT_WHIRLPOOL, $0, $0, $0
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+	anim_wait 64
+.loop
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 6
+	anim_loop 3, .loop
+	anim_wait 6
+	anim_incbgeffect BATTLE_BG_EFFECT_WHIRLPOOL
+	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_wait 6
+	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
+.loop2
+	anim_sound 0, 1, SFX_LICK
+	anim_wait 3
+	anim_loop 3, .loop2
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1
+	anim_ret
+
 BattleAnim_DoomDesire:
 BattleAnim_PsychoBoost:
 	anim_1gfx BATTLE_ANIM_GFX_HIT

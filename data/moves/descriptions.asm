@@ -1773,8 +1773,8 @@ ShockWaveDescription:
 	next "never misses.@"
 
 WaterPulseDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "cause confusion.@"
 
 DoomDesireDescription:
 	db   "Pounds with fore-"
