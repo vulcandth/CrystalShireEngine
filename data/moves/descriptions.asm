@@ -1654,7 +1654,7 @@ TickleDescription:
 
 CosmicPowerDescription:
 	db   "Raises the user's"
-	next "special stats.@"
+	next "defensive stats.@"
 
 WaterSpoutDescription:
 	db   "Stronger if the"
