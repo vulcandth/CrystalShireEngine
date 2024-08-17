@@ -2213,6 +2213,14 @@ BattleAnim_IronDefense:
 	anim_ret
 
 BattleAnim_Block:
+	anim_1gfx BATTLE_ANIM_GFX_OBJECTS
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj BATTLE_ANIM_OBJ_BLOCK, 132, 48, $20
+	anim_wait 48
+	anim_sound 0, 1, SFX_WRONG
+	anim_wait 20
+	anim_ret
+
 BattleAnim_Howl:
 BattleAnim_DragonClaw:
 BattleAnim_FrenzyPlant:
