@@ -60,4 +60,4 @@ AnimObjHydroCannonGFX:    INCBIN "gfx/battle_anims/hydrocannon.2bpp.lz"
 AnimObjWeatherBallGFX:    INCBIN "gfx/battle_anims/weatherball.2bpp.lz"
 AnimObjFrenzyPlantGFX:    INCBIN "gfx/battle_anims/frenzyplant.2bpp.lz"
 AnimObjBulkUpGFX:         INCBIN "gfx/battle_anims/bulkup.2bpp.lz"
-    
+AnimObjBlurGFX:           INCBIN "gfx/battle_anims/blur.2bpp.lz"

@@ -2346,6 +2346,30 @@ BattleAnimSub_BulkUp1:
 	anim_ret
 
 BattleAnim_Bounce:
+	anim_if_param_equal $1, .turn1
+	anim_if_param_equal $2, .miss
+	anim_2gfx BATTLE_ANIM_GFX_BLUR, BATTLE_ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_KINESIS
+	anim_obj BATTLE_ANIM_OBJ_BLUR_VERTICAL_DOWN, 136, 230, $10
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $10, $4, $0
+	anim_sound 0, 1, SFX_STOMP
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 16
+.miss:
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+.turn1:
+	anim_1gfx BATTLE_ANIM_GFX_BLUR
+	anim_sound 0, 0, SFX_POTION
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
+	anim_obj BATTLE_ANIM_OBJ_BLUR_VERTICAL_UP, 48, 88, $30
+	anim_wait 32
+	anim_clearobjs
+	anim_ret
+	
 BattleAnim_MudShot:
 BattleAnim_PoisonTail:
 BattleAnim_Covet:

@@ -71,4 +71,5 @@ AnimObjGFX:
 	anim_obj_gfx  8, AnimObjWeatherBallGFX
 	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
 	anim_obj_gfx 18, AnimObjBulkUpGFX
+	anim_obj_gfx 24, AnimObjBlurGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1

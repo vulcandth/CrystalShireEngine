@@ -317,6 +317,8 @@ DEF BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_FRENZY_PLANT_L          ; 11c
 	const BATTLE_ANIM_OBJ_FRENZY_PLANT_R          ; 11d
 	const BATTLE_ANIM_OBJ_BULK_UP                 ; 11e
+	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_UP        ; 11f
+	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_DOWN      ; 120
 DEF NUM_BATTLE_ANIM_OBJS EQU const_value
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
@@ -658,6 +660,8 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_FRENZY_PLANT_L        ; ee
 	const BATTLE_ANIM_FRAMESET_FRENZY_PLANT_R        ; ef
 	const BATTLE_ANIM_FRAMESET_BULK_UP               ; f0
+	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP      ; f1
+	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN    ; f2
 DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
@@ -914,7 +918,8 @@ DEF NUM_BATTLE_ANIM_FRAMESETS EQU const_value
 	const BATTLE_ANIM_OAMSET_F8
 	const BATTLE_ANIM_OAMSET_F9
 	const BATTLE_ANIM_OAMSET_FA
-	const BATTLE_ANIM_OAMSET_FB	
+	const BATTLE_ANIM_OAMSET_FB
+	const BATTLE_ANIM_OAMSET_FC
 DEF NUM_BATTLE_ANIM_OAMSETS EQU const_value
 
 assert NUM_BATTLE_ANIM_OAMSETS <= FIRST_BATTLE_OAM_CMD, \
@@ -1042,6 +1047,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_WEATHER_BALL   ; 3b
 	const BATTLE_ANIM_GFX_FRENZY_PLANT   ; 3c
 	const BATTLE_ANIM_GFX_BULK_UP        ; 3d
+	const BATTLE_ANIM_GFX_BLUR           ; 3e
 DEF NUM_BATTLE_ANIM_GFX EQU const_value - 1
 
 ; battle_bg_effect struct members (see macros/ram.asm)
