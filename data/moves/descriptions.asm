@@ -1693,8 +1693,8 @@ BulletSeedDescription:
 	next "strike 2-5 times.@"
 
 AerialAceDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that"
+	next "never misses.@"
 
 IcicleSpearDescription:
 	db   "Pounds with fore-"
