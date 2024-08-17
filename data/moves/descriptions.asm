@@ -1729,8 +1729,8 @@ BounceDescription:
 	next "May paralyze foe.@"
 
 MudShotDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "An attack that may"
+	next "reduce SPEED.@"
 
 PoisonTailDescription:
 	db   "Pounds with fore-"

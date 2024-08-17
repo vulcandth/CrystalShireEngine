@@ -2371,6 +2371,34 @@ BattleAnim_Bounce:
 	anim_ret
 	
 BattleAnim_MudShot:
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
+	anim_1gfx BATTLE_ANIM_GFX_POISON
+.loop
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+	anim_call BattleAnimSub_MudShot1
+	anim_sound 6, 2, SFX_BUBBLEBEAM
+	anim_call BattleAnimSub_MudShot2
+	anim_call BattleAnimSub_MudShot1
+	anim_loop 4, .loop
+	anim_wait 4
+	anim_call BattleAnimSub_MudShot2
+	anim_wait 16
+	anim_ret
+
+BattleAnimSub_MudShot1:
+	anim_obj BATTLE_ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_MUD_SHOT, 64, 92, $4
+	anim_wait 4
+	anim_ret
+
+BattleAnimSub_MudShot2:
+	anim_obj BATTLE_ANIM_OBJ_INK_SPLASH, 136, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_INK_SPLASH, 136, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_INK_SPLASH, 136, 56, $d0
+	anim_obj BATTLE_ANIM_OBJ_INK_SPLASH, 136, 56, $50
+	anim_ret
+
 BattleAnim_PoisonTail:
 BattleAnim_Covet:
 BattleAnim_VoltTackle:

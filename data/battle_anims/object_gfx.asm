@@ -19,7 +19,7 @@ AnimObjGFX:
 	anim_obj_gfx 17, AnimObjRocksGFX
 	anim_obj_gfx 15, AnimObjIceGFX
 	anim_obj_gfx 10, AnimObjPokeBallGFX
-	anim_obj_gfx  9, AnimObjPoisonGFX
+	anim_obj_gfx 19, AnimObjPoisonGFX
 	anim_obj_gfx 13, AnimObjBubbleGFX
 	anim_obj_gfx 18, AnimObjNoiseGFX
 	anim_obj_gfx  2, AnimObjPowderGFX
