@@ -2555,6 +2555,24 @@ BattleAnimSub_WaterSport1:
 	anim_ret
 
 BattleAnim_CalmMind:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GLOW_LUSTER
+	anim_3gfx BATTLE_ANIM_GFX_RING_BIG, BATTLE_ANIM_GFX_RING, BATTLE_ANIM_GFX_GLOW
+	anim_bgp $1b
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_SMALL_GLOW, 48, 96, $0
+	anim_wait 32
+	anim_clearobjs
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+.loop
+	anim_obj BATTLE_ANIM_OBJ_SHRINKING_RING_BIG, 48, 96, $0
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_SHRINKING_RING, 48, 96, $0
+	anim_wait 16
+	anim_loop 4, .loop
+	anim_wait 16
+	anim_ret
+
 BattleAnim_LeafBlade:
 BattleAnim_DragonDance:
 BattleAnim_RockBlast:

@@ -72,4 +72,6 @@ AnimObjGFX:
 	anim_obj_gfx 16, AnimObjFrenzyPlantGFX
 	anim_obj_gfx 18, AnimObjBulkUpGFX
 	anim_obj_gfx 24, AnimObjBlurGFX
+	anim_obj_gfx  6, AnimObjRingGFX
+	anim_obj_gfx 13, AnimObjRingBigGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1

@@ -1753,8 +1753,8 @@ WaterSportDescription:
 	next "type attacks.@"
 
 CalmMindDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+	db   "Raises the user's"
+	next "special stats.@"
 
 LeafBladeDescription:
 	db   "Pounds with fore-"
