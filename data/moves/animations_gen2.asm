@@ -1706,6 +1706,12 @@ BattleAnimSub_Ice:
 
 BattleAnimSub_Sludge:
 .loop
+	anim_call BattleAnimSub_Sludge1
+	anim_wait 8
+	anim_loop 5, .loop
+	anim_ret
+
+BattleAnimSub_Sludge1:
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 132, 72, $0
 	anim_wait 8
@@ -1714,8 +1720,6 @@ BattleAnimSub_Sludge:
 	anim_wait 8
 	anim_sound 0, 1, SFX_TOXIC
 	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 8
-	anim_loop 5, .loop
 	anim_ret
 
 BattleAnimSub_Acid:
