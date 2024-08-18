@@ -2470,22 +2470,22 @@ BattleAnim_WaterSport:
 .loop2
 	anim_sound 6, 2, SFX_SQUEAK
 	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 40, 20, $10
-	anim_call BattleAnimSub_WaterSport1
-	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 90, 20, $10
-	anim_call BattleAnimSub_WaterSport1
-	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 140, 20, $10
-	anim_call BattleAnimSub_WaterSport1
-	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 65, 20, $10
-	anim_call BattleAnimSub_WaterSport1
-	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 115, 20, $10
-	anim_call BattleAnimSub_WaterSport1
-	anim_loop 2, .loop2
-	anim_wait 32
-	anim_ret
-
-BattleAnimSub_WaterSport1:
 	anim_wait 8
 	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 90, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 140, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 65, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_obj BATTLE_ANIM_OBJ_WATER_SPORT, 115, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_SQUEAK
+	anim_loop 2, .loop2
+	anim_wait 32
 	anim_ret
 
 BattleAnim_CalmMind:
