@@ -360,9 +360,13 @@ BattleAnim_SwordsDance:
 
 BattleAnim_Cut:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
+	anim_call BattleAnimSub_Cut1
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_Cut1:
 	anim_sound 0, 1, SFX_CUT
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Gust:
@@ -2717,8 +2721,7 @@ BattleAnim_SuperFang:
 
 BattleAnim_Slash:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
-	anim_sound 0, 1, SFX_CUT
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_call BattleAnimSub_Cut1
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 148, 36, $0
 	anim_wait 32
 	anim_ret
