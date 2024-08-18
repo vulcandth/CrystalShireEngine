@@ -885,8 +885,7 @@ BattleAnimSub_Eruption2:
 
 BattleAnim_SkillSwap:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_SKILL_SWAP
-	anim_call BattleAnimSub_TransferOrbs
-	anim_ret
+	; fallthrough
 
 BattleAnimSub_TransferOrbs:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $4, $0
