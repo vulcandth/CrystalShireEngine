@@ -1770,6 +1770,8 @@ BattleAnim_Screech:
 	anim_1gfx BATTLE_ANIM_GFX_PSYCHIC
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $8, $1, $20
 	anim_sound 6, 2, SFX_SCREECH
+; fallthrough
+BattleAnimSub_HarshNoise:
 .loop
 	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 2
