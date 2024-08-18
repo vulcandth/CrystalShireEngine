@@ -1697,6 +1697,15 @@ BattleAnim_Agility:
 
 BattleAnim_QuickAttack:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_HIT
+	anim_call BattleAnimSub_SpeedLines
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+	anim_wait 8
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnimSub_SpeedLines:
 	anim_sound 0, 0, SFX_MENU
 	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, BG_EFFECT_USER, $0
 	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 24, 88, $2
@@ -1706,11 +1715,6 @@ BattleAnim_QuickAttack:
 	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 56, 88, $81
 	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 64, 88, $82
 	anim_wait 12
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 8
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Rage:

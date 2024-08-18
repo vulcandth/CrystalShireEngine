@@ -2102,15 +2102,7 @@ BattleAnimSub_BulletSeed1:
 
 BattleAnim_AerialAce:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_CUT
-	anim_sound 0, 0, SFX_MENU
-	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 64, 88, $82
-	anim_wait 12
+	anim_call BattleAnimSub_SpeedLines
 	anim_sound 0, 1, SFX_WING_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 160, 40, $0
 	anim_wait 24
@@ -2392,15 +2384,7 @@ BattleAnim_VoltTackle:
 	anim_incobj 1
 	anim_wait 48
 	anim_clearobjs
-	anim_sound 0, 0, SFX_MENU
-	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 24, 88, $2
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 32, 88, $1
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 40, 88, $0
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 48, 88, $80
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 56, 88, $81
-	anim_obj BATTLE_ANIM_OBJ_SPEED_LINE, 64, 88, $82
-	anim_wait 12
+	anim_call BattleAnimSub_SpeedLines
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_ICE
 .loop
 	anim_sound 0, 0, SFX_ZAP_CANNON
