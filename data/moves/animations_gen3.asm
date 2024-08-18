@@ -926,10 +926,8 @@ BattleAnim_Imprison:
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj BATTLE_ANIM_OBJ_IMPRISON_RING, 132, 52, $0
 	anim_wait 64
-	anim_clearobjs
-	anim_sound 6, 3, SFX_PLACE_PUZZLE_PIECE_DOWN
-	anim_obj BATTLE_ANIM_OBJ_RED_X, 132, 44, $2e
-	anim_wait 64
+	anim_call BattleAnimSub_PlaceRedX
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Refresh:
@@ -1737,6 +1735,8 @@ BattleAnim_RockTomb:
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $20, $2, $0
 	anim_wait 40
+; fallthrough
+BattleAnimSub_PlaceRedX:
 	anim_clearobjs
 	anim_sound 6, 3, SFX_PLACE_PUZZLE_PIECE_DOWN
 	anim_obj BATTLE_ANIM_OBJ_RED_X, 132, 44, $2e
