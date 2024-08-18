@@ -1813,15 +1813,10 @@ BattleAnim_GrassWhistle:
 	anim_sound 16, 2, SFX_GRASS_WHISTLE
 .loop
 	anim_obj BATTLE_ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $3e
-	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $1
-	anim_wait 8
+	anim_call BattleAnimSub_SingNote01
 	anim_obj BATTLE_ANIM_OBJ_GRASS_WHISTLE_LEAF, 64, 92, $1
-	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $2
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SING, 64, 92, $1
-	anim_wait 8
+	anim_call BattleAnimSub_SingNote2
+	anim_call BattleAnimSub_SingNote1
 	anim_loop 4, .loop
 	anim_wait 64
 	anim_ret
