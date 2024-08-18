@@ -1218,22 +1218,22 @@ BattleAnim_MudSport:
 	anim_clearobjs
 .loop2
 	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 30, 20, $10
-	anim_call BattleAnimSub_MudSport1
-	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 80, 20, $10
-	anim_call BattleAnimSub_MudSport1
-	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 130, 20, $10
-	anim_call BattleAnimSub_MudSport1
-	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 55, 20, $10
-	anim_call BattleAnimSub_MudSport1
-	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 105, 20, $10
-	anim_call BattleAnimSub_MudSport1
-	anim_loop 2, .loop2
-	anim_wait 32
-	anim_ret
-
-BattleAnimSub_MudSport1:
 	anim_wait 8
 	anim_sound 6, 2, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 80, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 130, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 55, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_MUD_SPORT_2, 105, 20, $10
+	anim_wait 8
+	anim_sound 6, 2, SFX_TOXIC
+	anim_loop 2, .loop2
+	anim_wait 32
 	anim_ret
 
 BattleAnim_IceBall:
