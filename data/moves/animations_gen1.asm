@@ -287,10 +287,14 @@ BattleAnim_Thunderpunch:
 BattleAnim_Scratch:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_SCRATCH
+	anim_call BattleAnim_CutDownLeft
+	anim_wait 32
+	anim_ret
+
+BattleAnim_CutDownLeft:
 	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
 	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
 	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Vicegrip:
@@ -2562,9 +2566,7 @@ BattleAnim_FurySwipes:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_SCRATCH
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_call BattleAnim_CutDownLeft
 	anim_sound 0, 1, SFX_SCRATCH
 	anim_wait 32
 	anim_ret

@@ -1218,9 +1218,7 @@ BattleAnim_MetalClaw:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_resetobp0
 	anim_sound 0, 1, SFX_SCRATCH
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_call BattleAnim_CutDownLeft
 	anim_wait 32
 	anim_ret
 
