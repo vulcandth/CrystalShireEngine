@@ -406,6 +406,16 @@ BattleAnim_Whirlwind:
 	anim_obj BATTLE_ANIM_OBJ_GUST, 64, 112, $0
 	anim_wait 6
 	anim_loop 9, .loop
+	anim_call BattleAnimSub_IncObj9
+	anim_sound 16, 2, SFX_WHIRLWIND
+	anim_wait 128
+	anim_if_param_equal $0, .done
+	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
+	anim_wait 64
+.done
+	anim_ret
+
+BattleAnimSub_IncObj9:
 	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
@@ -415,12 +425,6 @@ BattleAnim_Whirlwind:
 	anim_incobj 7
 	anim_incobj 8
 	anim_incobj 9
-	anim_sound 16, 2, SFX_WHIRLWIND
-	anim_wait 128
-	anim_if_param_equal $0, .done
-	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
-	anim_wait 64
-.done
 	anim_ret
 
 BattleAnim_Fly:
@@ -453,10 +457,14 @@ BattleAnim_Bind:
 	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
 	anim_wait 64
 	anim_sound 0, 1, SFX_BIND
+	anim_call BattleAnimSub_IncObj3
+	anim_wait 96
+	anim_ret
+
+BattleAnimSub_IncObj3:
 	anim_incobj 1
 	anim_incobj 2
 	anim_incobj 3
-	anim_wait 96
 	anim_ret
 
 BattleAnim_Slam:
@@ -666,9 +674,7 @@ BattleAnim_Wrap:
 	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
 	anim_wait 64
 	anim_sound 0, 1, SFX_BIND
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
+	anim_call BattleAnimSub_IncObj3
 	anim_wait 96
 	anim_ret
 
@@ -901,9 +907,7 @@ BattleAnim_Ember:
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj BATTLE_ANIM_OBJ_EMBER, 64, 84, $13
 	anim_wait 16
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
+	anim_call BattleAnimSub_IncObj3
 	anim_sound 0, 1, SFX_EMBER
 	anim_obj BATTLE_ANIM_OBJ_EMBER, 120, 68, $30
 	anim_obj BATTLE_ANIM_OBJ_EMBER, 132, 68, $30
@@ -2125,15 +2129,7 @@ BattleAnim_FireBlast:
 	anim_sound 0, 1, SFX_EMBER
 	anim_wait 8
 	anim_loop 10, .loop2
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_incobj 4
-	anim_incobj 5
-	anim_incobj 6
-	anim_incobj 7
-	anim_incobj 8
-	anim_incobj 9
+	anim_call BattleAnimSub_IncObj9
 	anim_incobj 10
 	anim_wait 2
 .loop3

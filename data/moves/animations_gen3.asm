@@ -581,9 +581,7 @@ BattleAnim_Assist:
 	anim_loop 6, .loop
 	anim_wait 8
 	anim_sound 0, 0, SFX_SWEET_SCENT
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
+	anim_call BattleAnimSub_IncObj3
 	anim_incobj 4
 	anim_wait 48
 	anim_ret
