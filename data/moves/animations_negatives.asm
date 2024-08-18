@@ -27,7 +27,7 @@ BattleAnimationsNegatives::
 BattleAnim_SnatchedMove:
 	anim_if_param_equal $0, .off
 	anim_2gfx BATTLE_ANIM_GFX_SNATCH, BATTLE_ANIM_GFX_SPEED
-	anim_ret BattleAnimSub_SpeedLines
+	anim_call BattleAnimSub_SpeedLines
 	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_SNATCH_1, 48, 88, $0
 	anim_wait 16
