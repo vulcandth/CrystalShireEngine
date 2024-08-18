@@ -2041,31 +2041,34 @@ BattleAnim_SheerCold:
 .loop
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 108, 88, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 112, 31, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 138, 68, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 144, 110, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 154, 40, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 16, 36, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 40, 96, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 64, 26, $0
-	anim_call BattleAnimSub_SheerCold1
+	anim_wait 2
+	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 80, 64, $0
 	anim_loop 4, .loop
 	anim_sound 0, 1, SFX_CUT
 	anim_bgp $0b
 	anim_wait 80
-	anim_ret
-
-BattleAnimSub_SheerCold1:
-	anim_wait 2
-	anim_sound 0, 1, SFX_SHINE
 	anim_ret
 
 BattleAnim_MuddyWater:
