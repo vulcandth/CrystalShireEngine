@@ -799,20 +799,17 @@ BattleAnim_Endeavor:
 	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_MISC_2
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, $1, $0
-	anim_setvar $0
-.loop
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 102, $24
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 102, $3b
 	anim_wait 21
-	anim_if_var_equal $1, .done
 	anim_sound 0, 0, SFX_RETURN
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 82, $24
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 82, $3b
 	anim_wait 21
-	anim_incvar
-	anim_jump .loop
-.done
+	anim_sound 0, 0, SFX_RETURN
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 102, $24
+	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 102, $3b
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
 	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
 	anim_call BattleAnim_ShowMon_0
