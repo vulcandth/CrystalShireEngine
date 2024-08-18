@@ -2701,18 +2701,6 @@ BattleAnim_DoomDesire:
 	anim_wait 32
 	anim_ret
 
-BattleAnimSub_DoomDesire1:
-	; anim_wait 8
-	; anim_clearobjs
-	; anim_wait 1
-	; anim_sound 0, 0, SFX_RAZOR_WIND
-	; anim_ret
-
-BattleAnimSub_DoomDesire2:
-	; anim_wait 8
-	; anim_sound 0, 1, SFX_EGG_BOMB
-	; anim_ret
-
 BattleAnim_PsychoBoost:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
 	anim_3gfx BATTLE_ANIM_GFX_BIG_GLOW, BATTLE_ANIM_GFX_GLOW, BATTLE_ANIM_GFX_SPEED
@@ -2726,19 +2714,26 @@ BattleAnim_PsychoBoost:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $2, $0
 	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $0
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $28
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $30
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $38
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $20
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $8
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $18
-	anim_call BattleAnimSub_PsychoBoost1
+	anim_wait 8
+	anim_sound 0, 1, SFX_KINESIS
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 88, $4
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_PSYCHO_BOOST_1
@@ -2757,26 +2752,22 @@ BattleAnim_PsychoBoost:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $70, $6, $0
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $4, $0
 .loop4
-	anim_call BattleAnimSub_PsychoBoost2
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 140, 44, $0
-	anim_call BattleAnimSub_PsychoBoost2
+	anim_wait 4
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 124, 60, $0
-	anim_call BattleAnimSub_PsychoBoost2
+	anim_wait 4
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 140, 60, $0
-	anim_call BattleAnimSub_PsychoBoost2
+	anim_wait 4
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 124, 44, $0
-	anim_call BattleAnimSub_PsychoBoost2
+	anim_wait 4
+	anim_sound 0, 1, SFX_THUNDER
 	anim_obj BATTLE_ANIM_OBJ_SHRINKING_GLOW, 132, 52, $0
+	anim_wait 4
 	anim_loop 2, .loop4
 	anim_wait 32
 	anim_ret
-
-BattleAnimSub_PsychoBoost1:
-	anim_wait 8
-	anim_sound 0, 1, SFX_KINESIS
-	anim_ret
-
-BattleAnimSub_PsychoBoost2:
-	anim_wait 4
-	anim_sound 0, 1, SFX_THUNDER
-	anim_ret
+	
