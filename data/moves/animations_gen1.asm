@@ -204,10 +204,7 @@ BattleAnim_Doubleslap:
 	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_DOUBLESLAP
 	anim_obj BATTLE_ANIM_OBJ_PALM, 144, 48, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
-	anim_wait 8
-	anim_ret
+	anim_jump BattleAnimSub_MultiHit1
 
 .alternate:
 	anim_sound 0, 1, SFX_DOUBLESLAP
@@ -219,17 +216,19 @@ BattleAnim_Doubleslap:
 
 BattleAnim_CometPunch:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, .alternate
+	anim_if_param_equal $1, BattleAnim_CometPunch.alternate
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 144, 48, $0
+BattleAnimSub_MultiHit1:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 8
 	anim_ret
 
-.alternate:
+BattleAnim_CometPunch.alternate:
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 120, 64, $0
+BattleAnimSub_MultiHit2:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 64, $0
 	anim_wait 8
@@ -497,18 +496,12 @@ BattleAnim_DoubleKick:
 	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 144, 48, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
-	anim_wait 8
-	anim_ret
+	anim_jump BattleAnimSub_MultiHit1
 
 .alternate:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 120, 64, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 64, $0
-	anim_wait 8
-	anim_ret
+	anim_jump BattleAnimSub_MultiHit2
 
 BattleAnim_MegaKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT

@@ -105,17 +105,13 @@ BattleAnim_TripleKick:
 	anim_if_param_equal $2, .alternate2
 	anim_sound 0, 1, SFX_MEGA_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 144, 48, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
-	anim_wait 8
+	anim_call BattleAnimSub_MultiHit1
 	anim_ret
 
 .alternate1:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 120, 64, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 64, $0
-	anim_wait 8
+	anim_call BattleAnimSub_MultiHit2
 	anim_ret
 
 .alternate2:
