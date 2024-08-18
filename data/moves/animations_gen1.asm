@@ -451,12 +451,19 @@ BattleAnim_Fly:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_Wrap:
+	anim_setvar $1
 BattleAnim_Bind:
 	anim_1gfx BATTLE_ANIM_GFX_ROPE
 	anim_sound 0, 1, SFX_BIND
 	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 64, $0
 	anim_wait 8
+	anim_if_var_equal $1, .wrap
 	anim_obj BATTLE_ANIM_OBJ_BIND2, 132, 56, $0
+	anim_jump .continue
+.wrap:
+	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 56, $0
+.continue:
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
 	anim_wait 64
@@ -666,20 +673,6 @@ BattleAnim_BodySlam:
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
-BattleAnim_Wrap:
-	anim_1gfx BATTLE_ANIM_GFX_ROPE
-	anim_sound 0, 1, SFX_BIND
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 64, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 56, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 64
-	anim_sound 0, 1, SFX_BIND
-	anim_call BattleAnimSub_IncObj3
-	anim_wait 96
 	anim_ret
 
 BattleAnim_TakeDown:
