@@ -1446,15 +1446,18 @@ BattleAnim_MeteorMash:
 	anim_obj BATTLE_ANIM_OBJ_LONG_PUNCH, 136, 56, $0
 	anim_wait 3
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $28
-	anim_call BattleAnimSub_MeteorMash1
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $5c
 	anim_wait 3
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $10
-	anim_call BattleAnimSub_MeteorMash1
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $e8
 	anim_wait 3
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $9c
-	anim_call BattleAnimSub_MeteorMash1
+	anim_wait 3
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $d0
 	anim_wait 3
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $1c
@@ -1465,11 +1468,6 @@ BattleAnim_MeteorMash:
 	anim_wait 3
 	anim_obj BATTLE_ANIM_OBJ_STAR_BURST, 136, 56, $90
 	anim_wait 32
-	anim_ret
-
-BattleAnimSub_MeteorMash1:
-	anim_wait 3
-	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_ret
 
 BattleAnim_Astonish:
