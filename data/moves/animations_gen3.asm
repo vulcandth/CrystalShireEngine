@@ -2653,51 +2653,65 @@ BattleAnim_DoomDesire:
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 48, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 64, 88, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 80, 104, $0
-	anim_call BattleAnimSub_DoomDesire1
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 48, 24, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 64, 40, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 80, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 96, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 112, 88, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 128, 104, $0
-	anim_call BattleAnimSub_DoomDesire1
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 80, 24, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 96, 40, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 112, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 128, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 144, 88, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 160, 104, $0
-	anim_call BattleAnimSub_DoomDesire1
+	anim_wait 8
+	anim_clearobjs
+	anim_wait 1
+	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 112, 24, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 128, 40, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 144, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 160, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_MOONLIGHT, 176, 88, $0
-	anim_call BattleAnimSub_DoomDesire2
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION_SMALL, 140, 42, $0
-	anim_call BattleAnimSub_DoomDesire2
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION_SMALL, 124, 62, $0
-	anim_call BattleAnimSub_DoomDesire2
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION_SMALL, 140, 62, $0
-	anim_call BattleAnimSub_DoomDesire2
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION_SMALL, 124, 42, $0
-	anim_call BattleAnimSub_DoomDesire2
+	anim_wait 8
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_obj BATTLE_ANIM_OBJ_EXPLOSION_SMALL, 132, 52, $0
 	anim_wait 32
 	anim_ret
 
 BattleAnimSub_DoomDesire1:
-	anim_wait 8
-	anim_clearobjs
-	anim_wait 1
-	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_ret
+	; anim_wait 8
+	; anim_clearobjs
+	; anim_wait 1
+	; anim_sound 0, 0, SFX_RAZOR_WIND
+	; anim_ret
 
 BattleAnimSub_DoomDesire2:
-	anim_wait 8
-	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_ret
+	; anim_wait 8
+	; anim_sound 0, 1, SFX_EGG_BOMB
+	; anim_ret
 
 BattleAnim_PsychoBoost:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_ICE
