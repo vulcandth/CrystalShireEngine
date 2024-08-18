@@ -194,6 +194,7 @@ BattleAnim_KarateChop:
 	anim_wait 6
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj BATTLE_ANIM_OBJ_PALM, 136, 48, $0
+BattleAnimSub_KarateChop1:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
 	anim_wait 16
@@ -512,10 +513,7 @@ BattleAnim_Stomp:
 	anim_wait 6
 	anim_sound 0, 1, SFX_STOMP
 	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 48, $0
-	anim_wait 6
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_wait 16
-	anim_ret
+	anim_jump BattleAnimSub_KarateChop1
 
 BattleAnim_DoubleKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
