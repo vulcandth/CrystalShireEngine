@@ -1340,27 +1340,23 @@ BattleAnim_CrossChop:
 
 BattleAnim_Twister:
 	anim_2gfx BATTLE_ANIM_GFX_WIND, BATTLE_ANIM_GFX_HIT
+	anim_call BattleAnimSub_WhirlwindLoop
 .loop1
 	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_GUST, 64, 112, $0
-	anim_wait 6
-	anim_loop 9, .loop1
-.loop2
-	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_wait 8
-	anim_loop 8, .loop2
+	anim_loop 8, .loop1
 	anim_call BattleAnimSub_IncObj9
 	anim_wait 64
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 64, $18
+.loop2
+	anim_sound 0, 1, SFX_RAZOR_WIND
+	anim_wait 8
+	anim_loop 4, .loop2
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 32, $18
 .loop3
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_wait 8
 	anim_loop 4, .loop3
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 32, $18
-.loop4
-	anim_sound 0, 1, SFX_RAZOR_WIND
-	anim_wait 8
-	anim_loop 4, .loop4
 	anim_call BattleAnimSub_IncObj9
 	anim_wait 32
 	anim_ret

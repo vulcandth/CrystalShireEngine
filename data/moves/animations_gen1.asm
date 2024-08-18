@@ -401,11 +401,7 @@ BattleAnim_WingAttack:
 
 BattleAnim_Whirlwind:
 	anim_1gfx BATTLE_ANIM_GFX_WIND
-.loop
-	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_obj BATTLE_ANIM_OBJ_GUST, 64, 112, $0
-	anim_wait 6
-	anim_loop 9, .loop
+	anim_call BattleAnimSub_WhirlwindLoop
 	anim_call BattleAnimSub_IncObj9
 	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 128
@@ -413,6 +409,14 @@ BattleAnim_Whirlwind:
 	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_TARGET, $0
 	anim_wait 64
 .done
+	anim_ret
+
+BattleAnimSub_WhirlwindLoop:
+.loop
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_GUST, 64, 112, $0
+	anim_wait 6
+	anim_loop 9, .loop
 	anim_ret
 
 BattleAnimSub_IncObj9:
