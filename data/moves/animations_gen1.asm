@@ -513,12 +513,16 @@ BattleAnim_MegaKick:
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $3
 .loop
 	anim_sound 0, 1, SFX_MEGA_KICK
-	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
-	anim_wait 6
+	anim_call BattleAnimSub_StrongKick
 	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
 	anim_wait 6
 	anim_loop 3, .loop
+	anim_ret
+
+BattleAnimSub_StrongKick:
+	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 6
 	anim_ret
 
 BattleAnim_JumpKick:
