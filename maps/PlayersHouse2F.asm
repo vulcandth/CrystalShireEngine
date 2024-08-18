@@ -140,8 +140,8 @@ if DEF(_DEBUG)
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke SNORLAX, 75
-	givepokemove QUICK_ATTACK,  wPartyMon1, 0
-	givepokemove MACH_PUNCH,  wPartyMon1, 1
+	givepokemove PIN_MISSILE,  wPartyMon1, 0
+	givepokemove ICICLE_SPEAR,  wPartyMon1, 1
 	givepokemove AERIAL_ACE,  wPartyMon1, 2
 	givepokemove VOLT_TACKLE,  wPartyMon1, 3
 	; givepoke GENGAR, 50
