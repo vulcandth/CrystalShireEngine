@@ -1966,26 +1966,22 @@ BattleAnim_Extrasensory:
 	anim_sound 0, 1, SFX_CUT
 	anim_bgp $1b
 	anim_bgeffect BATTLE_BG_EFFECT_VIBRATE_MON, $0, $0, $0
-	anim_call BattleAnimSub_Extrasensory1
-	anim_wait 36
+	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 40
 	anim_sound 0, 1, SFX_CUT
 	anim_bgeffect BATTLE_BG_EFFECT_NIGHT_SHADE, $0, $0, $8
-	anim_call BattleAnimSub_Extrasensory1
-	anim_wait 28
+	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 32
 	anim_incbgeffect BATTLE_BG_EFFECT_NIGHT_SHADE
 	anim_wait 8
 	anim_sound 0, 1, SFX_CUT
 	anim_bgeffect BATTLE_BG_EFFECT_TELEPORT, $0, $0, $0
-	anim_call BattleAnimSub_Extrasensory1
+	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 44, 96, $0
+	anim_wait 4
 	anim_sound 0, 1, SFX_PSYCHIC
 	anim_wait 64
 	anim_incbgeffect BATTLE_BG_EFFECT_TELEPORT
 	anim_call BattleAnim_ShowMon_1
-	anim_ret
-
-BattleAnimSub_Extrasensory1:
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 44, 96, $0
-	anim_wait 4
 	anim_ret
 
 BattleAnim_SkyUppercut:
