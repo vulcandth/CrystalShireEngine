@@ -1615,8 +1615,8 @@ BattleAnim_Toxic:
 	anim_bgeffect BATTLE_BG_EFFECT_BLACK_HUES, $0, $8, $0
 	anim_call BattleAnimSub_Acid
 	anim_wait 32
-	anim_call BattleAnimSub_Sludge
-	anim_wait 64
+	anim_call BattleAnimSub_PoisonBubblesLong
+	anim_wait 8
 	anim_ret
 
 BattleAnim_Confusion:
@@ -2072,7 +2072,11 @@ BattleAnim_Smog:
 BattleAnim_Sludge:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_1gfx BATTLE_ANIM_GFX_POISON
-	anim_call BattleAnimSub_Sludge
+; fallthrough
+BattleAnimSub_PoisonBubblesLong:
+.loop
+	anim_call BattleAnimSub_PoisonBubbles
+	anim_loop 5, .loop
 	anim_wait 56
 	anim_ret
 

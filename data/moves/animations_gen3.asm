@@ -1341,10 +1341,9 @@ BattleAnim_PoisonFang:
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 ;fallthrough
-BattleAnimSub_PoisonBubble1:
+BattleAnimSub_PoisonBubblesShort:
 .loop
-	anim_call BattleAnimSub_Sludge1
-	anim_wait 8
+	anim_call BattleAnimSub_PoisonBubbles
 	anim_loop 2, .loop
 	anim_wait 48
 	anim_ret
@@ -2377,7 +2376,7 @@ BattleAnim_PoisonTail:
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_0
-	anim_jump BattleAnimSub_PoisonBubble1
+	anim_jump BattleAnimSub_PoisonBubblesShort
 
 BattleAnim_Covet:
 	anim_2gfx BATTLE_ANIM_GFX_OBJECTS, BATTLE_ANIM_GFX_HIT
