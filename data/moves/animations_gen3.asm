@@ -1721,10 +1721,7 @@ BattleAnim_OdorSleuth:
 	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_1
 	anim_wait 24
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_sound 0, 0, SFX_FORESIGHT
-	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 64, 88, $0
-	anim_wait 24
+	anim_call BattleAnimSub_ShineEffect
 	anim_ret
 
 BattleAnim_RockTomb:

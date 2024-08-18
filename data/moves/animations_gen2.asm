@@ -629,6 +629,8 @@ BattleAnim_IcyWind:
 
 BattleAnim_Detect:
 	anim_1gfx BATTLE_ANIM_GFX_SHINE
+; fallthrough
+BattleAnimSub_ShineEffect:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_sound 0, 0, SFX_FORESIGHT
 	anim_obj BATTLE_ANIM_OBJ_FORESIGHT, 64, 88, $0
