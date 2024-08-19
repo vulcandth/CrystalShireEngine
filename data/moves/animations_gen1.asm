@@ -424,6 +424,7 @@ BattleAnimSub_WhirlwindLoop:
 
 BattleAnimSub_IncObj9:
 	anim_incobj 1
+.2
 	anim_incobj 2
 	anim_incobj 3
 	anim_incobj 4
