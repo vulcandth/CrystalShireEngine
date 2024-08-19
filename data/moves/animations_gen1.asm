@@ -1268,6 +1268,12 @@ BattleAnim_Absorb:
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
 	anim_obj BATTLE_ANIM_OBJ_ABSORB_CENTER, 44, 88, $0
 .loop
+	anim_call BattleAnimSub_AbsorbParticles
+	anim_loop 5, .loop
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_AbsorbParticles:
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj BATTLE_ANIM_OBJ_ABSORB, 128, 48, $2
 	anim_wait 6
@@ -1277,8 +1283,6 @@ BattleAnim_Absorb:
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 32, $4
 	anim_wait 6
-	anim_loop 5, .loop
-	anim_wait 32
 	anim_ret
 
 BattleAnim_MegaDrain:
@@ -1288,15 +1292,7 @@ BattleAnim_MegaDrain:
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MONS_TO_BLACK_REPEATING, $0, BG_EFFECT_TARGET, $10
 	anim_setvar $0
 .loop
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 6
+	anim_call BattleAnimSub_AbsorbParticles
 	anim_incvar
 	anim_if_var_equal $7, .done
 	anim_if_var_equal $2, .spawn
@@ -2402,15 +2398,7 @@ BattleAnim_LeechLife:
 	anim_wait 12
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
 .loop
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 6
+	anim_call BattleAnimSub_AbsorbParticles
 	anim_loop 4, .loop
 	anim_wait 28
 	anim_ret
