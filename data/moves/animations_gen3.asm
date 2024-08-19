@@ -625,15 +625,7 @@ BattleAnim_Superpower:
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
-	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, $1, $0
-	anim_sound 0, 0, SFX_SPARK
-	anim_wait 16
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $0, $0
-	anim_wait 4
-	anim_clearobjs
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
-	anim_wait 1
+	anim_call BattleAnimSub_Spark1
 	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
 .loop2

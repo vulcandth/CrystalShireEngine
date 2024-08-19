@@ -773,6 +773,14 @@ BattleAnim_Spark:
 	anim_setobj $1, $3
 	anim_wait 1
 	anim_call BattleAnim_TargetObj_2Row
+	anim_call BattleAnimSub_Spark1
+	anim_sound 0, 1, SFX_THUNDERSHOCK
+	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
+	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnimSub_Spark1:
 	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_SPARK
 	anim_wait 16
@@ -782,10 +790,6 @@ BattleAnim_Spark:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
 	anim_wait 1
-	anim_sound 0, 1, SFX_THUNDERSHOCK
-	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
-	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_FuryCutter:
