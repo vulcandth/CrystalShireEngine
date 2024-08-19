@@ -2733,22 +2733,19 @@ BattleAnim_Substitute:
 	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 48
 	anim_dropsub
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 32
-	anim_ret
+	anim_jump .done
 
 .raisesub:
 	anim_bgeffect BATTLE_BG_EFFECT_REMOVE_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 48
 	anim_raisesub
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 32
-	anim_ret
+	anim_jump .done
 
 .dropsub2:
 	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 48
 	anim_dropsub
+.done:
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 32
 	anim_ret
