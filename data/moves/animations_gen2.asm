@@ -1295,6 +1295,7 @@ BattleAnim_RainDance:
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $1
 	anim_wait 8
+.done
 	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
 	anim_wait 128
 	anim_ret
@@ -1307,9 +1308,7 @@ BattleAnim_SunnyDay:
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
 	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 128
-	anim_ret
+	anim_jump BattleAnim_RainDance.done
 
 BattleAnim_MirrorCoat:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_MIRROR_COAT
