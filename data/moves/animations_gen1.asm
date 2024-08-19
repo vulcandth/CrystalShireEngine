@@ -548,20 +548,22 @@ BattleAnimSub_StrongKick:
 
 BattleAnim_JumpKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, .alternate
+	anim_if_param_equal $1, BattleAnim_JumpKick.alternate
 	anim_sound 0, 1, SFX_JUMP_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 112, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_KICK, 100, 60, $0
 	anim_setobj $1, $2
 	anim_setobj $2, $2
 	anim_wait 24
+BattleAnimSub_JumpKick1:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 48, $0
 	anim_wait 16
 	anim_ret
 
-.alternate:
+BattleAnim_JumpKick.alternate:
 	anim_wait 8
+BattleAnimSub_JumpKick2:
 	anim_sound 0, 0, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_HIT, 44, 88, $0
 	anim_wait 16
@@ -2320,17 +2322,11 @@ BattleAnim_HiJumpKick:
 	anim_obj BATTLE_ANIM_OBJ_KICK, 112, 72, $0
 	anim_setobj $1, $2
 	anim_wait 16
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 48, $0
-	anim_wait 16
-	anim_ret
+	anim_jump BattleAnimSub_JumpKick1
 
 .alternate:
 	anim_wait 16
-	anim_sound 0, 0, SFX_DOUBLE_KICK
-	anim_obj BATTLE_ANIM_OBJ_HIT, 44, 88, $0
-	anim_wait 16
-	anim_ret
+	anim_jump BattleAnimSub_JumpKick2
 
 BattleAnim_Glare:
 	anim_1gfx BATTLE_ANIM_GFX_BEAM
