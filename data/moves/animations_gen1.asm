@@ -2180,29 +2180,26 @@ BattleAnim_Waterfall:
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
 	anim_sound 0, 1, SFX_LICK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
-	anim_wait 3
+	anim_call BattleAnimSub_WaterfallSplash
 	anim_sound 0, 1, SFX_LICK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
-	anim_wait 3
+	anim_call BattleAnimSub_WaterfallSplash
 	anim_sound 0, 1, SFX_LICK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 40, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
-	anim_wait 3
+	anim_call BattleAnimSub_WaterfallSplash
 	anim_sound 0, 1, SFX_LICK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 32, $0
+	anim_call BattleAnimSub_WaterfallSplash
+	anim_sound 0, 1, SFX_LICK
+	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 24, $0
+	anim_call BattleAnimSub_WaterfallSplash
+	anim_wait 5
+	anim_ret
+
+BattleAnimSub_WaterfallSplash:
 	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
 	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
 	anim_wait 3
-	anim_sound 0, 1, SFX_LICK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 24, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 56, $50
-	anim_wait 8
 	anim_ret
 
 BattleAnim_Clamp:
