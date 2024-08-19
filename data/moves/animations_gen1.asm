@@ -1752,6 +1752,7 @@ BattleAnim_Rage:
 	anim_wait 72
 	anim_incbgeffect BATTLE_BG_EFFECT_CYCLE_MON_LIGHT_DARK_REPEATING
 	anim_call BattleAnim_ShowMon_0
+.done:
 	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
 	anim_wait 6
