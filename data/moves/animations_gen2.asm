@@ -555,13 +555,7 @@ BattleAnim_IcyWind:
 	anim_playerheadobj
 	anim_sound 0, 0, SFX_PSYCHIC
 .loop
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
-	anim_wait 8
+	anim_call BattleAnimSub_IcyWind1
 	anim_loop 2, .loop
 	anim_wait 16
 	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
@@ -573,6 +567,16 @@ BattleAnim_IcyWind:
 	anim_wait 4
 	anim_incobj 7
 	anim_wait 1
+	anim_ret
+
+BattleAnimSub_IcyWind1:
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_wait 8
 	anim_ret
 
 BattleAnim_Detect:
@@ -1330,13 +1334,7 @@ BattleAnim_MirrorCoat:
 .loop
 	anim_call BattleAnimSub_ShineScreen
 	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 72, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
-	anim_wait 8
+	anim_call BattleAnimSub_IcyWind1
 	anim_loop 3, .loop
 	anim_wait 32
 	anim_ret
