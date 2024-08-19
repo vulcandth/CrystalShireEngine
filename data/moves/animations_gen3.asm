@@ -1324,7 +1324,7 @@ BattleAnim_HyperVoice:
 
 BattleAnim_PoisonFang:
 	anim_3gfx BATTLE_ANIM_GFX_CUT, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_POISON
-	anim_call BattleAnimSub_Bite1
+	anim_call BattleAnimSub_Bite2
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 4
 	anim_clearobjs
