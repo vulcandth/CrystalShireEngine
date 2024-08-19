@@ -735,9 +735,14 @@ BattleAnim_PoisonSting:
 	anim_2gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_HIT
 	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 64, 92, $14
 	anim_wait 16
+	anim_call BattleAnimSub_NeedleHit
+	anim_wait 16
+	anim_ret
+
+BattleAnimSub_NeedleHit:
+	anim_wait 16
 	anim_sound 0, 1, SFX_POISON_STING
 	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 136, 56, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Twineedle:
@@ -747,8 +752,7 @@ BattleAnim_Twineedle:
 	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 64, 92, $14
 	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 56, 84, $14
 	anim_wait 16
-	anim_sound 0, 1, SFX_POISON_STING
-	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 136, 56, $0
+	anim_call BattleAnimSub_NeedleHit
 	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 128, 48, $0
 	anim_wait 16
 	anim_ret
@@ -2380,8 +2384,7 @@ BattleAnim_LeechLife:
 	anim_2gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_HIT
 	anim_obj BATTLE_ANIM_OBJ_NEEDLE, 64, 92, $14
 	anim_wait 16
-	anim_sound 0, 1, SFX_POISON_STING
-	anim_obj BATTLE_ANIM_OBJ_HIT_SMALL, 136, 56, $0
+	anim_call BattleAnimSub_NeedleHit
 	anim_wait 12
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
 .loop
