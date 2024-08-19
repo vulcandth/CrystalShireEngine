@@ -185,6 +185,7 @@ BattleAnim_FlameWheel:
 	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 4
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $3
+.done
 	anim_sound 0, 1, SFX_EMBER
 	anim_obj BATTLE_ANIM_OBJ_FIRE_BLAST, 136, 48, $1
 	anim_obj BATTLE_ANIM_OBJ_FIRE_BLAST, 136, 48, $4
@@ -1035,16 +1036,7 @@ BattleAnim_SacredFire:
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_wait 4
-	anim_sound 0, 1, SFX_EMBER
-	anim_obj BATTLE_ANIM_OBJ_FIRE_BLAST, 136, 48, $1
-	anim_obj BATTLE_ANIM_OBJ_FIRE_BLAST, 136, 48, $4
-	anim_obj BATTLE_ANIM_OBJ_FIRE_BLAST, 136, 48, $5
-	anim_wait 8
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_TARGET, $0
-	anim_wait 4
-	anim_incobj 9
-	anim_wait 8
-	anim_ret
+	anim_jump BattleAnim_FlameWheel.done
 
 BattleAnim_Magnitude:
 	anim_1gfx BATTLE_ANIM_GFX_ROCKS
