@@ -1121,8 +1121,7 @@ BattleAnim_Encore:
 BattleAnim_Pursuit:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_call BattleAnim_Pound.done
 	anim_ret
 
 BattleAnim_RapidSpin:

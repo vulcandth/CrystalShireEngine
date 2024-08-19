@@ -395,8 +395,7 @@ BattleAnim_Facade:
 	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
 	anim_call BattleAnim_ShowMon_0
 	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_call BattleAnim_Pound.done
 	anim_ret
 
 BattleAnimSub_Facade1:
@@ -816,8 +815,7 @@ BattleAnim_Endeavor:
 	anim_call BattleAnim_ShowMon_0
 	anim_clearobjs
 	anim_sound 0, 1, SFX_KARATE_CHOP
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_wait 16
+	anim_call BattleAnim_Pound.done
 	anim_ret
 
 BattleAnim_Eruption:
