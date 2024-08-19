@@ -417,7 +417,7 @@ BattleAnim_BellyDrum:
 	anim_wait 12
 .loop1:
 	anim_call .beat
-	anim_loop 2, .loop1
+	anim_loop 3, .loop1
 	anim_wait 12
 .loop2:
 	anim_call .beat
