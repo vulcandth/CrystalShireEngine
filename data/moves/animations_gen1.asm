@@ -1149,6 +1149,7 @@ BattleAnimSub_Beam:
 	anim_sound 0, 1, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 4
+BattleAnimSub_Beam1:
 	anim_sound 0, 1, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 112, 68, $0
 	anim_obj BATTLE_ANIM_OBJ_BEAM_TIP, 126, 62, $0
