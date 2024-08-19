@@ -677,16 +677,7 @@ BattleAnim_GigaDrain:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 .loop2
 	anim_sound 0, 0, SFX_METRONOME
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 24, 64, $0
-	anim_wait 5
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 56, 104, $0
-	anim_wait 5
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 24, 104, $0
-	anim_wait 5
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 56, 64, $0
-	anim_wait 5
-	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 40, 84, $0
-	anim_wait 5
+	anim_call BattleAnimSub_Glimmer3
 	anim_loop 2, .loop2
 	anim_wait 32
 	anim_ret
@@ -1619,6 +1610,12 @@ BattleAnimSub_Glimmer:
 BattleAnimSub_Glimmer2:
 	anim_sound 0, 0, SFX_METRONOME
 .loop
+	anim_call BattleAnimSub_Glimmer3
+	anim_loop 2, .loop
+	anim_wait 16
+	anim_ret
+
+BattleAnimSub_Glimmer3:
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 24, 64, $0
 	anim_wait 5
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 56, 104, $0
@@ -1629,8 +1626,6 @@ BattleAnimSub_Glimmer2:
 	anim_wait 5
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 40, 84, $0
 	anim_wait 5
-	anim_loop 2, .loop
-	anim_wait 16
 	anim_ret
 
 BattleAnimSub_Recover:
