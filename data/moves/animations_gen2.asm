@@ -808,14 +808,18 @@ BattleAnim_FuryCutter:
 	anim_ret
 
 BattleAnim_SteelWing:
+	anim_call BattleAnimSub_MetallicRage
+	anim_call BattleAnim_ShowMon_0
+	anim_resetobp0
+	anim_call BattleAnim_WingAttack
+	anim_ret
+
+BattleAnimSub_MetallicRage:
 	anim_1gfx BATTLE_ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_sound 0, 0, SFX_RAGE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_call BattleAnimSub_Metallic
-	anim_call BattleAnim_ShowMon_0
-	anim_resetobp0
-	anim_call BattleAnim_WingAttack
 	anim_ret
 
 BattleAnim_MeanLook:
@@ -1104,11 +1108,7 @@ BattleAnim_SweetScent:
 	anim_ret
 
 BattleAnim_IronTail:
-	anim_1gfx BATTLE_ANIM_GFX_REFLECT
-	anim_obp0 $0
-	anim_sound 0, 0, SFX_RAGE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnimSub_Metallic
+	anim_call BattleAnimSub_MetallicRage
 	anim_wait 4
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_resetobp0
@@ -1122,11 +1122,7 @@ BattleAnim_IronTail:
 	anim_ret
 
 BattleAnim_MetalClaw:
-	anim_1gfx BATTLE_ANIM_GFX_REFLECT
-	anim_obp0 $0
-	anim_sound 0, 0, SFX_RAGE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnimSub_Metallic
+	anim_call BattleAnimSub_MetallicRage
 	anim_call BattleAnim_ShowMon_0
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_resetobp0
