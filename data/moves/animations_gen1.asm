@@ -1203,21 +1203,23 @@ BattleAnim_Submission:
 
 BattleAnim_LowKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_call BattleAnimSub_LowKick1
 	anim_obj BATTLE_ANIM_OBJ_KICK, 124, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 124, 64, $0
 	anim_wait 6
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_call BattleAnimSub_LowKick1
 	anim_obj BATTLE_ANIM_OBJ_KICK, 132, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 64, $0
 	anim_wait 6
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_call BattleAnimSub_LowKick1
 	anim_obj BATTLE_ANIM_OBJ_KICK, 140, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 140, 64, $0
 	anim_wait 16
+	anim_ret
+
+BattleAnimSub_LowKick1:
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
+	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_ret
 
 BattleAnim_Counter:
