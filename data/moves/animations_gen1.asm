@@ -1706,6 +1706,16 @@ BattleAnim_Agility:
 	anim_obp0 $fc
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, BG_EFFECT_USER, $40
+	anim_call BattleAnimSub_Agility1
+.loop
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_wait 4
+	anim_loop 18, .loop
+	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+BattleAnimSub_Agility1:
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 24, $10
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 48, $2
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 88, $8
@@ -1714,12 +1724,6 @@ BattleAnim_Agility:
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 56, $c
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 80, $4
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 104, $e
-.loop
-	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_wait 4
-	anim_loop 18, .loop
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_QuickAttack:
