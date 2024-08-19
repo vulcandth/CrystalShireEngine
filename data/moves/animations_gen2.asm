@@ -109,9 +109,7 @@ BattleAnim_TripleKick:
 	anim_ret
 
 .alternate1:
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj BATTLE_ANIM_OBJ_KICK, 120, 64, $0
-	anim_call BattleAnimSub_MultiHit2
+	anim_call BattleAnimSub_MultiKick
 	anim_ret
 
 .alternate2:

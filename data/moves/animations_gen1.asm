@@ -517,12 +517,12 @@ BattleAnim_Stomp:
 
 BattleAnim_DoubleKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, .alternate
+	anim_if_param_equal $1, BattleAnimSub_MultiKick
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 144, 48, $0
 	anim_jump BattleAnimSub_MultiHit1
 
-.alternate:
+BattleAnimSub_MultiKick:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 120, 64, $0
 	anim_jump BattleAnimSub_MultiHit2
