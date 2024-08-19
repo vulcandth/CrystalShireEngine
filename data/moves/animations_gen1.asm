@@ -2412,6 +2412,7 @@ BattleAnim_SkyAttack:
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
 	anim_wait 64
 	anim_incobj 1
+.done
 	anim_wait 32
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 16

@@ -1341,9 +1341,7 @@ BattleAnim_Extremespeed:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_CUT
 	anim_call BattleAnimSub_SpeedLines
 	anim_call BattleAnimSub_Cut1
-	anim_wait 32
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 16
+	anim_call BattleAnim_SkyAttack.done
 	anim_ret
 
 BattleAnim_Ancientpower:
