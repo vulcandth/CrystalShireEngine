@@ -628,17 +628,21 @@ BattleAnim_Outrage:
 	anim_ret
 
 BattleAnim_Sandstorm:
+	anim_call BattleAnimSub_Sandstorm1
+.loop
+	anim_sound 0, 1, SFX_MENU
+	anim_wait 8
+	anim_loop 16, .loop
+	anim_wait 8
+	anim_ret
+
+BattleAnimSub_Sandstorm1:
 	anim_1gfx BATTLE_ANIM_GFX_POWDER
 	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 88, 0, $0
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 72, 0, $1
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_MENU
-	anim_wait 8
-	anim_loop 16, .loop
-	anim_wait 8
 	anim_ret
 
 BattleAnim_GigaDrain:
