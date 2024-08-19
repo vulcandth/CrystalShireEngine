@@ -2341,13 +2341,7 @@ BattleAnim_PoisonTail:
 
 BattleAnim_Covet:
 	anim_2gfx BATTLE_ANIM_GFX_OBJECTS, BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
-	anim_sound 0, 0, SFX_ATTRACT
-	anim_obj BATTLE_ANIM_OBJ_HEART, 64, 80, $0
-	anim_wait 32
-	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
-	anim_call BattleAnim_ShowMon_0
+	anim_call BattleAnimSub_Charm1
 	anim_wait 1
 	anim_clearobjs
 	anim_wait 1
