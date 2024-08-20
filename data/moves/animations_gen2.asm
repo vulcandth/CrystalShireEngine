@@ -1245,6 +1245,7 @@ BattleAnim_HiddenPower:
 	anim_wait 1
 	anim_call BattleAnimSub_IncObj9.2
 	anim_wait 16
+.end
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 32
