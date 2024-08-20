@@ -2518,17 +2518,7 @@ BattleAnim_DragonDance:
 	anim_wait 40
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
 	anim_wait 1
-	anim_1gfx BATTLE_ANIM_GFX_SPEED
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT, $0, $1, $40
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-.loop2
-	anim_sound 0, 0, SFX_SWORDS_DANCE
-	anim_call BattleAnimSub_FocusedPower
-	anim_loop 3, .loop2
-	anim_wait 8
-	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT
-	anim_call BattleAnim_ShowMon_0
+	anim_call BattleAnim_FocusEnergy
 	anim_ret
 
 BattleAnim_RockBlast:
