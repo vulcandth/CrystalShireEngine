@@ -1844,6 +1844,7 @@ BattleAnim_Recover:
 	anim_call BattleAnimSub_Recover
 	anim_wait 32
 	anim_incbgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING
+.end
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
 	anim_call BattleAnimSub_Glimmer
 	anim_ret

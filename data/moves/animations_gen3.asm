@@ -243,10 +243,9 @@ BattleAnim_Swallow:
 	anim_wait 2
 	anim_obj BATTLE_ANIM_OBJ_ENERGY_ORB_OUT_YFIX, 68, 30, $10
 	anim_wait 2
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_call BattleAnimSub_Glimmer
+	anim_call BattleAnim_Recover.end
 	anim_ret
-
+	
 BattleAnim_HeatWave:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_HEAT_WAVE
 	anim_1gfx BATTLE_ANIM_GFX_HAZE
