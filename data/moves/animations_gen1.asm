@@ -1044,11 +1044,11 @@ BattleAnim_IceBeam:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx BATTLE_ANIM_GFX_ICE
 .loop
-	anim_call BattleAnimSub_IceBeam1
+	anim_call .beam
 	anim_loop 5, .loop
 	anim_obj BATTLE_ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
 .loop2
-	anim_call BattleAnimSub_IceBeam1
+	anim_call .beam
 	anim_loop 15, .loop2
 	anim_wait 48
 	anim_sound 0, 1, SFX_SHINE
@@ -1057,7 +1057,7 @@ BattleAnim_IceBeam:
 	anim_wait 8
 	anim_ret
 
-BattleAnimSub_IceBeam1:
+.beam:
 	anim_sound 6, 2, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE_BEAM, 64, 92, $4
 	anim_wait 4
