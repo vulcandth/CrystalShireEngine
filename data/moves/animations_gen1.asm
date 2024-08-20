@@ -196,7 +196,7 @@ BattleAnim_KarateChop:
 	anim_wait 6
 	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_obj BATTLE_ANIM_OBJ_PALM, 136, 48, $0
-BattleAnimSub_KarateChop1:
+.done:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
 	anim_wait 16
@@ -207,7 +207,7 @@ BattleAnim_Doubleslap:
 	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_DOUBLESLAP
 	anim_obj BATTLE_ANIM_OBJ_PALM, 144, 48, $0
-	anim_jump BattleAnimSub_MultiHit1
+	anim_jump BattleAnim_CometPunch.hit
 
 .alternate:
 	anim_sound 0, 1, SFX_DOUBLESLAP
@@ -219,19 +219,19 @@ BattleAnim_Doubleslap:
 
 BattleAnim_CometPunch:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, BattleAnim_CometPunch.alternate
+	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 144, 48, $0
-BattleAnimSub_MultiHit1:
+.hit:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $0
 	anim_wait 8
 	anim_ret
 
-BattleAnim_CometPunch.alternate:
+.alternate:
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 120, 64, $0
-BattleAnimSub_MultiHit2:
+.hit2:
 	anim_wait 6
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 64, $0
 	anim_wait 8
@@ -244,13 +244,13 @@ BattleAnim_MegaPunch:
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $3
 .loop
 	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_call BattleAnimSub_MegaPunch1
+	anim_call .punch
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 136, 56, $0
 	anim_wait 6
 	anim_loop 3, .loop
 	anim_ret
 
-BattleAnimSub_MegaPunch1:
+.punch:
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 136, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
 	anim_wait 6
@@ -363,11 +363,11 @@ BattleAnim_SwordsDance:
 
 BattleAnim_Cut:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
-	anim_call BattleAnimSub_Cut1
+	anim_call BattleAnim_Cut.cut
 	anim_wait 32
 	anim_ret
 
-BattleAnimSub_Cut1:
+.cut:
 	anim_sound 0, 1, SFX_CUT
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
 	anim_ret
@@ -516,19 +516,19 @@ BattleAnim_Stomp:
 	anim_wait 6
 	anim_sound 0, 1, SFX_STOMP
 	anim_obj BATTLE_ANIM_OBJ_KICK, 136, 48, $0
-	anim_jump BattleAnimSub_KarateChop1
+	anim_jump BattleAnim_KarateChop.done
 
 BattleAnim_DoubleKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, BattleAnimSub_MultiKick
+	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 144, 48, $0
-	anim_jump BattleAnimSub_MultiHit1
+	anim_jump BattleAnim_CometPunch.hit
 
-BattleAnimSub_MultiKick:
+.alternate:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 120, 64, $0
-	anim_jump BattleAnimSub_MultiHit2
+	anim_jump BattleAnim_CometPunch.hit2
 
 BattleAnim_MegaKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
@@ -551,22 +551,22 @@ BattleAnimSub_StrongKick:
 
 BattleAnim_JumpKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_if_param_equal $1, BattleAnim_JumpKick.alternate
+	anim_if_param_equal $1, .alternate
 	anim_sound 0, 1, SFX_JUMP_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 112, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_KICK, 100, 60, $0
 	anim_setobj $1, $2
 	anim_setobj $2, $2
 	anim_wait 24
-BattleAnimSub_JumpKick1:
+.done:
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 48, $0
 	anim_wait 16
 	anim_ret
 
-BattleAnim_JumpKick.alternate:
+.alternate:
 	anim_wait 8
-BattleAnimSub_JumpKick2:
+.altdone:
 	anim_sound 0, 0, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_HIT, 44, 88, $0
 	anim_wait 16
@@ -694,16 +694,16 @@ BattleAnim_TakeDown:
 
 BattleAnim_Thrash:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnimSub_Thrash1
+	anim_call .palm
 	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
-	anim_call BattleAnimSub_MegaPunch1
+	anim_call BattleAnim_MegaPunch.punch
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 152, 40, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 152, 40, $0
 	anim_wait 16
 	anim_ret
 
-BattleAnimSub_Thrash1:
+.palm:
 	anim_sound 0, 1, SFX_POUND
 	anim_obj BATTLE_ANIM_OBJ_PALM, 120, 72, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 120, 72, $0
@@ -766,9 +766,9 @@ BattleAnim_PinMissile:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
 	anim_2gfx BATTLE_ANIM_GFX_HORN, BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_RAZOR_WIND
-	anim_call BattleAnimSub_PinMissile1
+	anim_call BattleAnim_PinMissile.hit1
 	anim_sound 0, 1, SFX_POISON_STING
-	anim_call BattleAnimSub_PinMissile2
+	anim_call BattleAnim_PinMissile.hit2
 	anim_sound 0, 1, SFX_POISON_STING
 	anim_wait 12
 	anim_obj BATTLE_ANIM_OBJ_HIT, 132, 52, $0
@@ -776,14 +776,14 @@ BattleAnim_PinMissile:
 	anim_wait 16
 	anim_ret
 
-BattleAnimSub_PinMissile1:
+.hit1:
 	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 64, 92, $28
 	anim_wait 12
 	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 56, 84, $28
 	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 56, $0
 	anim_ret
 
-BattleAnimSub_PinMissile2:
+.hit2:
 	anim_wait 12
 	anim_obj BATTLE_ANIM_OBJ_MEDIUM_HORN, 52, 88, $28
 	anim_obj BATTLE_ANIM_OBJ_HIT, 128, 48, $0
@@ -1029,7 +1029,7 @@ BattleAnim_Surf:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_1gfx BATTLE_ANIM_GFX_BUBBLE
 	;fallthrough
-BattleAnimSub_Surf1:
+.surf:
 	anim_bgeffect BATTLE_BG_EFFECT_SURF, $0, $0, $0
 	anim_obj BATTLE_ANIM_OBJ_SURF, 88, 104, $8
 .loop
@@ -1141,6 +1141,7 @@ BattleAnim_HyperBeam:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $30, $4, $10
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $40
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	; fallthrough
 BattleAnimSub_Beam:
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 64, 92, $0
@@ -1151,7 +1152,7 @@ BattleAnimSub_Beam:
 	anim_sound 0, 1, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 4
-BattleAnimSub_Beam1:
+.done:
 	anim_sound 0, 1, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 112, 68, $0
 	anim_obj BATTLE_ANIM_OBJ_BEAM_TIP, 126, 62, $0
@@ -1205,21 +1206,21 @@ BattleAnim_Submission:
 
 BattleAnim_LowKick:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnimSub_LowKick1
+	anim_call .effect
 	anim_obj BATTLE_ANIM_OBJ_KICK, 124, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 124, 64, $0
 	anim_wait 6
-	anim_call BattleAnimSub_LowKick1
+	anim_call .effect
 	anim_obj BATTLE_ANIM_OBJ_KICK, 132, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 132, 64, $0
 	anim_wait 6
-	anim_call BattleAnimSub_LowKick1
+	anim_call .effect
 	anim_obj BATTLE_ANIM_OBJ_KICK, 140, 64, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 140, 64, $0
 	anim_wait 16
 	anim_ret
 
-BattleAnimSub_LowKick1:
+.effect:
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $4, $2
 	anim_sound 0, 1, SFX_DOUBLE_KICK
 	anim_ret
@@ -1228,7 +1229,7 @@ BattleAnim_Counter:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 .loop
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $6, $2
-	anim_call BattleAnimSub_Thrash1
+	anim_call BattleAnim_Thrash.palm
 	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $6, $2
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj BATTLE_ANIM_OBJ_PUNCH, 136, 40, $0
@@ -1249,14 +1250,14 @@ BattleAnim_SeismicToss:
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_Y, $10, $1, $20
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj BATTLE_ANIM_OBJ_SEISMIC_TOSS, 64, 104, $1
-	anim_jump BattleAnimSub_StrengthToss
+	anim_jump BattleAnim_Strength.toss
 BattleAnim_Strength:
 	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_HIT
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_Y, $10, $1, $20
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj BATTLE_ANIM_OBJ_STRENGTH, 64, 104, $1
 	; fallthrough
-BattleAnimSub_StrengthToss:
+.toss:
 	anim_wait 128
 	anim_incobj 1
 	anim_wait 20
@@ -1706,7 +1707,7 @@ BattleAnim_Agility:
 	anim_obp0 $fc
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_FADE_MON_TO_LIGHT_REPEATING, $0, BG_EFFECT_USER, $40
-	anim_call BattleAnimSub_Agility1
+	anim_call BattleAnimSub_AgilityLines
 .loop
 	anim_sound 0, 0, SFX_RAZOR_WIND
 	anim_wait 4
@@ -1715,7 +1716,7 @@ BattleAnim_Agility:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnimSub_Agility1:
+BattleAnimSub_AgilityLines:
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 24, $10
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 48, $2
 	anim_obj BATTLE_ANIM_OBJ_AGILITY, 8, 88, $8
@@ -2325,11 +2326,11 @@ BattleAnim_HiJumpKick:
 	anim_obj BATTLE_ANIM_OBJ_KICK, 112, 72, $0
 	anim_setobj $1, $2
 	anim_wait 16
-	anim_jump BattleAnimSub_JumpKick1
+	anim_jump BattleAnim_JumpKick.done
 
 .alternate:
 	anim_wait 16
-	anim_jump BattleAnimSub_JumpKick2
+	anim_jump BattleAnim_JumpKick.altdone
 
 BattleAnim_Glare:
 	anim_1gfx BATTLE_ANIM_GFX_BEAM
@@ -2700,7 +2701,7 @@ BattleAnim_SuperFang:
 
 BattleAnim_Slash:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
-	anim_call BattleAnimSub_Cut1
+	anim_call BattleAnim_Cut.cut
 	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 148, 36, $0
 	anim_wait 32
 	anim_ret

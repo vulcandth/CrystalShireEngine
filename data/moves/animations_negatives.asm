@@ -299,7 +299,7 @@ BattleAnim_InLove:
 	anim_ret
 
 BattleAnim_InSandstorm:
-	anim_call BattleAnimSub_Sandstorm1
+	anim_call BattleAnim_Sandstorm.storm
 .loop
 	anim_sound 0, 1, SFX_MENU
 	anim_wait 8

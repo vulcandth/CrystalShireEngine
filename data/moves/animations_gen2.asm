@@ -105,11 +105,11 @@ BattleAnim_TripleKick:
 	anim_if_param_equal $2, .alternate2
 	anim_sound 0, 1, SFX_MEGA_KICK
 	anim_obj BATTLE_ANIM_OBJ_KICK, 144, 48, $0
-	anim_call BattleAnimSub_MultiHit1
+	anim_call BattleAnim_CometPunch.hit
 	anim_ret
 
 .alternate1:
-	anim_call BattleAnimSub_MultiKick
+	anim_call BattleAnim_DoubleKick.alternate
 	anim_ret
 
 .alternate2:
@@ -286,7 +286,7 @@ BattleAnim_Aeroblast:
 	anim_sound 0, 1, SFX_HYPER_BEAM
 	anim_obj BATTLE_ANIM_OBJ_BEAM, 96, 76, $0
 	anim_wait 2
-	anim_call BattleAnimSub_Beam1
+	anim_call BattleAnimSub_Beam.done
 	anim_ret
 
 BattleAnim_CottonSpore:
@@ -555,7 +555,7 @@ BattleAnim_IcyWind:
 	anim_playerheadobj
 	anim_sound 0, 0, SFX_PSYCHIC
 .loop
-	anim_call BattleAnimSub_IcyWind1
+	anim_call .sparkle
 	anim_loop 2, .loop
 	anim_wait 16
 	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_2ROW, $0, BG_EFFECT_USER, $0
@@ -569,7 +569,7 @@ BattleAnim_IcyWind:
 	anim_wait 1
 	anim_ret
 
-BattleAnimSub_IcyWind1:
+.sparkle:
 	anim_wait 8
 	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
 	anim_wait 8
@@ -628,7 +628,7 @@ BattleAnim_Outrage:
 	anim_ret
 
 BattleAnim_Sandstorm:
-	anim_call BattleAnimSub_Sandstorm1
+	anim_call .storm
 .loop
 	anim_sound 0, 1, SFX_MENU
 	anim_wait 8
@@ -636,7 +636,7 @@ BattleAnim_Sandstorm:
 	anim_wait 8
 	anim_ret
 
-BattleAnimSub_Sandstorm1:
+.storm:
 	anim_1gfx BATTLE_ANIM_GFX_POWDER
 	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 88, 0, $0
 	anim_wait 8
@@ -698,11 +698,11 @@ BattleAnim_Endure:
 
 BattleAnim_Charm:
 	anim_1gfx BATTLE_ANIM_GFX_OBJECTS
-	anim_call BattleAnimSub_Charm1
+	anim_call BattleAnimSub_Charm
 	anim_wait 4
 	anim_ret
 
-BattleAnimSub_Charm1:
+BattleAnimSub_Charm:
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_ATTRACT
@@ -728,7 +728,7 @@ BattleAnim_Rollout:
 BattleAnim_FalseSwipe:
 	anim_2gfx BATTLE_ANIM_GFX_SHINE, BATTLE_ANIM_GFX_CUT
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_MID_OBPALS_GRAY_AND_YELLOW, $0, $0, $0
-	anim_call BattleAnimSub_Cut1
+	anim_call BattleAnim_Cut.cut
 	anim_wait 4
 	anim_obj BATTLE_ANIM_OBJ_GLIMMER, 136, 40, $0
 	anim_wait 32
@@ -773,14 +773,14 @@ BattleAnim_Spark:
 	anim_setobj $1, $3
 	anim_wait 1
 	anim_call BattleAnim_TargetObj_2Row
-	anim_call BattleAnimSub_Spark1
+	anim_call BattleAnimSub_Spark
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
 	anim_obj BATTLE_ANIM_OBJ_THUNDERSHOCK_SPARKS, 136, 56, $0
 	anim_wait 32
 	anim_ret
 
-BattleAnimSub_Spark1:
+BattleAnimSub_Spark:
 	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_SPARK
 	anim_wait 16
@@ -1317,7 +1317,7 @@ BattleAnim_MirrorCoat:
 .loop
 	anim_call BattleAnimSub_ShineScreen
 	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 72, $4
-	anim_call BattleAnimSub_IcyWind1
+	anim_call BattleAnim_IcyWind.sparkle
 	anim_loop 3, .loop
 	anim_wait 32
 	anim_ret
@@ -1340,7 +1340,7 @@ BattleAnim_PsychUp:
 BattleAnim_Extremespeed:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_CUT
 	anim_call BattleAnimSub_SpeedLines
-	anim_call BattleAnimSub_Cut1
+	anim_call BattleAnim_Cut.cut
 	anim_call BattleAnim_SkyAttack.done
 	anim_ret
 
@@ -1387,7 +1387,7 @@ BattleAnim_FutureSight:
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0
 	anim_bgeffect BATTLE_BG_EFFECT_PSYCHIC, $0, $0, $0
-	anim_call BattleAnimSub_Agility1
+	anim_call BattleAnimSub_AgilityLines
 .loop
 	anim_sound 0, 0, SFX_THROW_BALL
 	anim_wait 16
