@@ -488,10 +488,14 @@ BattleAnim_ZapCannon:
 	anim_wait 40
 	anim_obp0 $0
 	anim_sound 0, 1, SFX_THUNDERSHOCK
+	anim_call .thunderball
+	anim_wait 128
+	anim_ret
+
+.thunderball:
 	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_CORE, 136, 56, $2
 	anim_wait 16
 	anim_obj BATTLE_ANIM_OBJ_THUNDERBOLT_SPARKS, 136, 56, $0
-	anim_wait 128
 	anim_ret
 
 BattleAnim_Foresight:
