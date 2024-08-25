@@ -10,7 +10,7 @@
 	dw NO_ITEM, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
-	INCBIN "gfx/pokemon/mew/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/mew/front.dimensions"
 	db SYNCHRONIZE, SYNCHRONIZE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate

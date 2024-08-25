@@ -10,7 +10,7 @@
 	dw BURNT_BERRY, BURNT_BERRY ; items
 	db GENDER_F25 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/arcanine/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/arcanine/front.dimensions"
 	db INTIMIDATE, FLASH_FIRE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

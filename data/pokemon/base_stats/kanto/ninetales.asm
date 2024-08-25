@@ -10,7 +10,7 @@
 	dw BURNT_BERRY, BURNT_BERRY ; items
 	db GENDER_F75 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/ninetales/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/ninetales/front.dimensions"
 	db FLASH_FIRE, FLASH_FIRE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

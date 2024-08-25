@@ -10,7 +10,7 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F75 ; gender ratio
 	db 10 ; step cycles to hatch
-	INCBIN "gfx/pokemon/wigglytuff/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/wigglytuff/front.dimensions"
 	db CUTE_CHARM, CUTE_CHARM ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate

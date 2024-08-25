@@ -10,7 +10,7 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio
 	db 25 ; step cycles to hatch
-	INCBIN "gfx/pokemon/hitmonlee/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/hitmonlee/front.dimensions"
 	db LIMBER, LIMBER ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

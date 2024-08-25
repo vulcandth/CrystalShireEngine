@@ -10,7 +10,7 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/nidoking/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/nidoking/front.dimensions"
 	db POISON_POINT, POISON_POINT ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate

@@ -10,7 +10,7 @@
 	dw NO_ITEM, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
-	INCBIN "gfx/pokemon/celebi/front.dimensions"
+	INCBIN "gfx/pokemon/johto/celebi/front.dimensions"
 	db NATURAL_CURE, NATURAL_CURE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_SLOW ; growth rate

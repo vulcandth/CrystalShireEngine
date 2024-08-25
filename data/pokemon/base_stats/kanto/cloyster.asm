@@ -10,7 +10,7 @@
 	dw PEARL, BIG_PEARL ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/cloyster/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/cloyster/front.dimensions"
 	db SHELL_ARMOR, SHELL_ARMOR ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

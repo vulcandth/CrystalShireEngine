@@ -10,7 +10,7 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 80 ; step cycles to hatch
-	INCBIN "gfx/pokemon/suicune/front.dimensions"
+	INCBIN "gfx/pokemon/johto/suicune/front.dimensions"
 	db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

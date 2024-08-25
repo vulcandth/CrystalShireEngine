@@ -10,7 +10,7 @@
 	dw SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
-	INCBIN "gfx/pokemon/ho_oh/front.dimensions"
+	INCBIN "gfx/pokemon/johto/ho_oh/front.dimensions"
 	db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

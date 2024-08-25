@@ -51,7 +51,6 @@ ROMX $05
 ROMX $06
 	"Tileset Data 1"
 	"Prism tilemap copy functions"
-	"Pics 20"
 	"Pokemon Body Data"
 ROMX $07
 	"Roofs"
@@ -214,45 +213,26 @@ ROMX $47
 	"Battle Tower"
 ROMX $48
 	"Pic Pointers"
-	"Pics 1"
 ROMX $49
 	"Unown Pic Pointers"
-	"Pics 2"
 ROMX $4a
 	"Trainer Pic Pointers"
-	"Pics 3"
 ROMX $4b
-	"Pics 4"
 ROMX $4c
-	"Pics 5"
 ROMX $4d
-	"Pics 6"
 ROMX $4e
-	"Pics 7"
 ROMX $4f
-	"Pics 8"
 ROMX $50
-	"Pics 9"
 ROMX $51
-	"Pics 10"
 ROMX $52
-	"Pics 11"
 ROMX $53
-	"Pics 12"
 ROMX $54
-	"Pics 13"
 ROMX $55
-	"Pics 14"
 ROMX $56
-	"Pics 15"
 ROMX $57
-	"Pics 16"
 ROMX $58
-	"Pics 17"
 ROMX $59
-	"Pics 18"
 ROMX $5a
-	"Pics 19"
 ROMX $5b
 	"bank5B"
 ROMX $5c

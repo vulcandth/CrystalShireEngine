@@ -10,7 +10,7 @@
 	dw NO_ITEM, BERRY ; items
 	db GENDER_F50 ; gender ratio
 	db 10 ; step cycles to hatch
-	INCBIN "gfx/pokemon/pichu/front.dimensions"
+	INCBIN "gfx/pokemon/johto/pichu/front.dimensions"
 	db STATIC, STATIC ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

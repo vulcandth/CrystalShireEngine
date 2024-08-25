@@ -10,7 +10,7 @@
 	dw MOOMOO_MILK, MOOMOO_MILK ; items
 	db GENDER_F100 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/miltank/front.dimensions"
+	INCBIN "gfx/pokemon/johto/miltank/front.dimensions"
 	db THICK_FAT, THICK_FAT ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

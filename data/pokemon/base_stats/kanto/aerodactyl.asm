@@ -10,7 +10,7 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F12_5 ; gender ratio
 	db 35 ; step cycles to hatch
-	INCBIN "gfx/pokemon/aerodactyl/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/aerodactyl/front.dimensions"
 	db ROCK_HEAD, PRESSURE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

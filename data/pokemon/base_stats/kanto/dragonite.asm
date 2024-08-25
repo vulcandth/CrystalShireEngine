@@ -10,7 +10,7 @@
 	dw NO_ITEM, DRAGON_SCALE ; items
 	db GENDER_F50 ; gender ratio
 	db 40 ; step cycles to hatch
-	INCBIN "gfx/pokemon/dragonite/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/dragonite/front.dimensions"
 	db INNER_FOCUS, INNER_FOCUS ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

@@ -64,7 +64,7 @@ clean: tidy
 	        -o -name "*.sgb.tilemap" \) \
 	     -delete
 	find gfx/pokemon -mindepth 1 \
-	     ! -path "gfx/pokemon/unown/*" \
+	     ! -path "gfx/pokemon/johto/unown/*" \
 	     \( -name "bitmask.asm" \
 	        -o -name "frames.asm" \
 	        -o -name "front.animated.tilemap" \

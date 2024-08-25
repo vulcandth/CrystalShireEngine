@@ -10,7 +10,7 @@
 	dw NO_ITEM, METAL_COAT ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/magnemite/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/magnemite/front.dimensions"
 	db MAGNET_PULL, STURDY ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

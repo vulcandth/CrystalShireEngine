@@ -10,7 +10,7 @@
 	dw NO_ITEM, LUCKY_EGG ; items
 	db GENDER_F100 ; gender ratio
 	db 40 ; step cycles to hatch
-	INCBIN "gfx/pokemon/chansey/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/chansey/front.dimensions"
 	db NATURAL_CURE, SERENE_GRACE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_FAST ; growth rate

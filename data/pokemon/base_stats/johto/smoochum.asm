@@ -10,7 +10,7 @@
 	dw ICE_BERRY, ICE_BERRY ; items
 	db GENDER_F100 ; gender ratio
 	db 25 ; step cycles to hatch
-	INCBIN "gfx/pokemon/smoochum/front.dimensions"
+	INCBIN "gfx/pokemon/johto/smoochum/front.dimensions"
 	db OBLIVIOUS, OBLIVIOUS ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

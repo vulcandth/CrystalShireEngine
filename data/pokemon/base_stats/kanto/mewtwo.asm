@@ -10,7 +10,7 @@
 	dw NO_ITEM, BERSERK_GENE ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 120 ; step cycles to hatch
-	INCBIN "gfx/pokemon/mewtwo/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/mewtwo/front.dimensions"
 	db PRESSURE, PRESSURE ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate

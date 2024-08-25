@@ -10,7 +10,7 @@
 	dw NO_ITEM, SILVERPOWDER ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
-	INCBIN "gfx/pokemon/butterfree/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/butterfree/front.dimensions"
 	db COMPOUNDEYES, COMPOUNDEYES ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate

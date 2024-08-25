@@ -10,7 +10,7 @@
 	dw BURNT_BERRY, BURNT_BERRY ; items
 	db GENDER_F25 ; gender ratio
 	db 25 ; step cycles to hatch
-	INCBIN "gfx/pokemon/magmar/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/magmar/front.dimensions"
 	db FLAME_BODY, FLAME_BODY ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
