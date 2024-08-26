@@ -18,4 +18,8 @@
 
 	; tm/hm learnset
 	tmhm
+
+
+
+
 	; end
