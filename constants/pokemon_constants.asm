@@ -287,7 +287,7 @@ endc
 ; indexes for:
 ; - UnownWords (see data/pokemon/unown_words.asm)
 ; - UnownPicPointers (see data/pokemon/unown_pic_pointers.asm)
-; - UnownAnimationPointers (see gfx/pokemon/unown_anim_pointers.asm)
+; - AnimationPointersUnown (see gfx/pokemon/unown_anim_pointers.asm)
 ; - UnownAnimationIdlePointers (see gfx/pokemon/unown_idle_pointers.asm)
 ; - UnownBitmasksPointers (see gfx/pokemon/unown_bitmask_pointers.asm)
 ; - UnownFramesPointers (see gfx/pokemon/unown_frame_pointers.asm)
@@ -319,3 +319,5 @@ endc
 	const UNOWN_Y ; 25
 	const UNOWN_Z ; 26
 DEF NUM_UNOWN EQU const_value - 1 ; 26
+
+DEF UNOWN_OFFSET EQU NUM_POKEMON + NUM_UNOWN

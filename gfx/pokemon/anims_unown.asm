@@ -1,3 +1,34 @@
+SECTION "Animations Unown", ROMX
+
+AnimationPointersUnown:
+	dw UnownAAnimation
+	dw UnownBAnimation
+	dw UnownCAnimation
+	dw UnownDAnimation
+	dw UnownEAnimation
+	dw UnownFAnimation
+	dw UnownGAnimation
+	dw UnownHAnimation
+	dw UnownIAnimation
+	dw UnownJAnimation
+	dw UnownKAnimation
+	dw UnownLAnimation
+	dw UnownMAnimation
+	dw UnownNAnimation
+	dw UnownOAnimation
+	dw UnownPAnimation
+	dw UnownQAnimation
+	dw UnownRAnimation
+	dw UnownSAnimation
+	dw UnownTAnimation
+	dw UnownUAnimation
+	dw UnownVAnimation
+	dw UnownWAnimation
+	dw UnownXAnimation
+	dw UnownYAnimation
+	dw UnownZAnimation
+.IndirectEnd::
+
 UnownAAnimation: INCLUDE "gfx/pokemon/unown/unown_a/anim.asm"
 UnownBAnimation: INCLUDE "gfx/pokemon/unown/unown_b/anim.asm"
 UnownCAnimation: INCLUDE "gfx/pokemon/unown/unown_c/anim.asm"
