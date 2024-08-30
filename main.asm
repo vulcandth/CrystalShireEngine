@@ -418,19 +418,7 @@ INCLUDE "engine/gfx/pic_animation.asm"
 INCLUDE "gfx/pokemon/anim_pointers.asm"
 INCLUDE "gfx/pokemon/idle_pointers.asm"
 INCLUDE "gfx/pokemon/bitmask_pointers.asm"
-
-
-SECTION "Pic Animations 2", ROMX
-
 INCLUDE "gfx/pokemon/frame_pointers.asm"
-INCLUDE "gfx/pokemon/kanto_frames.asm"
-
-
-SECTION "Pic Animations 3", ROMX
-
-INCLUDE "gfx/pokemon/johto_frames.asm"
-INCLUDE "gfx/pokemon/unown_frame_pointers.asm"
-INCLUDE "gfx/pokemon/unown_frames.asm"
 
 
 SECTION "bank38", ROMX
