@@ -385,9 +385,6 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
-	;==========================
-	;	New Moves Start Here
-	;==========================
 	dbw EFFECT_HAIL,             AI_Smart_Hail
 	db -1 ; end
 

@@ -157,9 +157,6 @@
 	const EFFECT_BEAT_UP
 	const EFFECT_FLY
 	const EFFECT_DEFENSE_CURL
-	;==========================
-	;	New Moves Start Here
-	;==========================
 	const EFFECT_BLIZZARD
 	const EFFECT_HAIL
 	const EFFECT_LOW_KICK
