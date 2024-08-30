@@ -784,7 +784,7 @@ OTString:
 	db "OT/@"
 
 StatsScreen_PlaceFrontpic:
-	ld hl, wTempMonIVs
+	ld hl, wTempMonPersonality
 	predef GetUnownLetter
 	call StatsScreen_GetAnimationParam
 	jr c, .egg

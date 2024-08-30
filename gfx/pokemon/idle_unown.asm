@@ -1,3 +1,34 @@
+SECTION "Idle Animations Unown", ROMX
+
+AnimationIdlePointersUnown:
+	dw UnownAAnimationIdle
+	dw UnownBAnimationIdle
+	dw UnownCAnimationIdle
+	dw UnownDAnimationIdle
+	dw UnownEAnimationIdle
+	dw UnownFAnimationIdle
+	dw UnownGAnimationIdle
+	dw UnownHAnimationIdle
+	dw UnownIAnimationIdle
+	dw UnownJAnimationIdle
+	dw UnownKAnimationIdle
+	dw UnownLAnimationIdle
+	dw UnownMAnimationIdle
+	dw UnownNAnimationIdle
+	dw UnownOAnimationIdle
+	dw UnownPAnimationIdle
+	dw UnownQAnimationIdle
+	dw UnownRAnimationIdle
+	dw UnownSAnimationIdle
+	dw UnownTAnimationIdle
+	dw UnownUAnimationIdle
+	dw UnownVAnimationIdle
+	dw UnownWAnimationIdle
+	dw UnownXAnimationIdle
+	dw UnownYAnimationIdle
+	dw UnownZAnimationIdle
+.IndirectEnd::
+
 UnownAAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_a/anim_idle.asm"
 UnownBAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_b/anim_idle.asm"
 UnownCAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_c/anim_idle.asm"

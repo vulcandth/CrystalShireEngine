@@ -199,7 +199,7 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke SNORLAX, 75
+	givepoke UNOWN, 75
 	givepokemove ICE_BEAM,  wPartyMon1, 0
 	givepokemove STEEL_WING,  wPartyMon1, 1
 	givepokemove LEAF_BLADE,  wPartyMon1, 2
