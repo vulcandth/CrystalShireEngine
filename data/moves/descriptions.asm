@@ -261,9 +261,9 @@ MoveDescriptionsGen2:
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	.IndirectEnd::
+.IndirectEnd::
 	
-	MoveDescriptionsGen3:
+MoveDescriptionsGen3:
 	dw FakeOutDescription
 	dw UproarDescription
 	dw StockpileDescription

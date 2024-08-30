@@ -2073,9 +2073,6 @@ DefenseCurl:
 	statupfailtext
 	endmove
 	
-;==========================
-;	New Moves Start Here
-;==========================
 Hail:
 	checkobedience
 	usedmovetext
