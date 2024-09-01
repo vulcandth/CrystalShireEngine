@@ -620,18 +620,18 @@ DEF NUM_BATTLE_ANIM_FUNCS EQU const_value
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_1ROW         ; 0b2
 	const BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW          ; 0b3
 	const BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW         ; 0b4
-    ; New Framesets
-    const BATTLE_ANIM_FRAMESET_PALM_XFLIP              ; 0b5
+	; New Framesets
+	const BATTLE_ANIM_FRAMESET_PALM_XFLIP              ; 0b5
 	const BATTLE_ANIM_FRAMESET_MEDIUM_HORN             ; 0b6
 	const BATTLE_ANIM_FRAMESET_MINIMIZE                ; 0b7
-    const BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH           ; 0b8
-    const BATTLE_ANIM_FRAMESET_OCTAZOOKA_SMOKE         ; 0b9
-    const BATTLE_ANIM_FRAMESET_INK_SPLASH              ; 0ba
+	const BATTLE_ANIM_FRAMESET_BUBBLE_SPLASH           ; 0b8
+	const BATTLE_ANIM_FRAMESET_OCTAZOOKA_SMOKE         ; 0b9
+	const BATTLE_ANIM_FRAMESET_INK_SPLASH              ; 0ba
 	const BATTLE_ANIM_FRAMESET_SMELLINGSALT_L          ; 0bb
 	const BATTLE_ANIM_FRAMESET_SMELLINGSALT_R          ; 0bc
 	const BATTLE_ANIM_FRAMESET_SMELLINGSALT_SHOCK      ; 0bd
 	const BATTLE_ANIM_FRAMESET_BIG_WAVE                ; 0be
- 	const BATTLE_ANIM_FRAMESET_UPROAR_NOTE             ; 0bf
+	const BATTLE_ANIM_FRAMESET_UPROAR_NOTE             ; 0bf
 	const BATTLE_ANIM_FRAMESET_ENERGY_ORB              ; 0c0
 	const BATTLE_ANIM_FRAMESET_ENERGY_ORB_LONG         ; 0c1
 	const BATTLE_ANIM_FRAMESET_TORMENT                 ; 0c2
@@ -1061,7 +1061,7 @@ DEF NUM_BATTLE_BG_EFFECTS EQU const_value - 1
 	const BATTLE_ANIM_GFX_AEROBLAST        ; 27
 	const BATTLE_ANIM_GFX_PLAYERHEAD       ; 28
 	const BATTLE_ANIM_GFX_ENEMYFEET        ; 29
-    ; New Graphics
+	; New Graphics
 	const BATTLE_ANIM_GFX_BEAM_LIGHT       ; 2a
 	const BATTLE_ANIM_GFX_WIND_BG          ; 2b
 	const BATTLE_ANIM_GFX_MISC_2           ; 2c
