@@ -989,23 +989,7 @@ BattleAnim_Dive:
 .hit
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_WATER
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
-	anim_sound 0, 1, SFX_BUBBLEBEAM
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
-	anim_wait 3
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 40, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 40, $50
-	anim_wait 3
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 32, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 32, $50
-	anim_wait 3
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 24, $0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $d0
-	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 24, $50
+	anim_call BattleAnim_Waterfall.attack
 	anim_wait 8
 .fail
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
