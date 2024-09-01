@@ -1572,16 +1572,11 @@ BattleAnimSub_Ice:
 	anim_obj BATTLE_ANIM_OBJ_ICE, 128, 70, $0
 	anim_ret
 
-BattleAnimSub_PoisonBubbles:
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 132, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 116, 72, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_TOXIC
-	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 148, 72, $0
-	anim_wait 8
+BattleAnimSub_PoisonBubblesShort:
+.loop
+	anim_call BattleAnimSub_PoisonBubbles
+	anim_loop 2, .loop
+	anim_wait 48
 	anim_ret
 
 BattleAnimSub_Acid:
