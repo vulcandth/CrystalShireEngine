@@ -232,7 +232,7 @@ _NoYesBox::
 	call PushWindow
 	call VerticalMenu
 	push af
-	ld c, 15
+	ld c, 16
 	call DelayFrames
 	call CloseWindow
 	pop af
