@@ -59,11 +59,17 @@ ENDM
 MACRO cphl16
 ; arg1: 16 bit register
 ; arg2: value to compare to
-	ld a, h
-	smartcp HIGH(\1)
-	jr c, .done\@
-	jr nz, .done\@
-	ld a, l
-	smartcp LOW(\1)
+	IF \1 == 0
+		ld a, h
+		or l
+		jp z, .done\@
+	ELSE
+		ld a, h
+		smartcp HIGH(\1)
+		jr c, .done\@
+		jr nz, .done\@
+		ld a, l
+		smartcp LOW(\1)
+	ENDC
 .done\@
 ENDM
