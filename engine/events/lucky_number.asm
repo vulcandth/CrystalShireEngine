@@ -72,6 +72,10 @@ CheckForLuckyNumberWinners:
 	and a
 	ret z ; found nothing
 
+	; Remove these next two lines if you want to allow 1 match to be considered a win
+	dec a
+	ret z ; only 1 match
+
 	; Prepare found storage mon ID
 	push bc
 	farcall GetStorageBoxMon
