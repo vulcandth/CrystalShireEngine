@@ -818,18 +818,7 @@ BattleAnim_SteelWing:
 	anim_call BattleAnim_ShowMon_0
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_resetobp0
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 148, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 116, 56, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 120, 56, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_WING_ATTACK
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 140, 56, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 124, 56, $0
-	anim_wait 16
+	anim_call BattleAnim_WingAttack.attack
 	anim_ret
 
 BattleAnim_MeanLook:
@@ -1144,9 +1133,7 @@ BattleAnim_MetalClaw:
 	anim_1gfx BATTLE_ANIM_GFX_CUT
 	anim_resetobp0
 	anim_sound 0, 1, SFX_SCRATCH
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
-	anim_obj BATTLE_ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_call BattleAnim_CutDownLeft
 	anim_wait 32
 	anim_ret
 
@@ -1214,12 +1201,7 @@ BattleAnim_Crunch:
 	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $a8
 	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $28
 	anim_wait 8
-	anim_sound 0, 1, SFX_BITE
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 144, 48, $18
-	anim_wait 16
-	anim_sound 0, 1, SFX_BITE
-	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 128, 64, $18
-	anim_wait 8
+	anim_call BattleAnim_Bite.attack
 	anim_ret
 
 BattleAnim_Moonlight:

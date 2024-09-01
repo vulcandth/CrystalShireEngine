@@ -411,6 +411,7 @@ BattleAnim_Sonicboom:
 
 BattleAnim_WingAttack:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
+.attack
 	anim_sound 0, 1, SFX_WING_ATTACK
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 148, 56, $0
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 116, 56, $0
@@ -821,14 +822,19 @@ BattleAnim_Leer:
 
 BattleAnim_Bite:
 	anim_2gfx BATTLE_ANIM_GFX_CUT, BATTLE_ANIM_GFX_HIT
-	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $98
-	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $18
-	anim_wait 8
+	anim_call BattleAnimSub_Teeth
+.attack
 	anim_sound 0, 1, SFX_BITE
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 144, 48, $18
 	anim_wait 16
 	anim_sound 0, 1, SFX_BITE
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 128, 64, $18
+	anim_wait 8
+	anim_ret
+
+BattleAnimSub_Teeth:
+	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $18
 	anim_wait 8
 	anim_ret
 
