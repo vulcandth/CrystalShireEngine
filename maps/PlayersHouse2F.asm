@@ -61,9 +61,22 @@ if DEF(_DEBUG)
 	giveitem MAX_REPEL, 99
 	giveitem MASTER_BALL, 99
 	giveitem BLU_APRICORN, 2
-	giveitem BERRY
-	giveitem GOLD_BERRY
 	giveitem ICE_BERRY
+	giveitem BICYCLE
+	giveitem GOOD_ROD
+	giveitem THUNDERSTONE, 10
+	giveitem FIRE_STONE, 10
+	giveitem WATER_STONE, 10
+	giveitem LEAF_STONE, 10
+	giveitem MOON_STONE, 10
+	giveitem BERRY, 10
+	giveitem GOLD_BERRY, 10
+	giveitem MINT_BERRY, 10
+	giveitem MYSTERYBERRY, 10
+	giveitem QUICK_CLAW
+	giveitem KINGS_ROCK
+	giveitem AMULET_COIN
+	giveitem SCOPE_LENS
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -125,27 +138,23 @@ if DEF(_DEBUG)
 	setflag ENGINE_FLYPOINT_CINNABAR
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
-	; ; good party
-	; givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
-	; ; hm slaves
-	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	; givepokemove FLY,        wPartyMon2, 0
-	; givepokemove SURF,       wPartyMon2, 1
-	; givepokemove STRENGTH,   wPartyMon2, 2
-	; givepokemove CUT,        wPartyMon2, 3
-	; givepokemove FLASH,      wPartyMon3, 0
-	; givepokemove ROCK_SMASH, wPartyMon3, 1
-	; givepokemove HEADBUTT,   wPartyMon3, 2
-	; givepokemove WATERFALL,  wPartyMon3, 3
+	; good party
+	givepoke MEWTWO, 100, BRIGHTPOWDER
+	; hm slaves
+	givepoke MEW, 100, LEFTOVERS
+	givepoke LANTURN, 100, LEFTOVERS
+	givepokemove FLY,        wPartyMon2, 0
+	givepokemove SURF,       wPartyMon2, 1
+	givepokemove STRENGTH,   wPartyMon2, 2
+	givepokemove CUT,        wPartyMon2, 3
+	givepokemove FLASH,      wPartyMon3, 0
+	givepokemove ROCK_SMASH, wPartyMon3, 1
+	givepokemove HEADBUTT,   wPartyMon3, 2
+	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke SNORLAX, 75
-	givepokemove TRI_ATTACK,  wPartyMon1, 0
-	givepokemove STEEL_WING,  wPartyMon1, 1
-	givepokemove LEAF_BLADE,  wPartyMon1, 2
-	givepokemove LEECH_SEED,  wPartyMon1, 3
-	; givepoke GENGAR, 50
-	; givepoke DITTO, 50
+	givepoke AMPHAROS, 50
+	givepoke GENGAR, 50
+	givepoke DITTO, 50
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
