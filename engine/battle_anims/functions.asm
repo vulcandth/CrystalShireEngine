@@ -91,13 +91,25 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_Curse
 	dba BattleAnimFunc_PerishSong
 	dba BattleAnimFunc_RapidSpin
-	dba BattleAnimFunc_BetaPursuit
 	dba BattleAnimFunc_RainSandstorm
 	dba BattleAnimFunc_AnimObjB0
 	dba BattleAnimFunc_PsychUp
 	dba BattleAnimFunc_AncientPower
 	dba BattleAnimFunc_RockSmash
 	dba BattleAnimFunc_Cotton
+	; New Functions
+	dba BattleAnimFunc_BubbleSplash
+	dba BattleAnimFunc_RadialMoveOut
+	dba BattleAnimFunc_RadialMoveOut_CP_BG
+	dba BattleAnimFunc_RadialMoveOut_Slow
+	dba BattleAnimFunc_RadialMoveOut_VerySlow
+	dba BattleAnimFunc_RadialMoveOut_Fast
+	dba BattleAnimFunc_RadialMoveOut_VeryFast_NoStop
+	dba BattleAnimFunc_RadialMoveIn
+	dba BattleAnimFunc_ObjectHover
+	dba BattleAnimFunc_RockTomb
+	dba BattleAnimFunc_AirCutter
+	dba BattleAnimFunc_RadialMoveOut_SlowShort
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -1041,10 +1053,11 @@ BattleAnimFunc_RockSmash:
 	and $40
 	rlca
 	rlca
-	add BATTLE_ANIM_FRAMESET_BIG_ROCK
+	add BATTLE_ANIM_FRAMESET_BIG_ROCK_STAR_HEART
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld [hl], a
+.after_frameset
 	call BattleAnim_IncAnonJumptableIndex
 	ld hl, BATTLEANIMSTRUCT_VAR1
 	add hl, bc
@@ -1086,6 +1099,12 @@ BattleAnimFunc_RockSmash:
 	add hl, bc
 	ld [hl], e
 	ret
+
+BattleAnimFunc_BubbleSplash:
+	call BattleAnim_AnonJumptable
+
+	dw BattleAnimFunc_RockSmash.after_frameset
+	dw BattleAnimFunc_RockSmash.one
 
 SECTION "BattleAnimFunc_Bubble", ROMX
 
@@ -1862,7 +1881,7 @@ BattleAnimFunc_Wrap:
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, [hl]
-	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \ 
+	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \
 		&& BATTLE_ANIM_FRAMESET_BIND_2 + 1 == BATTLE_ANIM_FRAMESET_BIND_3 \
 		&& BATTLE_ANIM_FRAMESET_BIND_3 + 1 == BATTLE_ANIM_FRAMESET_BIND_4
 	inc a
@@ -2504,7 +2523,7 @@ BattleAnimFunc_Amnesia:
 	add hl, bc
 	ld a, [hl]
 	assert BATTLE_ANIM_FRAMESET_AMNESIA_1 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_2 \
-		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3
+		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3_RECOVER
 	add BATTLE_ANIM_FRAMESET_AMNESIA_1
 	call ReinitBattleAnimFrameset
 	ld hl, BATTLEANIMSTRUCT_PARAM
@@ -3920,59 +3939,6 @@ BattleAnimFunc_RapidSpin:
 .done
 	jmp DeinitBattleAnimation
 
-SECTION "BattleAnimFunc_BetaPursuit", ROMX
-
-BattleAnimFunc_BetaPursuit:
-; Working but unused animation
-; Object moves either down or up 4 pixels per frame, depending on Obj Param. Object disappears after 23 frames when going down, or at y coord $d8 when going up
-; Obj Param: 0 moves downwards, 1 moves upwards
-	call BattleAnim_AnonJumptable
-.anon_dw
-	dw .zero
-	dw .one
-	dw .two
-	dw .three
-
-.zero
-	ld hl, BATTLEANIMSTRUCT_PARAM
-	add hl, bc
-	ld a, [hl]
-	and a
-	jr nz, .move_up
-	call BattleAnim_IncAnonJumptableIndex
-	ld hl, BATTLEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld [hl], $ec
-.one
-	ld hl, BATTLEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld a, [hl]
-	cp $4
-	jr z, .three
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	inc [hl]
-	ret
-
-.three
-	jmp DeinitBattleAnimation
-
-.move_up
-	call BattleAnim_IncAnonJumptableIndex
-	call BattleAnim_IncAnonJumptableIndex
-.two
-	ld hl, BATTLEANIMSTRUCT_YOFFSET
-	add hl, bc
-	ld a, [hl]
-	cp $d8
-	ret z
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
 SECTION "BattleAnimFunc_RainSandstorm", ROMX
 
 BattleAnimFunc_RainSandstorm:
@@ -4134,5 +4100,353 @@ BattleAnimFunc_AncientPower:
 
 .done
 	jmp DeinitBattleAnimation
+
+SECTION "BattleAnimFunc_RadialMoveOut", ROMX
+
+BattleAnimFunc_RadialMoveOut:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step
+
+BattleAnimFunc_RadialMoveOut_CP_BG:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_CP_BG
+
+BattleAnimFunc_RadialMoveOut_Slow:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Slow
+
+BattleAnimFunc_RadialMoveOut_SlowShort:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Slow_Short
+
+BattleAnimFunc_RadialMoveOut_VerySlow:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_VerySlow
+
+BattleAnimFunc_RadialMoveOut_Fast:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Fast
+
+BattleAnimFunc_RadialMoveOut_VeryFast_NoStop:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_VeryFast_NoStop
+
+InitRadial:
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	xor a
+	ld [hld], a
+	ld [hl], a ; initial position = 0
+	call BattleAnim_IncAnonJumptableIndex
+
+Step:
+	call Get_Rad_Pos
+	ld hl, 6.0 ; speed
+	call Set_Rad_Pos
+	cp 80 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_CP_BG:
+	call Get_Rad_Pos
+	ld hl, 0.08 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Slow:
+	call Get_Rad_Pos
+	ld hl, 1.5 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Slow_Short:
+	call Get_Rad_Pos
+	ld hl, 1.5 ; speed
+	call Set_Rad_Pos
+	cp 40 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_VerySlow:
+	call Get_Rad_Pos
+	ld hl, 0.5 ; speed
+	call Set_Rad_Pos
+	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Fast:
+	call Get_Rad_Pos
+	ld hl, 10.0 ; speed
+	call Set_Rad_Pos
+	cp 160 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_VeryFast_NoStop:
+	call Get_Rad_Pos
+	ld hl, 15.0 ; speed
+	call Set_Rad_Pos
+	jr Rad_Move
+
+Get_Rad_Pos:
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ret
+
+Set_Rad_Pos:
+	add hl, de
+	ld a, h
+	ld e, l
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hli], a
+	ld [hl], e
+	ret
+
+Rad_Move:
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld e, [hl]
+	push de
+	ld a, e
+	xcall Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	ld a, e
+	xcall Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ret
+
+SECTION "BattleAnimFunc_RadialMoveIn", ROMX
+
+BattleAnimFunc_RadialMoveIn:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, 40
+	ld [hli], a
+	ld [hl], 0
+.one
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld d, [hl]
+	push af
+	push de
+	xcall Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	xcall Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ld hl, -4.5
+	add hl, de
+	jmp nc, DeinitBattleAnimation
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, e
+	ld [hld], a
+	ld [hl], d
+	ret
+
+SECTION "BattleAnimFunc_ObjectHover", ROMX
+
+BattleAnimFunc_ObjectHover:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw .two
+	dw .three
+
+.zero
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld a, [hl]
+	cp -1
+	jr nz, .not_done_climbing
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], 2
+	ret
+
+.not_done_climbing
+	ld d, a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld e, [hl]
+	ld hl, -$80
+	add hl, de
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], d
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld [hl], e
+	ret
+
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, [hl]
+	and a
+	jr z, .delay_done
+	dec [hl]
+	ret
+
+.delay_done
+	ld [hl], 4
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	cpl
+	inc a
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	ret
+
+.two
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $c0
+	ret nc
+	ld a, 8
+	jmp BattleAnim_StepToTarget
+
+.three
+	jmp DeinitBattleAnimation
+
+SECTION "BattleAnimFunc_RockTomb", ROMX
+
+BattleAnimFunc_RockTomb:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw DoNothing ; .two
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, $30
+	ld [hli], a
+	ld [hl], $48
+.one
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, [hl]
+	xcall Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	inc [hl]
+	ld a, [hl]
+	and $3f
+	ret nz
+	jmp BattleAnim_IncAnonJumptableIndex
+
+SECTION "BattleAnimFunc_AirCutter", ROMX
+
+BattleAnimFunc_AirCutter:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+	dw .two
+
+.zero
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	and $f0
+	swap a
+	ld hl, BATTLEANIMSTRUCT_JUMPTABLE_INDEX
+	add hl, bc
+	ld [hl], a
+	ret
+
+.two
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	ld d, $10
+	call Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	bit 7, a
+	jr z, .skip
+	ld [hl], a
+.skip
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hl]
+	sub 4
+	ld [hl], a
+.one
+	ld hl, BATTLEANIMSTRUCT_XCOORD
+	add hl, bc
+	ld a, [hl]
+	cp $e4
+	jmp nc, DeinitBattleAnimation
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	jmp BattleAnim_StepToTarget
 
 POPS ; restore the original section from the stack

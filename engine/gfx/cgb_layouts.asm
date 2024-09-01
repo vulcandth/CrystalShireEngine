@@ -77,11 +77,17 @@ _CGB_BattleGrayscale:
 	call CopyPalettes
 	jmp _CGB_FinishBattleScreenLayout
 
-	SetDefaultBattlePalette:
+SetDefaultBattlePalette:
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wTempBattleMonSpecies)
 	ldh [rSVBK], a
+	call .do_it
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.do_it
 	ld a, b
 	and a ; PAL_BATTLE_BG_PLAYER
 	jr z, SetBattlePal_Player
@@ -108,10 +114,7 @@ _CGB_BattleGrayscale:
 	ld hl, BattleObjectPals - 1 palettes
 	ld bc, 1 palettes
 	rst AddNTimes
-	call FarCopyWRAM
-	pop af
-	ldh [rSVBK], a
-	ret
+	jmp FarCopyWRAM
 
 SetBattlePal_Player:
 	call GetBattlemonBackpicPalettePointer

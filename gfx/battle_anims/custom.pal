@@ -1,29 +1,170 @@
 ; first 6 custom pals look like regular ones
 INCLUDE "gfx/battle_anims/battle_anims.pal"
 
-if !DEF(MONOCHROME)
-; metallic
-	RGB 31, 31, 31
-	RGB 20, 20, 20
-	RGB 10, 10, 10
-	RGB 00, 00, 00
 ; purple
 	RGB 31, 31, 31
-	RGB 22, 05, 24
-	RGB 10, 02, 11
+	RGB 25, 09, 27
+	RGB 13, 02, 15
 	RGB 00, 00, 00
 ; ice
 	RGB 31, 31, 31
-	RGB 00, 22, 29
-	RGB 06, 18, 30
+	RGB 13, 27, 31
+	RGB 10, 21, 29
 	RGB 00, 00, 00
 ; fire
 	RGB 31, 31, 31
 	RGB 31, 24, 02
 	RGB 29, 03, 04
 	RGB 00, 00, 00
-else
+; water
+	RGB 31, 31, 31
+	RGB 00, 19, 28
+	RGB 08, 09, 28
+	RGB 00, 00, 00
+; bubble
+	RGB 31, 31, 31
+	RGB 19, 28, 28
+	RGB 00, 23, 28
+	RGB 03, 10, 30
+; aurora
+	RGB 28, 22, 31
+	RGB 31, 31, 07
+	RGB 13, 27, 31
+	RGB 31, 20, 24
+; globe
+	RGB 31, 31, 31
+	RGB 03, 22, 31
+	RGB 04, 19, 08
+	RGB 00, 00, 00
+; spore
+	RGB 31, 12 ,10
+	RGB 05, 27, 06
+	RGB 31, 31, 08
+	RGB 00, 28, 22
+; dragon_rage
+	RGB 31, 31, 31
+	RGB 31, 29, 09
+	RGB 03, 09, 26
+	RGB 00, 00, 00
+; dragonbreath
+	RGB 31, 31, 31
+	RGB 31, 26, 09
+	RGB 27, 08, 22
+	RGB 00, 00, 00
+; lightscreen
+	RGB 31, 31, 31
+	RGB 19, 31, 31
+	RGB 00, 28, 15
+	RGB 00, 00, 00
+; peach
+	RGB 31, 31, 31
+	RGB 31, 25, 14
+	RGB 31, 13, 04
+	RGB 00, 00, 00
+; mirrorcoat
+	RGB 31, 31, 31
+	RGB 31, 22, 25
+	RGB 29, 11, 11
+	RGB 00, 00, 00
+; heatwave
+	RGB 31, 24, 02
+	RGB 29, 03, 04
+	RGB 29, 03, 04
+	RGB 00, 00, 00
+; willowisp
+	RGB 31, 31, 31
+	RGB 00, 22, 29
+	RGB 15, 09, 27
+	RGB 31, 31, 31
+; cosmic
+	RGB 31, 31, 31
+	RGB 31, 30, 23
+	RGB 13, 27, 31
+	RGB 28, 05, 13
+; recycle
+	RGB 31, 31, 31
+	RGB 08, 09, 28
+	RGB 29, 03, 04
+	RGB 00, 00, 00
+; lavarocks
+	RGB 31, 31, 31
+	RGB 31, 13, 01
+	RGB 06, 05, 07
+	RGB 00, 00, 00
+; skillswap
+	RGB 31, 31, 31
+	RGB 01, 22, 25
+	RGB 26, 28, 00
+	RGB 31, 30, 13
+; refresh
+	RGB 31, 31, 31
+	RGB 17, 31, 10
+	RGB 00, 25, 19
+	RGB 00, 00, 00
+; glowyellow
+	RGB 31, 31, 31
+	RGB 31, 31, 07
+	RGB 31, 24, 02
+	RGB 31, 16, 01
+; glowluster
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 23, 30, 31
+	RGB 29, 25, 31
+; verybright
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 28, 28, 28
+	RGB 10, 10, 10
+; bright
+	RGB 31, 31, 31
+	RGB 28, 28, 28
+	RGB 16, 16, 16
+	RGB 10, 10, 10
+; charred
+	RGB 31, 31, 31
+	RGB 14, 14, 15
+	RGB 12, 12, 13
+	RGB 09, 09, 11
+; grasswhistle
+	RGB 31, 31, 31
+	RGB 12, 25, 01
+	RGB 12, 25, 01
+	RGB 12, 25, 01
+; signalbeamred
+	RGB 31, 31, 31
+	RGB 31, 20, 22
+	RGB 31, 07, 05
+	RGB 20, 00, 00
+; signalbeamblue
+	RGB 31, 31, 31
+	RGB 18, 30, 31
+	RGB 04, 22, 31
+	RGB 04, 17, 31
+; bulkup
+	RGB 31, 31, 31
+	RGB 29, 03, 04
+	RGB 31, 24, 02
+	RGB 31, 24, 02
+; psychoboost1
+	RGB 31, 31, 31
+	RGB 31, 31, 31
+	RGB 29, 20, 31
+	RGB 30, 00, 13
+; psychoboost2
+	RGB 31, 31, 31
+	RGB 31, 18, 25
+	RGB 31, 00, 27
+	RGB 15, 06, 31
+; acid
+	RGB 31, 31, 31
+	RGB 31, 31, 07
+	RGB 31, 23, 04
+	RGB 31, 16, 01
+; reflect
+	RGB 31, 31, 31
+	RGB 31, 23, 30
+	RGB 06, 16, 31
+	RGB 00, 00, 00
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
-	MONOCHROME_RGB_FOUR
 endr
-endc

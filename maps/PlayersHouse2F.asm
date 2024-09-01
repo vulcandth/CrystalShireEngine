@@ -125,24 +125,27 @@ if DEF(_DEBUG)
 	setflag ENGINE_FLYPOINT_CINNABAR
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
-	; good party
-	givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
-	; hm slaves
-	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	givepokemove FLY,        wPartyMon2, 0
-	givepokemove SURF,       wPartyMon2, 1
-	givepokemove STRENGTH,   wPartyMon2, 2
-	givepokemove CUT,        wPartyMon2, 3
-	givepokemove FLASH,      wPartyMon3, 0
-	givepokemove ROCK_SMASH, wPartyMon3, 1
-	givepokemove HEADBUTT,   wPartyMon3, 2
-	givepokemove WATERFALL,  wPartyMon3, 3
+	; ; good party
+	; givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
+	; ; hm slaves
+	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
+	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
+	; givepokemove FLY,        wPartyMon2, 0
+	; givepokemove SURF,       wPartyMon2, 1
+	; givepokemove STRENGTH,   wPartyMon2, 2
+	; givepokemove CUT,        wPartyMon2, 3
+	; givepokemove FLASH,      wPartyMon3, 0
+	; givepokemove ROCK_SMASH, wPartyMon3, 1
+	; givepokemove HEADBUTT,   wPartyMon3, 2
+	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke SNORLAX, 50
-	givepokemove LOW_KICK,  wPartyMon4, 0
-	givepoke GENGAR, 50
-	givepoke DITTO, 50
+	givepoke SNORLAX, 75
+	givepokemove TRI_ATTACK,  wPartyMon1, 0
+	givepokemove STEEL_WING,  wPartyMon1, 1
+	givepokemove LEAF_BLADE,  wPartyMon1, 2
+	givepokemove LEECH_SEED,  wPartyMon1, 3
+	; givepoke GENGAR, 50
+	; givepoke DITTO, 50
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
@@ -184,7 +187,14 @@ else
 endc
 
 PlayersHouseBookshelfScript:
+	if DEF(_DEBUG)
+	loadwildmon AZUMARILL, 100
+	startbattle
+	reloadmapafterbattle
+	end
+else
 	jumpstd PictureBookshelfScript
+endc
 
 PlayersHousePCScript:
 	opentext

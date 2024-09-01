@@ -96,7 +96,7 @@ SFX:
 	dba Sfx_Sing
 	dba Sfx_HyperBeam
 	dba Sfx_Shine
-	dba Sfx_Unknown5F
+	dba Sfx_MetalSound
 	dba Sfx_Unknown60
 	dba Sfx_Unknown61
 	dba Sfx_SwitchPockets
@@ -209,4 +209,5 @@ SFX:
 	dba Sfx_TwoPcBeeps
 	dba Sfx_4NoteDitty
 	dba Sfx_Twinkle
+	dba Sfx_GrassWhistle
 	assert_table_length NUM_SFX

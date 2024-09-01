@@ -2073,6 +2073,13 @@ DefenseCurl:
 	statupfailtext
 	endmove
 
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	starthail
+	endmove
+
 LowKick:
 	checkobedience
 	usedmovetext

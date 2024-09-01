@@ -1,4 +1,5 @@
 BattleAnimationsNegatives::
+	dw BattleAnim_SnatchedMove
 	dw BattleAnim_ThrowPokeBall
 	dw BattleAnim_SendOutMon
 	dw BattleAnim_ReturnMon
@@ -22,6 +23,20 @@ BattleAnimationsNegatives::
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
 .IndirectEnd::
+
+BattleAnim_SnatchedMove:
+	anim_if_param_equal $0, .off
+	anim_2gfx BATTLE_ANIM_GFX_SNATCH, BATTLE_ANIM_GFX_SPEED
+	anim_call BattleAnimSub_SpeedLines
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_SNATCH_1, 48, 88, $0
+	anim_wait 16
+	anim_sound 0, 0, SFX_RAZOR_WIND
+	anim_obj BATTLE_ANIM_OBJ_SNATCH_2, 158, 56, $20
+.off
+	anim_wait 32
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_ret
 
 BattleAnim_ThrowPokeBall:
 	anim_if_param_item_equal NO_ITEM, .TheTrainerBlockedTheBall
@@ -134,33 +149,13 @@ BattleAnim_ThrowPokeBall:
 	anim_ret
 
 BattleAnim_SendOutMon:
-	anim_if_param_equal $0, .Normal
 	anim_if_param_equal $1, .Shiny
-	anim_if_param_equal $2, .Unknown
 	anim_1gfx BATTLE_ANIM_GFX_SMOKE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_BETA_SEND_OUT_MON2, $0, BG_EFFECT_USER, $0
 	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
+	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 44, 96, $0
+	anim_wait 4
 	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 128
-	anim_wait 4
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
-.Unknown:
-	anim_1gfx BATTLE_ANIM_GFX_SMOKE
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_BETA_SEND_OUT_MON1, $0, BG_EFFECT_USER, $0
-	anim_wait 1
-	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, BG_EFFECT_USER, $0
-	anim_wait 4
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BETA_BALL_POOF, 48, 96, $0
-	anim_incbgeffect BATTLE_BG_EFFECT_BETA_SEND_OUT_MON1
-	anim_wait 96
-	anim_incbgeffect BATTLE_BG_EFFECT_BETA_SEND_OUT_MON1
-	anim_call BattleAnim_ShowMon_0
+	anim_wait 32
 	anim_ret
 
 .Shiny:
@@ -190,15 +185,6 @@ BattleAnim_SendOutMon:
 	anim_wait 4
 	anim_sound 0, 0, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_SHINY, 48, 96, $38
-	anim_wait 32
-	anim_ret
-
-.Normal:
-	anim_1gfx BATTLE_ANIM_GFX_SMOKE
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_obj BATTLE_ANIM_OBJ_BALL_POOF, 44, 96, $0
-	anim_wait 4
-	anim_bgeffect BATTLE_BG_EFFECT_ENTER_MON, $0, BG_EFFECT_USER, $0
 	anim_wait 32
 	anim_ret
 
@@ -249,16 +235,10 @@ BattleAnim_Psn:
 	anim_ret
 
 BattleAnim_Sap:
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
 	anim_1gfx BATTLE_ANIM_GFX_CHARGE
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj BATTLE_ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 16
+	anim_call BattleAnimSub_AbsorbParticles
+	anim_wait 10
 	anim_ret
 
 BattleAnim_Frz:
@@ -290,12 +270,7 @@ BattleAnim_InLove:
 	anim_ret
 
 BattleAnim_InSandstorm:
-	anim_1gfx BATTLE_ANIM_GFX_POWDER
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 88, 0, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 72, 0, $1
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_SANDSTORM, 56, 0, $2
+	anim_call BattleAnim_Sandstorm.storm
 .loop
 	anim_sound 0, 1, SFX_MENU
 	anim_wait 8

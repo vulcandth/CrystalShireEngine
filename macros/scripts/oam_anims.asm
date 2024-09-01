@@ -37,6 +37,8 @@ MACRO battleoamdelete
 	dw battleoamdelete_command
 ENDM
 
+DEF FIRST_BATTLE_OAM_CMD EQU $fcff
+
 MACRO oamframe
 	db \1 ; duration
 	DEF x = \2
