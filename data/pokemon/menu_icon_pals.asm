@@ -10,6 +10,7 @@ ENDM
 MonMenuIconPals:
 	table_width 1, MonMenuIconPals
 	;         normal, shiny
+; Kanto
 	icon_pals TEAL,   GREEN  ; BULBASAUR
 	icon_pals TEAL,   GREEN  ; IVYSAUR
 	icon_pals TEAL,   GREEN  ; VENUSAUR
@@ -161,6 +162,7 @@ MonMenuIconPals:
 	icon_pals RED,    GRAY   ; DRAGONITE
 	icon_pals PURPLE, BROWN  ; MEWTWO
 	icon_pals PINK,   BLUE   ; MEW
+; Johto
 	icon_pals GREEN,  BROWN  ; CHIKORITA
 	icon_pals GREEN,  BROWN  ; BAYLEEF
 	icon_pals GREEN,  GREEN  ; MEGANIUM
@@ -261,4 +263,140 @@ MonMenuIconPals:
 	icon_pals BLUE,   TEAL   ; LUGIA
 	icon_pals RED,    BROWN  ; HO_OH
 	icon_pals GREEN,  PINK   ; CELEBI
+; Hoenn
+	icon_pals RED,    RED    ; TREECKO
+	icon_pals RED,    RED    ; GROVYLE
+	icon_pals RED,    RED    ; SCEPTILE
+	icon_pals RED,    RED    ; TORCHIC
+	icon_pals RED,    RED    ; COMBUSKEN
+	icon_pals RED,    RED    ; BLAZIKEN
+	icon_pals RED,    RED    ; MUDKIP
+	icon_pals RED,    RED    ; MARSHTOMP
+	icon_pals RED,    RED    ; SWAMPERT
+	icon_pals RED,    RED    ; POOCHYENA
+	icon_pals RED,    RED    ; MIGHTYENA
+	icon_pals RED,    RED    ; ZIGZAGOON
+	icon_pals RED,    RED    ; LINOONE
+	icon_pals RED,    RED    ; WURMPLE
+	icon_pals RED,    RED    ; SILCOON
+	icon_pals RED,    RED    ; BEAUTIFLY
+	icon_pals RED,    RED    ; CASCOON
+	icon_pals RED,    RED    ; DUSTOX
+	icon_pals RED,    RED    ; LOTAD
+	icon_pals RED,    RED    ; LOMBRE
+	icon_pals RED,    RED    ; LUDICOLO
+	icon_pals RED,    RED    ; SEEDOT
+	icon_pals RED,    RED    ; NUZLEAF
+	icon_pals RED,    RED    ; SHIFTRY
+	icon_pals RED,    RED    ; TAILLOW
+	icon_pals RED,    RED    ; SWELLOW
+	icon_pals RED,    RED    ; WINGULL
+	icon_pals RED,    RED    ; PELIPPER
+	icon_pals RED,    RED    ; RALTS
+	icon_pals RED,    RED    ; KIRLIA
+	icon_pals RED,    RED    ; GARDEVOIR
+	icon_pals RED,    RED    ; SURSKIT
+	icon_pals RED,    RED    ; MASQUERAIN
+	icon_pals RED,    RED    ; SHROOMISH
+	icon_pals RED,    RED    ; BRELOOM
+	icon_pals RED,    RED    ; SLAKOTH
+	icon_pals RED,    RED    ; VIGOROTH
+	icon_pals RED,    RED    ; SLAKING
+	icon_pals RED,    RED    ; NINCADA
+	icon_pals RED,    RED    ; NINJASK
+	icon_pals RED,    RED    ; SHEDINJA
+	icon_pals RED,    RED    ; WHISMUR
+	icon_pals RED,    RED    ; LOUDRED
+	icon_pals RED,    RED    ; EXPLOUD
+	icon_pals RED,    RED    ; MAKUHITA
+	icon_pals RED,    RED    ; HARIYAMA
+	icon_pals RED,    RED    ; AZURILL
+	icon_pals RED,    RED    ; NOSEPASS
+	icon_pals RED,    RED    ; SKITTY
+	icon_pals RED,    RED    ; DELCATTY
+	icon_pals RED,    RED    ; SABLEYE
+	icon_pals RED,    RED    ; MAWILE
+	icon_pals RED,    RED    ; ARON
+	icon_pals RED,    RED    ; LAIRON
+	icon_pals RED,    RED    ; AGGRON
+	icon_pals RED,    RED    ; MEDITITE
+	icon_pals RED,    RED    ; MEDICHAM
+	icon_pals RED,    RED    ; ELECTRIKE
+	icon_pals RED,    RED    ; MANECTRIC
+	icon_pals RED,    RED    ; PLUSLE
+	icon_pals RED,    RED    ; MINUN
+	icon_pals RED,    RED    ; VOLBEAT
+	icon_pals RED,    RED    ; ILLUMISE
+	icon_pals RED,    RED    ; ROSELIA
+	icon_pals RED,    RED    ; GULPIN
+	icon_pals RED,    RED    ; SWALOT
+	icon_pals RED,    RED    ; CARVANHA
+	icon_pals RED,    RED    ; SHARPEDO
+	icon_pals RED,    RED    ; WAILMER
+	icon_pals RED,    RED    ; WAILORD
+	icon_pals RED,    RED    ; NUMEL
+	icon_pals RED,    RED    ; CAMERUPT
+	icon_pals RED,    RED    ; TORKOAL
+	icon_pals RED,    RED    ; SPOINK
+	icon_pals RED,    RED    ; GRUMPIG
+	icon_pals RED,    RED    ; SPINDA
+	icon_pals RED,    RED    ; TRAPINCH
+	icon_pals RED,    RED    ; VIBRAVA
+	icon_pals RED,    RED    ; FLYGON
+	icon_pals RED,    RED    ; CACNEA
+	icon_pals RED,    RED    ; CACTURNE
+	icon_pals RED,    RED    ; SWABLU
+	icon_pals RED,    RED    ; ALTARIA
+	icon_pals RED,    RED    ; ZANGOOSE
+	icon_pals RED,    RED    ; SEVIPER
+	icon_pals RED,    RED    ; LUNATONE
+	icon_pals RED,    RED    ; SOLROCK
+	icon_pals RED,    RED    ; BARBOACH
+	icon_pals RED,    RED    ; WHISCASH
+	icon_pals RED,    RED    ; CORPHISH
+	icon_pals RED,    RED    ; CRAWDAUNT
+	icon_pals RED,    RED    ; BALTOY
+	icon_pals RED,    RED    ; CLAYDOL
+	icon_pals RED,    RED    ; LILEEP
+	icon_pals RED,    RED    ; CRADILY
+	icon_pals RED,    RED    ; ANORITH
+	icon_pals RED,    RED    ; ARMALDO
+	icon_pals RED,    RED    ; FEEBAS
+	icon_pals RED,    RED    ; MILOTIC
+	icon_pals RED,    RED    ; CASTFORM
+	icon_pals RED,    RED    ; KECLEON
+	icon_pals RED,    RED    ; SHUPPET
+	icon_pals RED,    RED    ; BANETTE
+	icon_pals RED,    RED    ; DUSKULL
+	icon_pals RED,    RED    ; DUSCLOPS
+	icon_pals RED,    RED    ; TROPIUS
+	icon_pals RED,    RED    ; CHIMECHO
+	icon_pals RED,    RED    ; ABSOL
+	icon_pals RED,    RED    ; WYNAUT
+	icon_pals RED,    RED    ; SNORUNT
+	icon_pals RED,    RED    ; GLALIE
+	icon_pals RED,    RED    ; SPHEAL
+	icon_pals RED,    RED    ; SEALEO
+	icon_pals RED,    RED    ; WALREIN
+	icon_pals RED,    RED    ; CLAMPERL
+	icon_pals RED,    RED    ; HUNTAIL
+	icon_pals RED,    RED    ; GOREBYSS
+	icon_pals RED,    RED    ; RELICANTH
+	icon_pals RED,    RED    ; LUVDISC
+	icon_pals RED,    RED    ; BAGON
+	icon_pals RED,    RED    ; SHELGON
+	icon_pals RED,    RED    ; SALAMENCE
+	icon_pals RED,    RED    ; BELDUM
+	icon_pals RED,    RED    ; METANG
+	icon_pals RED,    RED    ; METAGROSS
+	icon_pals RED,    RED    ; REGIROCK
+	icon_pals RED,    RED    ; REGICE
+	icon_pals RED,    RED    ; REGISTEEL
+	icon_pals RED,    RED    ; LATIAS
+	icon_pals RED,    RED    ; LATIOS
+	icon_pals RED,    RED    ; KYOGRE
+	icon_pals RED,    RED    ; GROUDON
+	icon_pals RED,    RED    ; RAYQUAZA
+	icon_pals RED,    RED    ; JIRACHI
+	icon_pals RED,    RED    ; DEOXYS
 	assert_table_length NUM_POKEMON

@@ -189,7 +189,7 @@ if DEF(_DEBUG)
 	; givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
 	; ; hm slaves
 	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
+	givepoke MAGIKARP, PLAIN_FORM, 100, LEFTOVERS
 	; givepokemove FLY,        wPartyMon2, 0
 	; givepokemove SURF,       wPartyMon2, 1
 	; givepokemove STRENGTH,   wPartyMon2, 2
@@ -199,13 +199,13 @@ if DEF(_DEBUG)
 	; givepokemove HEADBUTT,   wPartyMon3, 2
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke SNORLAX, 75
+	givepoke CLAMPERL, 75
 	givepokemove ICE_BEAM,  wPartyMon1, 0
 	givepokemove STEEL_WING,  wPartyMon1, 1
 	givepokemove LEAF_BLADE,  wPartyMon1, 2
 	givepokemove LEECH_SEED,  wPartyMon1, 3
-	; givepoke GENGAR, 50
-	; givepoke DITTO, 50
+	givepoke GENGAR, 50
+	givepoke NINCADA, 50
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
@@ -248,7 +248,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon AZUMARILL, 100
+	loadwildmon NOSEPASS, 100
 	startbattle
 	reloadmapafterbattle
 	end

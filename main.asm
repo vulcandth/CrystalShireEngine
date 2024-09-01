@@ -87,6 +87,13 @@ INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
 INCLUDE "engine/pokemon/breeding.asm"
+INCLUDE "engine/link/time_capsule.asm"
+INCLUDE "engine/events/name_rater.asm"
+INCLUDE "engine/events/play_slow_cry.asm"
+INCLUDE "engine/link/time_capsule_2.asm"
+INCLUDE "engine/events/magikarp.asm"
+INCLUDE "engine/battle/hidden_power.asm"
+INCLUDE "engine/battle/misc.asm"
 
 
 SECTION "Roofs", ROMX
@@ -164,6 +171,8 @@ INCLUDE "data/battle/effect_command_pointers.asm"
 SECTION "bank10", ROMX
 
 INCLUDE "engine/pokedex/pokedex.asm"
+INCLUDE "engine/pokedex/new_pokedex_entry.asm"
+INCLUDE "engine/pokedex/unown_dex.asm"
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
@@ -236,9 +245,13 @@ INCLUDE "engine/link/init_list.asm"
 INCLUDE "engine/pokemon/experience.asm"
 INCLUDE "engine/pokemon/switchpartymons.asm"
 INCLUDE "engine/gfx/load_pics.asm"
-INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
 INCLUDE "engine/pokemon/natures.asm"
+
+
+SECTION "Base Stats", ROMX
+
+INCLUDE "data/pokemon/base_stats.asm"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -439,15 +452,11 @@ INCLUDE "engine/movie/intro.asm"
 SECTION "bank3E", ROMX
 
 INCLUDE "engine/gfx/load_font.asm"
-INCLUDE "engine/link/time_capsule.asm"
-INCLUDE "engine/events/name_rater.asm"
-INCLUDE "engine/events/play_slow_cry.asm"
-INCLUDE "engine/pokedex/new_pokedex_entry.asm"
-INCLUDE "engine/link/time_capsule_2.asm"
-INCLUDE "engine/pokedex/unown_dex.asm"
-INCLUDE "engine/events/magikarp.asm"
-INCLUDE "engine/battle/hidden_power.asm"
-INCLUDE "engine/battle/misc.asm"
+
+
+SECTION "Footprints", ROMX
+
+INCLUDE "gfx/footprints.asm"
 
 
 SECTION "bank3F", ROMX
