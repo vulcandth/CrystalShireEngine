@@ -1680,4 +1680,3 @@ BattleAnimSub_Recover:
 	anim_obj BATTLE_ANIM_OBJ_RECOVER, 44, 88, $37
 	anim_wait 64
 	anim_ret
-	

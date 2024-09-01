@@ -245,7 +245,7 @@ BattleAnim_Swallow:
 	anim_wait 2
 	anim_call BattleAnim_Recover.end
 	anim_ret
-	
+
 BattleAnim_HeatWave:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_HEAT_WAVE
 	anim_1gfx BATTLE_ANIM_GFX_HAZE
@@ -268,7 +268,7 @@ BattleAnimSub_Mist:
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 80, $4
 	anim_obj BATTLE_ANIM_OBJ_MIST_BG, 8, 104, $e
 	anim_ret
-	
+
 BattleAnim_Hail:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_ICE
 	anim_1gfx BATTLE_ANIM_GFX_ICE
@@ -485,7 +485,7 @@ BattleAnim_Taunt:
 	anim_obj BATTLE_ANIM_OBJ_TAUNT, 72, 84, $0
 	anim_wait 16
 .loop
-	anim_sound 0, 0, SFX_SQUEAK 
+	anim_sound 0, 0, SFX_SQUEAK
 	anim_wait 32
 	anim_loop 3, .loop
 	anim_jump BattleAnimSub_Anger
@@ -670,7 +670,7 @@ BattleAnim_MagicCoat:
 	anim_clearobjs
 	anim_wait 40
 	anim_ret
-	
+
 BattleAnim_Recycle:
 	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_RECYCLE
 	anim_1gfx BATTLE_ANIM_GFX_RECYCLE
@@ -1019,7 +1019,7 @@ BattleAnim_Dive:
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_L, 44, 92, $24
 	anim_obj BATTLE_ANIM_OBJ_DROPLET_R, 64, 92, $3b
 	anim_ret
-	
+
 BattleAnim_ArmThrust:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_KARATE_CHOP
@@ -1107,7 +1107,7 @@ BattleAnim_MistBall:
 
 BattleAnim_FeatherDance:
 	anim_1gfx BATTLE_ANIM_GFX_MISC_1
-	anim_sound 0, 0, SFX_MORNING_SUN 
+	anim_sound 0, 0, SFX_MORNING_SUN
 .loop
 	anim_obj BATTLE_ANIM_OBJ_FEATHERDANCE, 132, 36, $0
 	anim_wait 16
@@ -1747,7 +1747,7 @@ BattleAnim_SilverWind:
 	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
 	anim_bgp $90
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_call .one 
+	anim_call .one
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
 	anim_call .two
 	anim_call .three
@@ -1763,7 +1763,7 @@ BattleAnim_SilverWind:
 	anim_call .three
 	anim_call .four
 	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 32, 96, $1
-	anim_call .one 
+	anim_call .one
 	anim_call .two
 	anim_call .three
 	anim_ret
@@ -1917,7 +1917,7 @@ BattleAnim_WaterSpout:
 	anim_sound 0, 0, SFX_WATER_GUN
 	anim_obj BATTLE_ANIM_OBJ_WATER_SPOUT_RISING, 48, 80, $30
 	anim_ret
-	
+
 BattleAnim_SignalBeam:
 	anim_1gfx BATTLE_ANIM_GFX_GLOW
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_SIGNAL_BEAM_RED
@@ -1934,7 +1934,7 @@ BattleAnim_SignalBeam:
 	anim_loop 8, .loop
 	anim_wait 64
 	anim_ret
-	
+
 BattleAnim_ShadowPunch:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_battlergfx_2row
@@ -2071,7 +2071,7 @@ BattleAnim_MuddyWater:
 	anim_ret
 
 BattleAnim_BulletSeed:
-	anim_2gfx BATTLE_ANIM_GFX_PLANT, BATTLE_ANIM_GFX_HIT    
+	anim_2gfx BATTLE_ANIM_GFX_PLANT, BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_BONE_CLUB
 .loop
 	anim_setvar $0
@@ -2299,7 +2299,7 @@ BattleAnim_Bounce:
 	anim_wait 32
 	anim_clearobjs
 	anim_ret
-	
+
 BattleAnim_MudShot:
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_BROWN
 	anim_1gfx BATTLE_ANIM_GFX_POISON
@@ -2437,7 +2437,7 @@ BattleAnim_MagicalLeaf:
 	anim_incobj 10
 	anim_wait 64
 	anim_ret
-	
+
 BattleAnim_WaterSport:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_WATER
 	anim_1gfx BATTLE_ANIM_GFX_WATER
@@ -2751,4 +2751,3 @@ BattleAnim_PsychoBoost:
 	anim_loop 2, .loop4
 	anim_wait 32
 	anim_ret
-	

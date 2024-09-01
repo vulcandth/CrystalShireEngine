@@ -1143,7 +1143,7 @@ DEF NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_PURPLE             ; 06
 	const PAL_BTLCUSTOM_ICE                ; 07
 	const PAL_BTLCUSTOM_FIRE               ; 08
-	const PAL_BTLCUSTOM_WATER              ; 09 
+	const PAL_BTLCUSTOM_WATER              ; 09
 	const PAL_BTLCUSTOM_BUBBLE             ; 0a
 	const PAL_BTLCUSTOM_AURORA             ; 0b
 	const PAL_BTLCUSTOM_GLOBE              ; 0c

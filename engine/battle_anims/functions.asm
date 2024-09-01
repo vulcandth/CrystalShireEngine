@@ -1881,7 +1881,7 @@ BattleAnimFunc_Wrap:
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, [hl]
-	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \ 
+	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \
 		&& BATTLE_ANIM_FRAMESET_BIND_2 + 1 == BATTLE_ANIM_FRAMESET_BIND_3 \
 		&& BATTLE_ANIM_FRAMESET_BIND_3 + 1 == BATTLE_ANIM_FRAMESET_BIND_4
 	inc a
@@ -4200,7 +4200,7 @@ Step_Fast:
 	cp 160 ; final position
 	jmp nc, DeinitBattleAnimation
 	jr Rad_Move
-	
+
 Step_VeryFast_NoStop:
 	call Get_Rad_Pos
 	ld hl, 15.0 ; speed
@@ -4213,7 +4213,7 @@ Get_Rad_Pos:
 	ld a, [hli]
 	ld e, [hl]
 	ld d, a
-	ret 
+	ret
 
 Set_Rad_Pos:
 	add hl, de
@@ -4241,7 +4241,7 @@ Rad_Move:
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret	
+	ret
 
 SECTION "BattleAnimFunc_RadialMoveIn", ROMX
 

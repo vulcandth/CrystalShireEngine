@@ -395,7 +395,7 @@ DEF NUM_ATTACKS EQU const_value - 1
 	const ANIM_RETURN_MON        ; -14 (ffec)
 	const ANIM_SEND_OUT_MON      ; -15 (ffeb)
 	const ANIM_THROW_POKE_BALL   ; -16 (ffea)
-	const ANIM_SNATCHED_MOVE	 ; -17 (ffe9) 
+	const ANIM_SNATCHED_MOVE	 ; -17 (ffe9)
 DEF NUM_BATTLE_ANIMS EQU -const_value - 1
 
 ; wNumHits uses offsets from ANIM_MISS

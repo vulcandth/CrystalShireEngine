@@ -182,7 +182,7 @@ BattleAnimFrameData:
 	dw .Frameset_PlayerHead1Row        ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_1ROW
 	dw .Frameset_EnemyFeet2Row         ; BATTLE_ANIM_FRAMESET_ENEMYFEET_2ROW
 	dw .Frameset_PlayerHead2Row        ; BATTLE_ANIM_FRAMESET_PLAYERHEAD_2ROW
-	; New Framesets                    
+	; New Framesets
 	dw .Frameset_PalmXFlip             ; BATTLE_ANIM_FRAMESET_PALM_XFLIP
 	dw .Frameset_MediumHorn            ; BATTLE_ANIM_FRAMESET_MEDIUM_HORN
 	dw .Frameset_Minimize              ; BATTLE_ANIM_FRAMESET_MINIMIZE

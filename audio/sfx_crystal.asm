@@ -283,11 +283,11 @@ Sfx_Twinkle_Ch5:
 	octave 5
 	note G_, 6
 	sound_ret
-	
+
 Sfx_GrassWhistle:
 	musicheader 2, 5, Sfx_GrassWhistle_Ch5
 	musicheader 1, 6, Sfx_GrassWhistle_Ch6
-	
+
 Sfx_GrassWhistle_Ch5:
 	togglesfx
 	vibrato $a, $24
@@ -299,7 +299,7 @@ Sfx_GrassWhistle_Ch5:
 	note E_, 2
 	note G_, 6
 	endchannel
-	
+
 Sfx_GrassWhistle_Ch6:
 	togglesfx
 	vibrato $a, $23
