@@ -109,6 +109,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_ObjectHover
 	dba BattleAnimFunc_RockTomb
 	dba BattleAnimFunc_AirCutter
+	dba BattleAnimFunc_RadialMoveOut_SlowShort
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -2522,7 +2523,7 @@ BattleAnimFunc_Amnesia:
 	add hl, bc
 	ld a, [hl]
 	assert BATTLE_ANIM_FRAMESET_AMNESIA_1 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_2 \
-		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3
+		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3_RECOVER
 	add BATTLE_ANIM_FRAMESET_AMNESIA_1
 	call ReinitBattleAnimFrameset
 	ld hl, BATTLEANIMSTRUCT_PARAM
@@ -4120,6 +4121,12 @@ BattleAnimFunc_RadialMoveOut_Slow:
 	dw InitRadial
 	dw Step_Slow
 
+BattleAnimFunc_RadialMoveOut_SlowShort:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Slow_Short
+
 BattleAnimFunc_RadialMoveOut_VerySlow:
 	call BattleAnim_AnonJumptable
 
@@ -4167,6 +4174,14 @@ Step_Slow:
 	ld hl, 1.5 ; speed
 	call Set_Rad_Pos
 	cp 120 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
+Step_Slow_Short:
+	call Get_Rad_Pos
+	ld hl, 1.5 ; speed
+	call Set_Rad_Pos
+	cp 40 ; final position
 	jmp nc, DeinitBattleAnimation
 	jr Rad_Move
 

@@ -357,7 +357,7 @@ ENDC
 
 DisplayUsedMoveText:
 IF DEF(_DEBUG)
-;	jr .no_animate_all_moves ; comment this line to animate all moves
+	jp .no_animate_all_moves ; comment this line to animate all moves
 	ld de, MoveTable
 .loop
 	ld a, BATTLE_VARS_MOVE

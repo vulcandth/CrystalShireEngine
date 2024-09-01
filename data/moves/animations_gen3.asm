@@ -348,6 +348,7 @@ BattleAnim_Flatter:
 
 BattleAnim_WillOWisp:
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_WILL_O_WISP
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_WILL_O_WISP
 	anim_1gfx BATTLE_ANIM_GFX_FIRE
 	anim_bgp $1b
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
@@ -990,7 +991,6 @@ BattleAnim_Dive:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_BUBBLE
 	anim_sound 0, 1, SFX_BUBBLEBEAM
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
-	anim_call BattleAnimSub_WaterfallSplash
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
 	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $d0
 	anim_obj BATTLE_ANIM_OBJ_BUBBLE_SPLASH, 140, 48, $50
@@ -1311,20 +1311,32 @@ BattleAnim_HyperVoice:
 
 BattleAnim_PoisonFang:
 	anim_3gfx BATTLE_ANIM_GFX_CUT, BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_POISON
-	anim_call BattleAnimSub_Bite2
+	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $98
+	anim_obj BATTLE_ANIM_OBJ_BITE, 136, 56, $18
+	anim_wait 8
+	anim_sound 0, 1, SFX_BITE
+	anim_obj BATTLE_ANIM_OBJ_HIT, 136, 56, $0
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
 	anim_wait 4
 	anim_clearobjs
 	anim_wait 8
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 ;fallthrough
-BattleAnimSub_PoisonBubblesShort:
+BattleAnim_Poison_Bubble_branch_2:
 .loop
-	anim_call BattleAnimSub_PoisonBubbles
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 132, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 116, 72, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj BATTLE_ANIM_OBJ_SLUDGE, 148, 72, $0
+	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 48
 	anim_ret
-	
+
 BattleAnim_CrushClaw:
 	anim_setobjpal PAL_BATTLE_OB_BLUE, PAL_BTLCUSTOM_GRAY
 	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_FIRE
@@ -1566,8 +1578,9 @@ BattleAnimSub_WeatherBall:
 	anim_wait 16
 	anim_sound 0, 0, SFX_METRONOME
 	anim_wait 64
-	anim_sound 0, 1, SFX_NOT_VERY_EFFECTIVE
+	anim_sound 0, 1, SFX_HEADBUTT
 	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 48, $0
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Aromatherapy:
@@ -2194,6 +2207,7 @@ BattleAnim_DragonClaw:
 
 BattleAnim_FrenzyPlant:
 	anim_3gfx BATTLE_ANIM_GFX_FRENZY_PLANT, BATTLE_ANIM_GFX_ROOTS, BATTLE_ANIM_GFX_PLANT
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GREEN
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $80, $2, $0
 	anim_sound 16, 2, SFX_VINE_WHIP
 	anim_obj BATTLE_ANIM_OBJ_ROOT_R, 40, 98, $0
@@ -2316,8 +2330,8 @@ BattleAnim_MudShot:
 	anim_ret
 
 BattleAnim_PoisonTail:
-	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_POISON
+	anim_setobjpal PAL_BATTLE_OB_GRAY, PAL_BTLCUSTOM_PURPLE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
 	anim_wait 16
@@ -2326,11 +2340,17 @@ BattleAnim_PoisonTail:
 	anim_wait 8
 	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
 	anim_call BattleAnim_ShowMon_0
-	anim_jump BattleAnimSub_PoisonBubblesShort
+	anim_jump BattleAnim_Poison_Bubble_branch_2
 
 BattleAnim_Covet:
 	anim_2gfx BATTLE_ANIM_GFX_OBJECTS, BATTLE_ANIM_GFX_HIT
-	anim_call BattleAnimSub_Charm
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect BATTLE_BG_EFFECT_WOBBLE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_ATTRACT
+	anim_obj BATTLE_ANIM_OBJ_HEART, 64, 80, $0
+	anim_wait 32
+	anim_incbgeffect BATTLE_BG_EFFECT_WOBBLE_MON
+	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 	anim_clearobjs
 	anim_wait 1

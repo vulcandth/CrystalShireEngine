@@ -20,7 +20,7 @@ AnimObjGFX:
 	anim_obj_gfx 15, AnimObjIceGFX
 	anim_obj_gfx 10, AnimObjPokeBallGFX
 	anim_obj_gfx 19, AnimObjPoisonGFX
-	anim_obj_gfx 13, AnimObjBubbleGFX
+	anim_obj_gfx 14, AnimObjBubbleGFX
 	anim_obj_gfx 18, AnimObjNoiseGFX
 	anim_obj_gfx  2, AnimObjPowderGFX
 	anim_obj_gfx 11, AnimObjBeamGFX
@@ -75,4 +75,6 @@ AnimObjGFX:
 	anim_obj_gfx  6, AnimObjRingGFX
 	anim_obj_gfx 13, AnimObjRingBigGFX
 	anim_obj_gfx  6, AnimObjExplosionSmallGFX
+	anim_obj_gfx 18, AnimObjMushroomGFX
+	anim_obj_gfx 12, AnimObjTriangleGFX
 	assert_table_length NUM_BATTLE_ANIM_GFX + 1

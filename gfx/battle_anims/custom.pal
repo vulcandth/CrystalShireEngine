@@ -53,8 +53,8 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 00, 00, 00
 ; lightscreen
 	RGB 31, 31, 31
-	RGB 17, 31, 10
-	RGB 00, 25, 19
+	RGB 19, 31, 31
+	RGB 00, 28, 15
 	RGB 00, 00, 00
 ; peach
 	RGB 31, 31, 31
@@ -156,6 +156,15 @@ INCLUDE "gfx/battle_anims/battle_anims.pal"
 	RGB 31, 18, 25
 	RGB 31, 00, 27
 	RGB 15, 06, 31
-	
+; acid
+	RGB 31, 31, 31
+	RGB 31, 31, 07
+	RGB 31, 23, 04
+	RGB 31, 16, 01
+; reflect
+	RGB 31, 31, 31
+	RGB 31, 23, 30
+	RGB 06, 16, 31
+	RGB 00, 00, 00
 rept NUM_CUSTOM_BATTLE_PALETTES - 6
 endr
