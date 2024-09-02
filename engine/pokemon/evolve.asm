@@ -64,7 +64,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 
 	cp EVOLVE_TRADE
-	jr z, .trade
+	jmp z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -81,6 +81,9 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_LEVEL
 	jmp z, .level
+
+	cp EVOLVE_PV
+	jmp z, .pv
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
@@ -131,13 +134,13 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp c, .skip_half_species_parameter ; MORN_F or DAY_F < NITE_F
-	jr .proceed
+	jmp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp nc, .skip_half_species_parameter ; NITE_F or EVE_F >= NITE_F
-	jr .proceed
+	jmp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -157,7 +160,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 	pop hl
 	inc a
-	jr z, .proceed
+	jmp z, .proceed
 	dec a
 
 	ld a, [wLinkMode]
@@ -192,6 +195,41 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jmp nz, .skip_evolution_species
+	jr .proceed
+
+.pv
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
+	jmp c, .skip_evolution_species
+
+	call IsMonHoldingEverstone
+	jmp z, .skip_evolution_species_parameter
+
+	push hl
+
+	ld hl, wTempMonPersonality
+	ld a, [hli]
+	ldh [hDividend], a
+	ld a, [hl]
+	ldh [hDividend + 1], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hRemainder]
+
+	pop hl
+
+	cp 4
+
+	jr c, .low_pv
+
+	call GetNextEvoAttackByte
+	call GetNextEvoAttackByte
+
+.low_pv
 	jr .proceed
 
 .level
