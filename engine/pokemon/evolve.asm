@@ -348,6 +348,29 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
+	; Check if party is full
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr z, .skip_shedinja
+
+	ld a, [wEvolutionOldSpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(NINCADA)
+	if HIGH(NINCADA) == 0
+		or h
+	else
+		jr nz, .skip_shedinja
+		if HIGH(NINCADA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(NINCADA)
+		endc
+	endc
+	call z, GiveShedinja
+
+.skip_shedinja
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -749,3 +772,56 @@ GetNextEvoAttackByte:
 	call GetFarByte
 	inc hl
 	ret
+
+GiveShedinja:
+; Generate Evolved Mon's OT Name
+	push hl
+	ld a, [wCurPartyMon]
+	ld bc, NAME_LENGTH
+	ld hl, wPartyMonOTs
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+	push de
+; Add Shedinja to Party
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld hl, SHEDINJA
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	predef TryAddMonToParty
+; Get Evolved Mon's OT Name and set
+; the OT Name of the new Shedinja
+	pop de
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOTs
+	call SkipNames
+	call CopyName2
+; Starting at Move 1 in the Pokemon Data Structure,
+; transfer the Evolved Mon's bytes up to Level to
+; the new Shedinja
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	push hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+.loop
+	ld a, [de]
+	ld [hli], a
+	inc de
+	inc b
+	ld a, b
+	cp MON_LEVEL
+	jr nz, .loop
+; Set the approprite Caught Data for Shedinja
+	farjp SetGiftPartyMonCaughtData
