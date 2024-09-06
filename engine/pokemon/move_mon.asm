@@ -1198,6 +1198,9 @@ CalcMonStatC:
 	jr nz, .not_hp
 	ld a, [wCurPartyLevel]
 	ld b, a
+	ld a, [wBaseStats]
+	cp 1 ; Check for Shedinja
+	jr z, .set_one
 	ldh a, [hQuotient + 3]
 	add b
 	ldh [hMultiplicand + 2], a
@@ -1208,6 +1211,12 @@ CalcMonStatC:
 
 .no_overflow_3
 	ld a, STAT_MIN_HP
+	jr .not_hp
+
+.set_one
+	xor a
+	ldh [hMultiplicand + 2], a
+	ld a, 1
 
 .not_hp
 	ld b, a

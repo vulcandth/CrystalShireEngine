@@ -59,6 +59,7 @@ if DEF(_DEBUG)
 	setflag ENGINE_POKEDEX
 	; useful items
 	giveitem RARE_CANDY, 99
+	giveitem HP_UP, 99
 	giveitem MAX_REPEL, 99
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 1
