@@ -247,6 +247,7 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_TRADE
 	const EVOLVE_HAPPINESS
 	const EVOLVE_STAT
+	const EVOLVE_PV
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1

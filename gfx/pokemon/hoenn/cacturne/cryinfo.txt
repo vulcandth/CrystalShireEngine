@@ -1,0 +1,1 @@
+	mon_cry CRY_TOTODILE,   -$1c0,  $170 ; CACTURNE

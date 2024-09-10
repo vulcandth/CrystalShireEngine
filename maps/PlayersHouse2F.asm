@@ -58,72 +58,15 @@ if DEF(_DEBUG)
 	; pokedex
 	setflag ENGINE_POKEDEX
 	; useful items
+	giveitem RARE_CANDY, 99
+	giveitem HP_UP, 99
 	giveitem MAX_REPEL, 99
 	giveitem MASTER_BALL, 99
+	giveitem POKE_BALL, 1
 	giveitem BLU_APRICORN, 2
 	giveitem BERRY
 	giveitem GOLD_BERRY
 	giveitem ICE_BERRY
-	; all tms
-	giveitem TM_FOCUS_PUNCH
-	giveitem TM_DRAGON_CLAW
-	giveitem TM_WATER_PULSE
-	giveitem TM_CALM_MIND
-	giveitem TM_ROAR
-	giveitem TM_TOXIC
-	giveitem TM_HAIL
-	giveitem TM_BULK_UP
-	giveitem TM_BULLET_SEED
-	giveitem TM_HIDDEN_POWER
-	giveitem TM_SUNNY_DAY
-	giveitem TM_TAUNT
-	giveitem TM_ICE_BEAM
-	giveitem TM_BLIZZARD
-	giveitem TM_HYPER_BEAM
-	giveitem TM_LIGHT_SCREEN
-	giveitem TM_PROTECT
-	giveitem TM_RAIN_DANCE
-	giveitem TM_GIGA_DRAIN
-	giveitem TM_SAFEGUARD
-	giveitem TM_FRUSTRATION
-	giveitem TM_SOLARBEAM
-	giveitem TM_IRON_TAIL
-	giveitem TM_THUNDERBOLT
-	giveitem TM_THUNDER
-	giveitem TM_EARTHQUAKE
-	giveitem TM_RETURN
-	giveitem TM_DIG
-	giveitem TM_PSYCHIC_M
-	giveitem TM_SHADOW_BALL
-	giveitem TM_BRICK_BREAK
-	giveitem TM_DOUBLE_TEAM
-	giveitem TM_REFLECT
-	giveitem TM_SHOCK_WAVE
-	giveitem TM_FLAMETHROWER
-	giveitem TM_SLUDGE_BOMB
-	giveitem TM_SANDSTORM
-	giveitem TM_FIRE_BLAST
-	giveitem TM_ROCK_TOMB
-	giveitem TM_AERIAL_ACE
-	giveitem TM_TORMENT
-	giveitem TM_FACADE
-	giveitem TM_SECRET_POWER
-	giveitem TM_REST
-	giveitem TM_ATTRACT
-	giveitem TM_THIEF
-	giveitem TM_STEEL_WING
-	giveitem TM_SKILL_SWAP
-	giveitem TM_SNATCH
-	giveitem TM_OVERHEAT
-	; all hms
-	giveitem HM_CUT
-	giveitem HM_FLY
-	giveitem HM_SURF
-	giveitem HM_STRENGTH
-	giveitem HM_FLASH
-	giveitem HM_ROCK_SMASH
-	giveitem HM_WATERFALL
-	giveitem HM_DIVE
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -200,12 +143,12 @@ if DEF(_DEBUG)
 	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke SNORLAX, 75
-	givepokemove ICE_BEAM,  wPartyMon1, 0
-	givepokemove STEEL_WING,  wPartyMon1, 1
+	givepokemove THUNDERSHOCK,  wPartyMon1, 0
+	givepokemove MEGA_DRAIN,  wPartyMon1, 1
 	givepokemove LEAF_BLADE,  wPartyMon1, 2
 	givepokemove LEECH_SEED,  wPartyMon1, 3
-	; givepoke GENGAR, 50
-	; givepoke DITTO, 50
+	givepoke GENGAR, 50
+	givepoke NINCADA, 50
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
@@ -248,7 +191,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon AZUMARILL, 100
+	loadwildmon NOSEPASS, 100
 	startbattle
 	reloadmapafterbattle
 	end

@@ -872,7 +872,7 @@ Pokedex_InitUnownMode:
 	ld [wDexCurUnownIndex], a
 	call Pokedex_LoadUnownFrontpicTiles
 	call Pokedex_UnownModePlaceCursor
-	farcall PrintUnownWord
+	call PrintUnownWord
 	call WaitBGMap
 	ld a, SCGB_POKEDEX_UNOWN_MODE
 	call Pokedex_GetSGBLayout
@@ -935,7 +935,7 @@ Pokedex_UnownModeHandleDPadInput:
 	call Pokedex_UnownModeEraseCursor
 	call Pokedex_LoadUnownFrontpicTiles
 	call Pokedex_UnownModePlaceCursor
-	farcall PrintUnownWord
+	call PrintUnownWord
 	ld a, $1
 	ldh [hBGMapMode], a
 	call DelayFrame

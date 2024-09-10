@@ -1217,7 +1217,7 @@ VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
-	jr c, RareCandy_StatBooster_ExitMenu
+	jmp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
 
@@ -1225,6 +1225,10 @@ VitaminEffect:
 
 	ld a, MON_EVS
 	call GetPartyParamLocation
+
+	ld a, [wBaseStats]
+	cp 1 ; Check for Shedinja
+	jr z, NoEffectMessage
 
 	ld d, 10
 	push bc

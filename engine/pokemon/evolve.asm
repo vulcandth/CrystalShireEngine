@@ -64,7 +64,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 
 	cp EVOLVE_TRADE
-	jr z, .trade
+	jmp z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -81,6 +81,9 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_LEVEL
 	jmp z, .level
+
+	cp EVOLVE_PV
+	jmp z, .pv
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
@@ -131,13 +134,13 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp c, .skip_half_species_parameter ; MORN_F or DAY_F < NITE_F
-	jr .proceed
+	jmp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp nc, .skip_half_species_parameter ; NITE_F or EVE_F >= NITE_F
-	jr .proceed
+	jmp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -157,7 +160,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 	pop hl
 	inc a
-	jr z, .proceed
+	jmp z, .proceed
 	dec a
 
 	ld a, [wLinkMode]
@@ -192,6 +195,41 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jmp nz, .skip_evolution_species
+	jr .proceed
+
+.pv
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
+	jmp c, .skip_evolution_species
+
+	call IsMonHoldingEverstone
+	jmp z, .skip_evolution_species_parameter
+
+	push hl
+
+	ld hl, wTempMonPersonality
+	ld a, [hli]
+	ldh [hDividend], a
+	ld a, [hl]
+	ldh [hDividend + 1], a
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hRemainder]
+
+	pop hl
+
+	cp 4
+
+	jr c, .low_pv
+
+	call GetNextEvoAttackByte
+	call GetNextEvoAttackByte
+
+.low_pv
 	jr .proceed
 
 .level
@@ -310,6 +348,29 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
+	; Check if party is full
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr z, .skip_shedinja
+
+	ld a, [wEvolutionOldSpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(NINCADA)
+	if HIGH(NINCADA) == 0
+		or h
+	else
+		jr nz, .skip_shedinja
+		if HIGH(NINCADA) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(NINCADA)
+		endc
+	endc
+	call z, GiveShedinja
+
+.skip_shedinja
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -328,7 +389,7 @@ EvolveAfterBattle_MasterLoop:
 	jr nz, .skip_unown
 	ld hl, wTempMonForm
 	predef GetUnownLetter
-	farcall UpdateUnownDex
+	call UpdateUnownDex
 
 .skip_unown
 	pop de
@@ -711,3 +772,56 @@ GetNextEvoAttackByte:
 	call GetFarByte
 	inc hl
 	ret
+
+GiveShedinja:
+; Generate Evolved Mon's OT Name
+	push hl
+	ld a, [wCurPartyMon]
+	ld bc, NAME_LENGTH
+	ld hl, wPartyMonOTs
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+	push de
+; Add Shedinja to Party
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld hl, SHEDINJA
+	call GetPokemonIDFromIndex
+	ld [wCurPartySpecies], a
+	predef TryAddMonToParty
+; Get Evolved Mon's OT Name and set
+; the OT Name of the new Shedinja
+	pop de
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMonOTs
+	call SkipNames
+	call CopyName2
+; Starting at Move 1 in the Pokemon Data Structure,
+; transfer the Evolved Mon's bytes up to Level to
+; the new Shedinja
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	push hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	call AddNTimes
+	ld e, l
+	ld d, h
+	pop hl
+.loop
+	ld a, [de]
+	ld [hli], a
+	inc de
+	inc b
+	ld a, b
+	cp MON_LEVEL
+	jr nz, .loop
+; Set the approprite Caught Data for Shedinja
+	farjp SetGiftPartyMonCaughtData

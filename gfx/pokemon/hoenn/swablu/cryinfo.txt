@@ -1,0 +1,1 @@
+	mon_cry CRY_CHIKORITA,   $9f0,  $0F0 ; SWABLU

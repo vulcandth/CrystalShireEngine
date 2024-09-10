@@ -1,4 +1,4 @@
-SECTION "Frames2", ROMX
+SECTION "Frames 2", ROMX
 
 FramePointers2:
 	dw ChikoritaFrames
