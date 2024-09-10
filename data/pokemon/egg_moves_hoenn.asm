@@ -139,237 +139,462 @@ EggMovePointers3::
 .IndirectEnd::
 
 TreeckoEggMoves:
-	dw POUND
+	dw CRUNCH
+	dw CRUSH_CLAW
+	dw DRAGONBREATH
+	dw ENDEAVOR
+	dw LEECH_SEED
+	dw MUD_SPORT
 	dw -1 ; end
-	
+
 TorchicEggMoves:
-	dw POUND
+	dw COUNTER
+	dw ENDURE
+	dw REVERSAL
+	dw ROCK_SLIDE
+	dw SMELLINGSALT
+	dw SWAGGER
 	dw -1 ; end
-	
+
 MudkipEggMoves:
-	dw POUND
+	dw CURSE
+	dw ICE_BALL
+	dw MIRROR_COAT
+	dw REFRESH
+	dw STOMP
+	dw UPROAR
 	dw -1 ; end
-	
+
 PoochyenaEggMoves:
-	dw POUND
+	dw ASTONISH
+	dw COVET
+	dw LEER
+	dw POISON_FANG
+	dw YAWN
 	dw -1 ; end
-	
+
 ZigzagoonEggMoves:
-	dw POUND
+	dw CHARM
+	dw PURSUIT
+	dw SUBSTITUTE
+	dw TICKLE
+	dw TRICK
 	dw -1 ; end
-	
+
 LotadEggMoves:
-	dw POUND
+	dw FLAIL
+	dw LEECH_SEED
+	dw RAZOR_LEAF
+	dw SWEET_SCENT
+	dw SYNTHESIS
+	dw WATER_GUN
 	dw -1 ; end
-	
+
 SeedotEggMoves:
-	dw POUND
+	dw AMNESIA
+	dw FALSE_SWIPE
+	dw LEECH_SEED
+	dw QUICK_ATTACK
+	dw RAZOR_WIND
+	dw TAKE_DOWN
 	dw -1 ; end
-	
+
 TaillowEggMoves:
-	dw POUND
+	dw MIRROR_MOVE
+	dw PURSUIT
+	dw RAGE
+	dw REFRESH
+	dw SKY_ATTACK
+	dw SUPERSONIC
 	dw -1 ; end
-	
+
 WingullEggMoves:
-	dw POUND
+	dw AGILITY
+	dw GUST
+	dw MIST
+	dw TWISTER
+	dw WATER_SPORT
 	dw -1 ; end
-	
+
 RaltsEggMoves:
-	dw POUND
+	dw DESTINY_BOND
+	dw DISABLE
+	dw MEAN_LOOK
+	dw MEMENTO
+	dw WILL_O_WISP
 	dw -1 ; end
-	
+
 SurskitEggMoves:
-	dw POUND
+	dw FORESIGHT
+	dw HYDRO_PUMP
+	dw MIND_READER
+	dw MUD_SHOT
+	dw PSYBEAM
 	dw -1 ; end
-	
+
 ShroomishEggMoves:
-	dw POUND
+	dw CHARM
+	dw FAKE_TEARS
+	dw FALSE_SWIPE
+	; dw HELPING_HAND
+	dw SWAGGER
 	dw -1 ; end
-	
+
 SlakothEggMoves:
-	dw POUND
+	dw BODY_SLAM
+	dw CRUSH_CLAW
+	dw CURSE
+	dw PURSUIT
+	dw SLASH
+	dw SLEEP_TALK
+	dw SNORE
 	dw -1 ; end
-	
+
 NincadaEggMoves:
-	dw POUND
+	dw ENDURE
+	dw FAINT_ATTACK
+	dw GUST
+	dw SILVER_WIND
 	dw -1 ; end
-	
+
 WhismurEggMoves:
-	dw POUND
+	dw EXTRASENSORY
+	dw SMELLINGSALT
+	dw SNORE
+	dw SWAGGER
+	dw TAKE_DOWN
 	dw -1 ; end
-	
+
 MakuhitaEggMoves:
-	dw POUND
+	dw COUNTER
+	dw CROSS_CHOP
+	dw DETECT
+	dw DYNAMICPUNCH
+	dw FAINT_ATTACK
+	dw FORESIGHT
+	; dw HELPING_HAND
+	dw REVENGE
 	dw -1 ; end
-	
+
 AzurillEggMoves:
-	dw POUND
+	dw ENCORE
+	dw REFRESH
+	dw SING
+	dw SLAM
+	dw TICKLE
 	dw -1 ; end
-	
+
 SkittyEggMoves:
-	dw POUND
+	dw BATON_PASS
+	dw FAKE_TEARS
+	; dw HELPING_HAND
+	dw PSYCH_UP
+	dw SUBSTITUTE
+	dw TICKLE
+	dw UPROAR
+	dw WISH
 	dw -1 ; end
-	
+
 SableyeEggMoves:
-	dw POUND
+	dw MOONLIGHT
+	dw PSYCH_UP
+	dw RECOVER
 	dw -1 ; end
-	
+
 MawileEggMoves:
-	dw POUND
+	dw ANCIENTPOWER
+	dw FALSE_SWIPE
+	dw POISON_FANG
+	dw PSYCH_UP
+	dw SWORDS_DANCE
+	dw TICKLE
 	dw -1 ; end
-	
+
 AronEggMoves:
-	dw POUND
+	dw BODY_SLAM
+	dw ENDEAVOR
+	dw SMELLINGSALT
+	dw STOMP
 	dw -1 ; end
-	
+
 MedititeEggMoves:
-	dw POUND
+	dw BATON_PASS
+	dw DYNAMICPUNCH
+	dw FAKE_OUT
+	dw FIRE_PUNCH
+	dw FORESIGHT
+	dw ICE_PUNCH
+	dw THUNDERPUNCH
 	dw -1 ; end
-	
+
 ElectrikeEggMoves:
-	dw POUND
+	dw CRUNCH
+	dw CURSE
+	dw HEADBUTT
+	dw SWIFT
+	dw UPROAR
 	dw -1 ; end
-	
+
 PlusleEggMoves:
-	dw POUND
+	dw SUBSTITUTE
+	dw WISH
 	dw -1 ; end
-	
+
 MinunEggMoves:
-	dw POUND
+	dw SUBSTITUTE
+	dw WISH
 	dw -1 ; end
-	
+
 VolbeatEggMoves:
-	dw POUND
+	dw BATON_PASS
+	dw SILVER_WIND
+	dw TRICK
 	dw -1 ; end
-	
+
 IllumiseEggMoves:
-	dw POUND
+	dw BATON_PASS
+	dw GROWTH
+	dw SILVER_WIND
 	dw -1 ; end
-	
+
 RoseliaEggMoves:
-	dw POUND
+	dw COTTON_SPORE
+	dw PIN_MISSILE
+	dw SPIKES
+	dw SYNTHESIS
 	dw -1 ; end
-	
+
 GulpinEggMoves:
-	dw POUND
+	dw ACID_ARMOR
+	dw DREAM_EATER
+	dw PAIN_SPLIT
+	dw SMOG
 	dw -1 ; end
-	
+
 CarvanhaEggMoves:
-	dw POUND
+	dw DOUBLE_EDGE
+	dw HYDRO_PUMP
+	dw THRASH
 	dw -1 ; end
-	
+
 WailmerEggMoves:
-	dw POUND
+	dw CURSE
+	dw DOUBLE_EDGE
+	dw FISSURE
+	dw SLEEP_TALK
+	dw SNORE
+	dw SWAGGER
+	dw THRASH
+	dw TICKLE
 	dw -1 ; end
-	
+
 NumelEggMoves:
-	dw POUND
+	dw BODY_SLAM
+	dw DEFENSE_CURL
+	dw HOWL
+	dw ROLLOUT
+	dw SCARY_FACE
+	dw STOMP
 	dw -1 ; end
-	
+
 TorkoalEggMoves:
-	dw POUND
+	dw ENDURE
+	dw ERUPTION
+	dw SLEEP_TALK
+	dw YAWN
 	dw -1 ; end
-	
+
 SpoinkEggMoves:
-	dw POUND
+	dw EXTRASENSORY
+	dw FUTURE_SIGHT
+	dw SUBSTITUTE
+	dw TRICK
 	dw -1 ; end
-	
+
 SpindaEggMoves:
-	dw POUND
+	dw ASSIST
+	dw BATON_PASS
+	dw DISABLE
+	dw ENCORE
+	dw ROCK_SLIDE
+	dw SMELLINGSALT
+	dw TRICK
+	dw WISH
 	dw -1 ; end
-	
+
 TrapinchEggMoves:
-	dw POUND
+	dw FOCUS_ENERGY
+	dw GUST
+	dw QUICK_ATTACK
 	dw -1 ; end
-	
+
 CacneaEggMoves:
-	dw POUND
+	dw ACID
+	dw COUNTER
+	dw DYNAMICPUNCH
+	dw GRASSWHISTLE
+	dw TEETER_DANCE
 	dw -1 ; end
-	
+
 SwabluEggMoves:
-	dw POUND
+	dw AGILITY
+	dw HAZE
+	dw PURSUIT
+	dw RAGE
 	dw -1 ; end
-	
+
 ZangooseEggMoves:
-	dw POUND
+	dw COUNTER
+	dw CURSE
+	dw DOUBLE_KICK
+	dw FLAIL
+	dw RAZOR_WIND
+	dw ROAR
 	dw -1 ; end
-	
+
 SeviperEggMoves:
-	dw POUND
+	dw BODY_SLAM
+	dw SPIT_UP
+	dw STOCKPILE
+	dw SWALLOW
 	dw -1 ; end
-	
+
 BarboachEggMoves:
-	dw POUND
+	dw SPARK
+	dw THRASH
+	dw WHIRLPOOL
 	dw -1 ; end
-	
+
 CorphishEggMoves:
-	dw POUND
+	dw ANCIENTPOWER
+	dw BODY_SLAM
+	dw ENDEAVOR
+	dw MUD_SPORT
 	dw -1 ; end
-	
+
 LileepEggMoves:
-	dw POUND
+	dw BARRIER
+	dw MIRROR_COAT
+	dw RECOVER
+	dw ROCK_SLIDE
 	dw -1 ; end
-	
+
 AnorithEggMoves:
-	dw POUND
+	dw KNOCK_OFF
+	dw RAPID_SPIN
+	dw ROCK_SLIDE
+	dw SWORDS_DANCE
 	dw -1 ; end
-	
+
 FeebasEggMoves:
-	dw POUND
+	dw CONFUSE_RAY
+	dw DRAGONBREATH
+	dw HYPNOSIS
+	dw LIGHT_SCREEN
+	dw MIRROR_COAT
+	dw MUD_SPORT
 	dw -1 ; end
-	
+
 CastformEggMoves:
-	dw POUND
+	dw FUTURE_SIGHT
+	dw PSYCH_UP
 	dw -1 ; end
-	
+
 KecleonEggMoves:
-	dw POUND
+	dw DISABLE
+	dw MAGIC_COAT
+	dw TRICK
 	dw -1 ; end
-	
+
 ShuppetEggMoves:
-	dw POUND
+	dw ASTONISH
+	dw DESTINY_BOND
+	dw DISABLE
+	dw FORESIGHT
+	dw IMPRISON
 	dw -1 ; end
-	
+
 DuskullEggMoves:
-	dw POUND
+	dw DESTINY_BOND
+	dw FAINT_ATTACK
+	dw GRUDGE
+	dw IMPRISON
+	dw MEMENTO
+	dw PAIN_SPLIT
 	dw -1 ; end
-	
+
 TropiusEggMoves:
-	dw POUND
+	dw HEADBUTT
+	dw LEECH_SEED
+	dw NATURE_POWER
+	dw RAZOR_WIND
+	dw SLAM
 	dw -1 ; end
-	
+
 ChimechoEggMoves:
-	dw POUND
+	dw CURSE
+	dw DISABLE
+	dw DREAM_EATER
+	dw HYPNOSIS
 	dw -1 ; end
-	
+
 AbsolEggMoves:
-	dw POUND
+	dw BATON_PASS
+	dw CURSE
+	dw DOUBLE_EDGE
+	dw FAINT_ATTACK
+	dw MAGIC_COAT
+	dw SUBSTITUTE
 	dw -1 ; end
-	
+
 SnoruntEggMoves:
-	dw POUND
+	dw BLOCK
+	dw SPIKES
 	dw -1 ; end
-	
+
 SphealEggMoves:
-	dw POUND
+	dw CURSE
+	dw FISSURE
+	dw ROCK_SLIDE
+	dw SPIT_UP
+	dw STOCKPILE
+	dw SWALLOW
+	dw WATER_SPORT
+	dw YAWN
 	dw -1 ; end
-	
+
 ClamperlEggMoves:
-	dw POUND
+	dw BARRIER
+	dw BODY_SLAM
+	dw CONFUSE_RAY
+	dw MUD_SPORT
+	dw REFRESH
+	dw SUPERSONIC
 	dw -1 ; end
-	
+
 RelicanthEggMoves:
-	dw POUND
+	dw AMNESIA
+	dw MAGNITUDE
+	dw ROCK_SLIDE
+	dw SKULL_BASH
+	dw SLEEP_TALK
+	dw WATER_SPORT
 	dw -1 ; end
-	
+
 LuvdiscEggMoves:
-	dw POUND
+	dw MUD_SPORT
+	dw SPLASH
+	dw SUPERSONIC
+	dw WATER_SPORT
 	dw -1 ; end
-	
+
 BagonEggMoves:
-	dw POUND
-	dw -1 ; end
-	
+	dw DRAGON_DANCE
+	dw DRAGON_RAGE
+	dw HYDRO_PUMP
+	dw THRASH
+	dw TWISTER
 NoEggMoves3:
 	dw -1 ; end
-	
+
+ENDSECTION
