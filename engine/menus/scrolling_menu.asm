@@ -540,7 +540,7 @@ ScrollingMenu_GetListItemCoordAndFunctionArgs16bit:
 
 CheckItemPocketConversion:
 	ld a, [wItemFlags]
-	and a
+	and (1 << IN_BAG_F)
 	ret z
 	ld a, [wCurPocket]
 	cp BALL_POCKET

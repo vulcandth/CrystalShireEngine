@@ -55,6 +55,7 @@ RadioTower1FLuckyNumberManScript:
 	closetext
 	applymovement RADIOTOWER1F_LUCKYNUMBERMAN, RadioTower1FLuckyNumberManReturnToPlayerMovement
 	opentext
+	; You need to remove two lines in CheckForLuckyNumberWinners to allow 1 match to be considered a win
 	ifless 2, .NoPrize ; 0-1 digits match
 	ifless 3, .ThirdPlace ; 2 digits match
 	ifless 5, .SecondPlace ; 3-4 digits match

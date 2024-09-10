@@ -262,7 +262,7 @@ MoveDescriptionsGen2:
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 .IndirectEnd::
-	
+
 MoveDescriptionsGen3:
 	dw FakeOutDescription
 	dw UproarDescription

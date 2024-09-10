@@ -109,6 +109,7 @@ DoBattleAnimFrame:
 	dba BattleAnimFunc_ObjectHover
 	dba BattleAnimFunc_RockTomb
 	dba BattleAnimFunc_AirCutter
+	dba BattleAnimFunc_RadialMoveOut_SlowShort
 	assert_table_length NUM_BATTLE_ANIM_FUNCS
 
 PUSHS ; push the current section onto the stack.
@@ -1880,7 +1881,7 @@ BattleAnimFunc_Wrap:
 	ld hl, BATTLEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
 	ld a, [hl]
-	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \ 
+	assert BATTLE_ANIM_FRAMESET_BIND_1 + 1 == BATTLE_ANIM_FRAMESET_BIND_2 \
 		&& BATTLE_ANIM_FRAMESET_BIND_2 + 1 == BATTLE_ANIM_FRAMESET_BIND_3 \
 		&& BATTLE_ANIM_FRAMESET_BIND_3 + 1 == BATTLE_ANIM_FRAMESET_BIND_4
 	inc a
@@ -2522,7 +2523,7 @@ BattleAnimFunc_Amnesia:
 	add hl, bc
 	ld a, [hl]
 	assert BATTLE_ANIM_FRAMESET_AMNESIA_1 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_2 \
-		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3
+		&& BATTLE_ANIM_FRAMESET_AMNESIA_2 + 1 == BATTLE_ANIM_FRAMESET_AMNESIA_3_RECOVER
 	add BATTLE_ANIM_FRAMESET_AMNESIA_1
 	call ReinitBattleAnimFrameset
 	ld hl, BATTLEANIMSTRUCT_PARAM
@@ -4120,6 +4121,12 @@ BattleAnimFunc_RadialMoveOut_Slow:
 	dw InitRadial
 	dw Step_Slow
 
+BattleAnimFunc_RadialMoveOut_SlowShort:
+	call BattleAnim_AnonJumptable
+
+	dw InitRadial
+	dw Step_Slow_Short
+
 BattleAnimFunc_RadialMoveOut_VerySlow:
 	call BattleAnim_AnonJumptable
 
@@ -4170,6 +4177,14 @@ Step_Slow:
 	jmp nc, DeinitBattleAnimation
 	jr Rad_Move
 
+Step_Slow_Short:
+	call Get_Rad_Pos
+	ld hl, 1.5 ; speed
+	call Set_Rad_Pos
+	cp 40 ; final position
+	jmp nc, DeinitBattleAnimation
+	jr Rad_Move
+
 Step_VerySlow:
 	call Get_Rad_Pos
 	ld hl, 0.5 ; speed
@@ -4185,7 +4200,7 @@ Step_Fast:
 	cp 160 ; final position
 	jmp nc, DeinitBattleAnimation
 	jr Rad_Move
-	
+
 Step_VeryFast_NoStop:
 	call Get_Rad_Pos
 	ld hl, 15.0 ; speed
@@ -4198,7 +4213,7 @@ Get_Rad_Pos:
 	ld a, [hli]
 	ld e, [hl]
 	ld d, a
-	ret 
+	ret
 
 Set_Rad_Pos:
 	add hl, de
@@ -4226,7 +4241,7 @@ Rad_Move:
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
-	ret	
+	ret
 
 SECTION "BattleAnimFunc_RadialMoveIn", ROMX
 

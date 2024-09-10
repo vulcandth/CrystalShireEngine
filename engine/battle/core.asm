@@ -1816,7 +1816,7 @@ HandleWeather:
 	call SwitchTurnCore
 	call GetSixteenthMaxHP
 	call SubtractHPFromUser
-	
+
 	ld hl, PeltedByHailText
 	jp StdBattleTextbox
 

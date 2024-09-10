@@ -296,11 +296,11 @@ MovesGen3:
 	move EFFECT_HAIL,                0, ICE,           100, 10,   0      ;HAIL EFFECT_HAIL
 	move EFFECT_NORMAL_HIT,          0, DARK,          100, 15,   0      ;TORMENT
 	move EFFECT_SWAGGER,             0, DARK,          100, 15, 100      ;FLATTER EFFECT_FLATTER
-	move EFFECT_POISON,              0, FIRE,           75, 15,   0      ;WILL_O_WISP EFFECT_BURN 
+	move EFFECT_POISON,              0, FIRE,           75, 15,   0      ;WILL_O_WISP EFFECT_BURN
 	move EFFECT_NORMAL_HIT,          0, DARK,          100, 10,   0      ;MEMENTO EFFECT_MEMENTO
 	move EFFECT_NORMAL_HIT,         70, NORMAL,        100, 20,   0      ;FACADE EFFECT_FACADE
 	move EFFECT_NORMAL_HIT,        150, FIGHTING,      100, 20,   0      ;FOCUS_PUNCH EFFECT_FOCUS_PUNCH
-	move EFFECT_NORMAL_HIT,         60, NORMAL,        100, 10,   0      ;SMELLINGSALT EFFECT_SMELLINGSALT 
+	move EFFECT_NORMAL_HIT,         60, NORMAL,        100, 10,   0      ;SMELLINGSALT EFFECT_SMELLINGSALT
 	move EFFECT_NORMAL_HIT,          0, NORMAL,        100, 20,   0      ;NATURE_POWER EFFECT_NATURE_POWER
 	move EFFECT_NORMAL_HIT,          0, ELECTRIC,      100, 20,   0      ;CHARGE EFFECT_CHARGE
 	move EFFECT_NORMAL_HIT,          0, DARK,          100, 20,   0      ;TAUNT EFFECT_TAUNT
@@ -333,7 +333,7 @@ MovesGen3:
 	move EFFECT_NORMAL_HIT,          0, FLYING,        100, 15,   0      ;FEATHERDANCE
 	move EFFECT_CONFUSE,             0, NORMAL,        100, 20,   0      ;TEETER_DANCE
 	move EFFECT_BURN_HIT,           85, FIRE,           90, 10,  10      ;BLAZE_KICK
-	move EFFECT_NORMAL_HIT,          0, GROUND,        100, 15,   0      ;MUD_SPORT 
+	move EFFECT_NORMAL_HIT,          0, GROUND,        100, 15,   0      ;MUD_SPORT
 	move EFFECT_ROLLOUT,            30, ICE,            90, 20,   0      ;ICE_BALL
 	move EFFECT_FLINCH_HIT,         60, GRASS,         100, 15,  30      ;NEEDLE_ARM
 	move EFFECT_HEAL,                0, NORMAL,        100, 10,   0      ;SLACK_OFF

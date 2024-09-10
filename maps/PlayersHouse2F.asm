@@ -64,9 +64,22 @@ if DEF(_DEBUG)
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 1
 	giveitem BLU_APRICORN, 2
-	giveitem BERRY
-	giveitem GOLD_BERRY
 	giveitem ICE_BERRY
+	giveitem BICYCLE
+	giveitem GOOD_ROD
+	giveitem THUNDERSTONE, 10
+	giveitem FIRE_STONE, 10
+	giveitem WATER_STONE, 10
+	giveitem LEAF_STONE, 10
+	giveitem MOON_STONE, 10
+	giveitem BERRY, 10
+	giveitem GOLD_BERRY, 10
+	giveitem MINT_BERRY, 10
+	giveitem MYSTERYBERRY, 10
+	giveitem QUICK_CLAW
+	giveitem KINGS_ROCK
+	giveitem AMULET_COIN
+	giveitem SCOPE_LENS
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -128,19 +141,19 @@ if DEF(_DEBUG)
 	setflag ENGINE_FLYPOINT_CINNABAR
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
-	; ; good party
-	; givepoke MEWTWO, PLAIN_FORM, 100, BRIGHTPOWDER
-	; ; hm slaves
-	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	; givepoke MEW, PLAIN_FORM, 100, LEFTOVERS
-	; givepokemove FLY,        wPartyMon2, 0
-	; givepokemove SURF,       wPartyMon2, 1
-	; givepokemove STRENGTH,   wPartyMon2, 2
-	; givepokemove CUT,        wPartyMon2, 3
-	; givepokemove FLASH,      wPartyMon3, 0
-	; givepokemove ROCK_SMASH, wPartyMon3, 1
-	; givepokemove HEADBUTT,   wPartyMon3, 2
-	; givepokemove WATERFALL,  wPartyMon3, 3
+	; good party
+	givepoke MEWTWO, 100, BRIGHTPOWDER
+	; hm slaves
+	givepoke MEW, 100, LEFTOVERS
+	givepoke LANTURN, 100, LEFTOVERS
+	givepokemove FLY,        wPartyMon2, 0
+	givepokemove SURF,       wPartyMon2, 1
+	givepokemove STRENGTH,   wPartyMon2, 2
+	givepokemove CUT,        wPartyMon2, 3
+	givepokemove FLASH,      wPartyMon3, 0
+	givepokemove ROCK_SMASH, wPartyMon3, 1
+	givepokemove HEADBUTT,   wPartyMon3, 2
+	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke SNORLAX, 75
 	givepokemove THUNDERSHOCK,  wPartyMon1, 0

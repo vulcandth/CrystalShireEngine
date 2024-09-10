@@ -417,7 +417,7 @@ PlaceYesNoBox::
 ;InterpretTwoOptionMenu
 	call VerticalMenu
 	push af
-	ld c, $f
+	ld c, 16
 	call DelayFrames
 	call CloseWindow
 	pop af

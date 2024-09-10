@@ -153,4 +153,4 @@ KantoMonSpecials:
 	db 100 ; DRAGONITE
 	db 154 ; MEWTWO
 	db 100 ; MEW
-	assert_table_length JOHTO_POKEMON - 1
+	assert_table_length NUM_KANTO_POKEMON
