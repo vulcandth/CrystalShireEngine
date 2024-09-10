@@ -987,6 +987,10 @@ UnownYFrontpic:           INCBIN "gfx/pokemon/unown/unown_y/front.animated.2bpp.
 UnownYBackpic:            INCBIN "gfx/pokemon/unown/unown_y/back.2bpp.lz"
 UnownZFrontpic:           INCBIN "gfx/pokemon/unown/unown_z/front.animated.2bpp.lz"
 UnownZBackpic:            INCBIN "gfx/pokemon/unown/unown_z/back.2bpp.lz"
+UnownExclamationFrontpic: INCBIN "gfx/pokemon/unown/unown_exclamation/front.animated.2bpp.lz"
+UnownExclamationBackpic:  INCBIN "gfx/pokemon/unown/unown_exclamation/back.2bpp.lz"
+UnownQuestionFrontpic:    INCBIN "gfx/pokemon/unown/unown_question/front.animated.2bpp.lz"
+UnownQuestionBackpic:     INCBIN "gfx/pokemon/unown/unown_question/back.2bpp.lz"
 
 ; Trainers
 

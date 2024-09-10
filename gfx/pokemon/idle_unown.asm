@@ -27,6 +27,8 @@ AnimationIdlePointersUnown:
 	dw UnownXAnimationIdle
 	dw UnownYAnimationIdle
 	dw UnownZAnimationIdle
+	dw UnownExclamationAnimationIdle
+	dw UnownQuestionAnimationIdle
 .IndirectEnd::
 
 UnownAAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_a/anim_idle.asm"
@@ -55,3 +57,5 @@ UnownWAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_w/anim_idle.asm"
 UnownXAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_x/anim_idle.asm"
 UnownYAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_y/anim_idle.asm"
 UnownZAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_z/anim_idle.asm"
+UnownExclamationAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_exclamation/anim_idle.asm"
+UnownQuestionAnimationIdle: INCLUDE "gfx/pokemon/unown/unown_question/anim_idle.asm"

@@ -27,6 +27,8 @@ BitmaskPointersUnown:
 	dw UnownXBitmasks
 	dw UnownYBitmasks
 	dw UnownZBitmasks
+	dw UnownExclamationBitmasks
+	dw UnownQuestionBitmasks
 .IndirectEnd::
 
 UnownABitmasks: INCLUDE "gfx/pokemon/unown/unown_a/bitmask.asm"
@@ -55,3 +57,5 @@ UnownWBitmasks: INCLUDE "gfx/pokemon/unown/unown_w/bitmask.asm"
 UnownXBitmasks: INCLUDE "gfx/pokemon/unown/unown_x/bitmask.asm"
 UnownYBitmasks: INCLUDE "gfx/pokemon/unown/unown_y/bitmask.asm"
 UnownZBitmasks: INCLUDE "gfx/pokemon/unown/unown_z/bitmask.asm"
+UnownExclamationBitmasks: INCLUDE "gfx/pokemon/unown/unown_exclamation/bitmask.asm"
+UnownQuestionBitmasks: INCLUDE "gfx/pokemon/unown/unown_question/bitmask.asm"

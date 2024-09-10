@@ -27,6 +27,8 @@ FramePointersUnown:
 	dw UnownXFrames
 	dw UnownYFrames
 	dw UnownZFrames
+	dw UnownExclamationFrames
+	dw UnownQuestionFrames
 .IndirectEnd::
 
 UnownAFrames: INCLUDE "gfx/pokemon/unown/unown_a/frames.asm"
@@ -55,3 +57,5 @@ UnownWFrames: INCLUDE "gfx/pokemon/unown/unown_w/frames.asm"
 UnownXFrames: INCLUDE "gfx/pokemon/unown/unown_x/frames.asm"
 UnownYFrames: INCLUDE "gfx/pokemon/unown/unown_y/frames.asm"
 UnownZFrames: INCLUDE "gfx/pokemon/unown/unown_z/frames.asm"
+UnownExclamationFrames: INCLUDE "gfx/pokemon/unown/unown_exclamation/frames.asm"
+UnownQuestionFrames: INCLUDE "gfx/pokemon/unown/unown_question/frames.asm"

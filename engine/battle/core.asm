@@ -6231,14 +6231,13 @@ LoadEnemyMon:
 ; Get random letter
 .GenerateUnownLetter
 	ld a, NUM_UNOWN
-	ld hl, wEnemyMonForm
+	ld hl, wEnemyMonPersonality
 	call BattleRandomRange
 	and FORM_MASK
 	ld [hl], a
-	;predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 ; If combined with forced shiny battletype, causes an infinite loop
-	call CheckUnownLetter
+	predef GetUnownLetter
 	jr nc, .GenerateUnownLetter ; try again
 	jr .Happiness ; skip the Magikarp check
 

@@ -27,6 +27,8 @@ AnimationPointersUnown:
 	dw UnownXAnimation
 	dw UnownYAnimation
 	dw UnownZAnimation
+	dw UnownExclamationAnimation
+	dw UnownQuestionAnimation
 .IndirectEnd::
 
 UnownAAnimation: INCLUDE "gfx/pokemon/unown/unown_a/anim.asm"
@@ -55,3 +57,5 @@ UnownWAnimation: INCLUDE "gfx/pokemon/unown/unown_w/anim.asm"
 UnownXAnimation: INCLUDE "gfx/pokemon/unown/unown_x/anim.asm"
 UnownYAnimation: INCLUDE "gfx/pokemon/unown/unown_y/anim.asm"
 UnownZAnimation: INCLUDE "gfx/pokemon/unown/unown_z/anim.asm"
+UnownExclamationAnimation: INCLUDE "gfx/pokemon/unown/unown_exclamation/anim.asm"
+UnownQuestionAnimation: INCLUDE "gfx/pokemon/unown/unown_question/anim.asm"

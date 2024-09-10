@@ -35,6 +35,8 @@ UnownWords:
 	dw UnownWordX
 	dw UnownWordY
 	dw UnownWordZ
+	dw UnownWordExclamation
+	dw UnownWordQuestion
 	assert_table_length NUM_UNOWN + 1
 
 UnownWordA: unownword "ANGRY"
@@ -63,3 +65,5 @@ UnownWordW: unownword "WANT"
 UnownWordX: unownword "XXXXX"
 UnownWordY: unownword "YIELD"
 UnownWordZ: unownword "ZOOM"
+UnownWordExclamation: unownword "(((((" ; "!!!!!" since "Z" + 1 == "("
+UnownWordQuestion: unownword ")))))" ; "?????" since "Z" + 2 == ")"
