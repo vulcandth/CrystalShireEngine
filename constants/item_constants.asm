@@ -183,14 +183,22 @@ DEF FIRST_BALL_ITEM EQU const_value
 	const ULTRA_BALL   ; 0201
 	const GREAT_BALL   ; 0202
 	const POKE_BALL    ; 0203
-	const HEAVY_BALL   ; 0204
-	const LEVEL_BALL   ; 0205
-	const LURE_BALL    ; 0206
-	const FAST_BALL    ; 0207
-	const FRIEND_BALL  ; 0208
-	const MOON_BALL    ; 0209
-	const LOVE_BALL    ; 020A
-	const PARK_BALL    ; 020B
+	const SAFARI_BALL  ; 0204
+	const NET_BALL     ; 0205
+	const DIVE_BALL    ; 0206
+	const NEST_BALL    ; 0207
+	const REPEAT_BALL  ; 0208
+	const TIMER_BALL   ; 0209
+	const LUXURY_BALL  ; 020A
+	const PREMIER_BALL ; 020B
+	const FAST_BALL    ; 020C
+	const LEVEL_BALL   ; 020D
+	const LURE_BALL    ; 020E
+	const HEAVY_BALL   ; 020F
+	const LOVE_BALL    ; 0210
+	const FRIEND_BALL  ; 0211
+	const MOON_BALL    ; 0212
+	const PARK_BALL    ; 0213
 DEF NUM_BALL_ITEM_POCKET EQU const_value - FIRST_BALL_ITEM
 assert NUM_BALL_ITEM_POCKET <= $ff
 
@@ -336,6 +344,6 @@ DEF USE_SCRIPT_VAR EQU $00
 DEF ITEM_FROM_MEM  EQU $ffff
 
 ; leftovers from red
-DEF SAFARI_BALL    EQU $08 ; MOON_STONE
+; DEF SAFARI_BALL    EQU $08 ; MOON_STONE
 DEF MOON_STONE_RED EQU $0a ; BURN_HEAL
 DEF FULL_HEAL_RED  EQU $34 ; X_SPEED

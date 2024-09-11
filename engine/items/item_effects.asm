@@ -201,18 +201,26 @@ ItemEffectsKeyItems:
 .IndirectEnd:
 
 ItemEffectsBalls:
-	dw PokeBallEffect ; MASTER_BALL
-	dw PokeBallEffect ; ULTRA_BALL
-	dw PokeBallEffect ; GREAT_BALL
-	dw PokeBallEffect ; POKE_BALL
-	dw PokeBallEffect ; HEAVY_BALL
-	dw PokeBallEffect ; LEVEL_BALL
-	dw PokeBallEffect ; LURE_BALL
-	dw PokeBallEffect ; FAST_BALL
-	dw PokeBallEffect ; FRIEND_BALL
-	dw PokeBallEffect ; MOON_BALL
-	dw PokeBallEffect ; LOVE_BALL
-	dw PokeBallEffect ; PARK_BALL
+	dw PokeBallEffect      ; MASTER_BALL
+	dw PokeBallEffect      ; ULTRA_BALL
+	dw PokeBallEffect      ; GREAT_BALL
+	dw PokeBallEffect      ; POKE_BALL
+	dw PokeBallEffect      ; SAFARI_BALL
+	dw PokeBallEffect      ; NET_BALL
+	dw PokeBallEffect      ; DIVE_BALL
+	dw PokeBallEffect      ; NEST_BALL
+	dw PokeBallEffect      ; REPEAT_BALL
+	dw PokeBallEffect      ; TIMER_BALL
+	dw PokeBallEffect      ; LUXURY_BALL
+	dw PokeBallEffect      ; PREMIER_BALL
+	dw PokeBallEffect      ; FAST_BALL
+	dw PokeBallEffect      ; LEVEL_BALL
+	dw PokeBallEffect      ; LURE_BALL
+	dw PokeBallEffect      ; HEAVY_BALL
+	dw PokeBallEffect      ; LOVE_BALL
+	dw PokeBallEffect      ; FRIEND_BALL
+	dw PokeBallEffect      ; MOON_BALL
+	dw PokeBallEffect      ; PARK_BALL
 .IndirectEnd:
 
 ItemEffectsBerries:

@@ -172,18 +172,26 @@ KeyItemNames::
 
 BallNames::
 	list_start BallNames
-	li "MASTER BALL" ; 0200
-	li "ULTRA BALL"  ; 0201
-	li "GREAT BALL"  ; 0202
-	li "POKé BALL"   ; 0203 VWF can't print "# BALL"
-	li "HEAVY BALL"  ; 0204
-	li "LEVEL BALL"  ; 0205
-	li "LURE BALL"   ; 0206
-	li "FAST BALL"   ; 0207
-	li "FRIEND BALL" ; 0208
-	li "MOON BALL"   ; 0209
-	li "LOVE BALL"   ; 020A
-	li "PARK BALL"   ; 020B
+	li "MASTER BALL"  ; 0200
+	li "ULTRA BALL"   ; 0201
+	li "GREAT BALL"   ; 0202
+	li "POKE BALL"    ; 0203 VWF can't print "# BALL"
+	li "SAFARI BALL"  ; 0204
+	li "NET BALL"     ; 0205
+	li "DIVE BALL"    ; 0206
+	li "NEST BALL"    ; 0207
+	li "REPEAT BALL"  ; 0208
+	li "TIMER BALL"   ; 0209
+	li "LUXURY BALL"  ; 020A
+	li "PREMIER BALL" ; 020B
+	li "FAST BALL"    ; 020C
+	li "LEVEL BALL"   ; 020D
+	li "LURE BALL"    ; 020E
+	li "HEAVY BALL"   ; 020F
+	li "LOVE BALL"    ; 0210
+	li "FRIEND BALL"  ; 0211
+	li "MOON BALL"    ; 0212
+	li "PARK BALL"    ; 0213
 	assert_list_length NUM_BALL_ITEM_POCKET
 
 BerryNames::
