@@ -316,11 +316,6 @@ PokeBallEffect:
 	ld h, a
 	call _hl_
 .skip_or_return_from_ball_fn
-	ld a, [wCurItem]
-	call GetItemIndexFromID
-	cphl16 LEVEL_BALL
-	ld a, b
-	jmp z, .skip_hp_calc
 
 	ld a, b
 	ldh [hMultiplicand + 2], a
@@ -415,7 +410,6 @@ PokeBallEffect:
 	ld a, $ff
 .max_2
 
-.skip_hp_calc
 	ld b, a
 	ld [wFinalCatchRate], a
 	call Random
