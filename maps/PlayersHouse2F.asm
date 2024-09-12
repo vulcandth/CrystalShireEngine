@@ -61,8 +61,8 @@ if DEF(_DEBUG)
 	giveitem RARE_CANDY, 99
 	giveitem HP_UP, 99
 	giveitem MAX_REPEL, 99
-	giveitem POKE_BALL, 99
-	giveitem DIVE_BALL, 99
+	giveitem LUXURY_BALL, 99
+	giveitem PREMIER_BALL, 99
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 1
 	giveitem BLU_APRICORN, 2
