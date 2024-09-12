@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import glob
 
-filenames = glob.glob("../data/pokemon/base_stats/*.asm")
+filenames = glob.glob("../data/pokemon/base_stats/*/*.asm")
 base_url = "https://pokemondb.net/pokedex/"
 
 for filename in filenames:

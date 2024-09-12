@@ -1,4 +1,4 @@
-; base data struct members (see data/pokemon/base_stats/*.asm)
+; base data struct members (see data/pokemon/base_stats/*/*.asm)
 rsreset
 DEF BASE_SPECIES            rb
 DEF BASE_STATS              rb NUM_STATS
