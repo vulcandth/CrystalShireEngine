@@ -3,7 +3,7 @@
 ; Indexes for:
 ; - Ability Names        (see data/abilities/names.asm)
 ; - Ability Descriptions (see data/abilities/descriptions.asm)
-; - Possible Abilities   (see data/pokemon/base_stats/*.asm)
+; - Possible Abilities   (see data/pokemon/base_stats/*/*.asm)
 ; - Ability Effects      (- TODO -)
 ; - Ability Effects Text (- TODO -)
 ;
