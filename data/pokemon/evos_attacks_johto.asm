@@ -653,6 +653,7 @@ AipomEvosAttacks:
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
+	dbww EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 6, GROWTH
