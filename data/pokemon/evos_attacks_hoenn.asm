@@ -436,6 +436,7 @@ LotadEvosAttacks:
 	db 0 ; no more level-up moves
 
 LombreEvosAttacks:
+	dbww EVOLVE_ITEM, WATER_STONE, LUDICOLO
 	db 0 ; no more evolutions
 	dbw 1, ASTONISH
 	dbw 3, GROWL
@@ -470,6 +471,7 @@ SeedotEvosAttacks:
 	db 0 ; no more level-up moves
 
 NuzleafEvosAttacks:
+	dbww EVOLVE_ITEM, LEAF_STONE, SHIFTRY
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 3, HARDEN
@@ -874,6 +876,7 @@ NosepassEvosAttacks:
 	db 0 ; no more level-up moves
 
 SkittyEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, DELCATTY
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, TACKLE

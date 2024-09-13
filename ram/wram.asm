@@ -2421,7 +2421,7 @@ wUnownLetter:: db
 
 wMoveSelectionMenuType:: db
 
-; corresponds to the data/pokemon/base_stats/*.asm contents
+; corresponds to the data/pokemon/base_stats/*/*.asm contents
 wCurBaseData::
 wBaseSpecies:: db
 wBaseStats::
