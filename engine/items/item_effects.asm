@@ -271,129 +271,10 @@ PokeBallEffect:
 	ld hl, ItemUsedText
 	call PrintText
 
-	ld a, [wEnemyMonCatchRate]
-	ld b, a
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jmp z, .catch_without_fail
-	ld a, [wCurItem]
-	call GetItemIndexFromID
-	cphl16 MASTER_BALL
-	jmp z, .catch_without_fail
-	ld c, a
+	ld a, [wOTPartyMon1Species]
+	ld [wWildMon], a
 
-	ld de, BallMultiplierFunctionTable
-.get_multiplier_loop
-	ld a, [de]
-	inc de
-	cp $ff
-	jr z, .next_num
-	cp l
-	jr nz, .skip_entry
-.next_num
-	ld a, [de]
-	cp -1 ; no balls above $ff00
-	inc de
-	jr z, .skip_or_return_from_ball_fn
-	cp h
-.got_mult_index
-	jr z, .call_ball_function
-	inc de
-	inc de
-	jr .get_multiplier_loop
-
-.skip_entry
-	inc de
-	inc de
-	inc de
-	jr .get_multiplier_loop
-
-.call_ball_function
-	ld a, [de]
-	ld l, a
-	inc de
-	ld a, [de]
-	ld h, a
-	call _hl_
-.skip_or_return_from_ball_fn
-
-	ld a, b
-	ldh [hMultiplicand + 2], a
-
-	ld hl, wEnemyMonHP
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	sla c
-	rl b
-
-	ld h, d
-	ld l, e
-	add hl, de
-	add hl, de
-	ld d, h
-	ld e, l
-	ld a, d
-	and a
-	jr z, .okay_1
-
-	srl d
-	rr e
-	srl d
-	rr e
-	srl b
-	rr c
-	srl b
-	rr c
-
-	ld a, c
-	and a
-	jr nz, .okay_1
-	ld c, $1
-.okay_1
-	ld b, e
-
-	push bc
-	ld a, b
-	sub c
-	ldh [hMultiplier], a
-	xor a
-	ldh [hDividend + 0], a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
-	call Multiply
-	pop bc
-
-	ld a, b
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
-
-	ldh a, [hQuotient + 3]
-	and a
-	jr nz, .statuscheck
-	ld a, 1
-.statuscheck
-	ld b, a
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ | SLP_MASK
-	ld c, 10
-	jr nz, .addstatus
-	ld a, [wEnemyMonStatus]
-	and a
-	ld c, 5
-	jr nz, .addstatus
-	ld c, 0
-.addstatus
-	ld a, b
-	add c
-	jr nc, .max_1
-	ld a, $ff
-.max_1
+	farcall GetModifiedCaptureRate	
 
 	ld d, a
 	push de
@@ -410,20 +291,11 @@ PokeBallEffect:
 	ld a, $ff
 .max_2
 
-	ld b, a
 	ld [wFinalCatchRate], a
-	call Random
-
-	cp b
-	ld a, 0 ; no-optimize a = 0
-	jr z, .catch_without_fail
-	jr nc, .fail_to_catch
-
-.catch_without_fail
-	ld a, [wEnemyMonSpecies]
-
-.fail_to_catch
+	ld a, [wTempEnemyMonSpecies]
+	ld [wEnemyMonSpecies], a
 	ld [wWildMon], a
+
 	ld c, 20
 	call DelayFrames
 
@@ -448,20 +320,17 @@ PokeBallEffect:
 	ld [wNumHits], a
 	predef PlayBattleAnim
 
-	ld a, [wWildMon]
-	and a
-	jr nz, .caught
 	ld a, [wThrownBallWobbleCount]
-	cp 1
+	and a
 	ld hl, BallBrokeFreeText
 	jmp z, .shake_and_break_free
-	cp 2
+	dec a
 	ld hl, BallAppearedCaughtText
 	jmp z, .shake_and_break_free
-	cp 3
+	dec a
 	ld hl, BallAlmostHadItText
 	jmp z, .shake_and_break_free
-	cp 4
+	dec a
 	ld hl, BallSoCloseText
 	jmp z, .shake_and_break_free
 
@@ -760,6 +629,8 @@ PokeBallEffect:
 	ld hl, Text_GotchaMonWasCaught
 
 .shake_and_break_free
+	ld a, 0
+	ld [wWildMon], a
 	call PrintText
 	call ClearSprites
 
@@ -788,309 +659,6 @@ PokeBallEffect:
 .used_park_ball
 	ld hl, wParkBallsRemaining
 	dec [hl]
-	ret
-
-BallMultiplierFunctionTable:
-; table of routines that increase or decrease the catch rate based on
-; which ball is used in a certain situation.
-	dw ULTRA_BALL,  UltraBallMultiplier
-	dw GREAT_BALL,  GreatBallMultiplier
-	dw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
-	dw HEAVY_BALL,  HeavyBallMultiplier
-	dw LEVEL_BALL,  LevelBallMultiplier
-	dw LURE_BALL,   LureBallMultiplier
-	dw FAST_BALL,   FastBallMultiplier
-	dw MOON_BALL,   MoonBallMultiplier
-	dw LOVE_BALL,   LoveBallMultiplier
-	dw PARK_BALL,   ParkBallMultiplier
-	dw -1 ; end
-
-UltraBallMultiplier:
-; multiply catch rate by 2
-	sla b
-	ret nc
-	ld b, $ff
-	ret
-
-SafariBallMultiplier:
-GreatBallMultiplier:
-ParkBallMultiplier:
-; multiply catch rate by 1.5
-	ld a, b
-	srl a
-	add b
-	ld b, a
-	ret nc
-	ld b, $ff
-	ret
-
-GetSpeciesWeight::
-	; input: hl = species
-	; output: hl = weight
-	dec hl
-	add hl, hl
-	add hl, hl
-	; skip height
-	inc hl
-	inc hl
-	ld bc, PokemonBodyData
-	add hl, bc
-	ld a, BANK(PokemonBodyData)
-	jmp GetFarWord ; get weight
-
-GetSpeciesHeight::
-	; input: hl = species
-	; output: hl = height
-	dec hl
-	add hl, hl
-	add hl, hl
-	ld bc, PokemonBodyData
-	add hl, bc
-	ld a, BANK(PokemonBodyData)
-	jmp GetFarWord ; get weight
-
-HeavyBallMultiplier:
-; subtract 20 from catch rate if weight < 102.4 kg
-; else add 0 to catch rate if weight < 204.8 kg
-; else add 20 to catch rate if weight < 307.2 kg
-; else add 30 to catch rate if weight < 409.6 kg
-; else add 40 to catch rate
-	push bc
-	ld a, [wEnemyMonSpecies]
-	call GetPokemonIndexFromID
-	call GetSpeciesWeight
-
-	srl h
-	rr l
-	ld b, h
-	ld c, l
-
-rept 4
-	srl b
-	rr c
-endr
-	call .subbc
-
-	srl b
-	rr c
-	call .subbc
-
-	ld a, h
-	pop bc
-	jr .compare
-
-.subbc
-	; subtract bc from hl
-	push bc
-	ld a, b
-	cpl
-	ld b, a
-	ld a, c
-	cpl
-	ld c, a
-	inc bc
-	add hl, bc
-	pop bc
-	ret
-
-.compare
-	ld c, a
-	cp HIGH(1024) ; 102.4 kg
-	jr c, .lightmon
-
-	ld hl, .WeightsTable
-.lookup
-	ld a, c
-	cp [hl]
-	jr c, .heavymon
-	inc hl
-	inc hl
-	jr .lookup
-
-.heavymon
-	inc hl
-	ld a, b
-	add [hl]
-	ld b, a
-	ret nc
-	ld b, $ff
-	ret
-
-.lightmon
-	ld a, b
-	sub 20
-	ld b, a
-	ret nc
-	ld b, $1
-	ret
-
-.WeightsTable:
-; weight factor, boost
-	db HIGH(2048),   0
-	db HIGH(3072),  20
-	db HIGH(4096),  30
-	db HIGH(65280), 40
-
-LureBallMultiplier:
-; multiply catch rate by 3 if this is a fishing rod battle
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
-	ret nz
-
-	ld a, b
-	add a
-	jr c, .max
-
-	add b
-	jr nc, .done
-.max
-	ld a, $ff
-.done
-	ld b, a
-	ret
-
-MoonBallMultiplier:
-; Multiply catch rate by 4 if mon evolves with moon stone
-	push de
-	push bc
-	ld a, [wTempEnemyMonSpecies]
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld hl, EvosAttacksPointers
-	ld a, BANK(EvosAttacksPointers)
-	call LoadDoubleIndirectPointer
-
-	ld a, [wCurItem]
-	ld c, a
-	push hl
-	ld hl, MOON_STONE
-	call GetItemIDFromIndex
-	pop hl
-	ld [wCurItem], a
-	ld d, h
-	ld e, l
-	farcall DetermineEvolutionItemResults
-	ld a, c
-	ld [wCurItem], a
-	ld a, d
-	or e
-	pop bc
-	pop de
-	ret z
-
-	sla b
-	jr c, .max
-	sla b
-	ret nc
-.max
-	ld b, $ff
-	ret
-
-LoveBallMultiplier:
-
-	; does species match?
-	ld a, [wTempEnemyMonSpecies]
-	ld c, a
-	ld a, [wTempBattleMonSpecies]
-	cp c
-	ret nz
-
-	; check player mon species
-	push bc
-	ld a, [wTempBattleMonSpecies]
-	ld [wCurPartySpecies], a
-	xor a ; PARTYMON
-	ld [wMonType], a
-	ld a, [wCurBattleMon]
-	ld [wCurPartyMon], a
-	farcall GetGender
-	jr c, .done1 ; no effect on genderless
-
-	ld d, 0 ; male
-	jr nz, .got_player_gender
-	inc d   ; female
-.got_player_gender
-
-	; check wild mon species
-	push de
-	ld a, [wTempEnemyMonSpecies]
-	ld [wCurPartySpecies], a
-	ld a, WILDMON
-	ld [wMonType], a
-	farcall GetGender
-	jr c, .done2 ; no effect on genderless
-
-	ld d, 0 ; male
-	jr nz, .got_wild_gender
-	inc d   ; female
-.got_wild_gender
-
-	ld a, d
-	pop de
-	cp d
-	pop bc
-	ret z
-
-	sla b
-	jr c, .max
-	sla b
-	jr c, .max
-	sla b
-	ret nc
-.max
-	ld b, $ff
-	ret
-
-.done2
-	pop de
-
-.done1
-	pop bc
-	ret
-
-FastBallMultiplier:
-; multiply catch rate by 4 if the enemy mon's Base Speed is at least 100
-	ld a, [wTempEnemyMonSpecies]
-	call GetBaseData
-	ld a, [wBaseSpeed]
-	cp 100
-	ret c
-
-	sla b
-	jr c, .max
-	sla b
-	ret nc
-.max
-	ld b, $ff
-	ret
-
-LevelBallMultiplier:
-; multiply catch rate by 8 if player mon level / 4 > enemy mon level
-; multiply catch rate by 4 if player mon level / 2 > enemy mon level
-; multiply catch rate by 2 if player mon level > enemy mon level
-	ld a, [wBattleMonLevel]
-	ld c, a
-	ld a, [wEnemyMonLevel]
-	cp c
-	ret nc ; if player is lower level, we're done here
-	sla b
-	jr c, .max
-
-	srl c
-	cp c
-	ret nc ; if player/2 is lower level, we're done here
-	sla b
-	jr c, .max
-
-	srl c
-	cp c
-	ret nc ; if player/4 is lower level, we're done here
-	sla b
-	ret nc
-
-.max
-	ld b, $ff
 	ret
 
 ; BallDodgedText and BallMissedText were used in Gen 1.

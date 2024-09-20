@@ -206,7 +206,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon JIRACHI, 100
+	loadwildmon MEW, 100
 	startbattle
 	reloadmapafterbattle
 	end

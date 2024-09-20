@@ -40,6 +40,10 @@ INCLUDE "engine/items/item_effects.asm"
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"
 INCLUDE "engine/pokemon/knows_move.asm"
 
+SECTION "Poke Ball Code", ROMX
+
+INCLUDE "engine/items/poke_balls.asm"
+
 SECTION "Load Map Part", ROMX
 
 INCLUDE "engine/overworld/player_step.asm"
