@@ -177,7 +177,7 @@ BallMultiplierFunctionTable:
 	dw NET_BALL,    NetBallMultiplier
 	dw DIVE_BALL,   DiveBallMultiplier
 	dw NEST_BALL,   NestBallMultiplier
-	dw REPEAT_BALL, ; TODO
+	dw REPEAT_BALL, RepeatBallMultiplier
 	dw TIMER_BALL,  ; TODO
 	dw FAST_BALL,   FastBallMultiplier
 	dw LEVEL_BALL,  LevelBallMultiplier
@@ -241,6 +241,17 @@ NestBallMultiplier:
 	ldh [hMultiplier], a
 	call Multiply
 	ln a, 1, 5 ; x1/5
+	jmp MultiplyAndDivide
+
+RepeatBallMultiplier:
+; multiply catch rate by 3.5 if enemy mon is already in Pokédex
+	ld a, [wTempEnemyMonSpecies]
+	push bc
+	call CheckCaughtMon
+	pop bc
+	ret z
+
+	ln a, 7, 2 ; x3.5
 	jmp MultiplyAndDivide
 
 FastBallMultiplier:
