@@ -174,7 +174,7 @@ BallMultiplierFunctionTable:
 	dw ULTRA_BALL,  UltraBallMultiplier
 	dw GREAT_BALL,  GreatBallMultiplier
 	dw SAFARI_BALL, SafariBallMultiplier
-	dw NET_BALL,    ; TODO
+	dw NET_BALL,    NetBallMultiplier
 	dw DIVE_BALL,   ; TODO
 	dw NEST_BALL,   ; TODO
 	dw REPEAT_BALL, ; TODO
@@ -198,6 +198,23 @@ SafariBallMultiplier:
 ParkBallMultiplier:
 ; multiply catch rate by 1.5
 	ln a, 3, 2 ; x1.5
+	jmp MultiplyAndDivide
+
+NetBallMultiplier:
+; multiply catch rate by 3.5 if mon is water or bug type
+	ld a, [wEnemyMonType1]
+	cp WATER
+	jr z, .ok
+	cp BUG
+	jr z, .ok
+	ld a, [wEnemyMonType2]
+	cp WATER
+	jr z, .ok
+	cp BUG
+	ret nz
+
+.ok
+	ln a, 7, 2 ; x3.5
 	jmp MultiplyAndDivide
 
 FastBallMultiplier:

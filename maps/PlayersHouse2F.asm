@@ -61,7 +61,7 @@ if DEF(_DEBUG)
 	giveitem RARE_CANDY, 99
 	giveitem HP_UP, 99
 	giveitem MAX_REPEL, 99
-	giveitem FAST_BALL, 99
+	giveitem NET_BALL, 99
 	giveitem PREMIER_BALL, 99
 	giveitem MASTER_BALL, 99
 	giveitem POKE_BALL, 1
@@ -206,7 +206,7 @@ endc
 
 PlayersHouseBookshelfScript:
 	if DEF(_DEBUG)
-	loadwildmon MEW, 100
+	loadwildmon AZUMARILL, 100
 	startbattle
 	reloadmapafterbattle
 	end
