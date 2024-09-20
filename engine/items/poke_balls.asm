@@ -175,7 +175,7 @@ BallMultiplierFunctionTable:
 	dw GREAT_BALL,  GreatBallMultiplier
 	dw SAFARI_BALL, SafariBallMultiplier
 	dw NET_BALL,    NetBallMultiplier
-	dw DIVE_BALL,   ; TODO
+	dw DIVE_BALL,   DiveBallMultiplier
 	dw NEST_BALL,   ; TODO
 	dw REPEAT_BALL, ; TODO
 	dw TIMER_BALL,  ; TODO
@@ -214,6 +214,20 @@ NetBallMultiplier:
 	ret nz
 
 .ok
+	ln a, 7, 2 ; x3.5
+	jmp MultiplyAndDivide
+
+DiveBallMultiplier:
+; multiply catch rate by 3.5 if surfing or fishing
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .water
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	ret nz
+
+.water
 	ln a, 7, 2 ; x3.5
 	jmp MultiplyAndDivide
 
