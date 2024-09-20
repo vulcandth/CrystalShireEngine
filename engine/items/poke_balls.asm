@@ -173,13 +173,18 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dw ULTRA_BALL,  UltraBallMultiplier
 	dw GREAT_BALL,  GreatBallMultiplier
-	dw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
-	dw HEAVY_BALL,  HeavyBallMultiplier
+	dw SAFARI_BALL, SafariBallMultiplier
+	dw NET_BALL,    ; TODO
+	dw DIVE_BALL,   ; TODO
+	dw NEST_BALL,   ; TODO
+	dw REPEAT_BALL, ; TODO
+	dw TIMER_BALL,  ; TODO
+	dw FAST_BALL,   FastBallMultiplier
 	dw LEVEL_BALL,  LevelBallMultiplier
 	dw LURE_BALL,   LureBallMultiplier
-	dw FAST_BALL,   FastBallMultiplier
-	dw MOON_BALL,   MoonBallMultiplier
+	dw HEAVY_BALL,  HeavyBallMultiplier
 	dw LOVE_BALL,   LoveBallMultiplier
+	dw MOON_BALL,   MoonBallMultiplier
 	dw PARK_BALL,   ParkBallMultiplier
 	dw -1 ; end
 
@@ -188,11 +193,51 @@ UltraBallMultiplier:
 	ln a, 2, 1 ; x2
 	jmp MultiplyAndDivide
 
-SafariBallMultiplier:
 GreatBallMultiplier:
+SafariBallMultiplier:
 ParkBallMultiplier:
 ; multiply catch rate by 1.5
 	ln a, 3, 2 ; x1.5
+	jmp MultiplyAndDivide
+
+FastBallMultiplier:
+; multiply catch rate by 4 if the enemy mon's Base Speed is at least 100
+	ld a, [wTempEnemyMonSpecies]
+	call GetBaseData
+	ld a, [wBaseSpeed]
+	cp 100
+	ret c
+
+	ln a, 4, 1 ; x4
+	jmp MultiplyAndDivide
+
+LevelBallMultiplier:
+; multiply catch rate by 8 if player mon level / 4 > enemy mon level
+; multiply catch rate by 4 if player mon level / 2 > enemy mon level
+; multiply catch rate by 2 if player mon level > enemy mon level
+	ld a, [wBattleMonLevel]
+	ld c, a
+	ld a, [wEnemyMonLevel]
+	call DoLevelBallMultiplier
+	call DoLevelBallMultiplier
+DoLevelBallMultiplier:
+	cp c
+	ret nc ; if player is lower level, we're done here
+
+	push af
+	ln a, 2, 1 ; x2
+	call MultiplyAndDivide
+	pop af
+	srl c
+	ret
+
+LureBallMultiplier:
+; multiply catch rate by 3 if this is a fishing rod battle
+	ld a, [wBattleType]
+	cp BATTLETYPE_FISH
+	ret nz
+
+	ln a, 3, 1 ; x3
 	jmp MultiplyAndDivide
 
 GetSpeciesWeight::
@@ -302,13 +347,20 @@ endr
 	db HIGH(4096),  30
 	db HIGH(65280), 40
 
-LureBallMultiplier:
-; multiply catch rate by 3 if this is a fishing rod battle
-	ld a, [wBattleType]
-	cp BATTLETYPE_FISH
+LoveBallMultiplier:
+
+	; does species match?
+	ld a, [wTempEnemyMonSpecies]
+	ld c, a
+	ld a, [wTempBattleMonSpecies]
+	cp c
 	ret nz
 
-	ln a, 3, 1 ; x3
+	farcall CheckOppositeGender
+	ret c ; genderless
+	ret z ; same gender
+	
+	ln a, 8, 1 ; x8
 	jmp MultiplyAndDivide
 
 MoonBallMultiplier:
@@ -343,50 +395,3 @@ MoonBallMultiplier:
 
 	ln a, 4, 1 ; x4
 	jmp MultiplyAndDivide
-
-LoveBallMultiplier:
-
-	; does species match?
-	ld a, [wTempEnemyMonSpecies]
-	ld c, a
-	ld a, [wTempBattleMonSpecies]
-	cp c
-	ret nz
-
-	farcall CheckOppositeGender
-	ret c ; genderless
-	ret z ; same gender
-	
-	ln a, 8, 1 ; x8
-	jmp MultiplyAndDivide
-
-FastBallMultiplier:
-; multiply catch rate by 4 if the enemy mon's Base Speed is at least 100
-	ld a, [wTempEnemyMonSpecies]
-	call GetBaseData
-	ld a, [wBaseSpeed]
-	cp 100
-	ret c
-
-	ln a, 4, 1 ; x4
-	jmp MultiplyAndDivide
-
-LevelBallMultiplier:
-; multiply catch rate by 8 if player mon level / 4 > enemy mon level
-; multiply catch rate by 4 if player mon level / 2 > enemy mon level
-; multiply catch rate by 2 if player mon level > enemy mon level
-	ld a, [wBattleMonLevel]
-	ld c, a
-	ld a, [wEnemyMonLevel]
-	call DoLevelBallMultiplier
-	call DoLevelBallMultiplier
-DoLevelBallMultiplier:
-	cp c
-	ret nc ; if player is lower level, we're done here
-
-	push af
-	ln a, 2, 1 ; x2
-	call MultiplyAndDivide
-	pop af
-	srl c
-	ret
