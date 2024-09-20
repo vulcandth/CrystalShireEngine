@@ -176,7 +176,7 @@ BallMultiplierFunctionTable:
 	dw SAFARI_BALL, SafariBallMultiplier
 	dw NET_BALL,    NetBallMultiplier
 	dw DIVE_BALL,   DiveBallMultiplier
-	dw NEST_BALL,   ; TODO
+	dw NEST_BALL,   NestBallMultiplier
 	dw REPEAT_BALL, ; TODO
 	dw TIMER_BALL,  ; TODO
 	dw FAST_BALL,   FastBallMultiplier
@@ -229,6 +229,18 @@ DiveBallMultiplier:
 
 .water
 	ln a, 7, 2 ; x3.5
+	jmp MultiplyAndDivide
+
+NestBallMultiplier:
+; multiply catch rate by (41 - enemy mon level) / 5, floored at 1
+	ld a, [wEnemyMonLevel]
+	cp 36
+	ret nc
+	cpl
+	add 41 + 1 ; a = 41 - a
+	ldh [hMultiplier], a
+	call Multiply
+	ln a, 1, 5 ; x1/5
 	jmp MultiplyAndDivide
 
 FastBallMultiplier:
