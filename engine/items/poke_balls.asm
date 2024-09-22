@@ -178,7 +178,7 @@ BallMultiplierFunctionTable:
 	dw DIVE_BALL,   DiveBallMultiplier
 	dw NEST_BALL,   NestBallMultiplier
 	dw REPEAT_BALL, RepeatBallMultiplier
-	dw TIMER_BALL,  ; TODO
+	dw TIMER_BALL,  TimerBallMultiplier
 	dw FAST_BALL,   FastBallMultiplier
 	dw LEVEL_BALL,  LevelBallMultiplier
 	dw LURE_BALL,   LureBallMultiplier
@@ -252,6 +252,22 @@ RepeatBallMultiplier:
 	ret z
 
 	ln a, 7, 2 ; x3.5
+	jmp MultiplyAndDivide
+
+TimerBallMultiplier:
+; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
+	ld a, [wBattleTurns]
+	ld b, a
+	add a
+	add b
+	add 10
+	cp 40
+	jr c, .nocap
+	ld a, 40
+.nocap
+	ldh [hMultiplier], a
+	call Multiply
+	ln a, 1, 10 ; x0.1 after the above multiplier gives 1.3x, 1.6x, 1.9x, ..., 4x.
 	jmp MultiplyAndDivide
 
 FastBallMultiplier:

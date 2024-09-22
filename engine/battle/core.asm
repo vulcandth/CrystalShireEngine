@@ -199,6 +199,8 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
+	ld hl, wBattleTurns
+	inc [hl]
 	jr .loop
 
 HandleBetweenTurnEffects:

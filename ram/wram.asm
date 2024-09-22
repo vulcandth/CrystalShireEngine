@@ -464,7 +464,7 @@ wEnemyEvaLevel::  db
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db
-	ds 1
+wBattleTurns::      db
 
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
