@@ -256,7 +256,7 @@ RepeatBallMultiplier:
 
 TimerBallMultiplier:
 ; multiply catch rate by 1 + (turns passed * 3) / 10, capped at 4
-	ld a, [wBattleTurns]
+	ld a, [wTotalBattleTurns]
 	ld b, a
 	add a
 	add b

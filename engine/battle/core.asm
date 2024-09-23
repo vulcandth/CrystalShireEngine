@@ -6,8 +6,7 @@ DoBattle:
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
-	inc a
-	ld [wBattleHasJustStarted], a
+	ld [wTotalBattleTurns], a
 	ld hl, wOTPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, BATTLEACTION_SWITCH1 - 1
@@ -149,7 +148,6 @@ BattleTurn:
 	xor a
 	ld [wPlayerIsSwitching], a
 	ld [wEnemyIsSwitching], a
-	ld [wBattleHasJustStarted], a
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wCurDamage], a
@@ -199,7 +197,7 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
-	ld hl, wBattleTurns
+	ld hl, wTotalBattleTurns
 	inc [hl]
 	jr .loop
 
@@ -3161,17 +3159,17 @@ CheckWhetherSwitchmonIsPredetermined:
 .not_linked
 	ld a, [wEnemySwitchMonIndex]
 	and a
-	jr z, .check_wBattleHasJustStarted
+	jr z, .check_wTotalBattleTurns
 
 	dec a
 	ld b, a
 	jr .return_carry
 
-.check_wBattleHasJustStarted
-	ld a, [wBattleHasJustStarted]
+.check_wTotalBattleTurns
+	ld a, [wTotalBattleTurns]
 	and a
 	ld b, 0
-	jr nz, .return_carry
+	jr z, .return_carry
 
 	and a
 	ret
@@ -3445,8 +3443,7 @@ LoadEnemyMonToSwitchTo:
 	ret
 
 CheckWhetherToAskSwitch:
-	ld a, [wBattleHasJustStarted]
-	dec a
+	ld a, [wTotalBattleTurns]
 	jr z, .return_nc
 	ld a, [wPartyCount]
 	dec a
@@ -3639,9 +3636,9 @@ CheckIfCurPartyMonIsFitToFight:
 	or [hl]
 	ret nz
 
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .finish_fail
+	jr z, .finish_fail
 	ld hl, wPartySpecies
 	ld a, [wCurPartyMon]
 	ld c, a
@@ -7716,11 +7713,11 @@ SendOutMonText:
 	jr z, .not_linked
 
 ; If we're in a LinkBattle print just "Go <PlayerMon>"
-; unless DoBattle already set [wBattleHasJustStarted]
+; unless DoBattle already set [wTotalBattleTurns] to 0
 	ld hl, GoMonText
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .skip_to_textbox
+	jr z, .skip_to_textbox
 
 .not_linked
 ; Depending on the HP of the enemy mon, the game prints a different text
