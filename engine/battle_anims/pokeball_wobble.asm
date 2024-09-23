@@ -31,20 +31,17 @@ GetPokeBallWobble:
 	call Random
 	cp b
 	ld c, 2 ; escaped
-	jr nc, .done
+	ret nc
 
 .ok
 	; Check how many wobbles we've done so far. If this would've been our 4th,
 	; we've successfully caught the Pokémon.
 	ld c, 0 ; shake
-	ld a, [wThrownBallWobbleCount]
-	inc a
-	ld [wThrownBallWobbleCount], a
+	ld hl, wThrownBallWobbleCount
+	inc [hl]
 	cp 4
-	jr c, .done
+	ret c
 	inc c ; captured
-
-.done
 	ret
 
 INCLUDE "data/battle/wobble_probabilities.asm"

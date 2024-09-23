@@ -629,7 +629,7 @@ PokeBallEffect:
 	ld hl, Text_GotchaMonWasCaught
 
 .shake_and_break_free
-	ld a, 0
+	xor a
 	ld [wWildMon], a
 	call PrintText
 	call ClearSprites
