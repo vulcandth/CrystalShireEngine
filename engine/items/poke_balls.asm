@@ -319,10 +319,7 @@ GetSpeciesWeight::
 	; skip height
 	inc hl
 	inc hl
-	ld bc, PokemonBodyData
-	add hl, bc
-	ld a, BANK(PokemonBodyData)
-	jmp GetFarWord ; get weight
+	jr GetSpeciesAttribute
 
 GetSpeciesHeight::
 	; input: hl = species
@@ -330,10 +327,11 @@ GetSpeciesHeight::
 	dec hl
 	add hl, hl
 	add hl, hl
+GetSpeciesAttribute:
 	ld bc, PokemonBodyData
 	add hl, bc
 	ld a, BANK(PokemonBodyData)
-	jmp GetFarWord ; get weight
+	jmp GetFarWord ; get weight/height
 
 HeavyBallMultiplier:
 ; subtract 20 from catch rate if weight < 102.4 kg
