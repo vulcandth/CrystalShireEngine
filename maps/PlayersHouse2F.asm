@@ -58,6 +58,7 @@ if DEF(_DEBUG)
 	; pokedex
 	setflag ENGINE_POKEDEX
 	; useful items
+	giveitem RARE_CANDY, 99
 	giveitem MAX_REPEL, 99
 	giveitem MASTER_BALL, 99
 	giveitem BLU_APRICORN, 2
@@ -69,6 +70,7 @@ if DEF(_DEBUG)
 	giveitem WATER_STONE, 10
 	giveitem LEAF_STONE, 10
 	giveitem MOON_STONE, 10
+	giveitem SUN_STONE, 10
 	giveitem BERRY, 10
 	giveitem GOLD_BERRY, 10
 	giveitem MINT_BERRY, 10
