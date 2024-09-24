@@ -86,10 +86,7 @@ EvolveAfterBattle_MasterLoop:
 	jr z, .happiness
 
 ; EVOLVE_STAT
-	call GetNextEvoAttackByte
-	ld c, a
-	ld a, [wTempMonLevel]
-	cp c
+	call GetEvoLevel
 	jmp c, .skip_evolution_species_parameter_byte
 
 	call IsMonHoldingEverstone
@@ -177,10 +174,7 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .level
-	call GetNextEvoAttackByte
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
+	call GetEvoLevel
 	jmp c, .skip_evolution_species
 	call IsMonHoldingEverstone
 	jmp z, .skip_evolution_species
@@ -695,4 +689,11 @@ GetEvoItem:
 	call GetItemIDFromIndex
 	ld b, a
 	pop hl
+	ret
+
+GetEvoLevel:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
 	ret
