@@ -64,7 +64,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 
 	cp EVOLVE_TRADE
-	jmp z, .trade
+	jr z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -111,7 +111,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetNextEvoAttackByte
 	cp c
 	jmp nz, .skip_evolution_species
-	jr .proceed
+	jmp .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -123,7 +123,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
-	jr z, .proceed
+	jmp z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
@@ -131,7 +131,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
-	jr .proceed
+	jmp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
@@ -177,14 +177,11 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .pv
-	call GetNextEvoAttackByte
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
-	jmp c, .skip_evolution_species
+	call GetEvoLevel
+	jmp c, .skip_evolution_species_parameter_word
 
 	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
+	jmp z, .skip_evolution_species_parameter_word
 
 	push hl
 
