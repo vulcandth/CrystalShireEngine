@@ -147,15 +147,7 @@ EvolveAfterBattle_MasterLoop:
 	call IsMonHoldingEverstone
 	jmp z, .skip_evolution_species_parameter_word
 
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	inc a
 	jr z, .proceed
 	dec a
@@ -173,15 +165,7 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .item
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jmp nz, .skip_evolution_species
@@ -677,15 +661,7 @@ DetermineEvolutionItemResults::
 	jr z, .skip_species_parameter_byte
 	cp EVOLVE_ITEM
 	jr nz, .skip_species_parameter_word
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
@@ -708,4 +684,17 @@ GetNextEvoAttackByte:
 	ldh a, [hTemp]
 	call GetFarByte
 	inc hl
+	ret
+
+GetEvoItem:
+; Return evolution item in register b
+	call GetNextEvoAttackByte
+	ld b, a
+	call GetNextEvoAttackByte
+	push hl
+	ld h, a
+	ld l, b
+	call GetItemIDFromIndex
+	ld b, a
+	pop hl
 	ret

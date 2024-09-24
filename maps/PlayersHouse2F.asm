@@ -141,7 +141,7 @@ if DEF(_DEBUG)
 	; good party
 	givepoke MEWTWO, 100, BRIGHTPOWDER
 	; hm slaves
-	givepoke MEW, 100, LEFTOVERS
+	givepoke EEVEE, 100, LEFTOVERS
 	givepoke LANTURN, 100, LEFTOVERS
 	givepokemove FLY,        wPartyMon2, 0
 	givepokemove SURF,       wPartyMon2, 1
