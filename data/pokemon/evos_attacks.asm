@@ -9,6 +9,7 @@ SECTION "Evolutions and Attacks Pointers", ROMX
 ;    * dbww EVOLVE_TRADE, held item (or -1 for none), species
 ;    * dbbw EVOLVE_HAPPINESS, TR_* constant (ANYTIME, MORNDAY, EVENITE), species
 ;    * dbbbw EVOLVE_STAT, level, ATK_*_DEF constant (LT, GT, EQ), species
+;    * dbww EVOLVE_PV, level, species 1, species 2
 ; - db 0 ; no more evolutions
 ; - Learnset (in increasing level order):
 ;    * dbw level, move
