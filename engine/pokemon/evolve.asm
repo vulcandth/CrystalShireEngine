@@ -374,10 +374,16 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
+	cp EVOLVE_PV
+	jr z, .skip_evolution_two_species_parameter_byte
 	cp EVOLVE_LEVEL
 	jr z, .skip_evolution_species_parameter_byte
 	cp EVOLVE_HAPPINESS
 	jr z, .skip_evolution_species_parameter_byte
+	jr .skip_evolution_species_parameter_word
+
+.skip_evolution_two_species_parameter_byte
+	inc hl
 .skip_evolution_species_parameter_word
 	inc hl
 .skip_evolution_species_parameter_byte
@@ -680,10 +686,17 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_PV
+	jr z, .two_extra_skips
 	cp EVOLVE_LEVEL
 	jr z, .no_extra_skip
 	cp EVOLVE_HAPPINESS
 	jr z, .no_extra_skip
+	jr .one_extra_skip
+
+.two_extra_skips
+	inc hl
+.one_extra_skip
 	inc hl
 .no_extra_skip
 	inc hl
@@ -703,6 +716,8 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
+	cp EVOLVE_PV
+	jr z, .skip_two_species_parameter_byte
 	cp EVOLVE_LEVEL
 	jr z, .skip_species_parameter_byte
 	cp EVOLVE_HAPPINESS
@@ -719,6 +734,8 @@ DetermineEvolutionItemResults::
 	ld e, l
 	ret
 
+.skip_two_species_parameter_byte
+	inc hl
 .skip_species_parameter_word
 	inc hl
 .skip_species_parameter_byte
