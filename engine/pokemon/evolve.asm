@@ -108,7 +108,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetNextEvoAttackByte
 	cp c
 	jmp nz, .skip_evolution_species
-	jmp .proceed
+	jr .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -120,7 +120,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
-	jmp z, .proceed
+	jr z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
