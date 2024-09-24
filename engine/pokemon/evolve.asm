@@ -141,6 +141,9 @@ EvolveAfterBattle_MasterLoop:
 
 .trade
 	ld a, [wLinkMode]
+	cp LINK_TIMECAPSULE
+	jmp z, .skip_evolution_species_parameter_word
+
 	and a
 	jmp z, .skip_evolution_species_parameter_word
 
@@ -150,11 +153,6 @@ EvolveAfterBattle_MasterLoop:
 	call GetEvoItem
 	inc a
 	jr z, .proceed
-	dec a
-
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jmp z, .skip_evolution_species
 
 	ld a, [wTempMonItem]
 	cp b
