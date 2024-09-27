@@ -227,7 +227,7 @@ endr
 	ld [de], a
 	inc de
 
-	; Initial Personality
+	; Initialize Personality
 	ld a, NUM_NATURES
 	call RandomRange
 	and NATURE_MASK
@@ -412,6 +412,11 @@ endr
 	rst AddNTimes
 	predef GetUnownLetter
 	farcall UpdateUnownDex
+	ld a, [wFirstUnownSeen]
+	and a
+	jr nz, .done
+	ld a, [wUnownLetter]
+	ld [wFirstUnownSeen], a
 
 .done
 	scf ; When this function returns, the carry flag indicates success vs failure.
@@ -745,7 +750,7 @@ SendMonIntoBox:
 	ld bc, MON_NAME_LENGTH
 	rst CopyBytes
 
-	ld hl, wEnemyMon
+ 	ld hl, wEnemyMon
 	ld de, wBufferMon
 	ld bc, 1 + 1 + NUM_MOVES ; species + item + moves
 	rst CopyBytes
@@ -1341,8 +1346,14 @@ GivePoke::
 	ld hl, wPartyMon1Form
 	ld bc, PARTYMON_STRUCT_LENGTH
 	rst AddNTimes
+	ld a, [wFirstUnownSeen]
+	and a
 	ld a, [wCurPartyForm]
+	jr nz, .skip
+	ld [wFirstUnownSeen], a
+.skip
 	ld [hl], a
+
 	ld a, [wCurItem]
 	and a
 	jr z, .done

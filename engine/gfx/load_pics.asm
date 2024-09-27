@@ -114,6 +114,10 @@ GetPicIndirectPointer:
 
 .unown
 	ld a, [wUnownLetter]
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
+.is_letter
 	ld c, a
 	ld b, 0
 	ld hl, UnownPicPointers - 6

@@ -269,6 +269,10 @@ PokeAnim_InitPicAttributes:
 	ld a, BANK(wUnownLetter)
 	ld hl, wUnownLetter
 	call GetFarWRAMByte
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
+.is_letter
 	ld [wPokeAnimUnownLetter], a
 
 	call PokeAnim_GetSpeciesOrUnown
@@ -998,6 +1002,10 @@ PokeAnim_GetSpeciesOrUnown:
 	ret
 
 .unown
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
+.is_letter
 	ld a, [wPokeAnimUnownLetter]
 	ret
 
