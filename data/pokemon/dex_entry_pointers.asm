@@ -1,6 +1,7 @@
 PokedexDataPointerTable:
 ; entries correspond to constants/pokemon_constants.asm
 	table_width 3, PokedexDataPointerTable
+; Kanto
 	dba BulbasaurPokedexEntry
 	dba IvysaurPokedexEntry
 	dba VenusaurPokedexEntry
@@ -152,6 +153,7 @@ PokedexDataPointerTable:
 	dba DragonitePokedexEntry
 	dba MewtwoPokedexEntry
 	dba MewPokedexEntry
+; Johto
 	dba ChikoritaPokedexEntry
 	dba BayleefPokedexEntry
 	dba MeganiumPokedexEntry
@@ -252,4 +254,140 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+; Hoenn
+	dba TreeckoPokedexEntry
+	dba GrovylePokedexEntry
+	dba SceptilePokedexEntry
+	dba TorchicPokedexEntry
+	dba CombuskenPokedexEntry
+	dba BlazikenPokedexEntry
+	dba MudkipPokedexEntry
+	dba MarshtompPokedexEntry
+	dba SwampertPokedexEntry
+	dba PoochyenaPokedexEntry
+	dba MightyenaPokedexEntry
+	dba ZigzagoonPokedexEntry
+	dba LinoonePokedexEntry
+	dba WurmplePokedexEntry
+	dba SilcoonPokedexEntry
+	dba BeautiflyPokedexEntry
+	dba CascoonPokedexEntry
+	dba DustoxPokedexEntry
+	dba LotadPokedexEntry
+	dba LombrePokedexEntry
+	dba LudicoloPokedexEntry
+	dba SeedotPokedexEntry
+	dba NuzleafPokedexEntry
+	dba ShiftryPokedexEntry
+	dba TaillowPokedexEntry
+	dba SwellowPokedexEntry
+	dba WingullPokedexEntry
+	dba PelipperPokedexEntry
+	dba RaltsPokedexEntry
+	dba KirliaPokedexEntry
+	dba GardevoirPokedexEntry
+	dba SurskitPokedexEntry
+	dba MasquerainPokedexEntry
+	dba ShroomishPokedexEntry
+	dba BreloomPokedexEntry
+	dba SlakothPokedexEntry
+	dba VigorothPokedexEntry
+	dba SlakingPokedexEntry
+	dba NincadaPokedexEntry
+	dba NinjaskPokedexEntry
+	dba ShedinjaPokedexEntry
+	dba WhismurPokedexEntry
+	dba LoudredPokedexEntry
+	dba ExploudPokedexEntry
+	dba MakuhitaPokedexEntry
+	dba HariyamaPokedexEntry
+	dba AzurillPokedexEntry
+	dba NosepassPokedexEntry
+	dba SkittyPokedexEntry
+	dba DelcattyPokedexEntry
+	dba SableyePokedexEntry
+	dba MawilePokedexEntry
+	dba AronPokedexEntry
+	dba LaironPokedexEntry
+	dba AggronPokedexEntry
+	dba MedititePokedexEntry
+	dba MedichamPokedexEntry
+	dba ElectrikePokedexEntry
+	dba ManectricPokedexEntry
+	dba PluslePokedexEntry
+	dba MinunPokedexEntry
+	dba VolbeatPokedexEntry
+	dba IllumisePokedexEntry
+	dba RoseliaPokedexEntry
+	dba GulpinPokedexEntry
+	dba SwalotPokedexEntry
+	dba CarvanhaPokedexEntry
+	dba SharpedoPokedexEntry
+	dba WailmerPokedexEntry
+	dba WailordPokedexEntry
+	dba NumelPokedexEntry
+	dba CameruptPokedexEntry
+	dba TorkoalPokedexEntry
+	dba SpoinkPokedexEntry
+	dba GrumpigPokedexEntry
+	dba SpindaPokedexEntry
+	dba TrapinchPokedexEntry
+	dba VibravaPokedexEntry
+	dba FlygonPokedexEntry
+	dba CacneaPokedexEntry
+	dba CacturnePokedexEntry
+	dba SwabluPokedexEntry
+	dba AltariaPokedexEntry
+	dba ZangoosePokedexEntry
+	dba SeviperPokedexEntry
+	dba LunatonePokedexEntry
+	dba SolrockPokedexEntry
+	dba BarboachPokedexEntry
+	dba WhiscashPokedexEntry
+	dba CorphishPokedexEntry
+	dba CrawdauntPokedexEntry
+	dba BaltoyPokedexEntry
+	dba ClaydolPokedexEntry
+	dba LileepPokedexEntry
+	dba CradilyPokedexEntry
+	dba AnorithPokedexEntry
+	dba ArmaldoPokedexEntry
+	dba FeebasPokedexEntry
+	dba MiloticPokedexEntry
+	dba CastformPokedexEntry
+	dba KecleonPokedexEntry
+	dba ShuppetPokedexEntry
+	dba BanettePokedexEntry
+	dba DuskullPokedexEntry
+	dba DusclopsPokedexEntry
+	dba TropiusPokedexEntry
+	dba ChimechoPokedexEntry
+	dba AbsolPokedexEntry
+	dba WynautPokedexEntry
+	dba SnoruntPokedexEntry
+	dba GlaliePokedexEntry
+	dba SphealPokedexEntry
+	dba SealeoPokedexEntry
+	dba WalreinPokedexEntry
+	dba ClamperlPokedexEntry
+	dba HuntailPokedexEntry
+	dba GorebyssPokedexEntry
+	dba RelicanthPokedexEntry
+	dba LuvdiscPokedexEntry
+	dba BagonPokedexEntry
+	dba ShelgonPokedexEntry
+	dba SalamencePokedexEntry
+	dba BeldumPokedexEntry
+	dba MetangPokedexEntry
+	dba MetagrossPokedexEntry
+	dba RegirockPokedexEntry
+	dba RegicePokedexEntry
+	dba RegisteelPokedexEntry
+	dba LatiasPokedexEntry
+	dba LatiosPokedexEntry
+	dba KyogrePokedexEntry
+	dba GroudonPokedexEntry
+	dba RayquazaPokedexEntry
+	dba JirachiPokedexEntry
+	dba DeoxysPokedexEntry
 	assert_table_length NUM_POKEMON

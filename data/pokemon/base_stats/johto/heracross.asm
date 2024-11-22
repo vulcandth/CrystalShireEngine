@@ -10,12 +10,12 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 25 ; step cycles to hatch
-	INCBIN "gfx/pokemon/heracross/front.dimensions"
+	INCBIN "gfx/pokemon/johto/heracross/front.dimensions"
 	db SWARM, GUTS ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_SLOW ; growth rate
 	dn EGG_BUG, EGG_BUG ; egg groups
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, FRUSTRATION, EARTHQUAKE, RETURN, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, DETECT, REST, ATTRACT, THIEF, FURY_CUTTER, CUT, STRENGTH
+	tmhm FOCUS_PUNCH, TOXIC, BULK_UP, HIDDEN_POWER, SUNNY_DAY, HYPER_BEAM, PROTECT, RAIN_DANCE, FRUSTRATION, EARTHQUAKE, RETURN, DIG, BRICK_BREAK, DOUBLE_TEAM, ROCK_TOMB, FACADE, SECRET_POWER, REST, ATTRACT, THIEF, CUT, STRENGTH, ROCK_SMASH
 	; end

@@ -36,7 +36,6 @@ ROMX $01
 	"Tileset Data 10"
 ROMX $02
 	"bank2"
-	"Tileset Data 9"
 ROMX $03
 	"bank3"
 	"VWF"
@@ -47,12 +46,8 @@ ROMX $04
 	"Battle Animation Data"
 ROMX $05
 	"bank5"
-	"Load Map Part"
 ROMX $06
 	"Tileset Data 1"
-	"Prism tilemap copy functions"
-	"Pics 20"
-	"Pokemon Body Data"
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
@@ -96,7 +91,6 @@ ROMX $13
 	"bank13_2"
 ROMX $14
 	"bank14"
-	"Unused Egg Pic"
 ROMX $15
 	"Map Scripts 1"
 ROMX $16
@@ -166,10 +160,8 @@ ROMX $33
 ROMX $34
 	"Pic Animations 1"
 ROMX $35
-	"Pic Animations 2"
 ROMX $36
 	"Font Inversed"
-	"Pic Animations 3"
 ROMX $37
 	"Tileset Data 6"
 ROMX $38
@@ -185,7 +177,6 @@ ROMX $3b
 ROMX $3c
 	"Songs 3"
 	"Sound Effects"
-	"Cries"
 ROMX $3d
 	"Songs 4"
 ROMX $3e
@@ -205,7 +196,6 @@ ROMX $43
 	"Title"
 ROMX $44
 	"Mobile Adapter SDK"
-	"Mon Icons 2"
 ROMX $45
 	"mobile45"
 ROMX $46
@@ -214,45 +204,26 @@ ROMX $47
 	"Battle Tower"
 ROMX $48
 	"Pic Pointers"
-	"Pics 1"
 ROMX $49
 	"Unown Pic Pointers"
-	"Pics 2"
 ROMX $4a
 	"Trainer Pic Pointers"
-	"Pics 3"
 ROMX $4b
-	"Pics 4"
 ROMX $4c
-	"Pics 5"
 ROMX $4d
-	"Pics 6"
 ROMX $4e
-	"Pics 7"
 ROMX $4f
-	"Pics 8"
 ROMX $50
-	"Pics 9"
 ROMX $51
-	"Pics 10"
 ROMX $52
-	"Pics 11"
 ROMX $53
-	"Pics 12"
 ROMX $54
-	"Pics 13"
 ROMX $55
-	"Pics 14"
 ROMX $56
-	"Pics 15"
 ROMX $57
-	"Pics 16"
 ROMX $58
-	"Pics 17"
 ROMX $59
-	"Pics 18"
 ROMX $5a
-	"Pics 19"
 ROMX $5b
 	"bank5B"
 ROMX $5c
@@ -308,7 +279,7 @@ ROMX $72
 ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
-	"Pokedex Entries 193-251"
+	"Pokedex Entries 193-256"
 ROMX $75
 	"16-bit ID stuff"
 ROMX $77

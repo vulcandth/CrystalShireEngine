@@ -10,12 +10,12 @@
 	dw NO_ITEM, SHARP_BEAK ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/dodrio/front.dimensions"
+	INCBIN "gfx/pokemon/kanto/dodrio/front.dimensions"
 	db RUN_AWAY, EARLY_BIRD ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FLYING ; egg groups
 
 	; tm/hm learnset
-	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, SNORE, HYPER_BEAM, PROTECT, ENDURE, FRUSTRATION, RETURN, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, REST, ATTRACT, THIEF, STEEL_WING, FLY
+	tmhm TOXIC, HIDDEN_POWER, SUNNY_DAY, TAUNT, HYPER_BEAM, PROTECT, FRUSTRATION, RETURN, DOUBLE_TEAM, AERIAL_ACE, TORMENT, FACADE, SECRET_POWER, REST, ATTRACT, THIEF, STEEL_WING, FLY
 	; end

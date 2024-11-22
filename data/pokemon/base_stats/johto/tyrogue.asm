@@ -10,12 +10,12 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio
 	db 25 ; step cycles to hatch
-	INCBIN "gfx/pokemon/tyrogue/front.dimensions"
+	INCBIN "gfx/pokemon/johto/tyrogue/front.dimensions"
 	db GUTS, GUTS ; wBaseAbility1, wBaseAbility2
 	dw NULL ; Padding left-over from the unused back pic
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm HEADBUTT, CURSE, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, ENDURE, FRUSTRATION, RETURN, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, DETECT, REST, ATTRACT, THIEF, STRENGTH
+	tmhm TOXIC, BULK_UP, HIDDEN_POWER, SUNNY_DAY, PROTECT, RAIN_DANCE, FRUSTRATION, EARTHQUAKE, RETURN, BRICK_BREAK, DOUBLE_TEAM, FACADE, SECRET_POWER, REST, ATTRACT, THIEF, STRENGTH, ROCK_SMASH
 	; end

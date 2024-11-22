@@ -170,7 +170,7 @@
 	const DRAGONITE  ; 95
 	const MEWTWO     ; 96
 	const MEW        ; 97
-DEF NUM_KANTO_POKEMON EQU const_value - 1
+DEF NUM_KANTO_POKEMON EQU const_value -1
 DEF JOHTO_POKEMON EQU const_value
 	const CHIKORITA  ; 98
 	const BAYLEEF    ; 99
@@ -272,7 +272,142 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
-DEF NUM_JOHTO_POKEMON EQU const_value - 1
+DEF HOENN_POKEMON EQU const_value
+	const TREECKO    ; fc
+	const GROVYLE    ; fd
+	const SCEPTILE   ; fe
+	const TORCHIC    ; ff
+	const COMBUSKEN  ; 100
+	const BLAZIKEN   ; 101
+	const MUDKIP     ; 102
+	const MARSHTOMP  ; 103
+	const SWAMPERT   ; 104
+	const POOCHYENA  ; 105
+	const MIGHTYENA  ; 106
+	const ZIGZAGOON  ; 107
+	const LINOONE    ; 108
+	const WURMPLE    ; 109
+	const SILCOON    ; 10a
+	const BEAUTIFLY  ; 10b
+	const CASCOON    ; 10c
+	const DUSTOX     ; 10d
+	const LOTAD	     ; 10e
+	const LOMBRE     ; 10f
+	const LUDICOLO   ; 110
+	const SEEDOT     ; 111
+	const NUZLEAF    ; 112
+	const SHIFTRY    ; 113
+	const TAILLOW    ; 114
+	const SWELLOW    ; 115
+	const WINGULL    ; 116
+	const PELIPPER   ; 117
+	const RALTS	     ; 118
+	const KIRLIA     ; 119
+	const GARDEVOIR  ; 11a
+	const SURSKIT    ; 11b
+	const MASQUERAIN ; 11c
+	const SHROOMISH  ; 11d
+	const BRELOOM    ; 11e
+	const SLAKOTH    ; 11f
+	const VIGOROTH   ; 120
+	const SLAKING    ; 121
+	const NINCADA    ; 122
+	const NINJASK    ; 123
+	const SHEDINJA   ; 124
+	const WHISMUR    ; 125
+	const LOUDRED    ; 126
+	const EXPLOUD    ; 127
+	const MAKUHITA   ; 128
+	const HARIYAMA   ; 129
+	const AZURILL    ; 12a
+	const NOSEPASS   ; 12b
+	const SKITTY     ; 12c
+	const DELCATTY   ; 12d
+	const SABLEYE    ; 12e
+	const MAWILE     ; 12f
+	const ARON       ; 130
+	const LAIRON     ; 131
+	const AGGRON     ; 132
+	const MEDITITE   ; 133
+	const MEDICHAM   ; 134
+	const ELECTRIKE  ; 135
+	const MANECTRIC  ; 136
+	const PLUSLE     ; 137
+	const MINUN      ; 138
+	const VOLBEAT    ; 139
+	const ILLUMISE   ; 13a
+	const ROSELIA    ; 13b
+	const GULPIN     ; 13c
+	const SWALOT     ; 13d
+	const CARVANHA   ; 13e
+	const SHARPEDO   ; 13f
+	const WAILMER    ; 140
+	const WAILORD    ; 141
+	const NUMEL      ; 142
+	const CAMERUPT   ; 143
+	const TORKOAL    ; 144
+	const SPOINK     ; 145
+	const GRUMPIG    ; 146
+	const SPINDA     ; 147
+	const TRAPINCH   ; 148
+	const VIBRAVA    ; 149
+	const FLYGON     ; 14a
+	const CACNEA     ; 14b
+	const CACTURNE   ; 14c
+	const SWABLU     ; 14d
+	const ALTARIA    ; 14e
+	const ZANGOOSE   ; 14f
+	const SEVIPER    ; 150
+	const LUNATONE   ; 151
+	const SOLROCK    ; 152
+	const BARBOACH   ; 153
+	const WHISCASH   ; 154
+	const CORPHISH   ; 155
+	const CRAWDAUNT  ; 156
+	const BALTOY     ; 157
+	const CLAYDOL    ; 158
+	const LILEEP     ; 159
+	const CRADILY    ; 15a
+	const ANORITH    ; 15b
+	const ARMALDO    ; 15c
+	const FEEBAS     ; 15d
+	const MILOTIC    ; 15e
+	const CASTFORM   ; 15f
+	const KECLEON    ; 160
+	const SHUPPET    ; 161
+	const BANETTE    ; 162
+	const DUSKULL    ; 163
+	const DUSCLOPS   ; 164
+	const TROPIUS    ; 165
+	const CHIMECHO   ; 166
+	const ABSOL      ; 167
+	const WYNAUT     ; 168
+	const SNORUNT    ; 169
+	const GLALIE     ; 16a
+	const SPHEAL     ; 16b
+	const SEALEO     ; 16c
+	const WALREIN    ; 16d
+	const CLAMPERL   ; 16e
+	const HUNTAIL    ; 16f
+	const GOREBYSS   ; 170
+	const RELICANTH  ; 171
+	const LUVDISC    ; 172
+	const BAGON      ; 173
+	const SHELGON    ; 174
+	const SALAMENCE  ; 175
+	const BELDUM     ; 176
+	const METANG     ; 177
+	const METAGROSS  ; 178
+	const REGIROCK   ; 179
+	const REGICE     ; 17a
+	const REGISTEEL  ; 17b
+	const LATIAS     ; 17c
+	const LATIOS     ; 17d
+	const KYOGRE     ; 17e
+	const GROUDON    ; 17f
+	const RAYQUAZA   ; 180
+	const JIRACHI    ; 181
+	const DEOXYS     ; 182
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3
@@ -289,35 +424,39 @@ endc
 ; indexes for:
 ; - UnownWords (see data/pokemon/unown_words.asm)
 ; - UnownPicPointers (see data/pokemon/unown_pic_pointers.asm)
-; - UnownAnimationPointers (see gfx/pokemon/unown_anim_pointers.asm)
+; - AnimationPointersUnown (see gfx/pokemon/unown_anim_pointers.asm)
 ; - UnownAnimationIdlePointers (see gfx/pokemon/unown_idle_pointers.asm)
 ; - UnownBitmasksPointers (see gfx/pokemon/unown_bitmask_pointers.asm)
 ; - UnownFramesPointers (see gfx/pokemon/unown_frame_pointers.asm)
 	const_def 1
-	const UNOWN_A ;  1
-	const UNOWN_B ;  2
-	const UNOWN_C ;  3
-	const UNOWN_D ;  4
-	const UNOWN_E ;  5
-	const UNOWN_F ;  6
-	const UNOWN_G ;  7
-	const UNOWN_H ;  8
-	const UNOWN_I ;  9
-	const UNOWN_J ; 10
-	const UNOWN_K ; 11
-	const UNOWN_L ; 12
-	const UNOWN_M ; 13
-	const UNOWN_N ; 14
-	const UNOWN_O ; 15
-	const UNOWN_P ; 16
-	const UNOWN_Q ; 17
-	const UNOWN_R ; 18
-	const UNOWN_S ; 19
-	const UNOWN_T ; 20
-	const UNOWN_U ; 21
-	const UNOWN_V ; 22
-	const UNOWN_W ; 23
-	const UNOWN_X ; 24
-	const UNOWN_Y ; 25
-	const UNOWN_Z ; 26
-DEF NUM_UNOWN EQU const_value - 1 ; 26
+	const UNOWN_A           ;  1
+	const UNOWN_B           ;  2
+	const UNOWN_C           ;  3
+	const UNOWN_D           ;  4
+	const UNOWN_E           ;  5
+	const UNOWN_F           ;  6
+	const UNOWN_G           ;  7
+	const UNOWN_H           ;  8
+	const UNOWN_I           ;  9
+	const UNOWN_J           ; 10
+	const UNOWN_K           ; 11
+	const UNOWN_L           ; 12
+	const UNOWN_M           ; 13
+	const UNOWN_N           ; 14
+	const UNOWN_O           ; 15
+	const UNOWN_P           ; 16
+	const UNOWN_Q           ; 17
+	const UNOWN_R           ; 18
+	const UNOWN_S           ; 19
+	const UNOWN_T           ; 20
+	const UNOWN_U           ; 21
+	const UNOWN_V           ; 22
+	const UNOWN_W           ; 23
+	const UNOWN_X           ; 24
+	const UNOWN_Y           ; 25
+	const UNOWN_Z           ; 26
+	const UNOWN_EXCLAMATION ; 27
+	const UNOWN_QUESTION    ; 28
+DEF NUM_UNOWN EQU const_value - 1 ; 28
+
+DEF UNOWN_OFFSET EQU NUM_POKEMON + NUM_UNOWN

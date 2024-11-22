@@ -269,6 +269,10 @@ PokeAnim_InitPicAttributes:
 	ld a, BANK(wUnownLetter)
 	ld hl, wUnownLetter
 	call GetFarWRAMByte
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
+.is_letter
 	ld [wPokeAnimUnownLetter], a
 
 	call PokeAnim_GetSpeciesOrUnown
@@ -834,38 +838,41 @@ GetMonAnimPointer:
 	call PokeAnim_IsEgg
 	jr z, .egg
 
-	ld c, BANK(UnownAnimationPointers) ; aka BANK(UnownAnimationIdlePointers)
-	ld hl, UnownAnimationPointers - 2
-	ld de, UnownAnimationIdlePointers - 2
 	call PokeAnim_IsUnown
 	jr z, .unown
-	ld c, BANK(AnimationPointers) ; aka BANK(AnimationIdlePointers)
-	ld hl, AnimationPointers - 2
-	ld de, AnimationIdlePointers - 2
-.unown
 
+	ld a, [wPokeAnimSpeciesOrUnown]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+.unown_return
 	ld a, [wPokeAnimIdleFlag]
 	and a
-	jr nz, .got_pointer
-	ld d, h
-	ld e, l
-.got_pointer
-
-	call PokeAnim_IsUnown
-	ld a, [wPokeAnimSpeciesOrUnown]
-	ld l, a
-	ld h, 0
-	call nz, GetPokemonIndexFromID
-	add hl, hl
-	add hl, de
-	ld a, c
+	ld a, BANK(AnimationPointers)
+	ld hl, AnimationPointers
+	jr z, .got_pointers
+	ld a, BANK(AnimationIdlePointers)
+	ld hl, AnimationIdlePointers
+.got_pointers
+	call LoadDoubleIndirectPointer
+	jr z, .egg ; error handler
+.load_pointer
+	ld a, b
 	ld [wPokeAnimPointerBank], a
-	call GetFarWord
 	ld a, l
 	ld [wPokeAnimPointerAddr], a
 	ld a, h
 	ld [wPokeAnimPointerAddr + 1], a
 	ret
+
+.unown
+	ld a, [wPokeAnimSpeciesOrUnown]
+	add LOW(NUM_POKEMON)
+	ld c, a
+	adc HIGH(NUM_POKEMON)
+	sub c
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld hl, EggAnimation
@@ -905,42 +912,34 @@ GetMonFramesPointer:
 	jr z, .egg
 
 	call PokeAnim_IsUnown
-	ld hl, FramesPointers - 3
-	ld a, BANK(FramesPointers)
-	ld c, 3
-	jr nz, .got_frames
-	ld a, BANK(UnownsFrames)
-	ld [wPokeAnimFramesBank], a
-	ld hl, UnownFramesPointers - 2
-	ld a, BANK(UnownFramesPointers)
-	ld c, 2
-.got_frames
+	jr z, .unown
 
-	push af
-	push hl
 	ld a, [wPokeAnimSpeciesOrUnown]
-	ld l, a
-	ld h, 0
-	call nz, GetPokemonIndexFromID
-	ld a, c
-	ld c, l
+	call GetPokemonIndexFromID
 	ld b, h
-	pop hl
-	rst AddNTimes
-	pop af
-	jr z, .no_bank
-	ld c, a
-	call GetFarByte
+	ld c, l
+.unown_return
+	ld a, BANK(FramesPointers)
+	ld hl, FramesPointers
+	call LoadDoubleIndirectPointer
+	jr z, .egg ; error handler
+.load_pointer
+	ld a, b
 	ld [wPokeAnimFramesBank], a
-	inc hl
-	ld a, c
-.no_bank
-	call GetFarWord
 	ld a, l
 	ld [wPokeAnimFramesAddr], a
 	ld a, h
 	ld [wPokeAnimFramesAddr + 1], a
 	ret
+
+.unown
+	ld a, [wPokeAnimSpeciesOrUnown]
+	add LOW(NUM_POKEMON)
+	ld c, a
+	adc HIGH(NUM_POKEMON)
+	sub c
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld a, BANK(EggFrames)
@@ -956,27 +955,34 @@ GetMonBitmaskPointer:
 	jr z, .egg
 
 	call PokeAnim_IsUnown
-	ld a, BANK(UnownBitmasksPointers)
-	ld de, UnownBitmasksPointers - 2
 	jr z, .unown
-	ld a, BANK(BitmasksPointers)
-	ld de, BitmasksPointers - 2
-.unown
-	ld [wPokeAnimBitmaskBank], a
 
 	ld a, [wPokeAnimSpeciesOrUnown]
-	ld l, a
-	ld h, 0
-	call nz, GetPokemonIndexFromID
-	add hl, hl
-	add hl, de
-	ld a, [wPokeAnimBitmaskBank]
-	call GetFarWord
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+.unown_return
+	ld a, BANK(BitmasksPointers)
+	ld hl, BitmasksPointers
+	call LoadDoubleIndirectPointer
+	jr z, .egg ; error handler
+.load_pointer
+	ld a, b
+	ld [wPokeAnimBitmaskBank], a
 	ld a, l
 	ld [wPokeAnimBitmaskAddr], a
 	ld a, h
 	ld [wPokeAnimBitmaskAddr + 1], a
 	ret
+
+.unown
+	ld a, [wPokeAnimSpeciesOrUnown]
+	add LOW(NUM_POKEMON)
+	ld c, a
+	adc HIGH(NUM_POKEMON)
+	sub c
+	ld b, a
+	jr .unown_return
 
 .egg
 	ld c, BANK(EggBitmasks)
@@ -996,6 +1002,10 @@ PokeAnim_GetSpeciesOrUnown:
 	ret
 
 .unown
+	and a
+	jr nz, .is_letter
+	inc a ; PLAIN_FORM will render as A
+.is_letter
 	ld a, [wPokeAnimUnownLetter]
 	ret
 

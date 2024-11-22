@@ -41,6 +41,11 @@ MACRO dbw
 	dw \2
 ENDM
 
+MACRO dbbww
+	db \1, \2
+	dw \3, \4
+ENDM
+
 MACRO dbbbw
 	db \1, \2, \3
 	dw \4

@@ -2,61 +2,46 @@ GetPokeBallWobble:
 ; Returns whether a Poke Ball will wobble in the catch animation.
 ; Whether a Pokemon is caught is determined beforehand.
 
-	push de
-
-	ldh a, [rSVBK]
-	ld d, a
-	push de
-
 	ld a, BANK(wThrownBallWobbleCount) ; aka BANK(wFinalCatchRate)
-	ldh [rSVBK], a
-
-	ld a, [wThrownBallWobbleCount] ; no-optimize inefficient WRAM increment/decrement
-	inc a
-	ld [wThrownBallWobbleCount], a
-
+	call StackCallInWRAMBankA
+.Function:
 ; Wobble up to 3 times.
-	cp 3 + 1
-	jr z, .finished
-
-	ld a, [wWildMon]
-	and a
-	ld c, 0 ; next
-	jr nz, .done
-
 	ld hl, WobbleProbabilities
 	ld a, [wFinalCatchRate]
+
+	; If a is 255, always capture
+	inc a
+	jr z, .ok
+	dec a
 	ld b, a
 .loop
 	ld a, [hli]
 	cp b
-	jr nc, .checkwobble
+	jr z, .checkwobble
+	jr nc, .use_previous
 	inc hl
 	jr .loop
+
+.use_previous
+	dec hl
+	dec hl
 
 .checkwobble
 	ld b, [hl]
 	call Random
 	cp b
-	ld c, 0 ; next
-	jr c, .done
 	ld c, 2 ; escaped
-	jr .done
+	ret nc
 
-.finished
-	ld a, [wWildMon]
-	and a
-	ld c, 1 ; caught
-	jr nz, .done
-	ld c, 2 ; escaped
-
-.done
-	pop de
-	ld e, a
-	ld a, d
-	ldh [rSVBK], a
-	ld a, e
-	pop de
+.ok
+	; Check how many wobbles we've done so far. If this would've been our 4th,
+	; we've successfully caught the Pokémon.
+	ld c, 0 ; shake
+	ld hl, wThrownBallWobbleCount
+	inc [hl]
+	cp 4
+	ret c
+	inc c ; captured
 	ret
 
 INCLUDE "data/battle/wobble_probabilities.asm"

@@ -464,7 +464,7 @@ wEnemyEvaLevel::  db
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db
-	ds 1
+wTotalBattleTurns::      db
 
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
@@ -2466,7 +2466,7 @@ wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db
 wInitListType:: db
-wBattleHasJustStarted:: db
+ds 1
 
 wNamedObjectIndex::
 wTextDecimalByte::

@@ -5,6 +5,7 @@ IconPointers:
 ; entries correspond to ICON_* constants (see constants/icon_constants.asm)
 	table_width 2, IconPointers
 	dw NullIcon
+; Kanto
 	dw BulbasaurIcon
 	dw IvysaurIcon
 	dw VenusaurIcon
@@ -156,6 +157,7 @@ IconPointers:
 	dw DragoniteIcon
 	dw MewtwoIcon
 	dw MewIcon
+; Johto
 	dw ChikoritaIcon
 	dw BayleefIcon
 	dw MeganiumIcon
@@ -256,4 +258,140 @@ IconPointers:
 	dw LugiaIcon
 	dw HoOhIcon
 	dw CelebiIcon
+; Hoenn
+	dw TreeckoIcon
+	dw GrovyleIcon
+	dw SceptileIcon
+	dw TorchicIcon
+	dw CombuskenIcon
+	dw BlazikenIcon
+	dw MudkipIcon
+	dw MarshtompIcon
+	dw SwampertIcon
+	dw PoochyenaIcon
+	dw MightyenaIcon
+	dw ZigzagoonIcon
+	dw LinooneIcon
+	dw WurmpleIcon
+	dw SilcoonIcon
+	dw BeautiflyIcon
+	dw CascoonIcon
+	dw DustoxIcon
+	dw LotadIcon
+	dw LombreIcon
+	dw LudicoloIcon
+	dw SeedotIcon
+	dw NuzleafIcon
+	dw ShiftryIcon
+	dw TaillowIcon
+	dw SwellowIcon
+	dw WingullIcon
+	dw PelipperIcon
+	dw RaltsIcon
+	dw KirliaIcon
+	dw GardevoirIcon
+	dw SurskitIcon
+	dw MasquerainIcon
+	dw ShroomishIcon
+	dw BreloomIcon
+	dw SlakothIcon
+	dw VigorothIcon
+	dw SlakingIcon
+	dw NincadaIcon
+	dw NinjaskIcon
+	dw ShedinjaIcon
+	dw WhismurIcon
+	dw LoudredIcon
+	dw ExploudIcon
+	dw MakuhitaIcon
+	dw HariyamaIcon
+	dw AzurillIcon
+	dw NosepassIcon
+	dw SkittyIcon
+	dw DelcattyIcon
+	dw SableyeIcon
+	dw MawileIcon
+	dw AronIcon
+	dw LaironIcon
+	dw AggronIcon
+	dw MedititeIcon
+	dw MedichamIcon
+	dw ElectrikeIcon
+	dw ManectricIcon
+	dw PlusleIcon
+	dw MinunIcon
+	dw VolbeatIcon
+	dw IllumiseIcon
+	dw RoseliaIcon
+	dw GulpinIcon
+	dw SwalotIcon
+	dw CarvanhaIcon
+	dw SharpedoIcon
+	dw WailmerIcon
+	dw WailordIcon
+	dw NumelIcon
+	dw CameruptIcon
+	dw TorkoalIcon
+	dw SpoinkIcon
+	dw GrumpigIcon
+	dw SpindaIcon
+	dw TrapinchIcon
+	dw VibravaIcon
+	dw FlygonIcon
+	dw CacneaIcon
+	dw CacturneIcon
+	dw SwabluIcon
+	dw AltariaIcon
+	dw ZangooseIcon
+	dw SeviperIcon
+	dw LunatoneIcon
+	dw SolrockIcon
+	dw BarboachIcon
+	dw WhiscashIcon
+	dw CorphishIcon
+	dw CrawdauntIcon
+	dw BaltoyIcon
+	dw ClaydolIcon
+	dw LileepIcon
+	dw CradilyIcon
+	dw AnorithIcon
+	dw ArmaldoIcon
+	dw FeebasIcon
+	dw MiloticIcon
+	dw CastformIcon
+	dw KecleonIcon
+	dw ShuppetIcon
+	dw BanetteIcon
+	dw DuskullIcon
+	dw DusclopsIcon
+	dw TropiusIcon
+	dw ChimechoIcon
+	dw AbsolIcon
+	dw WynautIcon
+	dw SnoruntIcon
+	dw GlalieIcon
+	dw SphealIcon
+	dw SealeoIcon
+	dw WalreinIcon
+	dw ClamperlIcon
+	dw HuntailIcon
+	dw GorebyssIcon
+	dw RelicanthIcon
+	dw LuvdiscIcon
+	dw BagonIcon
+	dw ShelgonIcon
+	dw SalamenceIcon
+	dw BeldumIcon
+	dw MetangIcon
+	dw MetagrossIcon
+	dw RegirockIcon
+	dw RegiceIcon
+	dw RegisteelIcon
+	dw LatiasIcon
+	dw LatiosIcon
+	dw KyogreIcon
+	dw GroudonIcon
+	dw RayquazaIcon
+	dw JirachiIcon
+	dw DeoxysIcon
 	assert_table_length NUM_POKEMON + 1

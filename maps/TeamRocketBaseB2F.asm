@@ -286,9 +286,9 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
-	verbosegiveitem HM_WHIRLPOOL
-	setevent EVENT_GOT_HM06_WHIRLPOOL
-	writetext RocketBaseLanceWhirlpoolText
+	; verbosegiveitem HM_WHIRLPOOL
+	; setevent EVENT_GOT_HM06_WHIRLPOOL
+	; writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext
 	turnobject TEAMROCKETBASEB2F_LANCE, DOWN

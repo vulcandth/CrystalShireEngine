@@ -67,7 +67,7 @@ EngineFlags:
 	engine_flag wUnlockedUnowns, UNLOCKED_UNOWNS_L_TO_R_F
 	engine_flag wUnlockedUnowns, UNLOCKED_UNOWNS_S_TO_W_F
 	engine_flag wUnlockedUnowns, UNLOCKED_UNOWNS_X_TO_Z_F
-	engine_flag wUnlockedUnowns, 4 ; unused
+	engine_flag wUnlockedUnowns, UNLOCKED_UNOWNS_MISC_F
 	engine_flag wUnlockedUnowns, 5 ; unused
 	engine_flag wUnlockedUnowns, 6 ; unused
 	engine_flag wUnlockedUnowns, 7 ; unused

@@ -183,14 +183,22 @@ DEF FIRST_BALL_ITEM EQU const_value
 	const ULTRA_BALL   ; 0201
 	const GREAT_BALL   ; 0202
 	const POKE_BALL    ; 0203
-	const HEAVY_BALL   ; 0204
-	const LEVEL_BALL   ; 0205
-	const LURE_BALL    ; 0206
-	const FAST_BALL    ; 0207
-	const FRIEND_BALL  ; 0208
-	const MOON_BALL    ; 0209
-	const LOVE_BALL    ; 020A
-	const PARK_BALL    ; 020B
+	const SAFARI_BALL  ; 0204
+	const NET_BALL     ; 0205
+	const DIVE_BALL    ; 0206
+	const NEST_BALL    ; 0207
+	const REPEAT_BALL  ; 0208
+	const TIMER_BALL   ; 0209
+	const LUXURY_BALL  ; 020A
+	const PREMIER_BALL ; 020B
+	const FAST_BALL    ; 020C
+	const LEVEL_BALL   ; 020D
+	const LURE_BALL    ; 020E
+	const HEAVY_BALL   ; 020F
+	const LOVE_BALL    ; 0210
+	const FRIEND_BALL  ; 0211
+	const MOON_BALL    ; 0212
+	const PARK_BALL    ; 0213
 DEF NUM_BALL_ITEM_POCKET EQU const_value - FIRST_BALL_ITEM
 assert NUM_BALL_ITEM_POCKET <= $ff
 
@@ -239,56 +247,56 @@ ENDM
 DEF FIRST_TMHM_ITEM EQU const_value
 ; see data/moves/tmhm_moves.asm for moves
 DEF TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; 0400
-	add_tm HEADBUTT     ; 0401
-	add_tm CURSE        ; 0402
-	add_tm ROLLOUT      ; 0403
+	add_tm FOCUS_PUNCH  ; 0400
+	add_tm DRAGON_CLAW  ; 0401
+	add_tm WATER_PULSE  ; 0402
+	add_tm CALM_MIND    ; 0403
 	add_tm ROAR         ; 0404
 	add_tm TOXIC        ; 0405
-	add_tm ZAP_CANNON   ; 0406
-	add_tm ROCK_SMASH   ; 0407
-	add_tm PSYCH_UP     ; 0408
+	add_tm HAIL         ; 0406
+	add_tm BULK_UP      ; 0407
+	add_tm BULLET_SEED  ; 0408
 	add_tm HIDDEN_POWER ; 0409
 	add_tm SUNNY_DAY    ; 040A
-	add_tm SWEET_SCENT  ; 040B
-	add_tm SNORE        ; 040C
+	add_tm TAUNT        ; 040B
+	add_tm ICE_BEAM     ; 040C
 	add_tm BLIZZARD     ; 040D
 	add_tm HYPER_BEAM   ; 040E
-	add_tm ICY_WIND     ; 040F
+	add_tm LIGHT_SCREEN ; 040F
 	add_tm PROTECT      ; 0410
 	add_tm RAIN_DANCE   ; 0411
 	add_tm GIGA_DRAIN   ; 0412
-	add_tm ENDURE       ; 0413
+	add_tm SAFEGUARD    ; 0413
 	add_tm FRUSTRATION  ; 0414
 	add_tm SOLARBEAM    ; 0415
 	add_tm IRON_TAIL    ; 0416
-	add_tm DRAGONBREATH ; 0417
+	add_tm THUNDERBOLT  ; 0417
 	add_tm THUNDER      ; 0418
 	add_tm EARTHQUAKE   ; 0419
 	add_tm RETURN       ; 041A
 	add_tm DIG          ; 041B
 	add_tm PSYCHIC_M    ; 041C
 	add_tm SHADOW_BALL  ; 041D
-	add_tm MUD_SLAP     ; 041E
+	add_tm BRICK_BREAK  ; 041E
 	add_tm DOUBLE_TEAM  ; 041F
-	add_tm ICE_PUNCH    ; 0420
-	add_tm SWAGGER      ; 0421
-	add_tm SLEEP_TALK   ; 0422
+	add_tm REFLECT      ; 0420
+	add_tm SHOCK_WAVE   ; 0421
+	add_tm FLAMETHROWER ; 0422
 	add_tm SLUDGE_BOMB  ; 0423
 	add_tm SANDSTORM    ; 0424
 	add_tm FIRE_BLAST   ; 0425
-	add_tm SWIFT        ; 0426
-	add_tm DEFENSE_CURL ; 0427
-	add_tm THUNDERPUNCH ; 0428
-	add_tm DREAM_EATER  ; 0429
-	add_tm DETECT       ; 042A
+	add_tm ROCK_TOMB    ; 0426
+	add_tm AERIAL_ACE   ; 0427
+	add_tm TORMENT      ; 0428
+	add_tm FACADE       ; 0429
+	add_tm SECRET_POWER ; 042A
 	add_tm REST         ; 042B
 	add_tm ATTRACT      ; 042C
 	add_tm THIEF        ; 042D
 	add_tm STEEL_WING   ; 042E
-	add_tm FIRE_PUNCH   ; 042F
-	add_tm FURY_CUTTER  ; 0430
-	add_tm NIGHTMARE    ; 0431
+	add_tm SKILL_SWAP   ; 042F
+	add_tm SNATCH       ; 0430
+	add_tm OVERHEAT     ; 0431
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -303,13 +311,14 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT       ; 0432
-	add_hm FLY       ; 0433
-	add_hm SURF      ; 0434
-	add_hm STRENGTH  ; 0435
-	add_hm FLASH     ; 0436
-	add_hm WHIRLPOOL ; 0437
-	add_hm WATERFALL ; 0438
+	add_hm CUT          ; 0432
+	add_hm FLY          ; 0433
+	add_hm SURF         ; 0434
+	add_hm STRENGTH     ; 0435
+	add_hm FLASH        ; 0436
+	add_hm ROCK_SMASH   ; 0437
+	add_hm WATERFALL    ; 0438
+	add_hm DIVE         ; 0439
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."
@@ -324,9 +333,9 @@ MACRO add_mt
 ENDM
 
 DEF MT01 EQU const_value
-	add_mt FLAMETHROWER
-	add_mt THUNDERBOLT
-	add_mt ICE_BEAM
+	add_mt FRENZY_PLANT
+	add_mt BLAST_BURN
+	add_mt HYDRO_CANNON
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
@@ -335,6 +344,6 @@ DEF USE_SCRIPT_VAR EQU $00
 DEF ITEM_FROM_MEM  EQU $ffff
 
 ; leftovers from red
-DEF SAFARI_BALL    EQU $08 ; MOON_STONE
+; DEF SAFARI_BALL    EQU $08 ; MOON_STONE
 DEF MOON_STONE_RED EQU $0a ; BURN_HEAL
 DEF FULL_HEAL_RED  EQU $34 ; X_SPEED

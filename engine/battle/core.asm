@@ -6,8 +6,7 @@ DoBattle:
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
-	inc a
-	ld [wBattleHasJustStarted], a
+	ld [wTotalBattleTurns], a
 	ld hl, wOTPartyMon1HP
 	ld bc, PARTYMON_STRUCT_LENGTH - 1
 	ld d, BATTLEACTION_SWITCH1 - 1
@@ -149,7 +148,6 @@ BattleTurn:
 	xor a
 	ld [wPlayerIsSwitching], a
 	ld [wEnemyIsSwitching], a
-	ld [wBattleHasJustStarted], a
 	ld [wPlayerJustGotFrozen], a
 	ld [wEnemyJustGotFrozen], a
 	ld [wCurDamage], a
@@ -199,6 +197,8 @@ BattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
+	ld hl, wTotalBattleTurns
+	inc [hl]
 	jr .loop
 
 HandleBetweenTurnEffects:
@@ -3159,17 +3159,17 @@ CheckWhetherSwitchmonIsPredetermined:
 .not_linked
 	ld a, [wEnemySwitchMonIndex]
 	and a
-	jr z, .check_wBattleHasJustStarted
+	jr z, .check_wTotalBattleTurns
 
 	dec a
 	ld b, a
 	jr .return_carry
 
-.check_wBattleHasJustStarted
-	ld a, [wBattleHasJustStarted]
+.check_wTotalBattleTurns
+	ld a, [wTotalBattleTurns]
 	and a
 	ld b, 0
-	jr nz, .return_carry
+	jr z, .return_carry
 
 	and a
 	ret
@@ -3443,8 +3443,7 @@ LoadEnemyMonToSwitchTo:
 	ret
 
 CheckWhetherToAskSwitch:
-	ld a, [wBattleHasJustStarted]
-	dec a
+	ld a, [wTotalBattleTurns]
 	jr z, .return_nc
 	ld a, [wPartyCount]
 	dec a
@@ -3637,9 +3636,9 @@ CheckIfCurPartyMonIsFitToFight:
 	or [hl]
 	ret nz
 
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .finish_fail
+	jr z, .finish_fail
 	ld hl, wPartySpecies
 	ld a, [wCurPartyMon]
 	ld c, a
@@ -6233,11 +6232,13 @@ LoadEnemyMon:
 	ld a, NUM_UNOWN
 	ld hl, wEnemyMonForm
 	call BattleRandomRange
+	inc a
 	and FORM_MASK
 	ld [hl], a
-	;predef GetUnownLetter
 ; Can't use any letters that haven't been unlocked
 ; If combined with forced shiny battletype, causes an infinite loop
+	predef GetUnownLetter
+	ld a, [wUnownLetter]
 	call CheckUnownLetter
 	jr nc, .GenerateUnownLetter ; try again
 	jr .Happiness ; skip the Magikarp check
@@ -6283,7 +6284,7 @@ LoadEnemyMon:
 ; Try again if length >= 1616 mm (i.e. if LOW(length) >= 4 inches)
 	ld a, [wMagikarpLength + 1]
 	cp 4
-	jr nc, .GenerateIVs
+	jmp nc, .GenerateIVs
 
 ; 20% chance of skipping this check
 	call Random
@@ -7715,11 +7716,11 @@ SendOutMonText:
 	jr z, .not_linked
 
 ; If we're in a LinkBattle print just "Go <PlayerMon>"
-; unless DoBattle already set [wBattleHasJustStarted]
+; unless DoBattle already set [wTotalBattleTurns] to 0
 	ld hl, GoMonText
-	ld a, [wBattleHasJustStarted]
+	ld a, [wTotalBattleTurns]
 	and a
-	jr nz, .skip_to_textbox
+	jr z, .skip_to_textbox
 
 .not_linked
 ; Depending on the HP of the enemy mon, the game prints a different text

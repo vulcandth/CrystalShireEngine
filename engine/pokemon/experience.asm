@@ -45,6 +45,10 @@ CalcExpAtLevel:
 
 .UseExpFormula
 	ld a, [wBaseGrowthRate]
+	cp GROWTH_ERRATIC
+	jp z, .erratic
+	cp GROWTH_FLUCTUATING
+	jp z, .fluctuating
 	add a
 	add a
 	ld c, a
@@ -170,5 +174,28 @@ CalcExpAtLevel:
 	ldh [hMultiplicand + 2], a
 	ldh [hMultiplier], a
 	jmp Multiply
+
+.erratic:
+	ld hl, ErraticExperience
+	jr .lookup_table
+
+.fluctuating:
+	ld hl, FluctuatingExperience
+.lookup_table
+	ld c, d
+	ld b, 0
+	dec c
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	xor a
+	ldh [hProduct + 0], a
+	ld a, [hli]
+	ldh [hProduct + 1], a
+	ld a, [hli]
+	ldh [hProduct + 2], a
+	ld a, [hli]
+	ldh [hProduct + 3], a
+	ret
 
 INCLUDE "data/growth_rates.asm"

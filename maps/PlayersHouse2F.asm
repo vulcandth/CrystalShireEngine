@@ -59,8 +59,12 @@ if DEF(_DEBUG)
 	setflag ENGINE_POKEDEX
 	; useful items
 	giveitem RARE_CANDY, 99
+	giveitem HP_UP, 99
 	giveitem MAX_REPEL, 99
+	giveitem TIMER_BALL, 99
+	giveitem PREMIER_BALL, 99
 	giveitem MASTER_BALL, 99
+	giveitem POKE_BALL, 1
 	giveitem BLU_APRICORN, 2
 	giveitem ICE_BERRY
 	giveitem BICYCLE
@@ -138,25 +142,35 @@ if DEF(_DEBUG)
 	setflag ENGINE_FLYPOINT_FUCHSIA
 	setflag ENGINE_FLYPOINT_SAFFRON
 	setflag ENGINE_FLYPOINT_CINNABAR
+	; unlock unowns
+	setflag ENGINE_UNLOCKED_UNOWNS_A_TO_K
+	setflag ENGINE_UNLOCKED_UNOWNS_L_TO_R
+	setflag ENGINE_UNLOCKED_UNOWNS_S_TO_W
+	setflag ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	setflag ENGINE_UNLOCKED_UNOWNS_EXCLAMATION_QUESTION
 	; post-e4
 	setflag ENGINE_CREDITS_SKIP
-	; good party
-	givepoke MEWTWO, 100, BRIGHTPOWDER
-	; hm slaves
-	givepoke MEW, 100, LEFTOVERS
-	givepoke LANTURN, 100, LEFTOVERS
-	givepokemove FLY,        wPartyMon2, 0
-	givepokemove SURF,       wPartyMon2, 1
-	givepokemove STRENGTH,   wPartyMon2, 2
-	givepokemove CUT,        wPartyMon2, 3
-	givepokemove FLASH,      wPartyMon3, 0
-	givepokemove ROCK_SMASH, wPartyMon3, 1
-	givepokemove HEADBUTT,   wPartyMon3, 2
-	givepokemove WATERFALL,  wPartyMon3, 3
+	; ; good party
+	; givepoke MEWTWO, 100, BRIGHTPOWDER
+	; ; hm slaves
+	; givepoke MEW, 100, LEFTOVERS
+	; givepoke LANTURN, 100, LEFTOVERS
+	; givepokemove FLY,        wPartyMon2, 0
+	; givepokemove SURF,       wPartyMon2, 1
+	; givepokemove STRENGTH,   wPartyMon2, 2
+	; givepokemove CUT,        wPartyMon2, 3
+	; givepokemove FLASH,      wPartyMon3, 0
+	; givepokemove ROCK_SMASH, wPartyMon3, 1
+	; givepokemove HEADBUTT,   wPartyMon3, 2
+	; givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke AMPHAROS, 50
-	givepoke GENGAR, 50
-	givepoke DITTO, 50
+	givepoke SNORLAX, 75
+	givepokemove THUNDERSHOCK,  wPartyMon1, 0
+	givepokemove MEGA_DRAIN,  wPartyMon1, 1
+	givepokemove LEAF_BLADE,  wPartyMon1, 2
+	givepokemove LEECH_SEED,  wPartyMon1, 3
+	givepoke NINCADA, 50
+	givepoke WURMPLE, 50
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1

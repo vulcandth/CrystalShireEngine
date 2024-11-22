@@ -40,7 +40,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw AipomEggMoves
-	dw NoEggMoves2
+	dw SunkernEggMoves
 	dw NoEggMoves2
 	dw YanmaEggMoves
 	dw WooperEggMoves
@@ -104,126 +104,154 @@ EggMovePointers2::
 .IndirectEnd::
 
 ChikoritaEggMoves:
-	dw VINE_WHIP
-	dw LEECH_SEED
-	dw COUNTER
 	dw ANCIENTPOWER
+	dw COUNTER
 	dw FLAIL
-	dw SWORDS_DANCE
+	dw GRASSWHISTLE
+	dw INGRAIN
+	dw LEECH_SEED
+	dw NATURE_POWER
+	dw VINE_WHIP
 	dw -1 ; end
 
 CyndaquilEggMoves:
+	dw COVET
+	dw CRUSH_CLAW
+	dw FORESIGHT
 	dw FURY_SWIPES
+	dw HOWL
 	dw QUICK_ATTACK
 	dw REVERSAL
 	dw THRASH
-	dw FORESIGHT
-	dw SUBMISSION
 	dw -1 ; end
 
 TotodileEggMoves:
-	dw CRUNCH
-	dw THRASH
-	dw HYDRO_PUMP
 	dw ANCIENTPOWER
-	dw RAZOR_WIND
+	dw CRUNCH
+	dw DRAGON_CLAW
+	dw HYDRO_PUMP
+	dw MUD_SPORT
 	dw ROCK_SLIDE
+	dw THRASH
+	dw WATER_SPORT
 	dw -1 ; end
 
 SentretEggMoves:
+	dw ASSIST
 	dw DOUBLE_EDGE
-	dw PURSUIT
-	dw SLASH
 	dw FOCUS_ENERGY
+	dw PURSUIT
 	dw REVERSAL
+	dw SLASH
+	dw SUBSTITUTE
+	dw TRICK
 	dw -1 ; end
 
 HoothootEggMoves:
-	dw MIRROR_MOVE
-	dw SUPERSONIC
+	dw FEATHERDANCE
 	dw FAINT_ATTACK
-	dw WING_ATTACK
-	dw WHIRLWIND
+	dw MIRROR_MOVE
 	dw SKY_ATTACK
+	dw SUPERSONIC
+	dw WHIRLWIND
+	dw WING_ATTACK
 	dw -1 ; end
 
 LedybaEggMoves:
-	dw PSYBEAM
 	dw BIDE
-	dw LIGHT_SCREEN
+	dw PSYBEAM
+	dw SILVER_WIND
 	dw -1 ; end
 
 SpinarakEggMoves:
-	dw PSYBEAM
-	dw DISABLE
-	dw SONICBOOM
 	dw BATON_PASS
+	dw DISABLE
+	dw PSYBEAM
 	dw PURSUIT
+	dw SIGNAL_BEAM
+	dw SONICBOOM
 	dw -1 ; end
 
 ChinchouEggMoves:
+	dw AMNESIA
 	dw FLAIL
-	dw SUPERSONIC
 	dw SCREECH
 	dw -1 ; end
 
 PichuEggMoves:
-	dw REVERSAL
 	dw BIDE
-	dw PRESENT
-	dw ENCORE
+	dw CHARGE
 	dw DOUBLESLAP
+	dw ENCORE
+	dw PRESENT
+	dw REVERSAL
+	dw WISH
 	dw -1 ; end
 
 CleffaEggMoves:
-	dw PRESENT
-	dw METRONOME
 	dw AMNESIA
 	dw BELLY_DRUM
-	dw SPLASH
+	dw METRONOME
 	dw MIMIC
+	dw PRESENT
+	dw SPLASH
+	dw SUBSTITUTE
+	dw WISH
 	dw -1 ; end
 
 IgglybuffEggMoves:
+	dw FAKE_TEARS
+	dw FAINT_ATTACK
 	dw PERISH_SONG
 	dw PRESENT
-	dw FAINT_ATTACK
+	dw WISH
 	dw -1 ; end
 
 TogepiEggMoves:
-	dw PRESENT
-	dw MIRROR_MOVE
-	dw PECK
 	dw FORESIGHT
 	dw FUTURE_SIGHT
+	dw MIRROR_MOVE
+	dw PECK
+	dw PRESENT
+	dw PSYCH_UP
+	dw SUBSTITUTE
 	dw -1 ; end
 
 NatuEggMoves:
-	dw HAZE
 	dw DRILL_PECK
-	dw QUICK_ATTACK
+	dw FEATHERDANCE
 	dw FAINT_ATTACK
+	dw HAZE
+	dw PSYCH_UP
+	dw QUICK_ATTACK
+	dw REFRESH
 	dw STEEL_WING
 	dw -1 ; end
 
 MareepEggMoves:
-	dw THUNDERBOLT
-	dw TAKE_DOWN
 	dw BODY_SLAM
+	dw CHARGE
+	dw ODOR_SLEUTH
+	dw REFLECT
 	dw SAFEGUARD
 	dw SCREECH
-	dw REFLECT
+	dw TAKE_DOWN
 	dw -1 ; end
 
 MarillEggMoves:
-	dw LIGHT_SCREEN
-	dw PRESENT
 	dw AMNESIA
-	dw FUTURE_SIGHT
 	dw BELLY_DRUM
+	dw FUTURE_SIGHT
+	dw LIGHT_SCREEN
 	dw PERISH_SONG
+	dw PRESENT
+	dw SUBSTITUTE
 	dw SUPERSONIC
-	dw FORESIGHT
+	dw ENCORE
+	dw REFRESH
+	dw SING
+	dw SLAM
+	dw TICKLE
 	dw -1 ; end
 
 SudowoodoEggMoves:
@@ -231,97 +259,126 @@ SudowoodoEggMoves:
 	dw -1 ; end
 
 HoppipEggMoves:
-	dw CONFUSION
-	dw GROWL
-	dw ENCORE
-	dw DOUBLE_EDGE
-	dw REFLECT
 	dw AMNESIA
-	dw PAY_DAY
+	dw CONFUSION
+	dw DOUBLE_EDGE
+	dw ENCORE
+	; dw HELPING_HAND
+	dw PSYCH_UP
+	dw REFLECT
 	dw -1 ; end
 
 AipomEggMoves:
-	dw COUNTER
-	dw SCREECH
-	dw PURSUIT
 	dw AGILITY
-	dw SPITE
-	dw SLAM
-	dw DOUBLESLAP
 	dw BEAT_UP
+	dw COUNTER
+	dw DOUBLESLAP
+	dw PURSUIT
+	dw SCREECH
+	dw SLAM
+	dw SPITE
+	dw -1 ; end
+
+SunkernEggMoves:
+	dw CURSE
+	dw ENCORE
+	dw GRASSWHISTLE
+	; dw HELPING_HAND
+	dw LEECH_SEED
+	dw NATURE_POWER
 	dw -1 ; end
 
 YanmaEggMoves:
-	dw WHIRLWIND
-	dw REVERSAL
 	dw LEECH_LIFE
+	dw REVERSAL
+	dw SIGNAL_BEAM
+	dw SILVER_WIND
+	dw WHIRLWIND
 	dw -1 ; end
 
 WooperEggMoves:
-	dw BODY_SLAM
 	dw ANCIENTPOWER
+	dw BODY_SLAM
+	dw CURSE
+	dw MUD_SPORT
 	dw SAFEGUARD
+	dw SPIT_UP
+	dw STOCKPILE
+	dw SWALLOW
 	dw -1 ; end
 
 MurkrowEggMoves:
-	dw WHIRLWIND
+	dw CONFUSE_RAY
 	dw DRILL_PECK
-	dw QUICK_ATTACK
+	dw FEATHERDANCE
 	dw MIRROR_MOVE
-	dw WING_ATTACK
+	dw PERISH_SONG
 	dw SKY_ATTACK
+	dw WHIRLWIND
+	dw WING_ATTACK
 	dw -1 ; end
 
 MisdreavusEggMoves:
-	dw SCREECH
 	dw DESTINY_BOND
+	dw IMPRISON
+	dw PSYCH_UP
+	dw SCREECH
 	dw -1 ; end
 
 GirafarigEggMoves:
-	dw TAKE_DOWN
 	dw AMNESIA
+	dw BEAT_UP
 	dw FORESIGHT
 	dw FUTURE_SIGHT
-	dw BEAT_UP
+	dw MAGIC_COAT
+	dw PSYCH_UP
+	dw TAKE_DOWN
+	dw WISH
 	dw -1 ; end
 
 PinecoEggMoves:
-	dw REFLECT
-	dw PIN_MISSILE
+	dw COUNTER
 	dw FLAIL
+	dw PIN_MISSILE
+	dw REFLECT
+	dw SAND_TOMB
 	dw SWIFT
 	dw -1 ; end
 
 DunsparceEggMoves:
-	dw BIDE
 	dw ANCIENTPOWER
-	dw ROCK_SLIDE
+	dw ASTONISH
+	dw BIDE
 	dw BITE
-	dw RAGE
+	dw CURSE
+	dw HEADBUTT
+	dw ROCK_SLIDE
 	dw -1 ; end
 
 GligarEggMoves:
-	dw METAL_CLAW
-	dw WING_ATTACK
-	dw RAZOR_WIND
 	dw COUNTER
+	dw METAL_CLAW
+	dw RAZOR_WIND
+	dw SAND_TOMB
+	dw WING_ATTACK
 	dw -1 ; end
 
 SnubbullEggMoves:
-	dw METRONOME
-	dw FAINT_ATTACK
-	dw REFLECT
-	dw PRESENT
 	dw CRUNCH
+	dw FAINT_ATTACK
 	dw HEAL_BELL
-	dw LICK
-	dw LEER
+	dw METRONOME
+	dw PRESENT
+	dw REFLECT
+	dw SMELLINGSALT
+	dw SNORE
 	dw -1 ; end
 
 QwilfishEggMoves:
+	dw ASTONISH
+	dw BUBBLEBEAM
 	dw FLAIL
 	dw HAZE
-	dw BUBBLEBEAM
 	dw SUPERSONIC
 	dw -1 ; end
 
@@ -330,142 +387,179 @@ ShuckleEggMoves:
 	dw -1 ; end
 
 HeracrossEggMoves:
-	dw HARDEN
 	dw BIDE
+	dw FALSE_SWIPE
 	dw FLAIL
+	dw HARDEN
 	dw -1 ; end
 
 SneaselEggMoves:
+	dw BITE
 	dw COUNTER
-	dw SPITE
+	dw CRUSH_CLAW
+	dw FAKE_OUT
 	dw FORESIGHT
 	dw REFLECT
-	dw BITE
+	dw SPITE
 	dw -1 ; end
 
 TeddiursaEggMoves:
-	dw CRUNCH
-	dw TAKE_DOWN
-	dw SEISMIC_TOSS
-	dw FOCUS_ENERGY
 	dw COUNTER
+	dw CRUNCH
+	dw FAKE_TEARS
 	dw METAL_CLAW
+	dw SEISMIC_TOSS
+	dw SLEEP_TALK
+	dw TAKE_DOWN
+	dw YAWN
 	dw -1 ; end
 
 SlugmaEggMoves:
 	dw ACID_ARMOR
+	dw HEAT_WAVE
 	dw -1 ; end
 
 SwinubEggMoves:
-	dw TAKE_DOWN
+	dw ANCIENTPOWER
 	dw BITE
 	dw BODY_SLAM
+	dw DOUBLE_EDGE
+	dw ICICLE_SPEAR
+	dw MUD_SHOT
 	dw ROCK_SLIDE
-	dw ANCIENTPOWER
+	dw TAKE_DOWN
 	dw -1 ; end
 
 CorsolaEggMoves:
-	dw ROCK_SLIDE
-	dw SAFEGUARD
-	dw SCREECH
-	dw MIST
 	dw AMNESIA
+	dw BARRIER
+	dw CONFUSE_RAY
+	dw ICICLE_SPEAR
+	dw INGRAIN
+	dw MIST
+	dw ROCK_SLIDE
+	dw SCREECH
 	dw -1 ; end
 
 RemoraidEggMoves:
 	dw AURORA_BEAM
-	dw OCTAZOOKA
-	dw SUPERSONIC
 	dw HAZE
+	dw OCTAZOOKA
+	dw ROCK_BLAST
 	dw SCREECH
+	dw SUPERSONIC
+	dw THUNDER_WAVE
 	dw -1 ; end
 
 DelibirdEggMoves:
 	dw AURORA_BEAM
-	dw QUICK_ATTACK
 	dw FUTURE_SIGHT
-	dw SPLASH
+	dw ICE_BALL
+	dw QUICK_ATTACK
 	dw RAPID_SPIN
+	dw SPLASH
 	dw -1 ; end
 
 MantineEggMoves:
-	dw TWISTER
-	dw HYDRO_PUMP
 	dw HAZE
+	dw HYDRO_PUMP
+	dw MUD_SPORT
+	dw ROCK_SLIDE
 	dw SLAM
+	dw TWISTER
 	dw -1 ; end
 
 SkarmoryEggMoves:
+	dw CURSE
 	dw DRILL_PECK
 	dw PURSUIT
-	dw WHIRLWIND
 	dw SKY_ATTACK
+	dw WHIRLWIND
 	dw -1 ; end
 
 HoundourEggMoves:
-	dw FIRE_SPIN
-	dw RAGE
-	dw PURSUIT
-	dw COUNTER
-	dw SPITE
-	dw REVERSAL
 	dw BEAT_UP
+	dw COUNTER
+	dw FIRE_SPIN
+	dw PURSUIT
+	dw RAGE
+	dw REVERSAL
+	dw SPITE
+	dw WILL_O_WISP
 	dw -1 ; end
 
 PhanpyEggMoves:
-	dw FOCUS_ENERGY
-	dw BODY_SLAM
 	dw ANCIENTPOWER
-	dw WATER_GUN
+	dw BODY_SLAM
+	dw COUNTER
+	dw FISSURE
+	dw FOCUS_ENERGY
+	dw SNORE
 	dw -1 ; end
 
 StantlerEggMoves:
-	dw REFLECT
-	dw SPITE
-	dw DISABLE
-	dw LIGHT_SCREEN
 	dw BITE
+	dw DISABLE
+	dw EXTRASENSORY
+	dw PSYCH_UP
+	dw SPITE
+	dw SWAGGER
 	dw -1 ; end
 
 TyrogueEggMoves:
-	dw RAPID_SPIN
+	; dw HELPING_HAND
 	dw HI_JUMP_KICK
 	dw MACH_PUNCH
 	dw MIND_READER
+	dw RAPID_SPIN
 	dw -1 ; end
 
 SmoochumEggMoves:
+	dw FAKE_OUT
+	dw ICE_PUNCH
 	dw MEDITATE
+	dw PSYCH_UP
+	dw WISH
 	dw -1 ; end
 
 ElekidEggMoves:
-	dw KARATE_CHOP
 	dw BARRIER
-	dw ROLLING_KICK
-	dw MEDITATE
 	dw CROSS_CHOP
+	dw FIRE_PUNCH
+	dw ICE_PUNCH
+	dw KARATE_CHOP
+	dw MEDITATE
+	dw ROLLING_KICK
 	dw -1 ; end
 
 MagbyEggMoves:
+	dw BARRIER
+	dw CROSS_CHOP
 	dw KARATE_CHOP
 	dw MEGA_PUNCH
-	dw BARRIER
 	dw SCREECH
-	dw CROSS_CHOP
+	dw THUNDERPUNCH
 	dw -1 ; end
 
 MiltankEggMoves:
+	dw CURSE
+	dw ENDURE
+	; dw HELPING_HAND
 	dw PRESENT
+	dw PSYCH_UP
 	dw REVERSAL
 	dw SEISMIC_TOSS
+	dw SLEEP_TALK
 	dw -1 ; end
 
 LarvitarEggMoves:
+	dw ANCIENTPOWER
+	dw CURSE
+	dw DRAGON_DANCE
+	dw FOCUS_ENERGY
+	dw OUTRAGE
 	dw PURSUIT
 	dw STOMP
-	dw OUTRAGE
-	dw FOCUS_ENERGY
-	dw ANCIENTPOWER
 NoEggMoves2:
 	dw -1 ; end
 
