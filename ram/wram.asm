@@ -503,6 +503,7 @@ wAlreadyFailed:: db
 wBattleParticipantsIncludingFainted:: db
 wBattleLowHealthAlarm:: db
 wPlayerMinimized:: db
+
 wPlayerScreens::
 ; bit
 ; 0 spikes
@@ -1522,10 +1523,7 @@ wJoypadDisable::
 
 wPendingOverworldGraphics:: db
 
-wInBattleTowerBattle::
-; 0 not in BattleTower-Battle
-; 1 BattleTower-Battle
-	db
+wInBattleTowerBattle:: db
 
 wOverworldDelaySkip::
 ; amount of overworld frames to skip DelayFrame for
@@ -2548,6 +2546,7 @@ wMapStatus:: db
 wMapEventStatus:: db
 
 wScriptFlags::
+; bit 2: running script
 ; bit 3: run deferred script
 	db
 wEnabledPlayerEvents::
@@ -2681,7 +2680,7 @@ wObjectMasks:: ds NUM_OBJECTS
 
 wVariableSprites:: ds $100 - SPRITE_VARS
 
-wEnteredMapFromContinue:: db
+wMapNameSignFlags:: db
 
 wTimeOfDayPal:: db
 wTimeOfDayPalFlags:: db

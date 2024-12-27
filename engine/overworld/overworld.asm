@@ -8,23 +8,23 @@ _UpdatePlayerSprite::
 	res 5, [hl]
 	jmp GetUsedSprite
 
-_RefreshSprites: ; mobile
+LoadStandingSpritesGFX: ; mobile
 	ld hl, wSpriteFlags
 	ld a, [hl]
 	push af
-	res 7, [hl]
-	set 6, [hl]
+	res SPRITES_SKIP_STANDING_GFX_F, [hl]
+	set SPRITES_SKIP_WALKING_GFX_F, [hl]
 	call LoadUsedSpritesGFX
 	pop af
 	ld [wSpriteFlags], a
 	ret
 
-_ClearSprites: ; mobile
+LoadWalkingSpritesGFX: ; mobile
 	ld hl, wSpriteFlags
 	ld a, [hl]
 	push af
-	set 7, [hl]
-	res 6, [hl]
+	set SPRITES_SKIP_STANDING_GFX_F, [hl]
+	res SPRITES_SKIP_WALKING_GFX_F, [hl]
 	call LoadUsedSpritesGFX
 	pop af
 	ld [wSpriteFlags], a
@@ -123,7 +123,7 @@ LoadUsedSpritesGFX:
 ; fallthrough
 LoadMiscTiles:
 	ld a, [wSpriteFlags]
-	bit 6, a
+	bit SPRITES_SKIP_WALKING_GFX_F, a
 	ret nz
 
 	ld c, EMOTE_SHADOW
@@ -343,7 +343,7 @@ GetUsedSprites:
 
 .loop
 	ld a, [wSpriteFlags]
-	res 5, a
+	res SPRITES_VRAM_BANK_0_F, a
 	ld [wSpriteFlags], a
 
 	ld a, [hli]
@@ -354,11 +354,11 @@ GetUsedSprites:
 	ld a, [hli]
 	ldh [hUsedSpriteTile], a
 
-	bit 7, a
+	bit 7, a ; tiles $80+ are in VRAM bank 0
 	jr z, .dont_set
 
 	ld a, [wSpriteFlags]
-	set 5, a ; load VBank0
+	set SPRITES_VRAM_BANK_0_F, a
 	ld [wSpriteFlags], a
 
 .dont_set
@@ -380,7 +380,7 @@ GetUsedSprite::
 	push de
 	push bc
 	ld a, [wSpriteFlags]
-	bit 7, a
+	bit SPRITES_SKIP_STANDING_GFX_F, a
 	call z, .CopyToVram
 	pop bc
 	ld l, c
@@ -395,7 +395,7 @@ endr
 	pop hl
 
 	ld a, [wSpriteFlags]
-	bit 6, a
+	bit SPRITES_SKIP_WALKING_GFX_F, a
 	ret nz
 
 	ldh a, [hUsedSpriteIndex]

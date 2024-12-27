@@ -1,5 +1,5 @@
 ItemNames::
-	list_start ItemNames
+	list_start
 	li "BRIGHTPOWDER" ; 0001
 	li "TERU-SAMA"    ; 0002
 	li "MOON STONE"   ; 0003
@@ -162,7 +162,7 @@ ItemNames::
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
-	list_start KeyItemNames
+	list_start
 	li "BICYCLE"      ; 0100
 	li "COIN CASE"    ; 0101
 	li "ITEMFINDER"   ; 0102
@@ -188,7 +188,7 @@ KeyItemNames::
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::
-	list_start BallNames
+	list_start
 	li "MASTER BALL" ; 0200
 	li "ULTRA BALL"  ; 0201
 	li "GREAT BALL"  ; 0202

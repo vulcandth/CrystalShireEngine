@@ -136,7 +136,7 @@ endc
 
 MailGFXPointers:
 ; entries correspond to *MAIL_INDEX constants
-	table_width 4, MailGFXPointers
+	table_width 4
 	dw FLOWER_MAIL,  LoadFlowerMailGFX
 	dw SURF_MAIL,    LoadSurfMailGFX
 	dw LITEBLUEMAIL, LoadLiteBlueMailGFX

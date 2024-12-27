@@ -6,7 +6,7 @@ StopRTC: ; unreferenced
 	ldh [hSRAMBank], a
 	ld [MBC3SRamBank], a
 	ld a, [MBC3RTC]
-	set 6, a ; halt
+	set RTC_DH_HALT, a
 	ld [MBC3RTC], a
 	jmp CloseSRAM
 
@@ -18,7 +18,7 @@ StartRTC:
 	ldh [hSRAMBank], a
 	ld [MBC3SRamBank], a
 	ld a, [MBC3RTC]
-	res 6, a ; halt
+	res RTC_DH_HALT, a
 	ld [MBC3RTC], a
 	jmp CloseSRAM
 
@@ -76,7 +76,7 @@ SaveRTC:
 	ld a, RTC_DH
 	ldh [hSRAMBank], a
 	ld [MBC3SRamBank], a
-	res 7, [hl]
+	res RTC_DH_OVERFLOW, [hl]
 	ld a, BANK(sRTCStatusFlags)
 	ldh [hSRAMBank], a
 	ld [MBC3SRamBank], a
@@ -88,33 +88,30 @@ StartClock::
 	call GetClock
 	call _FixDays
 	call FixDays
-	; bit 5: Day count exceeds 139
-	; bit 6: Day count exceeds 255
-	call c, RecordRTCStatus ; set flag on sRTCStatusFlags
+	call c, RecordRTCStatus
 	jr StartRTC
 
 _FixDays:
 	ld hl, hRTCDayHi
-	bit 7, [hl]
-	jr nz, .set_bit_7
-	bit 6, [hl]
-	jr nz, .set_bit_7
+	bit RTC_DH_OVERFLOW, [hl]
+	jr nz, .reset_rtc
+	bit RTC_DH_HALT, [hl]
+	jr nz, .reset_rtc
 	xor a
 	ret
 
-.set_bit_7
-	; Day count exceeds 16383
-	ld a, %10000000
-	jmp RecordRTCStatus ; set bit 7 on sRTCStatusFlags
+.reset_rtc
+	ld a, RTC_RESET
+	jmp RecordRTCStatus
 
 ClockContinue:
 	call CheckRTCStatus
 	ld c, a
-	and %11000000 ; Day count exceeded 255 or 16383
+	and RTC_RESET | RTC_DAYS_EXCEED_255
 	jr nz, .time_overflow
 
 	ld a, c
-	and %00100000 ; Day count exceeded 139
+	and RTC_DAYS_EXCEED_139
 	jr z, .dont_update
 
 	call UpdateTime

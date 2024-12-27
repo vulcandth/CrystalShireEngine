@@ -43,7 +43,7 @@ MagnetTrain:
 	ld a, [wJumptableIndex]
 	and a
 	jr z, .initialize
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call PlaySpriteAnimations
 	call MagnetTrain_Jumptable
@@ -362,7 +362,7 @@ MagnetTrain_Jumptable:
 .TrainArrived:
 	ld hl, wPalFlags
 	res USE_DAYTIME_PAL_F, [hl]
-	ld a, $80
+	ld a, JUMPTABLE_EXIT
 	ld [wJumptableIndex], a
 	ld de, SFX_TRAIN_ARRIVED
 	jmp PlaySFX

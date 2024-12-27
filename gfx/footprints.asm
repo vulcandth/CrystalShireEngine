@@ -1,5 +1,5 @@
 Footprints:
-	table_width LEN_1BPP_TILE * 4, Footprints
+	table_width LEN_1BPP_TILE * 4
 
 INCBIN "gfx/footprints/bulbasaur.1bpp"
 INCBIN "gfx/footprints/ivysaur.1bpp"

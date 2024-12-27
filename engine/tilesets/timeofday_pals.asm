@@ -11,7 +11,7 @@ _TimeOfDayPals::
 
 ; forced pals?
 	ld hl, wTimeOfDayPalFlags
-	bit 7, [hl]
+	bit FORCED_PALSET_F, [hl]
 	jr nz, .dontchange
 
 ; do we need to bother updating?
@@ -108,7 +108,7 @@ _UpdateTimePals::
 	call GetTimePalFade
 	jmp DmgToCgbTimePals
 
-FadeInPalettes_EnableDynNoApply:
+FadeInPalettes_EnableDynNoApply::
 	farcall EnableDynPalUpdatesNoApply
 	; fallthrough
 FadeInPalettes::

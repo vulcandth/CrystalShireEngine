@@ -7,7 +7,7 @@ ENDM
 
 OddEggProbabilities:
 ; entries correspond to OddEggs (below)
-	table_width 2, OddEggProbabilities
+	table_width 2
 DEF prob_total = 0
 ; Pichu
 	prob 8
@@ -34,7 +34,7 @@ DEF prob_total = 0
 	assert prob_total == 100, "OddEggProbabilities do not sum to 100%!"
 
 OddEggSpecies:
-	table_width 2, OddEggSpecies
+	table_width 2
 	dw PICHU
 	dw PICHU
 	dw CLEFFA
@@ -68,13 +68,13 @@ OddEggMoves:
 	dw TACKLE, DIZZY_PUNCH, NO_MOVE, NO_MOVE
 
 OddEggs:
-	table_width NICKNAMED_MON_STRUCT_LENGTH, OddEggs
+	table_width NICKNAMED_MON_STRUCT_LENGTH
 
 	db 0 ; Species, will be filled on load
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 02048 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -96,7 +96,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00256 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -118,7 +118,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 04096 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -140,7 +140,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00768 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -162,7 +162,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 04096 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -184,7 +184,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00768 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -206,7 +206,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 03584 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -228,7 +228,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00512 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -250,7 +250,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 02560 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -272,7 +272,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00512 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -294,7 +294,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 03072 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -316,7 +316,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00512 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs
@@ -338,7 +338,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 02560 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 0, 0, 0, 0 ; DVs
@@ -360,7 +360,7 @@ OddEggs:
 	db NO_ITEM
 	db 0, 0, 0, 0 ; Moves, will be filled on load
 	dw 00256 ; OT ID
-	dt 125 ; Exp
+	bigdt 125 ; Exp
 	db 0, 0, 0, 0, 0, 0 ; EVs
 	db 0, 0, 0, 0 ; padding
 	dn 2, 10, 10, 10 ; DVs

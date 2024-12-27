@@ -30,9 +30,9 @@ InitMapNameSign::
 	ld [wCurLandmark], a
 
 .not_gate
-	ld hl, wEnteredMapFromContinue
-	bit 1, [hl]
-	res 1, [hl]
+	ld hl, wMapNameSignFlags
+	bit SHOWN_MAP_NAME_SIGN, [hl]
+	res SHOWN_MAP_NAME_SIGN, [hl]
 	jr nz, .dont_do_map_sign
 
 	call .CheckMovingWithinLandmark
@@ -300,7 +300,7 @@ LoadMapNameSignGFX:
 	jr .loop
 
 SignPals:
-	table_width 1 palettes, SignPals
+	table_width 1 palettes
 INCLUDE "gfx/signs/signs.pal"
 	assert_table_length NUM_SIGNS
 

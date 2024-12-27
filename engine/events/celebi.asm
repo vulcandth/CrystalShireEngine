@@ -27,7 +27,7 @@ CelebiShrineEvent:
 	ld d, $0
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	push bc
 	call GetCelebiSpriteTile
@@ -90,7 +90,7 @@ CelebiEvent_CountDown:
 
 .done
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 SpecialCelebiLeafGFX:

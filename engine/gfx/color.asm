@@ -971,7 +971,7 @@ INCLUDE "gfx/sgb/pal_packets.asm"
 INCLUDE "data/sgb_ctrl_packets.asm"
 
 PredefPals:
-	table_width PALETTE_SIZE, PredefPals
+	table_width PALETTE_SIZE
 INCLUDE "gfx/sgb/predef.pal"
 	assert_table_length NUM_PREDEF_PALS
 
@@ -1108,7 +1108,7 @@ PartyMenuBGPalette:
 INCLUDE "gfx/stats/party_menu_bg.pal"
 
 BillsPC_ThemePals:
-	table_width PAL_COLOR_SIZE * 4, BillsPC_ThemePals
+	table_width PAL_COLOR_SIZE * 4
 INCLUDE "gfx/pc/themes.pal"
 	assert_table_length NUM_BILLS_PC_THEMES
 
@@ -1126,7 +1126,7 @@ TilesetBGPalette:
 INCLUDE "gfx/tilesets/bg_tiles.pal"
 
 RoofPals:
-	table_width PAL_COLOR_SIZE * 3 * 2, RoofPals
+	table_width PAL_COLOR_SIZE * 3 * 2
 INCLUDE "gfx/tilesets/roofs.pal"
 	assert_table_length NUM_MAP_GROUPS + 1
 

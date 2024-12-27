@@ -70,14 +70,8 @@ DEF IN_DARKNESS EQU 1 << IN_DARKNESS_F ; masked with a PALETTE_* constant
 	const FISHGROUP_QWILFISH_NO_SWARM
 DEF NUM_FISHGROUPS EQU const_value - 1
 
-; connection directions (see data/maps/data.asm)
-	const_def
-	const EAST_F
-	const WEST_F
-	const SOUTH_F
-	const NORTH_F
-
 ; wMapConnections
+; connection directions (see data/maps/data.asm)
 	const_def
 	shift_const EAST
 	shift_const WEST
