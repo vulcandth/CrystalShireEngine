@@ -173,7 +173,7 @@ LinkTradeMenu:
 
 .MenuAction:
 	ld hl, w2DMenuFlags2
-	res 7, [hl]
+	res _2DMENU_EXITING_F, [hl]
 	ldh a, [hBGMapMode]
 	push af
 	call .loop
@@ -189,7 +189,7 @@ LinkTradeMenu:
 	farcall _2DMenuInterpretJoypad
 	ret c
 	ld a, [w2DMenuFlags1]
-	bit 7, a
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, a
 	ret nz
 	call .GetJoypad
 	ld b, a
@@ -215,7 +215,7 @@ LinkTradeMenu:
 	call .TryAnims
 	ret c
 	ld a, [w2DMenuFlags1]
-	bit 7, a
+	bit _2DMENU_DISABLE_JOYPAD_FILTER_F, a
 	jr z, .loop2
 	and a
 	ret
@@ -298,7 +298,7 @@ LinkTradeMenu:
 
 .TryAnims:
 	ld a, [w2DMenuFlags1]
-	bit 6, a
+	bit _2DMENU_ENABLE_SPRITE_ANIMS_F, a
 	jr z, .skip_anims
 	farcall PlaySpriteAnimationsAndDelayFrame
 .skip_anims

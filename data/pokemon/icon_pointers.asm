@@ -3,7 +3,7 @@
 	dw NullIcon ; unused
 IconPointers:
 ; entries correspond to ICON_* constants (see constants/icon_constants.asm)
-	table_width 2, IconPointers
+	table_width 2
 	dw NullIcon
 ; Kanto
 	dw BulbasaurIcon

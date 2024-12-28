@@ -1,6 +1,6 @@
 PokemonBodyData:
 ; entries correspond to constants/pokemon_constants.asm
-	table_width 4, PokemonBodyData
+	table_width 4
 	; height / weight
 ; Kanto
 	dw 204, 150    ; BULBASAUR

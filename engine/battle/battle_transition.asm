@@ -4,7 +4,6 @@ DEF BATTLETRANSITION_CAVE_STRONGER    EQU $09
 DEF BATTLETRANSITION_NO_CAVE          EQU $10
 DEF BATTLETRANSITION_NO_CAVE_STRONGER EQU $18
 DEF BATTLETRANSITION_FINISH           EQU $20
-DEF BATTLETRANSITION_END              EQU $80
 
 DEF BATTLETRANSITION_SQUARE EQU "8" ; $fe
 DEF BATTLETRANSITION_BLACK  EQU "9" ; $ff
@@ -26,7 +25,7 @@ DoBattleTransition:
 
 .loop
 	ld a, [wJumptableIndex]
-	bit 7, a ; BATTLETRANSITION_END?
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call BattleTransitionJumptable
 	call DelayFrame
@@ -254,7 +253,7 @@ StartTrainerBattle_DetermineWhichAnimation:
 
 StartTrainerBattle_Finish:
 	call ClearSprites
-	ld a, BATTLETRANSITION_END
+	ld a, JUMPTABLE_EXIT
 	ld [wJumptableIndex], a
 	ret
 
@@ -725,8 +724,7 @@ INCLUDE "gfx/overworld/trainer_battle_dark.pal"
 
 PokeBallTransition:
 ; 16x16 overlay of a Poke Ball
-pusho
-opt b.X ; . = 0, X = 1
+pusho b.X ; . = 0, X = 1
 	bigdw %......XXXX......
 	bigdw %....XXXXXXXX....
 	bigdw %..XXXX....XXXX..

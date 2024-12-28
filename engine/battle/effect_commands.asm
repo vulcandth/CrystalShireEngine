@@ -1339,7 +1339,7 @@ BattleCommand_Stab:
 	ld [wCurDamage + 1], a
 
 	ld hl, wTypeModifier
-	set 7, [hl]
+	set STAB_DAMAGE_F, [hl]
 
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1377,7 +1377,7 @@ BattleCommand_Stab:
 	push bc
 	inc hl
 	ld a, [wTypeModifier]
-	and %10000000
+	and STAB_DAMAGE
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
 	ld a, [hl]
@@ -1443,7 +1443,7 @@ BattleCommand_Stab:
 	ld a, [wTypeMatchup]
 	ld b, a
 	ld a, [wTypeModifier]
-	and %10000000
+	and STAB_DAMAGE
 	or b
 	ld [wTypeModifier], a
 	ret
@@ -2255,7 +2255,7 @@ GetFailureResultText:
 	ld hl, DoesntAffectText
 	ld de, DoesntAffectText
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	jr z, .got_text
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -2280,7 +2280,7 @@ GetFailureResultText:
 	ret nz
 
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 
 	ld hl, wCurDamage
@@ -2325,7 +2325,7 @@ BattleCommand_BideFailText:
 	ret z
 
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	jmp z, PrintDoesntAffect
 	jmp PrintButItFailed
 
@@ -2380,7 +2380,7 @@ BattleCommand_SuperEffectiveLoopText:
 
 BattleCommand_SuperEffectiveText:
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	cp EFFECTIVE
 	ret z
 	ld hl, SuperEffectiveText
@@ -3760,7 +3760,7 @@ BattleCommand_PoisonTarget:
 	and a
 	ret nz
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 	call CheckIfTargetIsPoisonType
 	ret z
@@ -3787,7 +3787,7 @@ BattleCommand_PoisonTarget:
 BattleCommand_Poison:
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	jr z, .failed
 
 	call CheckIfTargetIsPoisonType
@@ -4022,7 +4022,7 @@ BattleCommand_BurnTarget:
 	and a
 	jr nz, Defrost
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
@@ -4085,7 +4085,7 @@ BattleCommand_FreezeTarget:
 	and a
 	ret nz
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
@@ -4136,7 +4136,7 @@ BattleCommand_ParalyzeTarget:
 	and a
 	ret nz
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -5497,7 +5497,7 @@ BattleCommand_HeldFlinch:
 BattleCommand_OHKO:
 	call ResetDamage
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	jr z, .no_effect
 	ld hl, wEnemyMonLevel
 	ld de, wBattleMonLevel
@@ -5916,7 +5916,7 @@ BattleCommand_Paralyze:
 	bit PAR, a
 	jr nz, .paralyzed
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	jr z, .didnt_affect
 	call GetOpponentItem
 	ld a, b

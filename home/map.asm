@@ -835,7 +835,7 @@ ExecuteCallbackScript::
 	ld hl, wScriptFlags
 	ld a, [hl]
 	push af
-	set 1, [hl]
+	set UNUSED_SCRIPT_FLAG_1, [hl]
 	farcall EnableScriptMode
 	farcall ScriptEvents
 	pop af
@@ -1157,7 +1157,7 @@ UpdateBGMapColumn::
 	ldh [hBGMapTileCount], a
 	ret
 
-_LoadTilesetGFX:
+_LoadTilesetGFX::
 ; Loads one of up to 3 tileset groups depending on a
 	push af
 	ld a, [wTilesetGFXBank]
@@ -2112,7 +2112,7 @@ GetFishingGroup::
 	pop de
 	ret
 
-TilesetUnchanged:
+TilesetUnchanged::
 ; returns z if tileset is unchanged from last tileset
 	push bc
 	ld a, [wOldTileset]

@@ -1,5 +1,5 @@
 Footprints:
-	table_width LEN_1BPP_TILE * 4, Footprints
+	table_width LEN_1BPP_TILE * 4
 
 ; Kanto
 INCBIN "gfx/footprints/kanto/bulbasaur.1bpp"

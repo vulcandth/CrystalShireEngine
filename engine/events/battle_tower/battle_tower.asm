@@ -60,7 +60,7 @@ RunBattleTowerTrainer:
 
 	ld a, [wInBattleTowerBattle]
 	push af
-	or 1
+	or 1 << IN_BATTLE_TOWER_BATTLE_F
 	ld [wInBattleTowerBattle], a
 
 	xor a
@@ -247,7 +247,7 @@ BattleTowerAction:
 	jumptable .dw, wScriptVar
 
 .dw
-	table_width 2, .dw
+	table_width 2
 	dw BattleTowerAction_CheckExplanationRead
 	dw BattleTowerAction_SetExplanationRead
 	dw BattleTowerAction_GetChallengeState

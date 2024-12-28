@@ -23,7 +23,7 @@ _PlayBattleAnim:
 
 	ld c, VBLANK_CUTSCENE
 	ldh a, [rKEY1]
-	bit 7, a ; check CGB double speed mode
+	bit KEY1_DBLSPEED, a
 	jr nz, .got_speed
 	ld c, VBLANK_CUTSCENE_CGB
 
@@ -297,7 +297,7 @@ RunBattleAnimCommand:
 
 BattleAnimCommands::
 ; entries correspond to anim_* constants (see macros/scripts/battle_anims.asm)
-	table_width 2, BattleAnimCommands
+	table_width 2
 	dw BattleAnimCmd_Obj               ; d0
 	dw BattleAnimCmd_1GFX              ; d1
 	dw BattleAnimCmd_2GFX              ; d2
@@ -1362,7 +1362,7 @@ PlayHitSound:
 
 .okay
 	ld a, [wTypeModifier]
-	and $7f
+	and EFFECTIVENESS_MASK
 	ret z
 
 	cp EFFECTIVE

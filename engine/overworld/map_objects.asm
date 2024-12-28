@@ -35,7 +35,7 @@ HandleObjectStep:
 CheckObjectStillVisible:
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	res OBJ_FLAGS2_6, [hl]
+	res OFF_SCREEN_F, [hl]
 	ldh a, [hMapObjectIndex]
 	and a
 	jr nz, .notPlayer
@@ -71,7 +71,7 @@ CheckObjectStillVisible:
 .ok
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	set OBJ_FLAGS2_6, [hl]
+	set OFF_SCREEN_F, [hl]
 	ld a, [wXCoord]
 	ld e, a
 	ld hl, OBJECT_INIT_X
@@ -108,7 +108,7 @@ CheckObjectStillVisible:
 .yes2
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	set OBJ_FLAGS2_6, [hl]
+	set OFF_SCREEN_F, [hl]
 	and a
 	ret
 
@@ -152,7 +152,7 @@ HandleObjectAction:
 	jr nz, SetFacingStanding
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	bit OBJ_FLAGS2_6, [hl]
+	bit OFF_SCREEN_F, [hl]
 	jr nz, SetFacingStanding
 	bit FROZEN_F, [hl]
 	jr nz, _CallFrozenObjectAction
@@ -519,7 +519,7 @@ StepFunction_FromMovement:
 
 .Pointers:
 ; entries correspond to SPRITEMOVEFN_* constants (see constants/map_object_constants.asm)
-	table_width 2, StepFunction_FromMovement.Pointers
+	table_width 2
 	dw DoNothing                             ; 00 MovementFunction_Null
 	dw MovementFunction_RandomWalkY          ; 01
 	dw MovementFunction_RandomWalkX          ; 02
@@ -655,8 +655,8 @@ MovementFunction_Strength:
 	jr z, .on_pit
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	bit OBJ_FLAGS2_2, [hl]
-	res OBJ_FLAGS2_2, [hl]
+	bit BOULDER_MOVING_F, [hl]
+	res BOULDER_MOVING_F, [hl]
 	jr z, .ok
 	ld hl, OBJECT_RANGE
 	add hl, bc
@@ -1075,7 +1075,7 @@ _SetRandomStepDuration:
 
 StepTypesJumptable:
 ; entries correspond to STEP_TYPE_* constants (see constants/map_object_constants.asm)
-	table_width 2, StepTypesJumptable
+	table_width 2
 	dw StepFunction_Reset           ; 00
 	dw StepFunction_FromMovement    ; 01
 	dw StepFunction_NPCWalk         ; 02
@@ -1646,7 +1646,7 @@ StepFunction_StrengthBoulder:
 	pop bc
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
-	res OBJ_FLAGS2_2, [hl]
+	res BOULDER_MOVING_F, [hl]
 	call CopyCoordsTileToLastCoordsTile
 	ld hl, OBJECT_WALKING
 	add hl, bc
@@ -2143,7 +2143,7 @@ RespawnPlayerAndOpponent:
 	ld a, PLAYER
 	call RespawnObject
 	ld a, [wBattleScriptFlags]
-	bit 7, a
+	bit BATTLESCRIPT_SCRIPTED_F, a
 	jr z, .skip_opponent
 	ldh a, [hLastTalked]
 	and a
@@ -2809,14 +2809,14 @@ InitSprites:
 	and ~(1 << 7)
 	ldh [hCurSpriteTile], a
 	xor a
-	bit 7, [hl]
+	bit 7, [hl] ; tiles $80+ are in VRAM bank 0
 	jr nz, .not_vram1
 	or VRAM_BANK_1
 .not_vram1
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	ld e, [hl]
-	bit OBJ_FLAGS2_7, e
+	bit OBJ_FLAGS2_7_F, e
 	jr z, .not_priority
 	or PRIORITY
 .not_priority

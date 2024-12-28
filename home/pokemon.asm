@@ -279,7 +279,7 @@ GetBaseData::
 	rst Bankswitch
 	jmp PopBCDEHL
 
-GetLeadAbility:
+GetLeadAbility::
 ; Returns ability of lead mon unless it's an Egg. Used for field
 ; abilities
 	ld a, [wPartyMon1Species]

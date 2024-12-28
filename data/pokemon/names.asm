@@ -3,7 +3,7 @@
 	db "?????@@@@@"
 	db "?????@@@@@"
 PokemonNames::
-	table_width NAME_LENGTH - 1, PokemonNames
+	table_width NAME_LENGTH - 1
 ; Kanto
 	db "BULBASAUR@"
 	db "IVYSAUR@@@"

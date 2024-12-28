@@ -1,8 +1,8 @@
-Font:
+Font::
 INCBIN "gfx/font/font.1bpp"
 
 Signs:
-	table_width 8 tiles, Signs
+	table_width 8 tiles
 INCBIN "gfx/signs/wood.2bpp"
 INCBIN "gfx/signs/city.2bpp"
 INCBIN "gfx/signs/forest.2bpp"
@@ -16,7 +16,7 @@ FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"
 
 Frames:
-	table_width TEXTBOX_FRAME_TILES * LEN_1BPP_TILE, Frames
+	table_width TEXTBOX_FRAME_TILES * LEN_1BPP_TILE
 INCBIN "gfx/frames/1.1bpp"
 INCBIN "gfx/frames/2.1bpp"
 INCBIN "gfx/frames/3.1bpp"
@@ -43,7 +43,7 @@ INCBIN "gfx/battle/expbar.2bpp"
 TownMapGFX:
 INCBIN "gfx/pokegear/town_map.2bpp.lz"
 
-TextboxSpaceGFX:
+TextboxSpaceGFX::
 ; StatsScreen_LoadTextboxSpaceGFX reads 2bpp; LoadFrame reads first half as 1bpp
 INCBIN "gfx/font/space.2bpp"
 

@@ -158,8 +158,7 @@ DisplayUnownWords:
 	call PlayClickSFX
 	jmp CloseWindow
 
-pushc
-setcharmap unown
+pushc unown
 
 INCLUDE "data/events/unown_walls.asm"
 

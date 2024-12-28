@@ -1,7 +1,7 @@
 ; Every Pokémon sorted in New Pokédex Order.
 
 NewPokedexOrder:
-	table_width 2, NewPokedexOrder
+	table_width 2
 	dw BULBASAUR
 	dw IVYSAUR
 	dw VENUSAUR

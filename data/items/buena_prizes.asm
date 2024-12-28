@@ -1,5 +1,5 @@
 BuenaPrizeItems:
-	table_width 3, BuenaPrizeItems
+	table_width 3
 	dwb ULTRA_BALL,   2
 	dwb FULL_RESTORE, 2
 	dwb NUGGET,       3

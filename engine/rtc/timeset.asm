@@ -521,7 +521,7 @@ SetDayOfWeek:
 
 InitialSetDSTFlag:
 	ld a, [wDST]
-	set 7, a
+	set DST_F, a
 	ld [wDST], a
 	hlcoord 1, 14
 	lb bc, 3, 18
@@ -547,7 +547,7 @@ InitialSetDSTFlag:
 
 InitialClearDSTFlag:
 	ld a, [wDST]
-	res 7, a
+	res DST_F, a
 	ld [wDST], a
 	hlcoord 1, 14
 	lb bc, 3, 18

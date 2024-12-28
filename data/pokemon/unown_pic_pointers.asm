@@ -1,6 +1,6 @@
 UnownPicPointers::
 ; entries correspond to Unown letters, two apiece
-	table_width 3 * 2, UnownPicPointers
+	table_width 3 * 2
 	dba UnownAFrontpic
 	dba UnownABackpic
 	dba UnownBFrontpic

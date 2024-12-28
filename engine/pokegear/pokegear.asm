@@ -43,7 +43,7 @@ PokeGear:
 	call UpdateTime
 	call JoyTextDelay
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .done
 	call PokegearJumptable
 	farcall PlaySpriteAnimations
@@ -475,7 +475,7 @@ PokegearClock_Joypad:
 
 .quit
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .UpdateClock:
@@ -578,7 +578,7 @@ PokegearMap_ContinueMap:
 
 .cancel
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .DPad:
@@ -757,7 +757,7 @@ PokegearRadio_Joypad:
 
 .cancel
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 PokegearPhone_Init:
@@ -810,7 +810,7 @@ PokegearPhone_Joypad:
 
 .b
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .a
@@ -1883,7 +1883,7 @@ PlayRadio:
 
 PlayRadioStationPointers:
 ; entries correspond to MAPRADIO_* constants
-	table_width 2, PlayRadioStationPointers
+	table_width 2
 	dw LoadStation_PokemonChannel
 	dw LoadStation_OaksPokemonTalk
 	dw LoadStation_PokedexShow

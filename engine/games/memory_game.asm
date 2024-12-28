@@ -43,7 +43,7 @@ _MemoryGame:
 
 .JumptableLoop:
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr nz, .quit
 	call .ExecuteJumptable
 	farcall PlaySpriteAnimations
@@ -78,7 +78,7 @@ _MemoryGame:
 .ResetBoard:
 	jr nc, .proceed
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .proceed
@@ -232,7 +232,7 @@ endr
 
 	jr nc, .restart
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 .restart

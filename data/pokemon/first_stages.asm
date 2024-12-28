@@ -1,6 +1,6 @@
 FirstEvoStages::
 	; lists the lowest stage for each Pokémon
-	table_width 2, FirstEvoStages
+	table_width 2
 	dw BULBASAUR
 	dw BULBASAUR
 	dw BULBASAUR

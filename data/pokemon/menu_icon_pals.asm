@@ -8,7 +8,7 @@ ENDM
 	icon_pals RED,    RED    ; unused
 	icon_pals RED,    RED    ; unused
 MonMenuIconPals:
-	table_width 1, MonMenuIconPals
+	table_width 1
 	;         normal, shiny
 ; Kanto
 	icon_pals TEAL,   GREEN  ; BULBASAUR

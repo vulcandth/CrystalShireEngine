@@ -1,4 +1,4 @@
-GetHPIV:
+GetHPIV::
 	inc hl
 	inc hl
 	call GetSpeedIV
@@ -6,18 +6,18 @@ GetHPIV:
 	dec hl
 	ret
 
-GetAttackIV:
+GetAttackIV::
 	ld a, [hl]
 	and %00011111
 	ret
 
-GetDefenseIV:
+GetDefenseIV::
 	inc hl
 	ld a, [hld]
 	and %00011111
 	ret
 
-GetSpeedIV:
+GetSpeedIV::
 	push bc
 	ld a, [hli]
 	and %01100000
@@ -32,13 +32,13 @@ GetSpeedIV:
 	pop bc
 	ret
 
-GetSpecialAttackIV:
+GetSpecialAttackIV::
 	inc hl
 	call GetDefenseIV
 	dec hl
 	ret
 
-GetSpecialDefenseIV:
+GetSpecialDefenseIV::
 	inc hl
 	call GetSpecialAttackIV
 	dec hl
