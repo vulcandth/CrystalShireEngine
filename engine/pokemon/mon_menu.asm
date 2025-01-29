@@ -276,10 +276,12 @@ _GetItemToGive:
 	jr .loop
 
 PCGiveItem:
+	ld hl, wItemFlags
+	set IN_BAG_F, [hl]
 	call DepositSellInitPackBuffers
 .loop
 	call _GetItemToGive
-	ret z
+	jr z, .done
 
 	; Ensure that we aren't trying to give Mail to a Pokémon in storage.
 	ld a, [wCurItem]
@@ -323,8 +325,13 @@ PCGiveItem:
 	ld a, [wCurItem]
 	ld d, a
 	farcall ItemIsMail
-	ret nc
-	jmp ComposeMailMessage
+	jr nc, .done
+	call ComposeMailMessage
+
+.done
+	ld hl, wItemFlags
+	res IN_BAG_F, [hl]
+	ret
 
 TryGiveItemToPartymon:
 	call SpeechTextbox
